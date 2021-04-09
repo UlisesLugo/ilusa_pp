@@ -1,6 +1,6 @@
 # ILUSA++ (ilusa_pp)
 
-## A new programming language made in go
+### *A new programming language made in go*
 
 **This is the project for the Compilers class**
 
