@@ -1,0 +1,18 @@
+Program firstTest :
+  variables {
+    int a, b, c ;
+  }
+
+  main () {
+    a = 1 ;
+    b = 2 ;
+    c = 3 ;
+
+    while (a <= c ) { 
+      a = a + 1 ;
+    }
+
+    if (b < c) {
+      output("b es menor a c y a")
+    }
+  }
