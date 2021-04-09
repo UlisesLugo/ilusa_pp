@@ -1,0 +1,13 @@
+Program secondTest :
+  variables {
+    int a, b ;
+  }
+
+  main () {
+    a = 1;
+    b = 2;
+
+    if (a < b) {
+      output("a es menor.");
+    }
+  }
