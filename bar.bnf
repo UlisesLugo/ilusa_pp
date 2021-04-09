@@ -10,58 +10,82 @@ cte_i : _num ;
 
 cte_float : _num  '.' _num ['e' ['+' | '-'] _num] ;
 
-string : '"' {.} '"' ;
+cte_string : '"' {.} '"' ;
 
 !whitespace : '\t' | '\n' | '\r' | ' ' ;
 
 /* Syntax part */
 
-P : "program" id ":" P1 ;
+P : "Program" id ":" P1 P2 P3 B;
+P1 : empty | CL ;
+P2 : empty | DV ;
+P3 : empty | F ;
 
-P1 : B | VS B ;
-
-B : "{" B1 "}" ;
-
+B : "main" "(" ")" "{" B1 "}" ;
 B1 : empty | EST B1 ;
 
-EST : A | C | ESC;
+CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}" ;
+INH : empty | "inherits" id ;
+MET_CL : empty | "methods" "{" F MET_CL1 "}" ;
+MET_CL1 : empty | F MET_CL1 ;
+ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
+ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
+ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-A : id "=" EXPR ";" ;
+DV : "variables" "{" DV1 ";" "}" ;
+DV1 : TIP_COMP id DV2 | TIP_SIMP id DV3 DV3 DV4 ;
+DV2 : empty | "," id DV2 ;
+DV3 : empty | "[" cte_i "]" ;
+DV4 : empty | "," id DV3 DV3 DV4 ;
 
-C : "if" "(" EXPR ")" B C1 ";" ;
+TIP_SIMP : "int" | "char" | "float" ;
+TIP_COMP : id ;
 
-C1 : "else" B | empty ;
+F : "function" F1 id "(" F2 ")" "{" DV "}" "body" "{" EST B1 "}" "}" ;
+F1 : TIP_SIMP | "void" ;
+F2 : empty | TIP_SIMP id F3 ;
+F3 : empty | "," TIP_SIMP id F3 ;
 
-ESC : "print" "(" ESC1 ")" ";" ;
+EST : AS | DEC | ESC | LEC | LLAM | RET | REP;
 
-ESC1 : EXPR ESC2 | string ESC2 ;
+AS : id "=" H_EXP ";" ;
 
-ESC2 : empty | "," ESC1 ;
+LLAM : id "(" LLAM1 ")" ;
+LLAM1 : empty | H_EXP LLAM2 ;
+LLAM2 : empty | "," H_EXP LLAM2 ;
 
-VS : "var" VS1 ;
+RET : "return" "(" H_EXP ")" ;
 
-VS1 : id VS3 ":" TIP ";" VS2 ;
+LEC : "input" "(" VAR LEC1 ")" ;
+LEC1 : empty | "," VAR LEC1 ;
 
-VS2 : empty | VS1 ;
+ESC : "output" "(" ESC1 ESC2 ")" ";" ;
+ESC1 : H_EXP | cte_string ;
+ESC2 : empty | "," ESC1 ESC2 ;
 
-VS3 : empty | "," id VS3 ;
+DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 ;
+DEC1 : empty | "else" "{" EST B1 "}" ;
 
-TIP : "int" | "float" ;
+REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
+REP1 : ")" "{" EST B1 "}" ;
 
-EXPR : EXP EXPR1 ;
+VAR : id VAR1 VAR1 ;
+VAR1 : empty | "[" H_EXP "]" ;
 
-EXPR1 : empty | ">" EXP | "<" EXP | "<>" EXP ;
+H_EXP : S_EXP H_EXP1 ;
+H_EXP1 : empty | LOG S_EXP ;
 
-EXP : TER EXP1 ;
+S_EXP : EXP S_EXP1 ;
+S_EXP1 : empty | REL EXP ;
 
+EXP : TERM EXP1 ;
 EXP1 : empty | "+" EXP | "-" EXP ;
 
-TER : F TER1 ;
+TERM : FAC TERM1 ;
+TERM1 : empty | "*" TERM | "/" TERM ;
 
-TER1 : empty | "*" TER | "/" TER ;
+FAC : "(" H_EXP ")" | VAR_CTE | "+" VAR_CTE | "-" VAR_CTE ;
 
-F : "(" EXPR ")" | VC | "+" VC | "-" VC ;
-
-VC : id | cte_i | cte_float ;
-
-
+VAR_CTE : id | cte_i | cte_float ;
+LOG : "&&" | "||" | "!=" ;
+REL : "<" | ">" | ">=" | "<=" | "==" ;
