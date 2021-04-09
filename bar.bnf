@@ -1,0 +1,67 @@
+/* Lexical part */
+
+id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit} ;
+
+_digit : '0'-'9' ;
+
+_num : _digit {_digit} ;
+
+cte_i : _num ;
+
+cte_float : _num  '.' _num ['e' ['+' | '-'] _num] ;
+
+string : '"' {.} '"' ;
+
+!whitespace : '\t' | '\n' | '\r' | ' ' ;
+
+/* Syntax part */
+
+P : "program" id ":" P1 ;
+
+P1 : B | VS B ;
+
+B : "{" B1 "}" ;
+
+B1 : empty | EST B1 ;
+
+EST : A | C | ESC;
+
+A : id "=" EXPR ";" ;
+
+C : "if" "(" EXPR ")" B C1 ";" ;
+
+C1 : "else" B | empty ;
+
+ESC : "print" "(" ESC1 ")" ";" ;
+
+ESC1 : EXPR ESC2 | string ESC2 ;
+
+ESC2 : empty | "," ESC1 ;
+
+VS : "var" VS1 ;
+
+VS1 : id VS3 ":" TIP ";" VS2 ;
+
+VS2 : empty | VS1 ;
+
+VS3 : empty | "," id VS3 ;
+
+TIP : "int" | "float" ;
+
+EXPR : EXP EXPR1 ;
+
+EXPR1 : empty | ">" EXP | "<" EXP | "<>" EXP ;
+
+EXP : TER EXP1 ;
+
+EXP1 : empty | "+" EXP | "-" EXP ;
+
+TER : F TER1 ;
+
+TER1 : empty | "*" TER | "/" TER ;
+
+F : "(" EXPR ")" | VC | "+" VC | "-" VC ;
+
+VC : id | cte_i | cte_float ;
+
+
