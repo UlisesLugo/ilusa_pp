@@ -1,0 +1,264 @@
+S': {
+	Program
+}
+P: {
+	Program
+}
+P1: {
+	Class
+	empty
+}
+P2: {
+	empty
+	variables
+}
+P3: {
+	empty
+	function
+}
+B: {
+	main
+}
+B1: {
+	empty
+	for
+	id
+	if
+	input
+	output
+	return
+	while
+}
+CL: {
+	Class
+}
+INH: {
+	empty
+	inherits
+}
+MET_CL: {
+	empty
+	methods
+}
+MET_CL1: {
+	empty
+	function
+}
+ATR_CL: {
+	public
+}
+ATR_SIMP: {
+	char
+	float
+	int
+}
+ATR_SIMP1: {
+	char
+	empty
+	float
+	int
+}
+DV: {
+	variables
+}
+DV1: {
+	char
+	float
+	id
+	int
+}
+DV2: {
+	,
+	empty
+}
+DV3: {
+	[
+	empty
+}
+DV4: {
+	,
+	empty
+}
+TIP_SIMP: {
+	char
+	float
+	int
+}
+TIP_COMP: {
+	id
+}
+F: {
+	function
+}
+F1: {
+	char
+	float
+	int
+	void
+}
+F2: {
+	char
+	empty
+	float
+	int
+}
+F3: {
+	,
+	empty
+}
+EST: {
+	for
+	id
+	if
+	input
+	output
+	return
+	while
+}
+AS: {
+	id
+}
+LLAM: {
+	id
+}
+LLAM1: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	empty
+	id
+}
+LLAM2: {
+	,
+	empty
+}
+RET: {
+	return
+}
+LEC: {
+	input
+}
+LEC1: {
+	,
+	empty
+}
+ESC: {
+	output
+}
+ESC1: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	cte_string
+	id
+}
+ESC2: {
+	,
+	empty
+}
+DEC: {
+	if
+}
+DEC1: {
+	else
+	empty
+}
+REP: {
+	for
+	while
+}
+REP1: {
+	)
+}
+VAR: {
+	id
+}
+VAR1: {
+	[
+	empty
+}
+H_EXP: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	id
+}
+H_EXP1: {
+	!=
+	&&
+	empty
+	||
+}
+S_EXP: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	id
+}
+S_EXP1: {
+	<
+	<=
+	==
+	>
+	>=
+	empty
+}
+EXP: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	id
+}
+EXP1: {
+	+
+	-
+	empty
+}
+TERM: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	id
+}
+TERM1: {
+	*
+	/
+	empty
+}
+FAC: {
+	(
+	+
+	-
+	cte_float
+	cte_i
+	id
+}
+VAR_CTE: {
+	cte_float
+	cte_i
+	id
+}
+LOG: {
+	!=
+	&&
+	||
+}
+REL: {
+	<
+	<=
+	==
+	>
+	>=
+}
