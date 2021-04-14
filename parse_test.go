@@ -38,7 +38,6 @@ func TestDuck(t *testing.T) {
     tests := []string {
         "first_test.txt",
         "second_test.txt",
-        "third_test.txt",
     }
 
     for _, test := range tests {
