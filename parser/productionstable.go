@@ -130,13 +130,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}"	<<  >>`,
+		String: `CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}"	<< ast.NewClass(X[1]) >>`,
 		Id:         "CL",
 		NTType:     7,
 		Index:      11,
 		NumSymbols: 11,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewClass(X[1])
 		},
 	},
 	ProdTabEntry{

@@ -1,4 +1,14 @@
 Program secondTest :
+  Class example : {
+    atributes {
+      public:
+        int a;
+      private:
+        int b;
+      protected:
+        int c;
+    }
+  }
   variables {
     int a, b ;
   }

@@ -25,7 +25,7 @@ P3 : empty | F ;
 B : "main" "(" ")" "{" B1 "}" ;
 B1 : empty | EST B1 ;
 
-CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}" ;
+CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}" << ast.NewClass($1) >>;
 INH : empty | "inherits" id ;
 MET_CL : empty | "methods" "{" F MET_CL1 "}" ;
 MET_CL1 : empty | F MET_CL1 ;
