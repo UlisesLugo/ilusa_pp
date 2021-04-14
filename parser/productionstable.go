@@ -2,7 +2,7 @@
 
 package parser
 
-
+import "github.com/uliseslugo/ilusa_pp/ast"
 
 type (
 	ProdTab      [numProductions]ProdTabEntry
@@ -30,13 +30,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `P : "Program" id ":" P1 P2 P3 B	<<  >>`,
+		String: `P : "Program" id ":" P1 P2 P3 B	<< ast.NewProgram(X[1]) >>`,
 		Id:         "P",
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 7,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewProgram(X[1])
 		},
 	},
 	ProdTabEntry{

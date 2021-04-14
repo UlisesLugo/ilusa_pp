@@ -24,8 +24,7 @@ func readFile(path string) ([]byte, error) {
     filesize := fileinfo.Size()
     buffer := make([]byte, filesize)
 
-    bytesr, err := file.Read(buffer)
-    fmt.Println(bytesr)
+    _, err = file.Read(buffer)
     if err != nil {
         return nil, err
     }
@@ -49,10 +48,12 @@ func TestDuck(t *testing.T) {
 
         s := lexer.NewLexer(input);
         
-        _, errtest := p.Parse(s);
+        st, errtest := p.Parse(s);
 
         if errtest != nil {
             t.Errorf("Error: %v", errtest);
         }
+
+        fmt.Println("Program name:", st);
     }
 }

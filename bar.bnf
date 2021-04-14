@@ -15,8 +15,9 @@ cte_string : '"' {.} '"' ;
 !whitespace : '\t' | '\n' | '\r' | ' ' ;
 
 /* Syntax part */
+<< import "github.com/uliseslugo/ilusa_pp/ast" >>
 
-P : "Program" id ":" P1 P2 P3 B;
+P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
 P1 : empty | CL ;
 P2 : empty | DV ;
 P3 : empty | F ;

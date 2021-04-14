@@ -22,15 +22,15 @@
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
 	S647
+		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
 	S659
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
@@ -53,8 +53,8 @@
 			Shift(22)
 	S669
 		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
