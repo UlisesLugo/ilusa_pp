@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"unicode/utf8"
 
-	"github.com/uliseslugo/ilusa_pp/token"
+	"github.com/uliseslugo/ilusa_pp/gocc/token"
 )
 
 const (

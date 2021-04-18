@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	parseError "github.com/uliseslugo/ilusa_pp/errors"
-	"github.com/uliseslugo/ilusa_pp/token"
+	parseError "github.com/uliseslugo/ilusa_pp/gocc/errors"
+	"github.com/uliseslugo/ilusa_pp/gocc/token"
 )
 
 const (

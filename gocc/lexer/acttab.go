@@ -5,7 +5,7 @@ package lexer
 import (
 	"fmt"
 
-	"github.com/uliseslugo/ilusa_pp/token"
+	"github.com/uliseslugo/ilusa_pp/gocc/token"
 )
 
 type ActionTable [NumStates]ActionRow

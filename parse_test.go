@@ -1,8 +1,8 @@
 package test
 
 import(
-    "github.com/uliseslugo/ilusa_pp/lexer"
-    "github.com/uliseslugo/ilusa_pp/parser"
+    "github.com/uliseslugo/ilusa_pp/gocc/lexer"
+    "github.com/uliseslugo/ilusa_pp/gocc/parser"
     "os"
     "testing"
     "fmt"
