@@ -3,6 +3,7 @@ package tables
 import(
 	"github.com/uliseslugo/ilusa_pp/types"
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
+	"fmt"
 )
 
 // function row struct
