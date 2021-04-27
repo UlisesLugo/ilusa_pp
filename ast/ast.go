@@ -19,3 +19,10 @@ func NewClass(id Attrib) (string, error){
 	fmt.Println(className)
 	return className, nil
 }
+
+func NewVariable(id Attrib) (string, error){
+	fmt.Println("In NewVariable Func");
+	className := string(id.(*token.Token).Lit)
+	fmt.Println("Variable:", className)
+	return className, nil
+}
