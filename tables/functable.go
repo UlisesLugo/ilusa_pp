@@ -76,13 +76,18 @@ func (fr *FuncRow) Table() map[string]*FuncRow {
 
 // Add Function Row to Table
 func (ft *FuncTable) AddRow(row *FuncRow) bool {
-	// Testing adding row
-	var row *FuncRow
-	row = new(FuncRow)
+	// // check if key is inserted in map
+	// val, ok := ft.table[e.Id()]
+
+	// if !ok {
+	// 	// add key
+	// 	ft.table[row.Id()] = row
+	// }
+
+	// return !ok
+
 	row.SetId("newFunction")
-	// row.SetReturnVal(int)
-	// row.SetParams(int)
-	// row.SetScope(1000)
-	// setLocalVars
+	fmt.Println(row.Id())
 	return true
+
 }
