@@ -1,8 +1,6 @@
 package tables
 
 import (
-	"fmt"
-
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -13,6 +11,7 @@ type VarRow struct {
 	token_ *token.Token
 }
 
+// TESTED
 func (vr *VarRow) Id() string {
 	return vr.id_
 }
@@ -25,6 +24,7 @@ func (vr *VarRow) Token() *token.Token {
 	return vr.token_
 }
 
+// TESTED
 func (vr *VarRow) SetId(id string) () {
 	vr.id_ = id
 }
@@ -50,11 +50,10 @@ func (vt *VarTable) Parent() *VarTable {
 	return vt.parent;
 }
 
-func (vt *VarTable) AddRow(id string, curr_type types.CoreType, token *token.Token) bool {
+func (vt *VarTable) AddRow(id string, curr_type types.CoreType, token *token.Token) error {
 	// Testing adding row
 	var row *VarRow
 	row = new(VarRow)
 	row.SetId("ulises")
-	fmt.Println(row.Id())
-	return true
+	return nil
 }
