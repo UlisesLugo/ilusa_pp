@@ -1,4 +1,4 @@
-/* Lexical part */
+tat/* Lexical part */
 
 id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit} ;
 
@@ -33,7 +33,7 @@ ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
 ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-DV : "variables" "{" DV1 ";" "}" ;
+DV : "variables" "{" DV1 ";" "}" ; << ast.NewVariable($3) >>;
 DV1 : TIP_COMP id DV2 | TIP_SIMP id DV3 DV3 DV4 ;
 DV2 : empty | "," id DV2 ;
 DV3 : empty | "[" cte_i "]" ;
