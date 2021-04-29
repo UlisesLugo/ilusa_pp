@@ -250,23 +250,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : TIP_COMP id DV2	<<  >>`,
+		String: `DV1 : TIP_COMP id DV2	<< ast.NewVariable(X[1]) >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      23,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewVariable(X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : TIP_SIMP id DV3 DV3 DV4	<<  >>`,
+		String: `DV1 : TIP_SIMP id DV3 DV3 DV4	<< ast.NewVariable(X[1]) >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      24,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewVariable(X[1])
 		},
 	},
 	ProdTabEntry{
@@ -280,13 +280,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV2 : "," id DV2	<<  >>`,
+		String: `DV2 : "," id DV2	<< ast.NewVariable(X[1]) >>`,
 		Id:         "DV2",
 		NTType:     16,
 		Index:      26,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewVariable(X[1])
 		},
 	},
 	ProdTabEntry{
@@ -320,13 +320,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV4 : "," id DV3 DV3 DV4	<<  >>`,
+		String: `DV4 : "," id DV3 DV3 DV4	<< ast.NewVariable(X[1]) >>`,
 		Id:         "DV4",
 		NTType:     18,
 		Index:      30,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewVariable(X[1])
 		},
 	},
 	ProdTabEntry{
