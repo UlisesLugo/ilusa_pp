@@ -1,4 +1,4 @@
-tat/* Lexical part */
+/* Lexical part */
 
 id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit} ;
 
@@ -34,7 +34,7 @@ ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
 DV : "variables" "{" DV1 ";" "}" ;
-DV1 : TIP_COMP id DV2 << ast.NewVariable($1) >> ;
+DV1 : TIP_COMP id DV2 << ast.NewVariable($1) >> 
  | TIP_SIMP id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
 DV2 : empty | "," id DV2 << ast.NewVariable($1) >> ;
 DV3 : empty | "[" cte_i "]" ;
