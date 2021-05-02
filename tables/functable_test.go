@@ -1,16 +1,16 @@
 package tables
 
-// import (
-// 	"testing"
-// )
+import (
+	"testing"
+)
 
-// func TestAddRow(t *testing.T) {
-// 	// structure for tests entries
-// 	tests := []struct {
-// 		fr *FuncRow
-// 		ft *FuncTable
-// 		want FuncDirectory
-// 	}
-
-// 	// try with examples
-// }
+func TestAddFuncRow(t *testing.T) {
+	// structure for tests entries
+	var row *FuncRow
+	row = new(FuncRow)
+	row.SetId("newFunction")
+	if row.id != row.Id() {
+		t.Errorf("Error: id of function was not correctly set")
+	}
+	t.Logf(row.Id())
+}

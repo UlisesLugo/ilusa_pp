@@ -30,3 +30,12 @@ func NewVariable(id Attrib) (*tables.VarRow, error) {
 	fmt.Println("Variable:", row.Id())
 	return row, nil
 }
+
+func NewFunction(id Attrib) (*tables.FuncRow, error) {
+	fmt.Println("In NewFunction Func")
+	idName := string(id.(*token.Token).Lit)
+	row := new(tables.FuncRow)
+	row.SetId(idName)
+	fmt.Println("Function:", row.Id())
+	return row, nil
+}
