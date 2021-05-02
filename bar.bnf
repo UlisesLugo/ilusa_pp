@@ -43,10 +43,10 @@ DV4 : empty | "," id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
 TIP_SIMP : "int" | "char" | "float" ;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "}" "body" "{" EST B1 "}" "}" ;
+F : "function" F1 id "(" F2 ")" "{" DV "}" "body" "{" EST B1 "}" "}" << ast.NewFunction($2) >> ;
 F1 : TIP_SIMP | "void" ;
-F2 : empty | TIP_SIMP id F3 ;
-F3 : empty | "," TIP_SIMP id F3 ;
+F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
+F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
 
 EST : AS | DEC | ESC | LEC | LLAM | RET | REP;
 
