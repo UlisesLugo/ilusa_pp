@@ -3,6 +3,16 @@ Program firstTest :
     int a, b, c ;
   }
 
+  function void isa(){
+    variables{
+      int u;
+      float v;
+    }
+    body{
+      output(1); 
+    }
+  }
+
   main () {
     a = 1;
     b = 2;

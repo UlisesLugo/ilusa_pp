@@ -33,19 +33,21 @@ ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
 ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-DV : "variables" "{" DV1 ";" "}" ;
-DV1 : TIP_COMP id DV2 | TIP_SIMP id DV3 DV3 DV4 ;
-DV2 : empty | "," id DV2 ;
+DV : "variables" "{" DV5 "}" ;
+DV1 : TIP_COMP id DV2 << ast.NewVariable($1) >> 
+ | TIP_SIMP id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
+DV2 : empty | "," id DV2 << ast.NewVariable($1) >> ;
 DV3 : empty | "[" cte_i "]" ;
-DV4 : empty | "," id DV3 DV3 DV4 ;
+DV4 : empty | "," id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
+DV5 : empty | DV1 ";" DV5;
 
 TIP_SIMP : "int" | "char" | "float" ;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "}" "body" "{" EST B1 "}" "}" ;
+F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" << ast.NewFunction($2) >> ;
 F1 : TIP_SIMP | "void" ;
-F2 : empty | TIP_SIMP id F3 ;
-F3 : empty | "," TIP_SIMP id F3 ;
+F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
+F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
 
 EST : AS | DEC | ESC | LEC | LLAM | RET | REP;
 
