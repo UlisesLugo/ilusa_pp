@@ -7,8 +7,10 @@ type CoreType int
 // Integer: Whole number (32 bits), positive or negative
 // Float: Floating point number with double precision (64 Bits), positive or negative
 // Char: ASCI character (8 bits)
+// Null: For operations not allowed in ILUSA++
 const (
 	Integer CoreType = iota
 	Float
 	Char
+	Null
 )
