@@ -9,7 +9,7 @@ func TestAddVarRowId(t *testing.T) {
 	if(row.id_ != row.Id()){
 		t.Errorf("Error: id was not correctly set");
 	}
-	t.Logf(row.Id());
+	t.Log("Passed id with:",row.Id());
 }
 
 // TODO(ulises) Add tests for rest of vartable.go and 

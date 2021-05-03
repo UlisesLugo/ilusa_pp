@@ -12,5 +12,5 @@ func TestAddFuncRow(t *testing.T) {
 	if row.id != row.Id() {
 		t.Errorf("Error: id of function was not correctly set")
 	}
-	t.Logf(row.Id())
+	t.Log("Passed with func name:", row.Id())
 }
