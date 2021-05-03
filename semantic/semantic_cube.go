@@ -1,5 +1,9 @@
 package semantic
 
+import (
+	"github.com/uliseslugo/ilusa_pp/types"
+)
+
 type Operation int // operation type int
 
 // enumarate opeartion starting in 0
@@ -16,6 +20,79 @@ const (
 	GreaterT
 	Equal
 )
+
+// Create semantic cube matrix
+// 11 operations
+// 4 types for left operator
+// 4 types for right operator
+semantic_cube[11][3][3] = [][][]types.CoreType{
+	{
+		// Add
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		 // Sub
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Mult
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Div
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Mod
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// And
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Or
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Not
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+ 		// LessT
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// GreaterT
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+	{
+		// Equal
+		{types.CoreType.Integer}, // Integer w Integer
+		{types.CoreType.Float}, // Integer w Float
+		{types.CoreType.Null}, // Integer w Char
+	},
+}
 
 /**
 	Translate
