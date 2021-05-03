@@ -79,6 +79,13 @@ DV4: {
 	,
 	empty
 }
+DV5: {
+	char
+	empty
+	float
+	id
+	int
+}
 TIP_SIMP: {
 	char
 	float

@@ -240,11 +240,11 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV : "variables" "{" DV1 ";" "}"	<<  >>`,
+		String: `DV : "variables" "{" DV5 "}"	<<  >>`,
 		Id:         "DV",
 		NTType:     14,
 		Index:      22,
-		NumSymbols: 5,
+		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
@@ -330,10 +330,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `TIP_SIMP : "int"	<<  >>`,
-		Id:         "TIP_SIMP",
+		String: `DV5 : empty	<<  >>`,
+		Id:         "DV5",
 		NTType:     19,
 		Index:      31,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `DV5 : DV1 ";" DV5	<<  >>`,
+		Id:         "DV5",
+		NTType:     19,
+		Index:      32,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TIP_SIMP : "int"	<<  >>`,
+		Id:         "TIP_SIMP",
+		NTType:     20,
+		Index:      33,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -342,26 +362,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `TIP_SIMP : "char"	<<  >>`,
 		Id:         "TIP_SIMP",
-		NTType:     19,
-		Index:      32,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `TIP_SIMP : "float"	<<  >>`,
-		Id:         "TIP_SIMP",
-		NTType:     19,
-		Index:      33,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `TIP_COMP : id	<<  >>`,
-		Id:         "TIP_COMP",
 		NTType:     20,
 		Index:      34,
 		NumSymbols: 1,
@@ -370,20 +370,40 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F : "function" F1 id "(" F2 ")" "{" DV "}" "body" "{" EST B1 "}" "}"	<<  >>`,
-		Id:         "F",
-		NTType:     21,
+		String: `TIP_SIMP : "float"	<<  >>`,
+		Id:         "TIP_SIMP",
+		NTType:     20,
 		Index:      35,
-		NumSymbols: 15,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
+		String: `TIP_COMP : id	<<  >>`,
+		Id:         "TIP_COMP",
+		NTType:     21,
+		Index:      36,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}"	<< ast.NewFunction(X[2]) >>`,
+		Id:         "F",
+		NTType:     22,
+		Index:      37,
+		NumSymbols: 14,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFunction(X[2])
+		},
+	},
+	ProdTabEntry{
 		String: `F1 : TIP_SIMP	<<  >>`,
 		Id:         "F1",
-		NTType:     22,
-		Index:      36,
+		NTType:     23,
+		Index:      38,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -392,8 +412,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `F1 : "void"	<<  >>`,
 		Id:         "F1",
-		NTType:     22,
-		Index:      37,
+		NTType:     23,
+		Index:      39,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -402,26 +422,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `F2 : empty	<<  >>`,
 		Id:         "F2",
-		NTType:     23,
-		Index:      38,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
-		},
-	},
-	ProdTabEntry{
-		String: `F2 : TIP_SIMP id F3	<<  >>`,
-		Id:         "F2",
-		NTType:     23,
-		Index:      39,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `F3 : empty	<<  >>`,
-		Id:         "F3",
 		NTType:     24,
 		Index:      40,
 		NumSymbols: 0,
@@ -430,20 +430,40 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F3 : "," TIP_SIMP id F3	<<  >>`,
-		Id:         "F3",
+		String: `F2 : TIP_SIMP id F3	<< ast.NewFunction(X[1]) >>`,
+		Id:         "F2",
 		NTType:     24,
 		Index:      41,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return ast.NewFunction(X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `F3 : empty	<<  >>`,
+		Id:         "F3",
+		NTType:     25,
+		Index:      42,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunction(X[2]) >>`,
+		Id:         "F3",
+		NTType:     25,
+		Index:      43,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunction(X[2])
 		},
 	},
 	ProdTabEntry{
 		String: `EST : AS	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      42,
+		NTType:     26,
+		Index:      44,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -452,8 +472,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : DEC	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      43,
+		NTType:     26,
+		Index:      45,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -462,8 +482,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : ESC	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      44,
+		NTType:     26,
+		Index:      46,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -472,8 +492,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : LEC	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      45,
+		NTType:     26,
+		Index:      47,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -482,8 +502,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : LLAM	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      46,
+		NTType:     26,
+		Index:      48,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -492,8 +512,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : RET	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      47,
+		NTType:     26,
+		Index:      49,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -502,8 +522,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `EST : REP	<<  >>`,
 		Id:         "EST",
-		NTType:     25,
-		Index:      48,
+		NTType:     26,
+		Index:      50,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -512,8 +532,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `AS : id "=" H_EXP ";"	<<  >>`,
 		Id:         "AS",
-		NTType:     26,
-		Index:      49,
+		NTType:     27,
+		Index:      51,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -522,8 +542,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `LLAM : id "(" LLAM1 ")"	<<  >>`,
 		Id:         "LLAM",
-		NTType:     27,
-		Index:      50,
+		NTType:     28,
+		Index:      52,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -532,26 +552,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `LLAM1 : empty	<<  >>`,
 		Id:         "LLAM1",
-		NTType:     28,
-		Index:      51,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
-		},
-	},
-	ProdTabEntry{
-		String: `LLAM1 : H_EXP LLAM2	<<  >>`,
-		Id:         "LLAM1",
-		NTType:     28,
-		Index:      52,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `LLAM2 : empty	<<  >>`,
-		Id:         "LLAM2",
 		NTType:     29,
 		Index:      53,
 		NumSymbols: 0,
@@ -560,10 +560,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LLAM2 : "," H_EXP LLAM2	<<  >>`,
-		Id:         "LLAM2",
+		String: `LLAM1 : H_EXP LLAM2	<<  >>`,
+		Id:         "LLAM1",
 		NTType:     29,
 		Index:      54,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `LLAM2 : empty	<<  >>`,
+		Id:         "LLAM2",
+		NTType:     30,
+		Index:      55,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `LLAM2 : "," H_EXP LLAM2	<<  >>`,
+		Id:         "LLAM2",
+		NTType:     30,
+		Index:      56,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -572,8 +592,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `RET : "return" "(" H_EXP ")"	<<  >>`,
 		Id:         "RET",
-		NTType:     30,
-		Index:      55,
+		NTType:     31,
+		Index:      57,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -582,8 +602,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `LEC : "input" "(" VAR LEC1 ")"	<<  >>`,
 		Id:         "LEC",
-		NTType:     31,
-		Index:      56,
+		NTType:     32,
+		Index:      58,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -592,8 +612,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `LEC1 : empty	<<  >>`,
 		Id:         "LEC1",
-		NTType:     32,
-		Index:      57,
+		NTType:     33,
+		Index:      59,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
@@ -602,8 +622,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `LEC1 : "," VAR LEC1	<<  >>`,
 		Id:         "LEC1",
-		NTType:     32,
-		Index:      58,
+		NTType:     33,
+		Index:      60,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -612,8 +632,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `ESC : "output" "(" ESC1 ESC2 ")" ";"	<<  >>`,
 		Id:         "ESC",
-		NTType:     33,
-		Index:      59,
+		NTType:     34,
+		Index:      61,
 		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -622,8 +642,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `ESC1 : H_EXP	<<  >>`,
 		Id:         "ESC1",
-		NTType:     34,
-		Index:      60,
+		NTType:     35,
+		Index:      62,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -632,8 +652,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `ESC1 : cte_string	<<  >>`,
 		Id:         "ESC1",
-		NTType:     34,
-		Index:      61,
+		NTType:     35,
+		Index:      63,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -642,8 +662,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `ESC2 : empty	<<  >>`,
 		Id:         "ESC2",
-		NTType:     35,
-		Index:      62,
+		NTType:     36,
+		Index:      64,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
@@ -652,8 +672,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `ESC2 : "," ESC1 ESC2	<<  >>`,
 		Id:         "ESC2",
-		NTType:     35,
-		Index:      63,
+		NTType:     36,
+		Index:      65,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -662,8 +682,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<<  >>`,
 		Id:         "DEC",
-		NTType:     36,
-		Index:      64,
+		NTType:     37,
+		Index:      66,
 		NumSymbols: 9,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -672,8 +692,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `DEC1 : empty	<<  >>`,
 		Id:         "DEC1",
-		NTType:     37,
-		Index:      65,
+		NTType:     38,
+		Index:      67,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
@@ -682,8 +702,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `DEC1 : "else" "{" EST B1 "}"	<<  >>`,
 		Id:         "DEC1",
-		NTType:     37,
-		Index:      66,
+		NTType:     38,
+		Index:      68,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -692,8 +712,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `REP : "while" "(" H_EXP REP1	<<  >>`,
 		Id:         "REP",
-		NTType:     38,
-		Index:      67,
+		NTType:     39,
+		Index:      69,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -702,8 +722,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `REP : "for" "(" AS ";" H_EXP ";" H_EXP REP1	<<  >>`,
 		Id:         "REP",
-		NTType:     38,
-		Index:      68,
+		NTType:     39,
+		Index:      70,
 		NumSymbols: 8,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -712,8 +732,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `REP1 : ")" "{" EST B1 "}"	<<  >>`,
 		Id:         "REP1",
-		NTType:     39,
-		Index:      69,
+		NTType:     40,
+		Index:      71,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -722,26 +742,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `VAR : id VAR1 VAR1	<<  >>`,
 		Id:         "VAR",
-		NTType:     40,
-		Index:      70,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `VAR1 : empty	<<  >>`,
-		Id:         "VAR1",
-		NTType:     41,
-		Index:      71,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
-		},
-	},
-	ProdTabEntry{
-		String: `VAR1 : "[" H_EXP "]"	<<  >>`,
-		Id:         "VAR1",
 		NTType:     41,
 		Index:      72,
 		NumSymbols: 3,
@@ -750,28 +750,28 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP : S_EXP H_EXP1	<<  >>`,
-		Id:         "H_EXP",
+		String: `VAR1 : empty	<<  >>`,
+		Id:         "VAR1",
 		NTType:     42,
 		Index:      73,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `H_EXP1 : empty	<<  >>`,
-		Id:         "H_EXP1",
-		NTType:     43,
-		Index:      74,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP1 : LOG S_EXP	<<  >>`,
-		Id:         "H_EXP1",
+		String: `VAR1 : "[" H_EXP "]"	<<  >>`,
+		Id:         "VAR1",
+		NTType:     42,
+		Index:      74,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `H_EXP : S_EXP H_EXP1	<<  >>`,
+		Id:         "H_EXP",
 		NTType:     43,
 		Index:      75,
 		NumSymbols: 2,
@@ -780,28 +780,28 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP : EXP S_EXP1	<<  >>`,
-		Id:         "S_EXP",
+		String: `H_EXP1 : empty	<<  >>`,
+		Id:         "H_EXP1",
 		NTType:     44,
 		Index:      76,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `S_EXP1 : empty	<<  >>`,
-		Id:         "S_EXP1",
-		NTType:     45,
-		Index:      77,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP1 : REL EXP	<<  >>`,
-		Id:         "S_EXP1",
+		String: `H_EXP1 : LOG S_EXP	<<  >>`,
+		Id:         "H_EXP1",
+		NTType:     44,
+		Index:      77,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `S_EXP : EXP S_EXP1	<<  >>`,
+		Id:         "S_EXP",
 		NTType:     45,
 		Index:      78,
 		NumSymbols: 2,
@@ -810,28 +810,28 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EXP : TERM EXP1	<<  >>`,
-		Id:         "EXP",
+		String: `S_EXP1 : empty	<<  >>`,
+		Id:         "S_EXP1",
 		NTType:     46,
 		Index:      79,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `EXP1 : empty	<<  >>`,
-		Id:         "EXP1",
-		NTType:     47,
-		Index:      80,
 		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `EXP1 : "+" EXP	<<  >>`,
-		Id:         "EXP1",
+		String: `S_EXP1 : REL EXP	<<  >>`,
+		Id:         "S_EXP1",
+		NTType:     46,
+		Index:      80,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXP : TERM EXP1	<<  >>`,
+		Id:         "EXP",
 		NTType:     47,
 		Index:      81,
 		NumSymbols: 2,
@@ -840,18 +840,18 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EXP1 : "-" EXP	<<  >>`,
+		String: `EXP1 : empty	<<  >>`,
 		Id:         "EXP1",
-		NTType:     47,
+		NTType:     48,
 		Index:      82,
-		NumSymbols: 2,
+		NumSymbols: 0,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `TERM : FAC TERM1	<<  >>`,
-		Id:         "TERM",
+		String: `EXP1 : "+" EXP	<<  >>`,
+		Id:         "EXP1",
 		NTType:     48,
 		Index:      83,
 		NumSymbols: 2,
@@ -860,18 +860,18 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : empty	<<  >>`,
-		Id:         "TERM1",
-		NTType:     49,
+		String: `EXP1 : "-" EXP	<<  >>`,
+		Id:         "EXP1",
+		NTType:     48,
 		Index:      84,
-		NumSymbols: 0,
+		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : "*" TERM	<<  >>`,
-		Id:         "TERM1",
+		String: `TERM : FAC TERM1	<<  >>`,
+		Id:         "TERM",
 		NTType:     49,
 		Index:      85,
 		NumSymbols: 2,
@@ -880,10 +880,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
+		String: `TERM1 : empty	<<  >>`,
+		Id:         "TERM1",
+		NTType:     50,
+		Index:      86,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `TERM1 : "*" TERM	<<  >>`,
+		Id:         "TERM1",
+		NTType:     50,
+		Index:      87,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
 		String: `TERM1 : "/" TERM	<<  >>`,
 		Id:         "TERM1",
-		NTType:     49,
-		Index:      86,
+		NTType:     50,
+		Index:      88,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -892,8 +912,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `FAC : "(" H_EXP ")"	<<  >>`,
 		Id:         "FAC",
-		NTType:     50,
-		Index:      87,
+		NTType:     51,
+		Index:      89,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -902,8 +922,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `FAC : VAR_CTE	<<  >>`,
 		Id:         "FAC",
-		NTType:     50,
-		Index:      88,
+		NTType:     51,
+		Index:      90,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -912,8 +932,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `FAC : "+" VAR_CTE	<<  >>`,
 		Id:         "FAC",
-		NTType:     50,
-		Index:      89,
+		NTType:     51,
+		Index:      91,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -922,8 +942,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `FAC : "-" VAR_CTE	<<  >>`,
 		Id:         "FAC",
-		NTType:     50,
-		Index:      90,
+		NTType:     51,
+		Index:      92,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -932,8 +952,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `VAR_CTE : id	<<  >>`,
 		Id:         "VAR_CTE",
-		NTType:     51,
-		Index:      91,
+		NTType:     52,
+		Index:      93,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -942,26 +962,6 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `VAR_CTE : cte_i	<<  >>`,
 		Id:         "VAR_CTE",
-		NTType:     51,
-		Index:      92,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `VAR_CTE : cte_float	<<  >>`,
-		Id:         "VAR_CTE",
-		NTType:     51,
-		Index:      93,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `LOG : "&&"	<<  >>`,
-		Id:         "LOG",
 		NTType:     52,
 		Index:      94,
 		NumSymbols: 1,
@@ -970,8 +970,8 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LOG : "||"	<<  >>`,
-		Id:         "LOG",
+		String: `VAR_CTE : cte_float	<<  >>`,
+		Id:         "VAR_CTE",
 		NTType:     52,
 		Index:      95,
 		NumSymbols: 1,
@@ -980,9 +980,9 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LOG : "!="	<<  >>`,
+		String: `LOG : "&&"	<<  >>`,
 		Id:         "LOG",
-		NTType:     52,
+		NTType:     53,
 		Index:      96,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -990,8 +990,8 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : "<"	<<  >>`,
-		Id:         "REL",
+		String: `LOG : "||"	<<  >>`,
+		Id:         "LOG",
 		NTType:     53,
 		Index:      97,
 		NumSymbols: 1,
@@ -1000,8 +1000,8 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : ">"	<<  >>`,
-		Id:         "REL",
+		String: `LOG : "!="	<<  >>`,
+		Id:         "LOG",
 		NTType:     53,
 		Index:      98,
 		NumSymbols: 1,
@@ -1010,10 +1010,30 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
+		String: `REL : "<"	<<  >>`,
+		Id:         "REL",
+		NTType:     54,
+		Index:      99,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `REL : ">"	<<  >>`,
+		Id:         "REL",
+		NTType:     54,
+		Index:      100,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
 		String: `REL : ">="	<<  >>`,
 		Id:         "REL",
-		NTType:     53,
-		Index:      99,
+		NTType:     54,
+		Index:      101,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -1022,8 +1042,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `REL : "<="	<<  >>`,
 		Id:         "REL",
-		NTType:     53,
-		Index:      100,
+		NTType:     54,
+		Index:      102,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
@@ -1032,8 +1052,8 @@ var productionsTable = ProdTab{
 	ProdTabEntry{
 		String: `REL : "=="	<<  >>`,
 		Id:         "REL",
-		NTType:     53,
-		Index:      101,
+		NTType:     54,
+		Index:      103,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
