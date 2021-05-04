@@ -21,18 +21,12 @@ const (
 	Equal
 )
 
-// type Operators struct {
-// 	left_op  types.CoreType
-// 	right_op types.CoreType
-// }
-
-// const p1 = Operators{left_op: int, right_op: int}
-
 // Create semantic cube matrix
 // 11 operations
 // 4 types for left operator
 // 4 types for right operator
-var semantic_cube = [][][]types.CoreType{
+
+var SemanticCube = [][][]types.CoreType{
 	{
 		// Add
 		{types.Integer}, // Integer w Integer
@@ -100,70 +94,3 @@ var semantic_cube = [][][]types.CoreType{
 		{types.Null},    // Integer w Char
 	},
 }
-
-/**
-	Translate
-	Translate operation label to operation token
-	return -> string
-**/
-func (o Operation) Translate() string {
-	switch o {
-	case Add:
-		return "+"
-	case Sub:
-		return "-"
-	case Mult:
-		return "*"
-	case Div:
-		return "/"
-	case Mod:
-		return "%"
-	case And:
-		return "&&"
-	case Or:
-		return "||"
-	case Not:
-		return "!"
-	case LessT:
-		return "<"
-	case GreaterT:
-		return ">"
-	case Equal:
-		return "=="
-	}
-	return "noop" // return string no operation
-}
-
-func GetOperationLabel(operationStr string) Operation {
-	switch operationStr {
-	case "+":
-		return Add
-	case "-":
-		return Sub
-	case "*":
-		return Mult
-	case "/":
-		return Div
-	case "%":
-		return Mod
-	case "&&":
-		return And
-	case "||":
-		return Or
-	case "!":
-		return Not
-	case "<":
-		return LessT
-	case ">":
-		return GreaterT
-	case "==":
-		return Equal
-	}
-	return -1 // invalid operation
-}
-
-// TODO: Implement Semantic Cube
-// github.com/Loptt/lambdish-compiler/blob/master/sem/semanticcube.go
-// type SemanticCube struct {
-// 	operations map[string]types.CoreType
-// }
