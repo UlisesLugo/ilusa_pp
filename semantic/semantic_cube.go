@@ -1,96 +1,70 @@
 package semantic
 
-import (
-	"github.com/uliseslugo/ilusa_pp/types"
-)
+import "github.com/uliseslugo/ilusa_pp/types"
 
-type Operation int // operation type int
+type Operation string // operation type int
 
-// enumarate opeartion starting in 0
+// enumarate operations by signs
 const (
-	Add = iota
-	Sub
-	Mult
-	Div
-	Mod
-	And
-	Or
-	Not
-	LessT
-	GreaterT
-	Equal
+	Add      = "+"
+	Sub      = "-"
+	Mult     = "*"
+	Div      = "/"
+	And      = "&&"
+	Or       = "||"
+	Not      = "!"
+	LessT    = "<"
+	GreaterT = ">"
+	Equal    = "=="
+	NotEqual = "!="
+	Assign   = "="
 )
 
-// Create semantic cube matrix
-// 11 operations
-// 4 types for left operator
+// Crete semantic cube matrix
+// 11 opeations
+// 4 tpes for left operator
 // 4 types for right operator
+type SemanticCube struct {
+	operations map[string]types.CoreType
+}
 
-var SemanticCube = [][][]types.CoreType{
-	{
-		// Add
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Sub
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Mult
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Div
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Mod
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// And
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Or
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Not
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// LessT
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// GreaterT
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
-	{
-		// Equal
-		{types.Integer}, // Integer w Integer
-		{types.Float},   // Integer w Float
-		{types.Null},    // Integer w Char
-	},
+// NewSemanticCube creates a new semantic cube struct
+func NewSemanticCube() *SemanticCube {
+	return &SemanticCube{
+		map[string]types.CoreType{
+			//Arithmetical Operators
+			"+00": types.Integer, // 00 int con int
+			"+11": types.Float,   // 11 float con float
+			"-00": types.Integer,
+			"-11": types.Float,
+			"*00": types.Integer,
+			"*11": types.Float,
+			"/00": types.Integer,
+			"/11": types.Float,
+			//Relational Operators
+			"<00":  types.Integer,
+			"<11":  types.Integer,
+			">00":  types.Integer,
+			">11":  types.Integer,
+			"==00": types.Integer, // 00 int con int
+			"==11": types.Integer, // 11 float con float
+			"==22": types.Integer, // 22 char con char
+			"!=00": types.Integer,
+			"!=11": types.Integer, // 11 float con float
+			"!=22": types.Integer, // 22 char con char
+			//Logical Operators
+			"&&00": types.Integer,
+			"&&11": types.Integer,
+			"&&33": types.Null,
+			"||00": types.Integer,
+			"||11": types.Integer,
+			"||33": types.Integer,
+			"!0":   types.Integer,
+			// Assignation
+			"=00": types.Integer,
+			"=11": types.Float,
+			"=22": types.Char,
+			"=33": types.Null,
+		},
+	}
 }
