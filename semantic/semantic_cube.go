@@ -1,10 +1,11 @@
+// Semantic Cube
 package semantic
 
 import "github.com/uliseslugo/ilusa_pp/types"
 
-type Operation string // operation type int
+type Operation string // operation type string
 
-// enumarate operations by signs
+// Assign string token to operation label
 const (
 	Add      = "+"
 	Sub      = "-"
@@ -20,15 +21,15 @@ const (
 	Assign   = "="
 )
 
-// Crete semantic cube matrix
-// 11 opeations
-// 4 tpes for left operator
-// 4 types for right operator
+// Crete semantic cube map
+// key - string of operation
+// value - type of return of operation
 type SemanticCube struct {
 	operations map[string]types.CoreType
 }
 
-// NewSemanticCube creates a new semantic cube struct
+// NewSemanticCube
+// creates a new semantic cube map
 func NewSemanticCube() *SemanticCube {
 	return &SemanticCube{
 		map[string]types.CoreType{
