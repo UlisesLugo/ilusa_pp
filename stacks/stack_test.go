@@ -3,7 +3,7 @@ package stacks
 import "testing"
 
 func TestStack(t *testing.T) {
-	s := make(stack,0)
+	s := make(Stack,0)
 
 	s, ok := s.Pop()
 	if ok != false {
@@ -15,7 +15,7 @@ func TestStack(t *testing.T) {
 	res, ok := s.Top()
 	if (!ok || res != 1 || s.Size() != 1) {
 		t.Log("Res:",res, "Ok:", ok)
-		t.Fatalf("Pushing 1 into stack is not working")
+		t.Fatalf("Pushing 1 into Stack is not working")
 	}
 
 	// Push a 2
@@ -23,7 +23,7 @@ func TestStack(t *testing.T) {
 	res, ok = s.Top()
 	if (!ok || res != 2 || s.Size() != 2) {
 		t.Log("Res:",res, "Ok:", ok)
-		t.Fatalf("Pushing 2 into stack is not working")
+		t.Fatalf("Pushing 2 into Stack is not working")
 	}
 
 	// Pop element from container
@@ -43,6 +43,7 @@ func TestStack(t *testing.T) {
 	res, ok = s.Top()
 	if (!ok || res != 3 || s.Size() != 2) {
 		t.Log("Res:",res, "Ok:", ok)
-		t.Fatalf("Pushing 3 into stack is not working")
+		t.Fatalf("Pushing 3 into Stack is not working")
 	}
+	t.Log("All tests of Stack passed :)")
 }

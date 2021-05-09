@@ -1,11 +1,13 @@
 package test
 
-import(
-    "github.com/uliseslugo/ilusa_pp/gocc/lexer"
-    "github.com/uliseslugo/ilusa_pp/gocc/parser"
-    "os"
-    "testing"
-    "fmt"
+import (
+	"fmt"
+	"os"
+	"testing"
+
+	"github.com/uliseslugo/ilusa_pp/ast"
+	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
+	"github.com/uliseslugo/ilusa_pp/gocc/parser"
 )
 
 func readFile(path string) ([]byte, error) {
@@ -54,6 +56,10 @@ func TestDuck(t *testing.T) {
             t.Errorf("Error: %v", errtest);
         }
 
-        fmt.Println("Program name:", st);
+        prog, ok := st.(*ast.Program)
+        if !ok {
+            t.Error("Program failed")
+        }
+        fmt.Println("Program name:", prog)
     }
 }
