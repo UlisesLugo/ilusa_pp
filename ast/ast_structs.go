@@ -1,15 +1,27 @@
 package ast
 
 import (
-	"github.com/uliseslugo/ilusa_pp/semantic")
 
+	// internal packages
+	"github.com/uliseslugo/ilusa_pp/semantic"
+)
 
+/*
+	Expresison struct
+	exp1: Exp
+	exp2: Exp
+*/
 type Exp struct {
-	exp1     *Exp
-	exp2     *Exp
+	exp1 *Exp
+	exp2 *Exp
 }
 
+/*
+	Operator Expresison struct
+	op: operation
+	exp: Expression
+*/
 type Op_exp struct {
 	operation semantic.Operation
-	exp *Exp
+	exp       *Exp
 }
