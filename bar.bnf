@@ -77,22 +77,26 @@ REP1 : ")" "{" EST B1 "}" ;
 VAR : id VAR1 VAR1 << ast.NewVariable($0, $1, $2) >>;
 VAR1 : empty | "[" H_EXP "]" ;
 
-H_EXP : S_EXP H_EXP1 << ast.NewHyperExpression($0,$1) >> ;
-H_EXP1 : empty | LOG S_EXP << ast.NewSuperExpression($0, $1) >>;
+H_EXP : S_EXP H_EXP1 << ast.NewExpression($0,$1) >> ;
+H_EXP1 : empty | LOG S_EXP << ast.NewOpExpression($0,$1) >> ;
 
-S_EXP : EXP S_EXP1 ;
-S_EXP1 : empty | REL EXP ;
+S_EXP : EXP S_EXP1 << ast.NewExpression($0,$1) >> ;
+S_EXP1 : empty | REL EXP << ast.NewOpExpression($0,$1) >> ;
 
-EXP : TERM EXP1 ;
-EXP1 : empty | "+" EXP | "-" EXP ;
+EXP : TERM EXP1 << ast.NewExpression($0,$1) >> ;
+EXP1 : empty 
+ | "+" EXP << ast.NewOpExpression($0,$1) >>
+ | "-" EXP << ast.NewOpExpression($0,$1) >> ;
 
 TERM : FAC TERM1 ;
-TERM1 : empty | "*" TERM | "/" TERM ;
+TERM1 : empty 
+ | "*" TERM << ast.NewOpExpression($0,$1) >>
+ | "/" TERM << ast.NewOpExpression($0,$1) >> ;
 
 FAC : "(" H_EXP ")" 
  | VAR_CTE
- | "+" VAR_CTE
- | "-" VAR_CTE;
+ | "+" VAR_CTE << ast.NewOpExpression($0,$1) >>
+ | "-" VAR_CTE << ast.NewOpExpression($0,$1) >>;
 
 VAR_CTE : id << ast.NewIdConst($0) >>
  | cte_i << ast.NewIntConst($0) >>

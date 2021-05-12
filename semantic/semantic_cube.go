@@ -20,6 +20,7 @@ const (
 	NotEqual = "!="
 	Assign   = "="
 )
+//TODO Hierarchy dictionary (operation, num)
 
 // Crete semantic cube map
 // key - string of operation

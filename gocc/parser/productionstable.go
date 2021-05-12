@@ -790,13 +790,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP : S_EXP H_EXP1	<< ast.NewHyperExpression(X[0],X[1]) >>`,
+		String: `H_EXP : S_EXP H_EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "H_EXP",
 		NTType:     44,
 		Index:      77,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewHyperExpression(X[0],X[1])
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -810,23 +810,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP1 : LOG S_EXP	<< ast.NewSuperExpression(X[0], X[1]) >>`,
+		String: `H_EXP1 : LOG S_EXP	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "H_EXP1",
 		NTType:     45,
 		Index:      79,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewSuperExpression(X[0], X[1])
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP : EXP S_EXP1	<<  >>`,
+		String: `S_EXP : EXP S_EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "S_EXP",
 		NTType:     46,
 		Index:      80,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -840,23 +840,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP1 : REL EXP	<<  >>`,
+		String: `S_EXP1 : REL EXP	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "S_EXP1",
 		NTType:     47,
 		Index:      82,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `EXP : TERM EXP1	<<  >>`,
+		String: `EXP : TERM EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "EXP",
 		NTType:     48,
 		Index:      83,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -870,23 +870,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EXP1 : "+" EXP	<<  >>`,
+		String: `EXP1 : "+" EXP	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "EXP1",
 		NTType:     49,
 		Index:      85,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `EXP1 : "-" EXP	<<  >>`,
+		String: `EXP1 : "-" EXP	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "EXP1",
 		NTType:     49,
 		Index:      86,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -910,23 +910,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : "*" TERM	<<  >>`,
+		String: `TERM1 : "*" TERM	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "TERM1",
 		NTType:     51,
 		Index:      89,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : "/" TERM	<<  >>`,
+		String: `TERM1 : "/" TERM	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "TERM1",
 		NTType:     51,
 		Index:      90,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -950,23 +950,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `FAC : "+" VAR_CTE	<<  >>`,
+		String: `FAC : "+" VAR_CTE	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "FAC",
 		NTType:     52,
 		Index:      93,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `FAC : "-" VAR_CTE	<<  >>`,
+		String: `FAC : "-" VAR_CTE	<< ast.NewOpExpression(X[0],X[1]) >>`,
 		Id:         "FAC",
 		NTType:     52,
 		Index:      94,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOpExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{

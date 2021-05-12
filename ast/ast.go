@@ -6,7 +6,6 @@ import (
 
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
 	"github.com/uliseslugo/ilusa_pp/semantic"
-	"github.com/uliseslugo/ilusa_pp/stacks"
 	"github.com/uliseslugo/ilusa_pp/tables"
 )
 
@@ -36,7 +35,6 @@ func NewProgram(id Attrib) (*Program, error) {
 	if !ok {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
-	fmt.Println("Program name", nombre)
 	return &Program{nombre, nil, new_id}, nil
 }
 
@@ -68,79 +66,21 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	return row, nil
 }
 
-/*
-	Super Expression Struct
-	operadores: Stack
-	operandos: Stack
-	tipos: Stack
-	saltos: Stack
-*/
-type S_exp struct {
-	operadores stacks.Stack
-	operandos  stacks.Stack
-	tipos      stacks.Stack
-	saltos     stacks.Stack
+func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
+	fmt.Println("New expression created")
+	new_term, _ := exp1.(Exp)
+	new_exp, _ := exp2.(Exp)
+	return &Exp{&new_term, &new_exp}, nil
 }
 
-func (s_exp *S_exp) IsEmpty() bool {
-	fmt.Println("S_exp is empty =", s_exp.operadores.Empty())
-	return (s_exp.operadores == nil &&
-		s_exp.operandos == nil &&
-		s_exp.tipos == nil &&
-		s_exp.saltos == nil)
-}
-
-/*
-	Hyper Expression Struct
-
-	super_exp1: left super expression
-	logical_operator: operator
-	super_exp2:
-	tok
-*/
-type H_exp struct {
-	super_exp1       S_exp
-	Logical_operator semantic.Operation
-	super_exp2       S_exp
-	tok              *token.Token
-}
-
-func (h_exp *H_exp) isEmpty() bool {
-	return (h_exp.super_exp1.IsEmpty() &&
-		h_exp.super_exp2.IsEmpty())
-}
-
-// TODO () Add newExpression that checks stacks and appends cuadruplos
-func NewHyperExpression(super_exp, hyper_exp Attrib) (*S_exp, error) {
-	h_exp, _ := hyper_exp.(H_exp)
-	// _, s_ok := super_exp.(S_exp)
-	// if !h_ok {
-	// 	return nil, errors.New("Problem in casting hyper_expression")
-	// }
-	// if !s_ok {
-	// 	return nil, errors.New("Problem in casting super_expression")
-	// }
-	if !h_exp.isEmpty() {
-		fmt.Println("Hyper exp not empty")
+func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
+	tok, t_ok := op.(*token.Token)
+	if !t_ok {
+		return nil, errors.New("Problem in casting operator")
 	}
-
-	fmt.Println("New hyper_expression created")
-	return &S_exp{nil, nil, nil, nil}, nil
-}
-
-func NewSuperExpression(log_op, super_exp Attrib) (*S_exp, error) {
-	// logical_op, _ := log_op.(semantic.Operation)
-	// _, s_ok := super_exp.(S_exp)
-	// if !log_ok {
-	// 	return nil, errors.New("Problem in casting logical operator")
-	// }
-	// if !s_ok {
-	// 	return nil, errors.New("Problem in casting super_expression")
-	// }
-	s := make(stacks.Stack, 0)
-	s = s.Push(2)
-	fmt.Println("Stack added")
-	return &S_exp{s, nil, nil, nil}, nil
+	new_op := semantic.Operation(tok.Lit)
+	fmt.Println("Operator: ", string(tok.Lit));
+	return &Op_exp{new_op, nil}, nil
 }
 
 func NewIdConst(id Attrib) (string, error) {
