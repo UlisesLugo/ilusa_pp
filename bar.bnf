@@ -75,8 +75,8 @@ REP1 : ")" "{" EST B1 "}" ;
 VAR : id VAR1 VAR1 ;
 VAR1 : empty | "[" H_EXP "]" ;
 
-H_EXP : S_EXP H_EXP1 ;
-H_EXP1 : empty | LOG S_EXP ;
+H_EXP : S_EXP H_EXP1 << ast.NewHyperExpression($0,$1) >> ;
+H_EXP1 : empty | LOG S_EXP << ast.NewSuperExpression($0, $1) >>;
 
 S_EXP : EXP S_EXP1 ;
 S_EXP1 : empty | REL EXP ;

@@ -1,0 +1,4 @@
+Program unitFuncTest :
+  main () {
+      z = a + b < c - d;
+  }
