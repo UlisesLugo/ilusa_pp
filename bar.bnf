@@ -89,7 +89,10 @@ EXP1 : empty | "+" EXP | "-" EXP ;
 TERM : FAC TERM1 ;
 TERM1 : empty | "*" TERM | "/" TERM ;
 
-FAC : "(" H_EXP ")" | VAR_CTE | "+" VAR_CTE | "-" VAR_CTE ;
+FAC : "(" H_EXP ")" 
+ | VAR_CTE
+ | "+" VAR_CTE
+ | "-" VAR_CTE;
 
 VAR_CTE : id << ast.NewIdConst($0) >>
  | cte_i << ast.NewIntConst($0) >>

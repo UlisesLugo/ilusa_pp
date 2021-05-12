@@ -56,6 +56,18 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	return row, nil
 }
 
+func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
+	tok, tok_ok := id.(*token.Token)
+	if !tok_ok {
+		return nil, errors.New("Problem in casting id token")
+	}
+	row := &tables.VarRow{} // TODO Constructor for VarRow
+	row.SetId(string(tok.Lit))
+	row.SetToken(tok)
+	fmt.Println("New var:", row.Id())
+	return row, nil
+}
+
 /*
 	Super Expression Struct
 	operadores: Stack
@@ -131,31 +143,16 @@ func NewSuperExpression(log_op, super_exp Attrib) (*S_exp, error) {
 	return &S_exp{s, nil, nil, nil}, nil
 }
 
-func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
-	fmt.Println("New variable beginning");
-	tok, tok_ok := id.(*token.Token)
-	curr_id := string(tok.Lit)
-	if !tok_ok {
-		return nil, errors.New("Problem in casting id token")
-	}
-	row := &tables.VarRow{}
-	row.SetId(curr_id)
-	row.SetToken(tok)
-	fmt.Println("New var:", curr_id)
-	return row, nil
-}
-
 func NewIdConst(id Attrib) (string, error) {
-	fmt.Println("In New Id const")
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return "", errors.New("Problem in id constants")
 	}
+	fmt.Println("New id exp", string(tok.Lit))
 	return string(tok.Lit), nil
 }
 
 func NewIntConst(value Attrib) (int, error){
-	fmt.Println("In New Int Const")
 	num, ok := value.(*token.Token).Int32Value()
 	if ok != nil{
 		return -1, errors.New("Problem in integer constants")
@@ -164,7 +161,6 @@ func NewIntConst(value Attrib) (int, error){
 }
 
 func NewFloatConst(value Attrib) (float64, error){
-	fmt.Println("In New Float Const")
 	num, ok := value.(*token.Token).Float64Value()
 	if ok != nil{
 		return -1, errors.New("Problem in float constants")
