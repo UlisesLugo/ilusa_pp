@@ -9,6 +9,8 @@ type VarRow struct {
 	id_ string
 	type_ types.CoreType
 	token_ *token.Token
+	dim1_ int
+	dim2_ int
 }
 
 // TESTED
@@ -24,6 +26,14 @@ func (vr *VarRow) Token() *token.Token {
 	return vr.token_
 }
 
+func (vr *VarRow) Dim1() int {
+	return vr.dim1_
+}
+
+func (vr *VarRow) Dim2() int {
+	return vr.dim2_
+}
+
 // TESTED
 func (vr *VarRow) SetId(id string) () {
 	vr.id_ = id
@@ -37,6 +47,13 @@ func (vr *VarRow) SetToken(token *token.Token) {
 	vr.token_ = token
 }
 
+func (vr *VarRow) SetDim1(dim1 int) {
+	vr.dim1_ = dim1
+}
+
+func (vr *VarRow) SetDim2(dim2 int) {
+	vr.dim2_ = dim2
+}
 type VarTable struct {
 	table map[string]*VarRow
 	parent *VarTable

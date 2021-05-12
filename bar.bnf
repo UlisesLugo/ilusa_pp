@@ -33,13 +33,15 @@ ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
 ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-DV : "variables" "{" DV5 "}" ;
-DV1 : TIP_COMP id DV2 << ast.NewVariable($1) >> 
- | TIP_SIMP id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
-DV2 : empty | "," id DV2 << ast.NewVariable($1) >> ;
-DV3 : empty | "[" cte_i "]" ;
-DV4 : empty | "," id DV3 DV3 DV4 << ast.NewVariable($1) >> ;
-DV5 : empty | DV1 ";" DV5;
+DV : "variables" "{" DV1 "}" ;
+DV1 : empty | DV2 ";" DV1 ;
+DV2 : TIP_COMP id DV4 | DV6 DV5 ;
+DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
+DV4 : empty | "," id DV4 ;
+DV5 : empty | "," DV6 DV5;
+DV6 : TIP_SIMP id << ast.NewVariable($1,0,0) >> 
+ |    TIP_SIMP id DV3 << ast.NewVariable($1,$2,0) >> 
+ |    TIP_SIMP id DV3 DV3 << ast.NewVariable($1,$2,$3) >> ;
 
 TIP_SIMP : "int" | "char" | "float" ;
 TIP_COMP : id ;
@@ -72,7 +74,7 @@ DEC1 : empty | "else" "{" EST B1 "}" ;
 REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
 REP1 : ")" "{" EST B1 "}" ;
 
-VAR : id VAR1 VAR1 ;
+VAR : id VAR1 VAR1 << ast.NewVariable($0, $1, $2) >>;
 VAR1 : empty | "[" H_EXP "]" ;
 
 H_EXP : S_EXP H_EXP1 << ast.NewHyperExpression($0,$1) >> ;
@@ -89,6 +91,8 @@ TERM1 : empty | "*" TERM | "/" TERM ;
 
 FAC : "(" H_EXP ")" | VAR_CTE | "+" VAR_CTE | "-" VAR_CTE ;
 
-VAR_CTE : id | cte_i | cte_float ;
+VAR_CTE : id << ast.NewIdConst($0) >>
+ | cte_i << ast.NewIntConst($0) >>
+ | cte_float << ast.NewFloatConst($0) >>;
 LOG : "&&" | "||" | "!=" ;
 REL : "<" | ">" | ">=" | "<=" | "==" ;

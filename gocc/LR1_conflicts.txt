@@ -1,17 +1,39 @@
-9 LR-1 conflicts: 
-	S34
+7 LR-1 conflicts: 
+	S137
 		symbol: [
-			Shift(43)
-			Reduce(27:DV3 : empty	<<  >>)
-	S94
-		symbol: [
-			Shift(43)
-			Reduce(27:DV3 : empty	<<  >>)
-	S135
-		symbol: [
-			Reduce(73:VAR1 : empty	<<  >>)
-			Shift(204)
-	S636
+			Shift(205)
+			Reduce(75:VAR1 : empty	<<  >>)
+	S635
+		symbol: int
+			Shift(20)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(21)
+		symbol: float
+			Shift(22)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+	S646
+		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
+		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(21)
+		symbol: float
+			Shift(22)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+	S658
+		symbol: int
+			Shift(20)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(21)
+		symbol: float
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(22)
+	S662
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
@@ -21,17 +43,7 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S647
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-	S659
+	S668
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
@@ -41,7 +53,7 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S663
+	S670
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
@@ -51,23 +63,3 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S669
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
-	S671
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
-		symbol: int
-			Shift(20)
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)

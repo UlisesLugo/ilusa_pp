@@ -47,15 +47,6 @@ func NewClass(id Attrib) (string, error) {
 	return className, nil
 }
 
-func NewVariable(id Attrib) (*tables.VarRow, error) {
-	fmt.Println("In NewVariable Func")
-	idName := string(id.(*token.Token).Lit)
-	row := new(tables.VarRow)
-	row.SetId(idName)
-	fmt.Println("Variable:", row.Id())
-	return row, nil
-}
-
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	fmt.Println("In NewFunction Func")
 	idName := string(id.(*token.Token).Lit)
@@ -110,8 +101,6 @@ func (h_exp *H_exp) isEmpty() bool {
 // TODO () Add newExpression that checks stacks and appends cuadruplos
 func NewHyperExpression(super_exp, hyper_exp Attrib) (*S_exp, error) {
 	h_exp, _ := hyper_exp.(H_exp)
-	fmt.Println("aqui")
-	fmt.Println(h_exp.Logical_operator)
 	// _, s_ok := super_exp.(S_exp)
 	// if !h_ok {
 	// 	return nil, errors.New("Problem in casting hyper_expression")
@@ -142,4 +131,44 @@ func NewSuperExpression(log_op, super_exp Attrib) (*S_exp, error) {
 	return &S_exp{s, nil, nil, nil}, nil
 }
 
+func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
+	fmt.Println("New variable beginning");
+	tok, tok_ok := id.(*token.Token)
+	curr_id := string(tok.Lit)
+	if !tok_ok {
+		return nil, errors.New("Problem in casting id token")
+	}
+	row := &tables.VarRow{}
+	row.SetId(curr_id)
+	row.SetToken(tok)
+	fmt.Println("New var:", curr_id)
+	return row, nil
+}
+
+func NewIdConst(id Attrib) (string, error) {
+	fmt.Println("In New Id const")
+	tok, ok := id.(*token.Token)
+	if !ok {
+		return "", errors.New("Problem in id constants")
+	}
+	return string(tok.Lit), nil
+}
+
+func NewIntConst(value Attrib) (int, error){
+	fmt.Println("In New Int Const")
+	num, ok := value.(*token.Token).Int32Value()
+	if ok != nil{
+		return -1, errors.New("Problem in integer constants")
+	}
+	return int(num), nil
+}
+
+func NewFloatConst(value Attrib) (float64, error){
+	fmt.Println("In New Float Const")
+	num, ok := value.(*token.Token).Float64Value()
+	if ok != nil{
+		return -1, errors.New("Problem in float constants")
+	}
+	return float64(num), nil
+}
 // TODO? () Move structs into astx for cleanliness?
