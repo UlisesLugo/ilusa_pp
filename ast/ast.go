@@ -16,40 +16,6 @@ import (
 type Attrib interface{}
 
 /*
-	Program struct
-	nombre: program name
-	operaciones: list of quadruples
-	id: program token
-*/
-type Program struct {
-	nombre      string
-	operaciones []Cuadruplo
-	id          *token.Token
-}
-
-/*
-	Getter
-	returns Program name
-*/
-func (p *Program) String() string {
-	return p.nombre
-}
-
-/*
-	Quadruple struct
-	operacion: action value
-	addr1: reference to first operator
-	addr2: reference to second operator
-	addr3: reference to result variable
-*/
-type Cuadruplo struct {
-	operacion semantic.Operation
-	var1      string
-	var2      string
-	res       string
-}
-
-/*
 	NewProgram
 	@param id Attrib
 	reads the program name id
