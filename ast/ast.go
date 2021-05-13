@@ -11,10 +11,6 @@ import (
 	"github.com/uliseslugo/ilusa_pp/tables"
 )
 
-// Attrib interface
-// Empty interface used to cast attributes
-type Attrib interface{}
-
 /*
 	NewProgram
 	@param id Attrib
@@ -120,7 +116,7 @@ func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
 /*
 	NewIdConst
 	@param id Attrib
-
+	TODO: Missing Constant struct
 */
 func NewIdConst(id Attrib) (string, error) {
 	tok, ok := id.(*token.Token)

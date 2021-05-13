@@ -6,7 +6,12 @@ import (
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
 	"github.com/uliseslugo/ilusa_pp/semantic"
+	"github.com/uliseslugo/ilusa_pp/types"
 )
+
+// Attrib interface
+// Empty interface used to cast attributes
+type Attrib interface{}
 
 /*
 	Program struct
@@ -58,4 +63,26 @@ type Exp struct {
 type Op_exp struct {
 	operation semantic.Operation
 	exp       *Exp
+}
+
+/*
+ Constant struct
+ value: literal
+*/
+type Constant struct {
+	value string
+	tok   *token.Token
+	type_ *types.CoreType
+}
+
+func (const_ *Constant) GetType() *types.CoreType {
+	return const_.type_
+}
+
+func (const_ *Constant) GetToken() *token.Token {
+	return const_.tok
+}
+
+func (const_ *Constant) GetValue() string {
+	return const_.value
 }
