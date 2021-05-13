@@ -156,5 +156,3 @@ func NewFloatConst(value Attrib) (float64, error) {
 	}
 	return float64(num), nil
 }
-
-// TODO? () Move structs into astx for cleanliness?

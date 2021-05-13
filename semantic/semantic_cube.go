@@ -24,7 +24,44 @@ const (
 	Assign   = "="
 )
 
-// TODO: Hierarchy dictionary (operation, num)
+/*
+	Operators Dictionary
+	key: int value
+	value: string operator
+*/
+type OperatorsDict struct {
+	op_hierarchy map[string]int
+}
+
+func NewOperatorsDict() *OperatorsDict {
+	// Hierarchy levels:
+	// 	indexes 0-2: 0
+	// 	indexes 3-5: 1,
+	// 	indexes 6-7: 2,
+	// 	indexes 8-9: 3,
+	// 	indexes 10-11: 4
+	return &OperatorsDict{
+		map[string]int{
+			// super low hierarchy (right association)
+			"!":  0,
+			"=":  1,
+			"!=": 2,
+			// logic operators very low hierarchy
+			"&&": 3,
+			"||": 4,
+			"==": 5,
+			// relations operators low hierarchy
+			"<": 6,
+			">": 7,
+			// add or sub operators medium hierarchy
+			"+": 8,
+			"-": 9,
+			// mult ord div high hierarchy
+			"*": 10,
+			"/": 11,
+		},
+	}
+}
 
 /*
 	Semantic Cube struct

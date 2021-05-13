@@ -12,9 +12,9 @@ import (
 
 /*
 	GetReturnType
-	op Operation string
-	type1 type of left operando
-	type2 type of right operando
+	@param op Operation string
+	@param type1 type of left operando
+	@param type2 type of right operando
 	returns result of operation
 */
 func GetReturnType(op Operation, type1, type2 types.CoreType) (types.CoreType, error) {
@@ -35,4 +35,18 @@ func GetReturnType(op Operation, type1, type2 types.CoreType) (types.CoreType, e
 		return result, errors.New("unsupported operation")
 	}
 	return result, nil
+}
+
+/*
+	GetOperatorHierarchy
+	@param op Operation string
+	returns level of hierarchy of operator
+*/
+func GetOperatorHierarchy(op Operation) (int, error) {
+	operatorsDict := NewOperatorsDict()
+	level, l_ok := operatorsDict.op_hierarchy[string(op)]
+	if !l_ok {
+		return level, errors.New("operator not found in Operators Dictionary")
+	}
+	return level, nil
 }
