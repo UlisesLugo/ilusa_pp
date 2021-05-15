@@ -7,17 +7,28 @@ import (
 
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
+	"github.com/uliseslugo/ilusa_pp/memory"
+	"github.com/uliseslugo/ilusa_pp/quadruples"
 	"github.com/uliseslugo/ilusa_pp/semantic"
 	"github.com/uliseslugo/ilusa_pp/tables"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
-func init(){
+var globalIntCount int
+var globalFloatCount int
+var globalIdCount int
+var globalCurrQuads []quadruples.Cuadruplo
+
+func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	// globalStackOperators
 	// globalStackOperands
 	// globalStackTypes
 	// globalStackJumps
+	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
+	globalCurrQuads = make([]quadruples.Cuadruplo, 0)
+	globalCurrQuads := append(globalCurrQuads, quadruples.Cuadruplo{semantic.Operation("GOTO"), "", "", "main"}) // TODO change main to memory address
+	fmt.Println("Added main quad:", globalCurrQuads[0])
 	fmt.Println("In init")
 }
 
@@ -28,6 +39,7 @@ func init(){
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
+	fmt.Println("In NEW PROGRAM")
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -35,7 +47,7 @@ func NewProgram(id Attrib) (*Program, error) {
 	if !ok {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
-	return &Program{nombre, nil, new_id}, nil
+	return &Program{nombre, globalCurrQuads, new_id}, nil
 }
 
 /*
@@ -104,10 +116,10 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	new_term, _ := exp1.(*Exp) // term non-terminal
 	new_const, ok := exp1.(*Constant)
 	if ok {
-		fmt.Println("New const id", new_const.GetValue())
+		fmt.Println("New const id", new_const.Value())
+		fmt.Println("\t with address", new_const.Address())
 		new_op_exp, ok := exp2.(*Op_exp)
 		if ok {
-			fmt.Println("New const id in op_exp", new_op_exp.exp.const_.value)
 			return &Exp{nil, new_op_exp, new_const}, nil
 
 		}
@@ -143,7 +155,10 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("Problem in id constants")
 	}
-	return &Constant{string(val.Lit),val,types.Char}, nil
+	// calculate current address occuppied in context
+	current_address := globalIdCount + memory.IdOffset
+	globalIdCount++ // assign next available address
+	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 
 /*
@@ -156,7 +171,10 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("Problem in integer constants")
 	}
-	return &Constant{string(val.Lit),val,types.Integer}, nil
+	// calculate current address occuppied in context
+	current_address := globalIdCount + memory.IntOffset
+	globalIntCount++ // assign next available address
+	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 
 /*
@@ -169,5 +187,8 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("Problem in float constants")
 	}
-	return &Constant{string(val.Lit),val,types.Float}, nil
+	// calculate current address occuppied in context
+	current_address := globalIdCount + memory.FloatOffset
+	globalFloatCount++ // assign next available address
+	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }

@@ -61,5 +61,9 @@ func TestDuck(t *testing.T) {
 			t.Error("Program failed")
 		}
 		fmt.Println("Program name:", prog)
+		fmt.Println("------------")
+		for cuad := range prog.Quads() {
+			fmt.Println(cuad)
+		}
 	}
 }

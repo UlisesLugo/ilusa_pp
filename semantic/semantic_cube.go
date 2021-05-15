@@ -22,6 +22,7 @@ const (
 	Equal    = "=="
 	NotEqual = "!="
 	Assign   = "="
+	GOTO     = "GOTO"
 )
 
 /*

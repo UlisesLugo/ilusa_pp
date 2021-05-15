@@ -5,6 +5,7 @@ import (
 
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
+	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/quadruples"
 	"github.com/uliseslugo/ilusa_pp/semantic"
 	"github.com/uliseslugo/ilusa_pp/types"
@@ -17,17 +18,21 @@ type Attrib interface{}
 /*
 	Program struct
 	nombre: program name
-	operaciones: list of quadruples
+	cuads: list of quadruples
 	id: program token
 */
 type Program struct {
-	nombre      string
-	operaciones []quadruples.Cuadruplo
-	id          *token.Token
+	nombre string
+	quads_ []quadruples.Cuadruplo
+	id     *token.Token
 }
 
 func (p *Program) String() string {
 	return p.nombre
+}
+
+func (p *Program) Quads() []quadruples.Cuadruplo {
+	return p.quads_
 }
 
 /*
@@ -36,8 +41,8 @@ func (p *Program) String() string {
 	exp2: Exp
 */
 type Exp struct {
-	exp1 *Exp
-	exp2 *Op_exp
+	exp1   *Exp
+	exp2   *Op_exp
 	const_ *Constant
 }
 
@@ -56,19 +61,24 @@ type Op_exp struct {
  value: literal
 */
 type Constant struct {
-	value string
-	tok   *token.Token
-	type_ types.CoreType
+	value          string
+	tok            *token.Token
+	type_          types.CoreType
+	local_address_ memory.Address
 }
 
-func (const_ *Constant) GetType() types.CoreType {
+func (const_ *Constant) Type() types.CoreType {
 	return const_.type_
 }
 
-func (const_ *Constant) GetToken() *token.Token {
+func (const_ *Constant) Token() *token.Token {
 	return const_.tok
 }
 
-func (const_ *Constant) GetValue() string {
+func (const_ *Constant) Value() string {
 	return const_.value
+}
+
+func (const_ *Constant) Address() memory.Address {
+	return const_.local_address_
 }
