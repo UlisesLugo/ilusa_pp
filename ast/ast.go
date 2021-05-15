@@ -174,7 +174,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IntOffset
 	globalIntCount++ // assign next available address
-	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+	return &Constant{string(val.Lit), val, types.Integer, memory.Address(current_address)}, nil
 }
 
 /*
@@ -190,5 +190,5 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.FloatOffset
 	globalFloatCount++ // assign next available address
-	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+	return &Constant{string(val.Lit), val, types.Float, memory.Address(current_address)}, nil
 }
