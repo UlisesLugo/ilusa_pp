@@ -37,7 +37,8 @@ func (p *Program) String() string {
 */
 type Exp struct {
 	exp1 *Exp
-	exp2 *Exp
+	exp2 *Op_exp
+	const_ *Constant
 }
 
 /*
@@ -57,10 +58,10 @@ type Op_exp struct {
 type Constant struct {
 	value string
 	tok   *token.Token
-	type_ *types.CoreType
+	type_ types.CoreType
 }
 
-func (const_ *Constant) GetType() *types.CoreType {
+func (const_ *Constant) GetType() types.CoreType {
 	return const_.type_
 }
 

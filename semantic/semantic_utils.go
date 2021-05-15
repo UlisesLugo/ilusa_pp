@@ -17,9 +17,7 @@ import (
 	@param type2 type of right operando
 	returns result of operation
 */
-func GetReturnType(op Operation, type1, type2 types.CoreType) (types.CoreType, error) {
-	semantic_cube := NewSemanticCube() // create semantic cube
-
+func GetReturnType(op Operation, type1, type2 types.CoreType, semantic_cube *SemanticCube) (types.CoreType, error) {
 	// swap operands to respect keys in semnatic cube
 	if int(type1) > int(type2) {
 		temp := type1

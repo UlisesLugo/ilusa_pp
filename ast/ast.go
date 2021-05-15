@@ -9,7 +9,17 @@ import (
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
 	"github.com/uliseslugo/ilusa_pp/semantic"
 	"github.com/uliseslugo/ilusa_pp/tables"
+	"github.com/uliseslugo/ilusa_pp/types"
 )
+
+func init(){
+	// globalSemanticCube := semantic.NewSemanticCube()
+	// globalStackOperators
+	// globalStackOperands
+	// globalStackTypes
+	// globalStackJumps
+	fmt.Println("In init")
+}
 
 /*
 	NewProgram
@@ -91,10 +101,20 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	returns Exp struct
 */
 func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
-	fmt.Println("New expression created")
-	new_term, _ := exp1.(Exp) // term non-terminal
-	new_exp, _ := exp2.(Exp)  // exp non-terminal
-	return &Exp{&new_term, &new_exp}, nil
+	new_term, _ := exp1.(*Exp) // term non-terminal
+	new_const, ok := exp1.(*Constant)
+	if ok {
+		fmt.Println("New const id", new_const.GetValue())
+		new_op_exp, ok := exp2.(*Op_exp)
+		if ok {
+			fmt.Println("New const id in op_exp", new_op_exp.exp.const_.value)
+			return &Exp{nil, new_op_exp, new_const}, nil
+
+		}
+		return &Exp{nil, nil, new_const}, nil
+
+	}
+	return &Exp{new_term, nil, nil}, nil
 }
 
 /*
@@ -108,23 +128,22 @@ func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
 	if !t_ok {
 		return nil, errors.New("Problem in casting operator")
 	}
+	new_exp, _ := exp.(*Exp)
 	new_op := semantic.Operation(tok.Lit)
 	fmt.Println("Operator: ", string(tok.Lit))
-	return &Op_exp{new_op, nil}, nil
+	return &Op_exp{new_op, new_exp}, nil
 }
 
 /*
 	NewIdConst
 	@param id Attrib
-	TODO: Missing Constant struct
 */
-func NewIdConst(id Attrib) (string, error) {
-	tok, ok := id.(*token.Token)
+func NewIdConst(id Attrib) (*Constant, error) {
+	val, ok := id.(*token.Token)
 	if !ok {
-		return "", errors.New("Problem in id constants")
+		return nil, errors.New("Problem in id constants")
 	}
-	fmt.Println("New id exp", string(tok.Lit))
-	return string(tok.Lit), nil
+	return &Constant{string(val.Lit),val,types.Char}, nil
 }
 
 /*
@@ -132,12 +151,12 @@ func NewIdConst(id Attrib) (string, error) {
 	@param value Attrib
 
 */
-func NewIntConst(value Attrib) (int, error) {
-	num, ok := value.(*token.Token).Int32Value()
-	if ok != nil {
-		return -1, errors.New("Problem in integer constants")
+func NewIntConst(value Attrib) (*Constant, error) {
+	val, ok := value.(*token.Token)
+	if !ok {
+		return nil, errors.New("Problem in integer constants")
 	}
-	return int(num), nil
+	return &Constant{string(val.Lit),val,types.Integer}, nil
 }
 
 /*
@@ -145,10 +164,10 @@ func NewIntConst(value Attrib) (int, error) {
 	@param value Attrib
 
 */
-func NewFloatConst(value Attrib) (float64, error) {
-	num, ok := value.(*token.Token).Float64Value()
-	if ok != nil {
-		return -1, errors.New("Problem in float constants")
+func NewFloatConst(value Attrib) (*Constant, error) {
+	val, ok := value.(*token.Token)
+	if !ok {
+		return nil, errors.New("Problem in float constants")
 	}
-	return float64(num), nil
+	return &Constant{string(val.Lit),val,types.Float}, nil
 }
