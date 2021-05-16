@@ -10,6 +10,7 @@ import (
 	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/quadruples"
 	"github.com/uliseslugo/ilusa_pp/semantic"
+	"github.com/uliseslugo/ilusa_pp/stacks"
 	"github.com/uliseslugo/ilusa_pp/tables"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -17,14 +18,18 @@ import (
 var globalIntCount int
 var globalFloatCount int
 var globalIdCount int
+var globalStackOperators stacks.Stack
+var globalStackOperands stacks.Stack
+var globalStackTypes stacks.Stack
+var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
+var globalOperatorsDict semantic.OperatorsDict
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
-	// globalStackOperators
-	// globalStackOperands
-	// globalStackTypes
-	// globalStackJumps
+	// globalOperatorsDict := semantic.NewOperatorsDict()
+	// globalStackOperands := make(stacks.Stack, 0)
+	// globalStackOperantors := make(stacks.Stack, 0)
 	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0)
 	globalCurrQuads := append(globalCurrQuads, quadruples.Cuadruplo{semantic.Operation("GOTO"), "", "", "main"}) // TODO change main to memory address
@@ -137,13 +142,21 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 */
 func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
 	tok, t_ok := op.(*token.Token)
-	if !t_ok {
-		return nil, errors.New("Problem in casting operator")
-	}
 	new_exp, _ := exp.(*Exp)
+	if !t_ok {
+		return nil, errors.New("problem in casting operator")
+	}
 	new_op := semantic.Operation(tok.Lit)
+	new_const, ok := exp.(*Constant)
 	fmt.Println("Operator: ", string(tok.Lit))
-	return &Op_exp{new_op, new_exp}, nil
+	// curr_hierarchy := globalOperatorsDict[string(tok.Lit)]
+	// globalStackOperators := globalStackOperators.Push()
+	if ok {
+		fmt.Println("Reading const:", new_const.Address())
+		return &Op_exp{new_op, nil, new_const}, nil
+		
+	}
+	return &Op_exp{new_op, new_exp, nil}, nil
 }
 
 /*
@@ -153,7 +166,7 @@ func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
 func NewIdConst(id Attrib) (*Constant, error) {
 	val, ok := id.(*token.Token)
 	if !ok {
-		return nil, errors.New("Problem in id constants")
+		return nil, errors.New("problem in id constants")
 	}
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IdOffset
@@ -169,7 +182,7 @@ func NewIdConst(id Attrib) (*Constant, error) {
 func NewIntConst(value Attrib) (*Constant, error) {
 	val, ok := value.(*token.Token)
 	if !ok {
-		return nil, errors.New("Problem in integer constants")
+		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IntOffset
@@ -185,7 +198,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 func NewFloatConst(value Attrib) (*Constant, error) {
 	val, ok := value.(*token.Token)
 	if !ok {
-		return nil, errors.New("Problem in float constants")
+		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.FloatOffset

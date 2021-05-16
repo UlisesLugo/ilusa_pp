@@ -54,6 +54,7 @@ type Exp struct {
 type Op_exp struct {
 	operation semantic.Operation
 	exp       *Exp
+	const_	  *Constant
 }
 
 /*
