@@ -30,7 +30,7 @@ func GetReturnType(op Operation, type1, type2 types.CoreType, semantic_cube *Sem
 	// get result in semantic cube
 	result, ok := semantic_cube.operations[cube_key]
 	if !ok {
-		return result, errors.New("unsupported operation")
+		return result, errors.New("unsupported operation.")
 	}
 	return result, nil
 }
