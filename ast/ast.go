@@ -118,20 +118,42 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	returns Exp struct
 */
 func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
-	new_term, _ := exp1.(*Exp) // term non-terminal
-	new_const, ok := exp1.(*Constant)
-	if ok {
-		fmt.Println("New const id", new_const.Value())
-		fmt.Println("\t with address", new_const.Address())
-		new_op_exp, ok := exp2.(*Op_exp)
-		if ok {
-			return &Exp{nil, new_op_exp, new_const}, nil
-
+	new_exp, expr_ok := exp1.(*Exp) // term non-terminal
+	new_op_exp, _ := exp1.(*Op_exp)
+	if expr_ok {
+		if new_exp.const1_ != nil {
+			fmt.Println("Reading const in new exp:", new_exp.const1_.Value())
 		}
-		return &Exp{nil, nil, new_const}, nil
+		fmt.Println("Reading exp:", new_exp)
+		// fmt.Println("Full Expression encountered")
+		// 	new_const1 := new_term1.const1_
+		// 	// new_op := new_term.operator
+		// 	fmt.Println("New const 1 id", new_const1.Value())
+		// 	fmt.Println("\t with address", new_const1.Address())
+		// 	// fmt.Println("Operator: ", string(new_op))
+		// 	new_term2, expr_ok2 := exp2.(*Exp)
+		// 	if expr_ok2 {
+		// 		new_const2 := new_term2.const1_
+		// 		fmt.Println("New const 2 id", new_const2.Value())
+		// 		fmt.Println("\t with address", new_const1.Address())
+		// 		return &Exp{nil, nil, new_const1, semantic.Operation(""), new_const2}, nil
+		// 	}
 
 	}
-	return &Exp{new_term, nil, nil}, nil
+
+	// a + b < c - d
+	new_const1, ok := exp1.(*Constant)
+	if ok {
+		// fmt.Println("Reading constant 1:", new_const1.Value())
+		return &Exp{nil, nil, new_const1, new_op_exp}, nil
+	}
+	new_const2, ok := exp2.(*Constant)
+	if ok {
+		fmt.Println("Reading constant 2:", new_const2.Value())
+		return &Exp{nil, nil, nil, new_op_exp}, nil
+	}
+
+	return &Exp{new_exp, nil, nil, nil}, nil
 }
 
 /*
@@ -140,23 +162,22 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	@param exp Attrib
 
 */
-func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
+func NewOperation(op, exp Attrib) (*Op_exp, error) {
 	tok, t_ok := op.(*token.Token)
-	new_exp, _ := exp.(*Exp)
 	if !t_ok {
-		return nil, errors.New("problem in casting operator")
+		return &Op_exp{semantic.Operation(""), nil}, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
-	new_const, ok := exp.(*Constant)
 	fmt.Println("Operator: ", string(tok.Lit))
+	new_exp, ok := exp.(*Exp)
+	if ok {
+		new_const := new_exp.exp1.const1_
+		fmt.Println("\tConstant in op:", new_exp.exp1.const1_.value)
+		return &Op_exp{new_op, new_const}, nil
+	}
 	// curr_hierarchy := globalOperatorsDict[string(tok.Lit)]
 	// globalStackOperators := globalStackOperators.Push()
-	if ok {
-		fmt.Println("Reading const:", new_const.Address())
-		return &Op_exp{new_op, nil, new_const}, nil
-		
-	}
-	return &Op_exp{new_op, new_exp, nil}, nil
+	return &Op_exp{new_op, nil}, nil
 }
 
 /*
