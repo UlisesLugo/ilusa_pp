@@ -1,29 +1,37 @@
 
 
-======== Data Segment ========= 0
-0-999   Int
-1000-1999 Char
-2000-2999 Bool
-3000-3999 Ids (Functions)
-======== Code Segment ========= 4000
-4000-4999   Num
-5000-5999 Char
-6000-6999 Bool
-7000-7999 Ids(Functions)
-======= Stack Segment ========= 8000
-8000-8999   Num
-9000-9999 Char
-10000-10999 Bool
-1100-11999 Functions
-======== Constant Segment ========= 12000
-12000-12999  Num
-13000-13999 Char
-14000-14999 Bool
-15000-15999 Functions
-======== Extra Segment ========= 16000
+=============== Global Context ============= 0
+0-999   int_counter
+1000-1999 char_counter
+2000-2999 bool_counter
+3000-3999 func_counter
+
+4000 - 4999 gtemp_int_counter
+5000 - 5999 gtemp_char_counter
+6000 - 6999 gtemp_bool_counter
+7000 - 7999 gtemp_func_counter
+
+=============== Local Context =============== 8000
+8000-8999   int_counter
+9000-9999 char_counter
+10000-10999 bool_counter
+1100-11999 func_counter (functions)
+
+12000 - 12999 ltemp_int_counter
+13000 - 13999 ltemp_char_counter
+14000 - 14999 ltemp_bool_counter
+15000 - 15999 ltemp_func_counter
+
+=============== Constants Context ========== 16000
 16000-16999  Num
 17000-17999 Char
 18000-18999 Bool
-19000-19999 Functions
-======== Out of scope ========= 20000
-....
+19000-19999 Functions (Functions, objects)
+
+=============== Objects Context ============ 20000
+
+TODO
+
+
+=============== Out of scope =============== 24000
+Too many variables ...
