@@ -1,1 +1,1 @@
-package virtual_maquine
+package virtual_machine
