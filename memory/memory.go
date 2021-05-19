@@ -7,21 +7,23 @@ import (
 type Address int
 
 // Memory integer that start new context
-const Globalstart = 0
-const Localstart = 5000
-const Tempstart = 10000
-const Constantstart = 15000
-const Scopestart = 20000 // main scope
+const DataSegment = 0 // global scope
+const CodeSegment = 4000
+const StackSegment = 8000
+const ConstantsSegment = 12000
+const ExtraSegment = 16000
 
-// Segment size for context
+// const Scopestart = 20000 // main scope
+
+// Segment size for segment
 const segmentSize = 1000
 
 // Offset for constants
 const IntOffset = 0
-const FloatOffset = IntOffset + segmentSize
-const CharOffset = FloatOffset + segmentSize
-const BoolOffset = CharOffset + segmentSize
-const IdOffset = BoolOffset + segmentSize
+const FloatOffset = 1000
+const CharOffset = 2000
+const BoolOffset = 3000
+const IdOffset = 4000 // Ask Ulises (functions)
 
 // Returns -1 if Address is negative
 func (a Address) String() string {
