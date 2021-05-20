@@ -42,9 +42,8 @@ func (p *Program) Quads() []quadruples.Cuadruplo {
 */
 type Exp struct {
 	exp1    *Exp
-	exp2    *Exp
-	const_ *Constant
 	op_exp_ *Op_exp
+	const_ *Constant
 }
 
 /*

@@ -34,7 +34,7 @@ func init() {
 	globalCurrQuads := append(globalCurrQuads, quadruples.Cuadruplo{semantic.Operation("GOTO"), "", "", "main"}) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
-	fmt.Println("\tOperatorsStack:", globalStackOperands)
+	fmt.Println("\tOperandsStack:", globalStackOperands)
 	fmt.Println("\tMain Quad:", globalCurrQuads[0]);
 }
 
@@ -144,7 +144,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	@param exp Attrib
 
 */
-func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
+func NewOperation(op, exp Attrib) (*Op_exp, error) {
 	fmt.Println("In new Operator")
 	globalOperatorsDict := semantic.NewOperatorsDict()
 	tok, t_ok := op.(*token.Token)
@@ -180,9 +180,7 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IdOffset
 	globalIdCount++ // assign next available address
-	globalStackOperands := globalStackOperands.Push(current_address)
-	top, _ := globalStackOperands.Top()
-	fmt.Println("Pushing to stack", top)
+	globalStackOperands = globalStackOperands.Push(current_address)
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 
