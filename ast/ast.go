@@ -27,14 +27,15 @@ var globalOperatorsDict semantic.OperatorsDict
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
-	// globalOperatorsDict := semantic.NewOperatorsDict()
-	// globalStackOperands := make(stacks.Stack, 0)
-	// globalStackOperantors := make(stacks.Stack, 0)
+	globalStackOperands := make(stacks.Stack, 0)
+	globalStackOperators := make(stacks.Stack, 0)
 	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0)
 	globalCurrQuads := append(globalCurrQuads, quadruples.Cuadruplo{semantic.Operation("GOTO"), "", "", "main"}) // TODO change main to memory address
-	fmt.Println("Added main quad:", globalCurrQuads[0])
-	fmt.Println("In init")
+	fmt.Println("Defining globals")
+	fmt.Println("\tOperatorsStack:", globalStackOperators)
+	fmt.Println("\tOperatorsStack:", globalStackOperands)
+	fmt.Println("\tMain Quad:", globalCurrQuads[0]);
 }
 
 /*
@@ -44,7 +45,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM")
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands);
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -118,20 +119,23 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	returns Exp struct
 */
 func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
-	new_term, _ := exp1.(*Exp) // term non-terminal
-	new_const, ok := exp1.(*Constant)
-	if ok {
-		fmt.Println("New const id", new_const.Value())
-		fmt.Println("\t with address", new_const.Address())
-		new_op_exp, ok := exp2.(*Op_exp)
-		if ok {
-			return &Exp{nil, new_op_exp, new_const}, nil
-
+	fmt.Println("In new Expression")
+	new_exp1, exp1_ok := exp1.(*Exp) // term non-terminal
+	new_const, _ := exp1.(*Constant)
+	if exp1_ok {
+		fmt.Println("\tParsed first expression", new_exp1)
+		if new_exp1.const_ != nil {
+			new_const = new_exp1.const_
+			fmt.Println("\t\tWith const", new_exp1.const_.Value())
+			fmt.Println("\t\tAnd addr", new_exp1.const_.Address())
 		}
-		return &Exp{nil, nil, new_const}, nil
-
+		
 	}
-	return &Exp{new_term, nil, nil}, nil
+	new_exp2, exp2_ok := exp2.(*Op_exp)
+	if exp2_ok {
+		fmt.Println("\tParsed second expression", new_exp2);
+	}
+	return &Exp{new_exp1, new_exp2, new_const}, nil
 }
 
 /*
@@ -141,22 +145,27 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 
 */
 func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
+	fmt.Println("In new Operator")
+	globalOperatorsDict := semantic.NewOperatorsDict()
 	tok, t_ok := op.(*token.Token)
-	new_exp, _ := exp.(*Exp)
 	if !t_ok {
 		return nil, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
-	new_const, ok := exp.(*Constant)
-	fmt.Println("Operator: ", string(tok.Lit))
-	// curr_hierarchy := globalOperatorsDict[string(tok.Lit)]
-	// globalStackOperators := globalStackOperators.Push()
-	if ok {
-		fmt.Println("Reading const:", new_const.Address())
-		return &Op_exp{new_op, nil, new_const}, nil
-		
+	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
+	// TODO (Check Hierarchy)
+	globalStackOperators = globalStackOperators.Push(int_id)
+	new_const, _ := exp.(*Constant)
+	new_exp, exp_ok := exp.(*Exp)
+	if exp_ok {
+		fmt.Println("\tReading expr", new_exp)
+		if new_exp.const_ != nil {
+			new_const = new_exp.const_
+			fmt.Println("\t\tWith const:", new_exp.const_.Value())
+			fmt.Println("\t\tAnd addr:", new_exp.const_.Address())
+		}
 	}
-	return &Op_exp{new_op, new_exp, nil}, nil
+	return &Op_exp{new_op, new_const}, nil
 }
 
 /*
@@ -171,6 +180,9 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IdOffset
 	globalIdCount++ // assign next available address
+	globalStackOperands := globalStackOperands.Push(current_address)
+	top, _ := globalStackOperands.Top()
+	fmt.Println("Pushing to stack", top)
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 

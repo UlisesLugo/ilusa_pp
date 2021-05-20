@@ -31,7 +31,7 @@ const (
 	value: string operator
 */
 type OperatorsDict struct {
-	op_hierarchy map[string]int
+	Op_hierarchy map[string]int
 }
 
 func NewOperatorsDict() *OperatorsDict {

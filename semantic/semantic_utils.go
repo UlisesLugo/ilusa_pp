@@ -42,7 +42,7 @@ func GetReturnType(op Operation, type1, type2 types.CoreType, semantic_cube *Sem
 */
 func GetOperatorHierarchy(op Operation) (int, error) {
 	operatorsDict := NewOperatorsDict()
-	level, l_ok := operatorsDict.op_hierarchy[string(op)]
+	level, l_ok := operatorsDict.Op_hierarchy[string(op)]
 	if !l_ok {
 		return level, errors.New("operator not found in Operators Dictionary")
 	}
