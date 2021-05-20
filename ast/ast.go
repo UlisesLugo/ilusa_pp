@@ -149,7 +149,7 @@ func NewOpExpression(op, exp Attrib) (*Op_exp, error) {
 	globalOperatorsDict := semantic.NewOperatorsDict()
 	tok, t_ok := op.(*token.Token)
 	if !t_ok {
-		return nil, errors.New("problem in casting operator")
+		return &Op_exp{semantic.Operation(""), nil}, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
 	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
