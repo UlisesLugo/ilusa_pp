@@ -25,23 +25,48 @@ const (
 	GOTO     = "GOTO"
 )
 
+type OperationsDict struct {
+	Operators map[int]string // Reverse map
+}
+
+// Assign string token to operation label
+func NewOperationsDict() *OperationsDict {
+	return &OperationsDict{
+		map[int]string{
+			0:  "!",
+			1:  "=",
+			2:  "!=",
+			3:  "&&",
+			4:  "||",
+			5:  "==",
+			6:  "<",
+			7:  ">",
+			8:  "+",
+			9:  "-",
+			10: "*",
+			11: "/",
+			12: "GOTO",
+		},
+	}
+}
+
 /*
 	Operators Dictionary
 	key: int value
 	value: string operator
 */
-type OperatorsDict struct {
+type HierarchyDict struct {
 	Op_hierarchy map[string]int
 }
 
-func NewOperatorsDict() *OperatorsDict {
+func NewHierarchyDict() *HierarchyDict {
 	// Hierarchy levels:
 	// 	indexes 0-2: 0
 	// 	indexes 3-5: 1,
 	// 	indexes 6-7: 2,
 	// 	indexes 8-9: 3,
 	// 	indexes 10-11: 4
-	return &OperatorsDict{
+	return &HierarchyDict{
 		map[string]int{
 			// super low hierarchy (right association)
 			"!":  0,

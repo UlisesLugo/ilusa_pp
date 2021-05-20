@@ -2,8 +2,6 @@ package quadruples
 
 import (
 	"fmt"
-
-	"github.com/uliseslugo/ilusa_pp/semantic"
 )
 
 /*
@@ -14,13 +12,13 @@ import (
 	addr3: reference to result variable
 */
 type Cuadruplo struct {
-	Op   semantic.Operation
-	Var1 string
-	Var2 string
-	Res  string
+	Op   int
+	Var1 int
+	Var2 int
+	Res  int
 }
 
 // TODO: Getters and setters for Cuadruplo
 func (c Cuadruplo) String() string {
-	return fmt.Sprintf("%v %s %s %s", c.Op, c.Var1, c.Var2, c.Res)
+	return fmt.Sprintf("%v %v %v %v", c.Op, c.Var1, c.Var2, c.Res)
 }

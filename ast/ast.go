@@ -18,18 +18,19 @@ import (
 var globalIntCount int
 var globalFloatCount int
 var globalIdCount int
+var globalTempCount int
 var globalStackOperators stacks.Stack
 var globalStackOperands stacks.Stack
 var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
-var globalOperatorsDict semantic.OperatorsDict
+var globalOperatorsDict semantic.HierarchyDict
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
-	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
+	globalIntCount, globalFloatCount, globalIdCount, globalTempCount = 0, 0, 0, 0
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
@@ -53,7 +54,7 @@ func NewProgram(id Attrib) (*Program, error) {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
 	// Prepend main quad
-	main_quad := quadruples.Cuadruplo{semantic.GOTO, "", "", "main"}
+	main_quad := quadruples.Cuadruplo{12, -1, -1, 0}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	return &Program{nombre, globalCurrQuads, new_id}, nil
 }
@@ -131,11 +132,15 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 			fmt.Println("\t\tWith const", new_exp1.const_.Value())
 			fmt.Println("\t\tAnd addr", new_exp1.const_.Address())
 		}
+		if new_exp1.op_exp_ != nil {
+			createBinaryQuadruple(new_exp1.op_exp_.operation)
+		}
 		
 	}
 	new_exp2, exp2_ok := exp2.(*Op_exp)
 	if exp2_ok {
 		fmt.Println("\tParsed second expression", new_exp2);
+		createBinaryQuadruple(new_exp2.operation)
 	}
 	return &Exp{new_exp1, new_exp2, new_const}, nil
 }
@@ -148,26 +153,42 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 */
 func NewOperation(op, exp Attrib) (*Op_exp, error) {
 	fmt.Println("In new Operator")
-	globalOperatorsDict := semantic.NewOperatorsDict()
+	globalOperatorsDict := semantic.NewHierarchyDict()
 	tok, t_ok := op.(*token.Token)
 	if !t_ok {
 		return &Op_exp{semantic.Operation(""), nil}, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
 	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
-	// TODO (Check Hierarchy)
+	fmt.Println("INT IDDDDD:", int_id)
 	globalStackOperators = globalStackOperators.Push(int_id)
+
 	new_const, _ := exp.(*Constant)
-	new_exp, exp_ok := exp.(*Exp)
-	if exp_ok {
-		fmt.Println("\tReading expr", new_exp)
-		if new_exp.const_ != nil {
-			new_const = new_exp.const_
-			fmt.Println("\t\tWith const:", new_exp.const_.Value())
-			fmt.Println("\t\tAnd addr:", new_exp.const_.Address())
-		}
-	}
 	return &Op_exp{new_op, new_const}, nil
+}
+
+func createBinaryQuadruple(new_op semantic.Operation){
+	fmt.Println("Creating quad...", globalStackOperators);
+	globalOperatorsDict := semantic.NewHierarchyDict()
+	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
+	curr_top, ok := globalStackOperators.Top()
+	fmt.Println(curr_top, int_id);
+	for ok && curr_top <= int_id {
+		globalStackOperators,_ = globalStackOperators.Pop()
+		curr_top1, _ := globalStackOperands.Top()
+		globalStackOperands, _ = globalStackOperands.Pop()
+		curr_top2, _ := globalStackOperands.Top()
+		globalStackOperands, _ = globalStackOperands.Pop()
+
+		curr_quad := quadruples.Cuadruplo{curr_top, curr_top1, curr_top2, globalTempCount}
+		globalStackOperands = globalStackOperands.Push(globalTempCount)
+		globalTempCount++
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+		fmt.Println("Added Quad")
+
+		curr_top, ok = globalStackOperators.Top()
+	}
+	fmt.Println("Finishing quad...", globalStackOperators);
 }
 
 /*
@@ -183,6 +204,7 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	current_address := globalIdCount + memory.IdOffset
 	globalIdCount++ // assign next available address
 	globalStackOperands = globalStackOperands.Push(current_address)
+	globalStackTypes = globalStackTypes.Push(int(types.Char))
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 
@@ -199,6 +221,8 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IntOffset
 	globalIntCount++ // assign next available address
+	globalStackOperands = globalStackOperands.Push(current_address)
+	globalStackTypes = globalStackTypes.Push(int(types.Char))
 	return &Constant{string(val.Lit), val, types.Integer, memory.Address(current_address)}, nil
 }
 
