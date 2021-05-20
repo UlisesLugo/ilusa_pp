@@ -55,18 +55,18 @@ func NewOperationsDict() *OperationsDict {
 	key: int value
 	value: string operator
 */
-type HierarchyDict struct {
-	Op_hierarchy map[string]int
+type OperatorKey struct {
+	Dict map[string]int
 }
 
-func NewHierarchyDict() *HierarchyDict {
+func NewOperatorKey() *OperatorKey {
 	// Hierarchy levels:
 	// 	indexes 0-2: 0
 	// 	indexes 3-5: 1,
 	// 	indexes 6-7: 2,
 	// 	indexes 8-9: 3,
 	// 	indexes 10-11: 4
-	return &HierarchyDict{
+	return &OperatorKey{
 		map[string]int{
 			// super low hierarchy (right association)
 			"!":  0,
@@ -85,6 +85,40 @@ func NewHierarchyDict() *HierarchyDict {
 			// mult ord div high hierarchy
 			"*": 10,
 			"/": 11,
+		},
+	}
+}
+
+type HierarchyDict struct {
+	Op_hierarchy map[string]int
+}
+
+func NewHierarchyDict() *HierarchyDict {
+	// Hierarchy levels:
+	// 	indexes 0-2: 0
+	// 	indexes 3-5: 1,
+	// 	indexes 6-7: 2,
+	// 	indexes 8-9: 3,
+	// 	indexes 10-11: 4
+	return &HierarchyDict{
+		map[string]int{
+			// super low hierarchy (right association)
+			"!":  0,
+			"=":  0,
+			// logic operators very low hierarchy
+			"&&": 1,
+			"||": 1,
+			"==": 1,
+			"!=": 1,
+			// relations operators low hierarchy
+			"<": 3,
+			">": 3,
+			// add or sub operators medium hierarchy
+			"+": 4,
+			"-": 4,
+			// mult ord div high hierarchy
+			"*": 5,
+			"/": 5,
 		},
 	}
 }

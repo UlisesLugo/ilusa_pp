@@ -11,17 +11,17 @@ func TestStack(t *testing.T) {
 	}
 
 	// Push a 1
-	s = s.Push(1)
+	s = s.Push("1")
 	res, ok := s.Top()
-	if (!ok || res != 1 || s.Size() != 1) {
+	if (!ok || res != "1" || s.Size() != 1) {
 		t.Log("Res:",res, "Ok:", ok)
 		t.Fatalf("Pushing 1 into Stack is not working")
 	}
 
 	// Push a 2
-	s = s.Push(2)
+	s = s.Push("2")
 	res, ok = s.Top()
-	if (!ok || res != 2 || s.Size() != 2) {
+	if (!ok || res != "2" || s.Size() != 2) {
 		t.Log("Res:",res, "Ok:", ok)
 		t.Fatalf("Pushing 2 into Stack is not working")
 	}
@@ -33,15 +33,15 @@ func TestStack(t *testing.T) {
 		t.Fatalf("Pop should pass in non empty container")
 	}
 	res, ok = s.Top()
-	if (!ok || res != 1 || s.Size() != 1) {
+	if (!ok || res != "1" || s.Size() != 1) {
 		t.Log("Res:",res, "Ok:", ok)
 		t.Fatalf("Top element should be 1")
 	}
 
 	// Push element and print top
-	s = s.Push(3)
+	s = s.Push("3")
 	res, ok = s.Top()
-	if (!ok || res != 3 || s.Size() != 2) {
+	if (!ok || res != "3" || s.Size() != 2) {
 		t.Log("Res:",res, "Ok:", ok)
 		t.Fatalf("Pushing 3 into Stack is not working")
 	}

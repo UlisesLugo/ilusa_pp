@@ -1,7 +1,7 @@
 package stacks
 
 // Stack
-type Stack []int
+type Stack []string
 
 // Empty returns true when Stack does not have elements
 func (s Stack) Empty() bool {
@@ -15,7 +15,7 @@ func (s Stack) Clear() {
 }
 
 // Push adds an element into the Stack
-func (s Stack) Push(v int) Stack {
+func (s Stack) Push(v string) Stack {
 	return append(s,v)
 }
 
@@ -32,9 +32,9 @@ func (s Stack) Pop() (Stack, bool) {
 
 // Top returns the last element pushed into the Stack
 // Returns false when the Stack is empty
-func (s Stack) Top() (int, bool) {
+func (s Stack) Top() (string, bool) {
 	if s.Empty() {
-		return -1, false
+		return "", false
 	}
 
 	length := len(s)

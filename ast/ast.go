@@ -30,12 +30,13 @@ func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
-	globalIntCount, globalFloatCount, globalIdCount, globalTempCount = 0, 0, 0, 0
+	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
+	globalTempCount = 6000
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
 	fmt.Println("\tOperandsStack:", globalStackOperands)
-	fmt.Println("\tQuad:", globalCurrQuads);
+	fmt.Println("\tQuad:", globalCurrQuads)
 }
 
 /*
@@ -45,7 +46,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands);
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -54,7 +55,7 @@ func NewProgram(id Attrib) (*Program, error) {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
 	// Prepend main quad
-	main_quad := quadruples.Cuadruplo{12, -1, -1, 0}
+	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	return &Program{nombre, globalCurrQuads, new_id}, nil
 }
@@ -122,24 +123,19 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	returns Exp struct
 */
 func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
-	fmt.Println("In new Expression")
 	new_exp1, exp1_ok := exp1.(*Exp) // term non-terminal
 	new_const, _ := exp1.(*Constant)
 	if exp1_ok {
-		fmt.Println("\tParsed first expression", new_exp1)
 		if new_exp1.const_ != nil {
 			new_const = new_exp1.const_
-			fmt.Println("\t\tWith const", new_exp1.const_.Value())
-			fmt.Println("\t\tAnd addr", new_exp1.const_.Address())
 		}
 		if new_exp1.op_exp_ != nil {
 			createBinaryQuadruple(new_exp1.op_exp_.operation)
 		}
-		
+
 	}
 	new_exp2, exp2_ok := exp2.(*Op_exp)
 	if exp2_ok {
-		fmt.Println("\tParsed second expression", new_exp2);
 		createBinaryQuadruple(new_exp2.operation)
 	}
 	return &Exp{new_exp1, new_exp2, new_const}, nil
@@ -152,43 +148,47 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 
 */
 func NewOperation(op, exp Attrib) (*Op_exp, error) {
-	fmt.Println("In new Operator")
-	globalOperatorsDict := semantic.NewHierarchyDict()
 	tok, t_ok := op.(*token.Token)
 	if !t_ok {
 		return &Op_exp{semantic.Operation(""), nil}, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
-	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
-	fmt.Println("INT IDDDDD:", int_id)
-	globalStackOperators = globalStackOperators.Push(int_id)
-
+	globalStackOperators = globalStackOperators.Push(string(new_op))
 	new_const, _ := exp.(*Constant)
 	return &Op_exp{new_op, new_const}, nil
 }
 
-func createBinaryQuadruple(new_op semantic.Operation){
-	fmt.Println("Creating quad...", globalStackOperators);
-	globalOperatorsDict := semantic.NewHierarchyDict()
-	int_id := globalOperatorsDict.Op_hierarchy[string(new_op)]
-	curr_top, ok := globalStackOperators.Top()
-	fmt.Println(curr_top, int_id);
-	for ok && curr_top <= int_id {
-		globalStackOperators,_ = globalStackOperators.Pop()
+func createBinaryQuadruple(new_op semantic.Operation) {
+	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
+	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
+
+	level_id := operatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
+
+	top, ok := globalStackOperators.Top()        // get top operator
+	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+
+	for ok && top_level <= level_id { // top level has higher hierarchy level
+		// pop top operator
+		globalStackOperators, _ = globalStackOperators.Pop()
+		// get operand 1
 		curr_top1, _ := globalStackOperands.Top()
+		// pop operand 1
 		globalStackOperands, _ = globalStackOperands.Pop()
+		// get operand 2
 		curr_top2, _ := globalStackOperands.Top()
+		// pop operand 2
 		globalStackOperands, _ = globalStackOperands.Pop()
 
-		curr_quad := quadruples.Cuadruplo{curr_top, curr_top1, curr_top2, globalTempCount}
-		globalStackOperands = globalStackOperands.Push(globalTempCount)
+		// generate quad
+		curr_temp := fmt.Sprint(globalTempCount)
+		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, curr_temp}
+		globalStackOperands = globalStackOperands.Push(curr_temp)
 		globalTempCount++
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
-		fmt.Println("Added Quad")
 
-		curr_top, ok = globalStackOperators.Top()
+		top, ok = globalStackOperators.Top()
+		top_level = operatorsDict.Op_hierarchy[top]
 	}
-	fmt.Println("Finishing quad...", globalStackOperators);
 }
 
 /*
@@ -203,8 +203,7 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IdOffset
 	globalIdCount++ // assign next available address
-	globalStackOperands = globalStackOperands.Push(current_address)
-	globalStackTypes = globalStackTypes.Push(int(types.Char))
+	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 
@@ -221,8 +220,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	// calculate current address occuppied in context
 	current_address := globalIdCount + memory.IntOffset
 	globalIntCount++ // assign next available address
-	globalStackOperands = globalStackOperands.Push(current_address)
-	globalStackTypes = globalStackTypes.Push(int(types.Char))
+	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	return &Constant{string(val.Lit), val, types.Integer, memory.Address(current_address)}, nil
 }
 

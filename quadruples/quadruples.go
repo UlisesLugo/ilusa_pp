@@ -12,10 +12,10 @@ import (
 	addr3: reference to result variable
 */
 type Cuadruplo struct {
-	Op   int
-	Var1 int
-	Var2 int
-	Res  int
+	Op   string
+	Var1 string
+	Var2 string
+	Res  string
 }
 
 // TODO: Getters and setters for Cuadruplo
