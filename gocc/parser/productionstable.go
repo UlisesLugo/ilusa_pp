@@ -12,7 +12,7 @@ type (
 		NTType     int
 		Index      int
 		NumSymbols int
-		ReduceFunc func([]Attrib) (Attrib, error)
+		ReduceFunc func([]Attrib, interface{}) (Attrib, error)
 	}
 	Attrib interface {
 	}
@@ -25,7 +25,7 @@ var productionsTable = ProdTab{
 		NTType:     0,
 		Index:      0,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -35,7 +35,7 @@ var productionsTable = ProdTab{
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 7,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return ast.NewProgram(X[1])
 		},
 	},
@@ -45,7 +45,7 @@ var productionsTable = ProdTab{
 		NTType:     2,
 		Index:      2,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -55,7 +55,7 @@ var productionsTable = ProdTab{
 		NTType:     2,
 		Index:      3,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -65,7 +65,7 @@ var productionsTable = ProdTab{
 		NTType:     3,
 		Index:      4,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -75,7 +75,7 @@ var productionsTable = ProdTab{
 		NTType:     3,
 		Index:      5,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -85,7 +85,7 @@ var productionsTable = ProdTab{
 		NTType:     4,
 		Index:      6,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -95,7 +95,7 @@ var productionsTable = ProdTab{
 		NTType:     4,
 		Index:      7,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -105,7 +105,7 @@ var productionsTable = ProdTab{
 		NTType:     5,
 		Index:      8,
 		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -115,7 +115,7 @@ var productionsTable = ProdTab{
 		NTType:     6,
 		Index:      9,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -125,7 +125,7 @@ var productionsTable = ProdTab{
 		NTType:     6,
 		Index:      10,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -135,7 +135,7 @@ var productionsTable = ProdTab{
 		NTType:     7,
 		Index:      11,
 		NumSymbols: 11,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return ast.NewClass(X[1])
 		},
 	},
@@ -145,7 +145,7 @@ var productionsTable = ProdTab{
 		NTType:     8,
 		Index:      12,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -155,7 +155,7 @@ var productionsTable = ProdTab{
 		NTType:     8,
 		Index:      13,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -165,7 +165,7 @@ var productionsTable = ProdTab{
 		NTType:     9,
 		Index:      14,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -175,7 +175,7 @@ var productionsTable = ProdTab{
 		NTType:     9,
 		Index:      15,
 		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -185,7 +185,7 @@ var productionsTable = ProdTab{
 		NTType:     10,
 		Index:      16,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -195,7 +195,7 @@ var productionsTable = ProdTab{
 		NTType:     10,
 		Index:      17,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -205,7 +205,7 @@ var productionsTable = ProdTab{
 		NTType:     11,
 		Index:      18,
 		NumSymbols: 9,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -215,7 +215,7 @@ var productionsTable = ProdTab{
 		NTType:     12,
 		Index:      19,
 		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
@@ -225,7 +225,7 @@ var productionsTable = ProdTab{
 		NTType:     13,
 		Index:      20,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
@@ -235,827 +235,847 @@ var productionsTable = ProdTab{
 		NTType:     13,
 		Index:      21,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV : "variables" "{" DV5 "}"	<<  >>`,
+		String: `DV : "variables" "{" DV1 "}"	<<  >>`,
 		Id:         "DV",
 		NTType:     14,
 		Index:      22,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : TIP_COMP id DV2	<< ast.NewVariable(X[1]) >>`,
+		String: `DV1 : empty	<<  >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      23,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1])
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : TIP_SIMP id DV3 DV3 DV4	<< ast.NewVariable(X[1]) >>`,
+		String: `DV1 : DV2 ";" DV1	<<  >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      24,
-		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1])
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV2 : empty	<<  >>`,
+		String: `DV2 : TIP_COMP id DV4	<<  >>`,
 		Id:         "DV2",
 		NTType:     16,
 		Index:      25,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV2 : "," id DV2	<< ast.NewVariable(X[1]) >>`,
+		String: `DV2 : DV6 DV5	<<  >>`,
 		Id:         "DV2",
 		NTType:     16,
 		Index:      26,
-		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1])
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV3 : empty	<<  >>`,
+		String: `DV3 : "[" cte_i "]"	<< ast.NewIntConst(X[1]) >>`,
 		Id:         "DV3",
 		NTType:     17,
 		Index:      27,
-		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return nil, nil
-		},
-	},
-	ProdTabEntry{
-		String: `DV3 : "[" cte_i "]"	<<  >>`,
-		Id:         "DV3",
-		NTType:     17,
-		Index:      28,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewIntConst(X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `DV4 : empty	<<  >>`,
 		Id:         "DV4",
 		NTType:     18,
-		Index:      29,
+		Index:      28,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV4 : "," id DV3 DV3 DV4	<< ast.NewVariable(X[1]) >>`,
+		String: `DV4 : "," id DV4	<<  >>`,
 		Id:         "DV4",
 		NTType:     18,
-		Index:      30,
-		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1])
+		Index:      29,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `DV5 : empty	<<  >>`,
 		Id:         "DV5",
 		NTType:     19,
-		Index:      31,
+		Index:      30,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : DV1 ";" DV5	<<  >>`,
+		String: `DV5 : "," DV6 DV5	<<  >>`,
 		Id:         "DV5",
 		NTType:     19,
-		Index:      32,
+		Index:      31,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `DV6 : TIP_SIMP id	<< ast.NewVariable(X[1],0,0) >>`,
+		Id:         "DV6",
+		NTType:     20,
+		Index:      32,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewVariable(X[1],0,0)
+		},
+	},
+	ProdTabEntry{
+		String: `DV6 : TIP_SIMP id DV3	<< ast.NewVariable(X[1],X[2],0) >>`,
+		Id:         "DV6",
+		NTType:     20,
+		Index:      33,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewVariable(X[1],X[2],0)
+		},
+	},
+	ProdTabEntry{
+		String: `DV6 : TIP_SIMP id DV3 DV3	<< ast.NewVariable(X[1],X[2],X[3]) >>`,
+		Id:         "DV6",
+		NTType:     20,
+		Index:      34,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewVariable(X[1],X[2],X[3])
 		},
 	},
 	ProdTabEntry{
 		String: `TIP_SIMP : "int"	<<  >>`,
 		Id:         "TIP_SIMP",
-		NTType:     20,
-		Index:      33,
+		NTType:     21,
+		Index:      35,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `TIP_SIMP : "char"	<<  >>`,
 		Id:         "TIP_SIMP",
-		NTType:     20,
-		Index:      34,
+		NTType:     21,
+		Index:      36,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `TIP_SIMP : "float"	<<  >>`,
 		Id:         "TIP_SIMP",
-		NTType:     20,
-		Index:      35,
+		NTType:     21,
+		Index:      37,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `TIP_COMP : id	<<  >>`,
 		Id:         "TIP_COMP",
-		NTType:     21,
-		Index:      36,
+		NTType:     22,
+		Index:      38,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}"	<< ast.NewFunction(X[2]) >>`,
 		Id:         "F",
-		NTType:     22,
-		Index:      37,
+		NTType:     23,
+		Index:      39,
 		NumSymbols: 14,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return ast.NewFunction(X[2])
 		},
 	},
 	ProdTabEntry{
 		String: `F1 : TIP_SIMP	<<  >>`,
 		Id:         "F1",
-		NTType:     23,
-		Index:      38,
+		NTType:     24,
+		Index:      40,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `F1 : "void"	<<  >>`,
 		Id:         "F1",
-		NTType:     23,
-		Index:      39,
+		NTType:     24,
+		Index:      41,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `F2 : empty	<<  >>`,
 		Id:         "F2",
-		NTType:     24,
-		Index:      40,
+		NTType:     25,
+		Index:      42,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `F2 : TIP_SIMP id F3	<< ast.NewFunction(X[1]) >>`,
 		Id:         "F2",
-		NTType:     24,
-		Index:      41,
+		NTType:     25,
+		Index:      43,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return ast.NewFunction(X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `F3 : empty	<<  >>`,
 		Id:         "F3",
-		NTType:     25,
-		Index:      42,
+		NTType:     26,
+		Index:      44,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunction(X[2]) >>`,
 		Id:         "F3",
-		NTType:     25,
-		Index:      43,
+		NTType:     26,
+		Index:      45,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return ast.NewFunction(X[2])
 		},
 	},
 	ProdTabEntry{
 		String: `EST : AS	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      44,
+		NTType:     27,
+		Index:      46,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : DEC	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      45,
+		NTType:     27,
+		Index:      47,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : ESC	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      46,
+		NTType:     27,
+		Index:      48,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : LEC	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      47,
+		NTType:     27,
+		Index:      49,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : LLAM	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      48,
+		NTType:     27,
+		Index:      50,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : RET	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      49,
+		NTType:     27,
+		Index:      51,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `EST : REP	<<  >>`,
 		Id:         "EST",
-		NTType:     26,
-		Index:      50,
+		NTType:     27,
+		Index:      52,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `AS : id "=" H_EXP ";"	<<  >>`,
 		Id:         "AS",
-		NTType:     27,
-		Index:      51,
+		NTType:     28,
+		Index:      53,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LLAM : id "(" LLAM1 ")"	<<  >>`,
 		Id:         "LLAM",
-		NTType:     28,
-		Index:      52,
+		NTType:     29,
+		Index:      54,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LLAM1 : empty	<<  >>`,
 		Id:         "LLAM1",
-		NTType:     29,
-		Index:      53,
+		NTType:     30,
+		Index:      55,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `LLAM1 : H_EXP LLAM2	<<  >>`,
 		Id:         "LLAM1",
-		NTType:     29,
-		Index:      54,
+		NTType:     30,
+		Index:      56,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LLAM2 : empty	<<  >>`,
 		Id:         "LLAM2",
-		NTType:     30,
-		Index:      55,
+		NTType:     31,
+		Index:      57,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `LLAM2 : "," H_EXP LLAM2	<<  >>`,
 		Id:         "LLAM2",
-		NTType:     30,
-		Index:      56,
+		NTType:     31,
+		Index:      58,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `RET : "return" "(" H_EXP ")"	<<  >>`,
 		Id:         "RET",
-		NTType:     31,
-		Index:      57,
+		NTType:     32,
+		Index:      59,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LEC : "input" "(" VAR LEC1 ")"	<<  >>`,
 		Id:         "LEC",
-		NTType:     32,
-		Index:      58,
+		NTType:     33,
+		Index:      60,
 		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LEC1 : empty	<<  >>`,
 		Id:         "LEC1",
-		NTType:     33,
-		Index:      59,
+		NTType:     34,
+		Index:      61,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `LEC1 : "," VAR LEC1	<<  >>`,
 		Id:         "LEC1",
-		NTType:     33,
-		Index:      60,
+		NTType:     34,
+		Index:      62,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `ESC : "output" "(" ESC1 ESC2 ")" ";"	<<  >>`,
 		Id:         "ESC",
-		NTType:     34,
-		Index:      61,
+		NTType:     35,
+		Index:      63,
 		NumSymbols: 6,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `ESC1 : H_EXP	<<  >>`,
 		Id:         "ESC1",
-		NTType:     35,
-		Index:      62,
+		NTType:     36,
+		Index:      64,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `ESC1 : cte_string	<<  >>`,
 		Id:         "ESC1",
-		NTType:     35,
-		Index:      63,
+		NTType:     36,
+		Index:      65,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `ESC2 : empty	<<  >>`,
 		Id:         "ESC2",
-		NTType:     36,
-		Index:      64,
+		NTType:     37,
+		Index:      66,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `ESC2 : "," ESC1 ESC2	<<  >>`,
 		Id:         "ESC2",
-		NTType:     36,
-		Index:      65,
+		NTType:     37,
+		Index:      67,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<<  >>`,
 		Id:         "DEC",
-		NTType:     37,
-		Index:      66,
+		NTType:     38,
+		Index:      68,
 		NumSymbols: 9,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `DEC1 : empty	<<  >>`,
 		Id:         "DEC1",
-		NTType:     38,
-		Index:      67,
+		NTType:     39,
+		Index:      69,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `DEC1 : "else" "{" EST B1 "}"	<<  >>`,
 		Id:         "DEC1",
-		NTType:     38,
-		Index:      68,
+		NTType:     39,
+		Index:      70,
 		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REP : "while" "(" H_EXP REP1	<<  >>`,
 		Id:         "REP",
-		NTType:     39,
-		Index:      69,
+		NTType:     40,
+		Index:      71,
 		NumSymbols: 4,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REP : "for" "(" AS ";" H_EXP ";" H_EXP REP1	<<  >>`,
 		Id:         "REP",
-		NTType:     39,
-		Index:      70,
+		NTType:     40,
+		Index:      72,
 		NumSymbols: 8,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REP1 : ")" "{" EST B1 "}"	<<  >>`,
 		Id:         "REP1",
-		NTType:     40,
-		Index:      71,
+		NTType:     41,
+		Index:      73,
 		NumSymbols: 5,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `VAR : id VAR1 VAR1	<<  >>`,
+		String: `VAR : id VAR1 VAR1	<< ast.NewVariable(X[0], X[1], X[2]) >>`,
 		Id:         "VAR",
-		NTType:     41,
-		Index:      72,
+		NTType:     42,
+		Index:      74,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewVariable(X[0], X[1], X[2])
 		},
 	},
 	ProdTabEntry{
 		String: `VAR1 : empty	<<  >>`,
 		Id:         "VAR1",
-		NTType:     42,
-		Index:      73,
+		NTType:     43,
+		Index:      75,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
 		String: `VAR1 : "[" H_EXP "]"	<<  >>`,
 		Id:         "VAR1",
-		NTType:     42,
-		Index:      74,
+		NTType:     43,
+		Index:      76,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP : S_EXP H_EXP1	<<  >>`,
+		String: `H_EXP : S_EXP H_EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "H_EXP",
-		NTType:     43,
-		Index:      75,
+		NTType:     44,
+		Index:      77,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `H_EXP1 : empty	<<  >>`,
 		Id:         "H_EXP1",
-		NTType:     44,
-		Index:      76,
+		NTType:     45,
+		Index:      78,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `H_EXP1 : LOG S_EXP	<<  >>`,
+		String: `H_EXP1 : LOG S_EXP	<< ast.NewOperation(X[0],X[1]) >>`,
 		Id:         "H_EXP1",
-		NTType:     44,
-		Index:      77,
+		NTType:     45,
+		Index:      79,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP : EXP S_EXP1	<<  >>`,
+		String: `S_EXP : EXP S_EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "S_EXP",
-		NTType:     45,
-		Index:      78,
+		NTType:     46,
+		Index:      80,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `S_EXP1 : empty	<<  >>`,
 		Id:         "S_EXP1",
-		NTType:     46,
-		Index:      79,
+		NTType:     47,
+		Index:      81,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `S_EXP1 : REL EXP	<<  >>`,
+		String: `S_EXP1 : REL EXP	<< ast.NewOperation(X[0],X[1]) >>`,
 		Id:         "S_EXP1",
-		NTType:     46,
-		Index:      80,
+		NTType:     47,
+		Index:      82,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `EXP : TERM EXP1	<<  >>`,
+		String: `EXP : TERM EXP1	<< ast.NewExpression(X[0],X[1]) >>`,
 		Id:         "EXP",
-		NTType:     47,
-		Index:      81,
+		NTType:     48,
+		Index:      83,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `EXP1 : empty	<<  >>`,
 		Id:         "EXP1",
-		NTType:     48,
-		Index:      82,
+		NTType:     49,
+		Index:      84,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `EXP1 : "+" EXP	<<  >>`,
+		String: `EXP1 : "+" EXP	<< ast.NewOperation(X[0],X[1]) >>`,
 		Id:         "EXP1",
-		NTType:     48,
-		Index:      83,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `EXP1 : "-" EXP	<<  >>`,
-		Id:         "EXP1",
-		NTType:     48,
-		Index:      84,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `TERM : FAC TERM1	<<  >>`,
-		Id:         "TERM",
 		NTType:     49,
 		Index:      85,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `EXP1 : "-" EXP	<< ast.NewOperation(X[0],X[1]) >>`,
+		Id:         "EXP1",
+		NTType:     49,
+		Index:      86,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
+		},
+	},
+	ProdTabEntry{
+		String: `TERM : FAC TERM1	<< ast.NewExpression(X[0],X[1]) >>`,
+		Id:         "TERM",
+		NTType:     50,
+		Index:      87,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewExpression(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `TERM1 : empty	<<  >>`,
 		Id:         "TERM1",
-		NTType:     50,
-		Index:      86,
+		NTType:     51,
+		Index:      88,
 		NumSymbols: 0,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return nil, nil
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : "*" TERM	<<  >>`,
+		String: `TERM1 : "*" TERM	<< ast.NewOperation(X[0],X[1]) >>`,
 		Id:         "TERM1",
-		NTType:     50,
-		Index:      87,
+		NTType:     51,
+		Index:      89,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `TERM1 : "/" TERM	<<  >>`,
+		String: `TERM1 : "/" TERM	<< ast.NewOperation(X[0],X[1]) >>`,
 		Id:         "TERM1",
-		NTType:     50,
-		Index:      88,
+		NTType:     51,
+		Index:      90,
 		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
 		String: `FAC : "(" H_EXP ")"	<<  >>`,
 		Id:         "FAC",
-		NTType:     51,
-		Index:      89,
+		NTType:     52,
+		Index:      91,
 		NumSymbols: 3,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `FAC : VAR_CTE	<<  >>`,
 		Id:         "FAC",
-		NTType:     51,
-		Index:      90,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `FAC : "+" VAR_CTE	<<  >>`,
-		Id:         "FAC",
-		NTType:     51,
-		Index:      91,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
-		},
-	},
-	ProdTabEntry{
-		String: `FAC : "-" VAR_CTE	<<  >>`,
-		Id:         "FAC",
-		NTType:     51,
+		NTType:     52,
 		Index:      92,
-		NumSymbols: 2,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `VAR_CTE : id	<<  >>`,
-		Id:         "VAR_CTE",
+		String: `FAC : "+" VAR_CTE	<< ast.NewOperation(X[0],X[1]) >>`,
+		Id:         "FAC",
 		NTType:     52,
 		Index:      93,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `VAR_CTE : cte_i	<<  >>`,
-		Id:         "VAR_CTE",
+		String: `FAC : "-" VAR_CTE	<< ast.NewOperation(X[0],X[1]) >>`,
+		Id:         "FAC",
 		NTType:     52,
 		Index:      94,
-		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewOperation(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
-		String: `VAR_CTE : cte_float	<<  >>`,
+		String: `VAR_CTE : id	<< ast.NewIdConst(X[0]) >>`,
 		Id:         "VAR_CTE",
-		NTType:     52,
+		NTType:     53,
 		Index:      95,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewIdConst(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `VAR_CTE : cte_i	<< ast.NewIntConst(X[0]) >>`,
+		Id:         "VAR_CTE",
+		NTType:     53,
+		Index:      96,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewIntConst(X[0])
+		},
+	},
+	ProdTabEntry{
+		String: `VAR_CTE : cte_float	<< ast.NewFloatConst(X[0]) >>`,
+		Id:         "VAR_CTE",
+		NTType:     53,
+		Index:      97,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
+			return ast.NewFloatConst(X[0])
 		},
 	},
 	ProdTabEntry{
 		String: `LOG : "&&"	<<  >>`,
 		Id:         "LOG",
-		NTType:     53,
-		Index:      96,
+		NTType:     54,
+		Index:      98,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LOG : "||"	<<  >>`,
 		Id:         "LOG",
-		NTType:     53,
-		Index:      97,
+		NTType:     54,
+		Index:      99,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `LOG : "!="	<<  >>`,
 		Id:         "LOG",
-		NTType:     53,
-		Index:      98,
+		NTType:     54,
+		Index:      100,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REL : "<"	<<  >>`,
 		Id:         "REL",
-		NTType:     54,
-		Index:      99,
+		NTType:     55,
+		Index:      101,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REL : ">"	<<  >>`,
 		Id:         "REL",
-		NTType:     54,
-		Index:      100,
+		NTType:     55,
+		Index:      102,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REL : ">="	<<  >>`,
 		Id:         "REL",
-		NTType:     54,
-		Index:      101,
+		NTType:     55,
+		Index:      103,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REL : "<="	<<  >>`,
 		Id:         "REL",
-		NTType:     54,
-		Index:      102,
+		NTType:     55,
+		Index:      104,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
 		String: `REL : "=="	<<  >>`,
 		Id:         "REL",
-		NTType:     54,
-		Index:      103,
+		NTType:     55,
+		Index:      105,
 		NumSymbols: 1,
-		ReduceFunc: func(X []Attrib) (Attrib, error) {
+		ReduceFunc: func(X []Attrib, C interface{}) (Attrib, error) {
 			return X[0], nil
 		},
 	},

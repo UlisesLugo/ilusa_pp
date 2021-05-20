@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	numProductions = 104
-	numStates      = 675
-	numSymbols     = 107
+	numProductions = 106
+	numStates      = 674
+	numSymbols     = 108
 )
 
 // Stack
@@ -91,6 +91,7 @@ type Parser struct {
 	stack     *stack
 	nextToken *token.Token
 	pos       int
+	Context   Context
 }
 
 type Scanner interface {
@@ -202,7 +203,7 @@ func (p *Parser) Parse(scanner Scanner) (res interface{}, err error) {
 			p.nextToken = scanner.Scan()
 		case reduce:
 			prod := productionsTable[int(act)]
-			attrib, err := prod.ReduceFunc(p.stack.popN(prod.NumSymbols))
+			attrib, err := prod.ReduceFunc(p.stack.popN(prod.NumSymbols), p.Context)
 			if err != nil {
 				return nil, p.newError(err)
 			} else {

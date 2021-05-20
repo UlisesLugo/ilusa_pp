@@ -63,27 +63,31 @@ DV: {
 }
 DV1: {
 	char
+	empty
 	float
 	id
 	int
 }
 DV2: {
-	,
-	empty
+	char
+	float
+	id
+	int
 }
 DV3: {
 	[
-	empty
 }
 DV4: {
 	,
 	empty
 }
 DV5: {
-	char
+	,
 	empty
+}
+DV6: {
+	char
 	float
-	id
 	int
 }
 TIP_SIMP: {

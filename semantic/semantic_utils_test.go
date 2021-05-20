@@ -11,8 +11,9 @@ import (
 // @param *testing.T
 // tests function of GetReturnType(Op, int, float)
 func TestIntFloatOperations(t *testing.T) {
+	semantic_cube := NewSemanticCube()
 	// get value of operation result
-	_, err := GetReturnType(Add, types.Integer, types.Float)
+	_, err := GetReturnType(Add, types.Integer, types.Float, semantic_cube)
 	if err == nil { // unsupported operation
 		t.Fatalf("Inteer and Float should not be added")
 	}
