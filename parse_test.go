@@ -62,8 +62,10 @@ func TestDuck(t *testing.T) {
 		}
 		fmt.Println("Program name:", prog)
 		fmt.Println("------------")
+		fmt.Println("Quads")
+		fmt.Println("------------")
 		for cuad := range prog.Quads() {
-			fmt.Println(cuad)
+			fmt.Println(prog.Quads()[cuad])
 		}
 	}
 }

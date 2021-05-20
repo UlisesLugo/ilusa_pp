@@ -30,12 +30,11 @@ func init() {
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
 	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
-	globalCurrQuads = make([]quadruples.Cuadruplo, 0)
-	globalCurrQuads := append(globalCurrQuads, quadruples.Cuadruplo{semantic.Operation("GOTO"), "", "", "main"}) // TODO change main to memory address
+	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
 	fmt.Println("\tOperandsStack:", globalStackOperands)
-	fmt.Println("\tMain Quad:", globalCurrQuads[0]);
+	fmt.Println("\tQuad:", globalCurrQuads);
 }
 
 /*
@@ -53,6 +52,9 @@ func NewProgram(id Attrib) (*Program, error) {
 	if !ok {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
+	// Prepend main quad
+	main_quad := quadruples.Cuadruplo{semantic.GOTO, "", "", "main"}
+	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	return &Program{nombre, globalCurrQuads, new_id}, nil
 }
 
