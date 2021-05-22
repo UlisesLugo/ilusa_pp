@@ -7,13 +7,12 @@ import (
 type Address int
 
 // Memory integer that start new context
-const DataSegment = 0 // global scope
-const CodeSegment = 4000
-const StackSegment = 8000
-const ConstantsSegment = 12000
-const ExtraSegment = 16000
+const GlobalContext = 0       // global context + global temps
+const LocalContext = 4000     // local context + local temps
+const ConstantsContext = 8000 // constants context
+const PointersContext = 16000 // pointers segment for array accessing
 
-// const Scopestart = 20000 // main scope
+const Scopestart = 30000 // main scope
 
 // Segment size for segment
 const segmentSize = 1000
