@@ -19,6 +19,12 @@ type FuncTable struct {
 	table map[string]*FuncRow
 }
 
+func NewFuncTable() *FuncTable {
+	return &FuncTable{
+		map[string]*FuncRow{},
+	}
+}
+
 // Getter for id
 func (fr *FuncRow) Id() string {
 	return fr.id
@@ -60,6 +66,6 @@ func (ft *FuncTable) Table() map[string]*FuncRow {
 
 // Add Function Row to Table
 func (ft *FuncTable) AddRow(row *FuncRow) bool {
-	row.SetId("newFunction")
+	ft.table[row.id] = row
 	return true
 }

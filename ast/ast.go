@@ -24,7 +24,7 @@ var globalStackOperands stacks.Stack
 var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
-var globalOperatorsDict semantic.HierarchyDict
+var globalFuncTable *tables.FuncTable
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
@@ -81,13 +81,20 @@ func NewClass(id Attrib) (string, error) {
 	returns function row in funciton directory
 */
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
-	fmt.Println("In NewFunction Func")
+	if (globalFuncTable == nil){
+		globalFuncTable = tables.NewFuncTable()
+	}
+	fmt.Println("In NewFunction Func", globalFuncTable)
+	tok, ok := id.(*token.Token)
+	if !ok {
+		return nil, errors.New("problem reading function")
+	}
 	// cast id Attrib to string token literal
-	idName := string(id.(*token.Token).Lit)
-	// create new function row
+	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
-	// set id to funciton
 	row.SetId(idName)
+	globalFuncTable.AddRow(row)
+	// TODO Add type checking and check to repeated func
 	fmt.Println("Function:", row.Id())
 	return row, nil
 }
