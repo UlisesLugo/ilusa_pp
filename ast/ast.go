@@ -46,7 +46,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -84,7 +84,6 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	if (globalFuncTable == nil){
 		globalFuncTable = tables.NewFuncTable()
 	}
-	fmt.Println("In NewFunction Func", globalFuncTable)
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errors.New("problem reading function")
@@ -251,7 +250,7 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 		// TODO (Add type validation)
 
 		// generate quad
-		curr_quad := quadruples.Cuadruplo{top, curr_top1, "", curr_top2}
+		curr_quad := quadruples.Cuadruplo{top, curr_top2, "-1", curr_top1}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 
 		top, ok = globalStackOperators.Top()
