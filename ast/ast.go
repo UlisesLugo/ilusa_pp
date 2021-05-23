@@ -135,7 +135,12 @@ func NewAssignation(id, exp Attrib) (int, error) {
 	if !tok_ok {
 		return -1, errors.New("Problem in casting id token")
 	}
+	globalStackOperators = globalStackOperators.Push(semantic.Assign)
 	fmt.Println("Id: ", string(tok.Lit))
+	current_address := globalIdCount + memory.IdOffset
+	globalIdCount++ // assign next available address
+	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
+	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 	_, exp_ok := exp.(*Exp)
 	if exp_ok {
 		createUnaryQuadruple(semantic.Equal)
@@ -221,6 +226,7 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 }
 
 func createUnaryQuadruple(new_op semantic.Operation) {
+	fmt.Println("\tCreating unary cuad")
 	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
 	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
 
@@ -229,6 +235,7 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 	top, ok := globalStackOperators.Top()        // get top operator
 	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
 
+	fmt.Println("\tTop",globalStackOperands)
 	for ok && top_level <= level_id { // top level has higher hierarchy level
 		// pop top operator
 		globalStackOperators, _ = globalStackOperators.Pop()
@@ -236,12 +243,15 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 		curr_top1, _ := globalStackOperands.Top()
 		// pop operand 1
 		globalStackOperands, _ = globalStackOperands.Pop()
+		// get operand 2
+		curr_top2, _ := globalStackOperands.Top()
+		// pop operand 2
+		globalStackOperands, _ = globalStackOperands.Pop()
+
+		// TODO (Add type validation)
 
 		// generate quad
-		curr_temp := fmt.Sprint(globalTempCount)
-		curr_quad := quadruples.Cuadruplo{top, curr_top1, "", curr_temp}
-		globalStackOperands = globalStackOperands.Push(curr_temp)
-		globalTempCount++
+		curr_quad := quadruples.Cuadruplo{top, curr_top1, "", curr_top2}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 
 		top, ok = globalStackOperators.Top()

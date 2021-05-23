@@ -37,7 +37,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"func_test_2.txt",
+		"expr_test.txt",
 	}
 
 	for _, test := range tests {
