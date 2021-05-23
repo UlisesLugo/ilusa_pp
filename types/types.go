@@ -12,5 +12,7 @@ const (
 	Integer CoreType = iota
 	Float
 	Char
+	Bool
+	Ids
 	Null
 )
