@@ -1,0 +1,6 @@
+Program linearFuncTest :
+  main () {
+      input(a,b);
+      output(c,d);
+      return(0);
+  }

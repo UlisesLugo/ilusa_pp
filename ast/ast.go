@@ -25,6 +25,7 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
+var globalCurrentScope string
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
@@ -128,7 +129,6 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	returns variable entry
 */
 func NewAssignation(id, exp Attrib) (int, error) {
-	fmt.Println("In New Assignation")
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
 	if !tok_ok {
@@ -305,4 +305,44 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	current_address := globalIdCount + memory.FloatOffset
 	globalFloatCount++ // assign next available address
 	return &Constant{string(val.Lit), val, types.Float, memory.Address(current_address)}, nil
+}
+
+func FinishInput(idList Attrib) (int, error) {
+	id_list, ok := idList.([]*Constant)
+	fmt.Println("In Finish Input", id_list)
+	if !ok {
+		return -1, errors.New("problem casting constant in input")
+	}
+	for _, id := range id_list {
+		curr_quad := quadruples.Cuadruplo{"READ","-1","-1",fmt.Sprint(id.Address())}
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+	}
+	return 1, nil
+}
+
+func NewInput(id, idList Attrib) ([]*Constant, error){
+	new_id, ok := id.(*Constant)
+	id_list, _ := idList.([]*Constant)
+	if !ok {
+		return nil, errors.New("problem casting constant in input")
+	}
+	return append([]*Constant{new_id} ,id_list...), nil // Prepend (Add first)
+}
+
+/*
+	GetIdDimConst
+	@param id Attrib
+*/
+func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
+	fmt.Println("In IdDim Const")
+	val, ok := id.(*token.Token)
+	if !ok {
+		return nil, errors.New("problem in id dim constants")
+	}
+	// TODO (Access id address from vartable scope instead of curr address)
+	// TODO (Check dimensions)
+	// calculate current address occuppied in context
+	current_address := globalIdCount + memory.IdOffset
+	globalIdCount++ // assign next available address
+	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }

@@ -530,13 +530,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EST : LEC	<<  >>`,
+		String: `EST : LEC	<< ast.FinishInput(X[0]) >>`,
 		Id:         "EST",
 		NTType:     28,
 		Index:      51,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.FinishInput(X[0])
 		},
 	},
 	ProdTabEntry{
@@ -630,23 +630,23 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `RET : "return" "(" H_EXP ")"	<<  >>`,
+		String: `RET : "return" "(" H_EXP ")" ";"	<<  >>`,
 		Id:         "RET",
 		NTType:     33,
 		Index:      61,
-		NumSymbols: 4,
+		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},
 	},
 	ProdTabEntry{
-		String: `LEC : "input" "(" VAR LEC1 ")"	<<  >>`,
+		String: `LEC : "input" "(" VAR LEC1 ")" ";"	<< ast.NewInput(X[2],X[3]) >>`,
 		Id:         "LEC",
 		NTType:     34,
 		Index:      62,
-		NumSymbols: 5,
+		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewInput(X[2],X[3])
 		},
 	},
 	ProdTabEntry{
@@ -660,13 +660,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LEC1 : "," VAR LEC1	<<  >>`,
+		String: `LEC1 : "," VAR LEC1	<< ast.NewInput(X[1],X[2]) >>`,
 		Id:         "LEC1",
 		NTType:     35,
 		Index:      64,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewInput(X[1],X[2])
 		},
 	},
 	ProdTabEntry{
@@ -780,13 +780,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VAR : id VAR1 VAR1	<< ast.NewVariable(X[0], X[1], X[2]) >>`,
+		String: `VAR : id VAR1 VAR1	<< ast.GetIdDimConst(X[0], X[1], X[2]) >>`,
 		Id:         "VAR",
 		NTType:     43,
 		Index:      76,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[0], X[1], X[2])
+			return ast.GetIdDimConst(X[0], X[1], X[2])
 		},
 	},
 	ProdTabEntry{
@@ -800,13 +800,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `VAR1 : "[" H_EXP "]"	<<  >>`,
+		String: `VAR1 : "[" H_EXP "]"	<< X[1], nil >>`,
 		Id:         "VAR1",
 		NTType:     44,
 		Index:      78,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return X[1], nil
 		},
 	},
 	ProdTabEntry{

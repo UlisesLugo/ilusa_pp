@@ -52,7 +52,8 @@ F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
 F4 : empty | F ;
 
-EST : AS | DEC | ESC | LEC | LLAM | RET | REP;
+EST : AS | DEC | ESC | LEC << ast.FinishInput($0) >>
+| LLAM | RET | REP;
 
 AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
 
@@ -60,10 +61,10 @@ LLAM : id "(" LLAM1 ")" ;
 LLAM1 : empty | H_EXP LLAM2 ;
 LLAM2 : empty | "," H_EXP LLAM2 ;
 
-RET : "return" "(" H_EXP ")" ;
+RET : "return" "(" H_EXP ")" ";" ;
 
-LEC : "input" "(" VAR LEC1 ")" ;
-LEC1 : empty | "," VAR LEC1 ;
+LEC : "input" "(" VAR LEC1 ")" ";" << ast.NewInput($2,$3) >>;
+LEC1 : empty | "," VAR LEC1 << ast.NewInput($1,$2) >>;
 
 ESC : "output" "(" ESC1 ESC2 ")" ";" ;
 ESC1 : H_EXP | cte_string ;
@@ -75,8 +76,8 @@ DEC1 : empty | "else" "{" EST B1 "}" ;
 REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
 REP1 : ")" "{" EST B1 "}" ;
 
-VAR : id VAR1 VAR1 << ast.NewVariable($0, $1, $2) >>;
-VAR1 : empty | "[" H_EXP "]" ;
+VAR : id VAR1 VAR1 << ast.GetIdDimConst($0, $1, $2) >>;
+VAR1 : empty | "[" H_EXP "]" << $1, nil >>;
 
 H_EXP : S_EXP H_EXP1 << ast.NewExpression($0,$1) >> ;
 H_EXP1 : empty | LOG S_EXP << ast.NewOperation($0,$1) >> ;
