@@ -18,7 +18,10 @@ import (
 var globalIntCount int
 var globalFloatCount int
 var globalIdCount int
-var globalTempCount int
+var globalTempIntCount int
+var globalTempFloatCount int
+var globalTempCharCount int
+var globalTempBoolCount int
 var globalStackOperators stacks.Stack
 var globalStackOperands stacks.Stack
 var globalStackTypes stacks.Stack
@@ -31,8 +34,11 @@ func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
-	globalIntCount, globalFloatCount, globalIdCount = 0, 0, 0
-	globalTempCount = 6000
+	globalIntCount = memory.GlobalContext + memory.IntOffset
+	globalFloatCount = memory.GlobalContext + memory.FloatOffset
+	// TODO: add
+	globalIdCount = memory.GlobalContext + memory.IdOffset
+	globalTempIntCount = memory.GlobalContext + memory.TempIntOffset
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
@@ -213,10 +219,10 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 		globalStackOperands, _ = globalStackOperands.Pop()
 
 		// generate quad
-		curr_temp := fmt.Sprint(globalTempCount)
+		curr_temp := fmt.Sprint(globalTempIntCount) // TODO (Validate type with semantic cube)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, curr_temp}
 		globalStackOperands = globalStackOperands.Push(curr_temp)
-		globalTempCount++
+		globalTempIntCount++
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 
 		top, ok = globalStackOperators.Top()
