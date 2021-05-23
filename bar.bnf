@@ -46,14 +46,15 @@ DV6 : TIP_SIMP id << ast.NewVariable($1,0,0) >>
 TIP_SIMP : "int" | "char" | "float" ;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" << ast.NewFunction($2) >> ;
+F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2) >> ;
 F1 : TIP_SIMP | "void" ;
 F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
+F4 : empty | F ;
 
 EST : AS | DEC | ESC | LEC | LLAM | RET | REP;
 
-AS : id "=" H_EXP ";" ;
+AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
 
 LLAM : id "(" LLAM1 ")" ;
 LLAM1 : empty | H_EXP LLAM2 ;

@@ -81,7 +81,7 @@ S8{
 	P : Program id : P1 P2 •P3 B «$»
 	P3 : empty• «main»
 	P3 : •F «main»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «main»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «main»
 }
 Transitions:
 	P3 -> 12
@@ -129,7 +129,7 @@ Transitions:
 
 
 S14{
-	F : function •F1 id ( F2 ) { DV body { EST B1 } } «main»
+	F : function •F1 id ( F2 ) { DV body { EST B1 } } F4 «main»
 	F1 : •TIP_SIMP «id»
 	F1 : •void «id»
 	TIP_SIMP : •int «id»
@@ -225,7 +225,7 @@ Transitions:
 
 
 S23{
-	F : function F1 •id ( F2 ) { DV body { EST B1 } } «main»
+	F : function F1 •id ( F2 ) { DV body { EST B1 } } F4 «main»
 }
 Transitions:
 	id -> 34
@@ -311,7 +311,7 @@ Transitions:
 
 
 S34{
-	F : function F1 id •( F2 ) { DV body { EST B1 } } «main»
+	F : function F1 id •( F2 ) { DV body { EST B1 } } F4 «main»
 }
 Transitions:
 	( -> 44
@@ -428,7 +428,7 @@ Transitions:
 
 
 S44{
-	F : function F1 id ( •F2 ) { DV body { EST B1 } } «main»
+	F : function F1 id ( •F2 ) { DV body { EST B1 } } F4 «main»
 	F2 : empty• «)»
 	F2 : •TIP_SIMP id F3 «)»
 	TIP_SIMP : •int «id»
@@ -655,7 +655,7 @@ Transitions:
 
 
 S54{
-	F : function F1 id ( F2 •) { DV body { EST B1 } } «main»
+	F : function F1 id ( F2 •) { DV body { EST B1 } } F4 «main»
 }
 Transitions:
 	) -> 78
@@ -1072,7 +1072,7 @@ Transitions:
 
 
 S78{
-	F : function F1 id ( F2 ) •{ DV body { EST B1 } } «main»
+	F : function F1 id ( F2 ) •{ DV body { EST B1 } } F4 «main»
 }
 Transitions:
 	{ -> 96
@@ -2058,7 +2058,7 @@ Transitions:
 
 
 S96{
-	F : function F1 id ( F2 ) { •DV body { EST B1 } } «main»
+	F : function F1 id ( F2 ) { •DV body { EST B1 } } F4 «main»
 	DV : •variables { DV1 } «body»
 }
 Transitions:
@@ -3871,7 +3871,7 @@ Transitions:
 
 
 S147{
-	F : function F1 id ( F2 ) { DV •body { EST B1 } } «main»
+	F : function F1 id ( F2 ) { DV •body { EST B1 } } F4 «main»
 }
 Transitions:
 	body -> 217
@@ -7356,7 +7356,7 @@ Transitions:
 
 
 S217{
-	F : function F1 id ( F2 ) { DV body •{ EST B1 } } «main»
+	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «main»
 }
 Transitions:
 	{ -> 325
@@ -7401,8 +7401,8 @@ Transitions:
 
 S220{
 	MET_CL : methods { •F MET_CL1 } «}»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «function»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «}»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
 	F -> 327
@@ -11073,7 +11073,7 @@ Transitions:
 
 
 S325{
-	F : function F1 id ( F2 ) { DV body { •EST B1 } } «main»
+	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «main»
 	EST : •AS «for»
 	EST : •AS «id»
 	EST : •AS «if»
@@ -11224,8 +11224,8 @@ S327{
 	MET_CL : methods { F •MET_CL1 } «}»
 	MET_CL1 : empty• «}»
 	MET_CL1 : •F MET_CL1 «}»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «function»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «}»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
 	function -> 328
@@ -11234,8 +11234,8 @@ Transitions:
 
 
 S328{
-	F : function •F1 id ( F2 ) { DV body { EST B1 } } «function»
-	F : function •F1 id ( F2 ) { DV body { EST B1 } } «}»
+	F : function •F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : function •F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 	F1 : •TIP_SIMP «id»
 	F1 : •void «id»
 	TIP_SIMP : •int «id»
@@ -15483,7 +15483,7 @@ Transitions:
 
 
 S414{
-	F : function F1 id ( F2 ) { DV body { EST •B1 } } «main»
+	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «main»
 	B1 : empty• «}»
 	B1 : •EST B1 «}»
 	EST : •AS «for»
@@ -15636,8 +15636,8 @@ S416{
 	MET_CL1 : F •MET_CL1 «}»
 	MET_CL1 : empty• «}»
 	MET_CL1 : •F MET_CL1 «}»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «function»
-	F : •function F1 id ( F2 ) { DV body { EST B1 } } «}»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
 	function -> 328
@@ -15653,8 +15653,8 @@ Transitions:
 
 
 S418{
-	F : function F1 •id ( F2 ) { DV body { EST B1 } } «function»
-	F : function F1 •id ( F2 ) { DV body { EST B1 } } «}»
+	F : function F1 •id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : function F1 •id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
 	id -> 515
@@ -17798,7 +17798,7 @@ Transitions:
 
 
 S512{
-	F : function F1 id ( F2 ) { DV body { EST B1 •} } «main»
+	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «main»
 }
 Transitions:
 	} -> 571
@@ -17817,8 +17817,8 @@ Transitions:
 
 
 S515{
-	F : function F1 id •( F2 ) { DV body { EST B1 } } «function»
-	F : function F1 id •( F2 ) { DV body { EST B1 } } «}»
+	F : function F1 id •( F2 ) { DV body { EST B1 } } F4 «function»
+	F : function F1 id •( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
 	( -> 572
@@ -19725,15 +19725,15 @@ Transitions:
 
 
 S571{
-	F : function F1 id ( F2 ) { DV body { EST B1 } •} «main»
+	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «main»
 }
 Transitions:
 	} -> 614
 
 
 S572{
-	F : function F1 id ( •F2 ) { DV body { EST B1 } } «function»
-	F : function F1 id ( •F2 ) { DV body { EST B1 } } «}»
+	F : function F1 id ( •F2 ) { DV body { EST B1 } } F4 «function»
+	F : function F1 id ( •F2 ) { DV body { EST B1 } } F4 «}»
 	F2 : empty• «)»
 	F2 : •TIP_SIMP id F3 «)»
 	TIP_SIMP : •int «id»
@@ -20342,17 +20342,23 @@ Transitions:
 
 
 S614{
-	F : function F1 id ( F2 ) { DV body { EST B1 } }• «main»
+	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «main»
+	F4 : empty• «main»
+	F4 : •F «main»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «main»
 }
 Transitions:
+	function -> 14
+	F -> 630
+	F4 -> 631
 
 
 S615{
-	F : function F1 id ( F2 •) { DV body { EST B1 } } «function»
-	F : function F1 id ( F2 •) { DV body { EST B1 } } «}»
+	F : function F1 id ( F2 •) { DV body { EST B1 } } F4 «function»
+	F : function F1 id ( F2 •) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	) -> 630
+	) -> 632
 
 
 S616{
@@ -20365,7 +20371,7 @@ S617{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «}»
 }
 Transitions:
-	id -> 631
+	id -> 633
 
 
 S618{
@@ -20384,9 +20390,9 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 632
-	TIP_SIMP -> 633
-	ATR_SIMP1 -> 634
+	ATR_SIMP -> 634
+	TIP_SIMP -> 635
+	ATR_SIMP1 -> 636
 
 
 S619{
@@ -20396,7 +20402,7 @@ S619{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «private»
 }
 Transitions:
-	; -> 635
+	; -> 637
 
 
 S620{
@@ -20407,7 +20413,7 @@ S620{
 	FAC : ( H_EXP •) «]»
 }
 Transitions:
-	) -> 636
+	) -> 638
 
 
 S621{
@@ -20468,7 +20474,7 @@ Transitions:
 	FAC -> 600
 	VAR_CTE -> 601
 	cte_float -> 602
-	EXP -> 637
+	EXP -> 639
 
 
 S623{
@@ -20523,7 +20529,7 @@ Transitions:
 	FAC -> 600
 	VAR_CTE -> 601
 	cte_float -> 602
-	EXP -> 638
+	EXP -> 640
 
 
 S624{
@@ -20606,7 +20612,7 @@ Transitions:
 	FAC -> 600
 	VAR_CTE -> 601
 	cte_float -> 602
-	TERM -> 639
+	TERM -> 641
 
 
 S628{
@@ -20661,7 +20667,7 @@ Transitions:
 	FAC -> 600
 	VAR_CTE -> 601
 	cte_float -> 602
-	TERM -> 640
+	TERM -> 642
 
 
 S629{
@@ -20809,18 +20815,30 @@ Transitions:
 	if -> 74
 	while -> 75
 	for -> 76
-	EST -> 641
+	EST -> 643
 
 
 S630{
-	F : function F1 id ( F2 ) •{ DV body { EST B1 } } «function»
-	F : function F1 id ( F2 ) •{ DV body { EST B1 } } «}»
+	F4 : F• «main»
 }
 Transitions:
-	{ -> 642
 
 
 S631{
+	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «main»
+}
+Transitions:
+
+
+S632{
+	F : function F1 id ( F2 ) •{ DV body { EST B1 } } F4 «function»
+	F : function F1 id ( F2 ) •{ DV body { EST B1 } } F4 «}»
+}
+Transitions:
+	{ -> 644
+
+
+S633{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «}»
 	DV2 : •TIP_COMP id DV4 «;»
 	DV2 : •DV6 DV5 «;»
@@ -20843,10 +20861,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 643
+	DV2 -> 645
 
 
-S632{
+S634{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «protected»
 	ATR_SIMP1 : empty• «protected»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «protected»
@@ -20862,28 +20880,28 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 632
-	TIP_SIMP -> 633
-	ATR_SIMP1 -> 644
+	ATR_SIMP -> 634
+	TIP_SIMP -> 635
+	ATR_SIMP1 -> 646
 
 
-S633{
+S635{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «protected»
 }
 Transitions:
-	id -> 645
+	id -> 647
 
 
-S634{
+S636{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «protected»
 }
 Transitions:
 
 
-S635{
+S637{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -20909,11 +20927,11 @@ Transitions:
 	char -> 21
 	float -> 22
 	TIP_SIMP -> 519
-	ATR_SIMP -> 646
-	ATR_SIMP1 -> 647
+	ATR_SIMP -> 648
+	ATR_SIMP1 -> 649
 
 
-S636{
+S638{
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «+»
 	FAC : ( H_EXP )• «/»
@@ -20923,19 +20941,19 @@ S636{
 Transitions:
 
 
-S637{
+S639{
 	EXP1 : + EXP• «]»
 }
 Transitions:
 
 
-S638{
+S640{
 	EXP1 : - EXP• «]»
 }
 Transitions:
 
 
-S639{
+S641{
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
 	TERM1 : * TERM• «]»
@@ -20943,7 +20961,7 @@ S639{
 Transitions:
 
 
-S640{
+S642{
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
 	TERM1 : / TERM• «]»
@@ -20951,7 +20969,7 @@ S640{
 Transitions:
 
 
-S641{
+S643{
 	DEC1 : else { EST •B1 } «for»
 	DEC1 : else { EST •B1 } «id»
 	DEC1 : else { EST •B1 } «if»
@@ -21099,33 +21117,33 @@ Transitions:
 	if -> 74
 	while -> 75
 	for -> 76
-	B1 -> 648
+	B1 -> 650
 
 
-S642{
-	F : function F1 id ( F2 ) { •DV body { EST B1 } } «function»
-	F : function F1 id ( F2 ) { •DV body { EST B1 } } «}»
+S644{
+	F : function F1 id ( F2 ) { •DV body { EST B1 } } F4 «function»
+	F : function F1 id ( F2 ) { •DV body { EST B1 } } F4 «}»
 	DV : •variables { DV1 } «body»
 }
 Transitions:
 	variables -> 148
-	DV -> 649
+	DV -> 651
 
 
-S643{
+S645{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «}»
 }
 Transitions:
-	; -> 650
+	; -> 652
 
 
-S644{
+S646{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «protected»
 }
 Transitions:
 
 
-S645{
+S647{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «int»
@@ -21151,10 +21169,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 651
+	DV2 -> 653
 
 
-S646{
+S648{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -21180,11 +21198,11 @@ Transitions:
 	char -> 21
 	float -> 22
 	TIP_SIMP -> 519
-	ATR_SIMP -> 646
-	ATR_SIMP1 -> 652
+	ATR_SIMP -> 648
+	ATR_SIMP1 -> 654
 
 
-S647{
+S649{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -21193,7 +21211,7 @@ S647{
 Transitions:
 
 
-S648{
+S650{
 	DEC1 : else { EST B1 •} «for»
 	DEC1 : else { EST B1 •} «id»
 	DEC1 : else { EST B1 •} «if»
@@ -21204,18 +21222,18 @@ S648{
 	DEC1 : else { EST B1 •} «}»
 }
 Transitions:
-	} -> 653
+	} -> 655
 
 
-S649{
-	F : function F1 id ( F2 ) { DV •body { EST B1 } } «function»
-	F : function F1 id ( F2 ) { DV •body { EST B1 } } «}»
+S651{
+	F : function F1 id ( F2 ) { DV •body { EST B1 } } F4 «function»
+	F : function F1 id ( F2 ) { DV •body { EST B1 } } F4 «}»
 }
 Transitions:
-	body -> 654
+	body -> 656
 
 
-S650{
+S652{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «}»
 	ATR_SIMP1 : empty• «}»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «}»
@@ -21231,22 +21249,22 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 655
-	TIP_SIMP -> 656
-	ATR_SIMP1 -> 657
+	ATR_SIMP -> 657
+	TIP_SIMP -> 658
+	ATR_SIMP1 -> 659
 
 
-S651{
+S653{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «protected»
 }
 Transitions:
-	; -> 658
+	; -> 660
 
 
-S652{
+S654{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
@@ -21255,7 +21273,7 @@ S652{
 Transitions:
 
 
-S653{
+S655{
 	DEC1 : else { EST B1 }• «for»
 	DEC1 : else { EST B1 }• «id»
 	DEC1 : else { EST B1 }• «if»
@@ -21268,15 +21286,15 @@ S653{
 Transitions:
 
 
-S654{
-	F : function F1 id ( F2 ) { DV body •{ EST B1 } } «function»
-	F : function F1 id ( F2 ) { DV body •{ EST B1 } } «}»
+S656{
+	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «function»
+	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «}»
 }
 Transitions:
-	{ -> 659
+	{ -> 661
 
 
-S655{
+S657{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «}»
 	ATR_SIMP1 : empty• «}»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «}»
@@ -21292,28 +21310,28 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 655
-	TIP_SIMP -> 656
-	ATR_SIMP1 -> 660
+	ATR_SIMP -> 657
+	TIP_SIMP -> 658
+	ATR_SIMP1 -> 662
 
 
-S656{
+S658{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «}»
 }
 Transitions:
-	id -> 661
+	id -> 663
 
 
-S657{
+S659{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «}»
 }
 Transitions:
 
 
-S658{
+S660{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -21338,14 +21356,14 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 633
-	ATR_SIMP -> 662
-	ATR_SIMP1 -> 663
+	TIP_SIMP -> 635
+	ATR_SIMP -> 664
+	ATR_SIMP1 -> 665
 
 
-S659{
-	F : function F1 id ( F2 ) { DV body { •EST B1 } } «function»
-	F : function F1 id ( F2 ) { DV body { •EST B1 } } «}»
+S661{
+	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «function»
+	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «}»
 	EST : •AS «for»
 	EST : •AS «id»
 	EST : •AS «if»
@@ -21482,16 +21500,16 @@ Transitions:
 	if -> 74
 	while -> 75
 	for -> 76
-	EST -> 664
+	EST -> 666
 
 
-S660{
+S662{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «}»
 }
 Transitions:
 
 
-S661{
+S663{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «int»
@@ -21517,10 +21535,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 665
+	DV2 -> 667
 
 
-S662{
+S664{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -21545,12 +21563,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 633
-	ATR_SIMP -> 662
-	ATR_SIMP1 -> 666
+	TIP_SIMP -> 635
+	ATR_SIMP -> 664
+	ATR_SIMP1 -> 668
 
 
-S663{
+S665{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -21559,9 +21577,9 @@ S663{
 Transitions:
 
 
-S664{
-	F : function F1 id ( F2 ) { DV body { EST •B1 } } «function»
-	F : function F1 id ( F2 ) { DV body { EST •B1 } } «}»
+S666{
+	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «function»
+	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «}»
 	B1 : empty• «}»
 	B1 : •EST B1 «}»
 	EST : •AS «for»
@@ -21701,20 +21719,20 @@ Transitions:
 	if -> 74
 	while -> 75
 	for -> 76
-	B1 -> 667
+	B1 -> 669
 
 
-S665{
+S667{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «}»
 }
 Transitions:
-	; -> 668
+	; -> 670
 
 
-S666{
+S668{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
@@ -21723,15 +21741,15 @@ S666{
 Transitions:
 
 
-S667{
-	F : function F1 id ( F2 ) { DV body { EST B1 •} } «function»
-	F : function F1 id ( F2 ) { DV body { EST B1 •} } «}»
+S669{
+	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «function»
+	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «}»
 }
 Transitions:
-	} -> 669
+	} -> 671
 
 
-S668{
+S670{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -21756,20 +21774,20 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 656
-	ATR_SIMP -> 670
-	ATR_SIMP1 -> 671
+	TIP_SIMP -> 658
+	ATR_SIMP -> 672
+	ATR_SIMP1 -> 673
 
 
-S669{
-	F : function F1 id ( F2 ) { DV body { EST B1 } •} «function»
-	F : function F1 id ( F2 ) { DV body { EST B1 } •} «}»
+S671{
+	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «function»
+	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «}»
 }
 Transitions:
-	} -> 672
+	} -> 674
 
 
-S670{
+S672{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -21794,12 +21812,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 656
-	ATR_SIMP -> 670
-	ATR_SIMP1 -> 673
+	TIP_SIMP -> 658
+	ATR_SIMP -> 672
+	ATR_SIMP1 -> 675
 
 
-S671{
+S673{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -21808,18 +21826,41 @@ S671{
 Transitions:
 
 
-S672{
-	F : function F1 id ( F2 ) { DV body { EST B1 } }• «function»
-	F : function F1 id ( F2 ) { DV body { EST B1 } }• «}»
+S674{
+	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «function»
+	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «}»
+	F4 : empty• «function»
+	F4 : •F «function»
+	F4 : empty• «}»
+	F4 : •F «}»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
+	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
+	function -> 328
+	F -> 676
+	F4 -> 677
 
 
-S673{
+S675{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «}»
+}
+Transitions:
+
+
+S676{
+	F4 : F• «function»
+	F4 : F• «}»
+}
+Transitions:
+
+
+S677{
+	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «function»
+	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «}»
 }
 Transitions:
 

@@ -1,0 +1,21 @@
+Program doubleFuncTest :
+  function void isa(){
+    variables{
+      int u;
+      float v;
+    }
+    body{
+      output(1); 
+    }
+  }
+  
+  function void ulises(){
+    variables{
+    }
+    body{
+      output(1); 
+    }
+  }
+
+  main () {
+  }

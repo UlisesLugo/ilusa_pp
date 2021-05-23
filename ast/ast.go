@@ -115,6 +115,28 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 }
 
 /*
+	NewAssignation
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewAssignation(id, exp Attrib) (int, error) {
+	fmt.Println("In New Assignation")
+	// cast id to token
+	tok, tok_ok := id.(*token.Token)
+	if !tok_ok {
+		return -1, errors.New("Problem in casting id token")
+	}
+	fmt.Println("Id: ", string(tok.Lit))
+	_, exp_ok := exp.(*Exp)
+	if exp_ok {
+		createUnaryQuadruple(semantic.Equal)
+	}
+	return globalIdCount, nil // return row
+}
+
+/*
 	NewExpression
 	handles logic of creation of new expressions.
 	@param exp1 Attrib
@@ -182,6 +204,35 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 		// generate quad
 		curr_temp := fmt.Sprint(globalTempCount)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, curr_temp}
+		globalStackOperands = globalStackOperands.Push(curr_temp)
+		globalTempCount++
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+
+		top, ok = globalStackOperators.Top()
+		top_level = operatorsDict.Op_hierarchy[top]
+	}
+}
+
+func createUnaryQuadruple(new_op semantic.Operation) {
+	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
+	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
+
+	level_id := operatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
+
+	top, ok := globalStackOperators.Top()        // get top operator
+	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+
+	for ok && top_level <= level_id { // top level has higher hierarchy level
+		// pop top operator
+		globalStackOperators, _ = globalStackOperators.Pop()
+		// get operand 1
+		curr_top1, _ := globalStackOperands.Top()
+		// pop operand 1
+		globalStackOperands, _ = globalStackOperands.Pop()
+
+		// generate quad
+		curr_temp := fmt.Sprint(globalTempCount)
+		curr_quad := quadruples.Cuadruplo{top, curr_top1, "", curr_temp}
 		globalStackOperands = globalStackOperands.Push(curr_temp)
 		globalTempCount++
 		globalCurrQuads = append(globalCurrQuads, curr_quad)

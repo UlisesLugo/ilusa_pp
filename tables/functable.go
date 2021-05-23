@@ -1,6 +1,7 @@
 package tables
 
 import (
+	"github.com/uliseslugo/ilusa_pp/gocc/token"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
@@ -10,7 +11,7 @@ type FuncRow struct {
 	return_val types.CoreType
 	params     []types.CoreType
 	// scope int
-	// local_vars *VarTable // ask elda
+	local_vars *VarTable
 }
 
 // fuction table struct
@@ -26,6 +27,10 @@ func (fr *FuncRow) Id() string {
 // Setter for id
 func (fr *FuncRow) SetId(curr_id string) {
 	fr.id = curr_id
+}
+
+func (fr *FuncRow) AddRow(id string, curr_type types.CoreType, token *token.Token) error {
+	return fr.local_vars.AddRow(id, curr_type, token)
 }
 
 // Getter for return value
