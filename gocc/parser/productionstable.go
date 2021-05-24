@@ -520,13 +520,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EST : ESC	<<  >>`,
+		String: `EST : ESC	<< ast.FinishOutput(X[0]) >>`,
 		Id:         "EST",
 		NTType:     28,
 		Index:      50,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.FinishOutput(X[0])
 		},
 	},
 	ProdTabEntry{
@@ -670,13 +670,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ESC : "output" "(" ESC1 ESC2 ")" ";"	<<  >>`,
+		String: `ESC : "output" "(" ESC1 ESC2 ")" ";"	<< ast.NewOutput(X[2], X[3]) >>`,
 		Id:         "ESC",
 		NTType:     36,
 		Index:      65,
 		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOutput(X[2], X[3])
 		},
 	},
 	ProdTabEntry{
@@ -710,13 +710,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `ESC2 : "," ESC1 ESC2	<<  >>`,
+		String: `ESC2 : "," ESC1 ESC2	<< ast.NewOutput(X[1], X[2]) >>`,
 		Id:         "ESC2",
 		NTType:     38,
 		Index:      69,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewOutput(X[1], X[2])
 		},
 	},
 	ProdTabEntry{
