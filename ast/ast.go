@@ -354,7 +354,6 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 
 func FinishOutput(idList Attrib) (int, error) {
 	id_list, ok := idList.([]*Exp)
-	fmt.Println("In Finish Output", id_list)
 	if !ok {
 		return -1, errors.New("problem casting constant in input")
 	}
@@ -369,7 +368,22 @@ func NewOutput(id, idList Attrib) ([]*Exp, error){
 	new_id, ok := id.(*Exp)
 	id_list, _ := idList.([]*Exp)
 	if !ok {
-		return nil, errors.New("problem casting constant in input")
+		return nil, errors.New("problem casting constant in output")
 	}
 	return append([]*Exp{new_id} ,id_list...), nil // Prepend (Add first)
+}
+
+func Return(exp Attrib) (*Exp, error) {
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return nil, errors.New("problem casting exp in return")
+	}
+	curr_top, ok := globalStackOperands.Top()
+	if !ok {
+		return nil, errors.New("stack is empty in return")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	curr_quad := quadruples.Cuadruplo{"RETURN","-1","-1",curr_top}
+	globalCurrQuads = append(globalCurrQuads, curr_quad)
+	return new_exp, nil
 }

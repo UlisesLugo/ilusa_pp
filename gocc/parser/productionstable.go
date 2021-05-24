@@ -630,13 +630,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `RET : "return" "(" H_EXP ")" ";"	<<  >>`,
+		String: `RET : "return" "(" H_EXP ")" ";"	<< ast.Return(X[2]) >>`,
 		Id:         "RET",
 		NTType:     33,
 		Index:      61,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.Return(X[2])
 		},
 	},
 	ProdTabEntry{
