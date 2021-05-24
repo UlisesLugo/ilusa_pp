@@ -27,7 +27,8 @@ var globalStackOperands stacks.Stack
 var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
-var globalOperatorsDict semantic.HierarchyDict
+var globalFuncTable *tables.FuncTable
+var globalCurrentScope string
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
@@ -52,7 +53,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -87,13 +88,19 @@ func NewClass(id Attrib) (string, error) {
 	returns function row in funciton directory
 */
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
-	fmt.Println("In NewFunction Func")
+	if (globalFuncTable == nil){
+		globalFuncTable = tables.NewFuncTable()
+	}
+	tok, ok := id.(*token.Token)
+	if !ok {
+		return nil, errors.New("problem reading function")
+	}
 	// cast id Attrib to string token literal
-	idName := string(id.(*token.Token).Lit)
-	// create new function row
+	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
-	// set id to funciton
 	row.SetId(idName)
+	globalFuncTable.AddRow(row)
+	// TODO Add type checking and check to repeated func
 	fmt.Println("Function:", row.Id())
 	return row, nil
 }
@@ -118,6 +125,32 @@ func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
 	row.SetToken(tok)
 	fmt.Println("New var:", row.Id())
 	return row, nil // return row
+}
+
+/*
+	NewAssignation
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewAssignation(id, exp Attrib) (int, error) {
+	// cast id to token
+	tok, tok_ok := id.(*token.Token)
+	if !tok_ok {
+		return -1, errors.New("Problem in casting id token")
+	}
+	globalStackOperators = globalStackOperators.Push(semantic.Assign)
+	fmt.Println("Id: ", string(tok.Lit))
+	current_address := globalIdCount + memory.IdOffset
+	globalIdCount++ // assign next available address
+	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
+	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+	_, exp_ok := exp.(*Exp)
+	if exp_ok {
+		createUnaryQuadruple(semantic.Equal)
+	}
+	return globalIdCount, nil // return row
 }
 
 /*
@@ -197,6 +230,40 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 	}
 }
 
+func createUnaryQuadruple(new_op semantic.Operation) {
+	fmt.Println("\tCreating unary cuad")
+	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
+	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
+
+	level_id := operatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
+
+	top, ok := globalStackOperators.Top()        // get top operator
+	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+
+	fmt.Println("\tTop",globalStackOperands)
+	for ok && top_level <= level_id { // top level has higher hierarchy level
+		// pop top operator
+		globalStackOperators, _ = globalStackOperators.Pop()
+		// get operand 1
+		curr_top1, _ := globalStackOperands.Top()
+		// pop operand 1
+		globalStackOperands, _ = globalStackOperands.Pop()
+		// get operand 2
+		curr_top2, _ := globalStackOperands.Top()
+		// pop operand 2
+		globalStackOperands, _ = globalStackOperands.Pop()
+
+		// TODO (Add type validation)
+
+		// generate quad
+		curr_quad := quadruples.Cuadruplo{top, curr_top2, "-1", curr_top1}
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+
+		top, ok = globalStackOperators.Top()
+		top_level = operatorsDict.Op_hierarchy[top]
+	}
+}
+
 /*
 	NewIdConst
 	@param id Attrib
@@ -244,4 +311,79 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	current_address := globalIdCount + memory.FloatOffset
 	globalFloatCount++ // assign next available address
 	return &Constant{string(val.Lit), val, types.Float, memory.Address(current_address)}, nil
+}
+
+func FinishInput(idList Attrib) (int, error) {
+	id_list, ok := idList.([]*Constant)
+	if !ok {
+		return -1, errors.New("problem casting constant in input")
+	}
+	for _, id := range id_list {
+		curr_quad := quadruples.Cuadruplo{"READ","-1","-1",fmt.Sprint(id.Address())}
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+	}
+	return 1, nil
+}
+
+func NewInput(id, idList Attrib) ([]*Constant, error){
+	new_id, ok := id.(*Constant)
+	id_list, _ := idList.([]*Constant)
+	if !ok {
+		return nil, errors.New("problem casting constant in input")
+	}
+	return append([]*Constant{new_id} ,id_list...), nil // Prepend (Add first)
+}
+
+/*
+	GetIdDimConst
+	@param id Attrib
+*/
+func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
+	fmt.Println("In IdDim Const")
+	val, ok := id.(*token.Token)
+	if !ok {
+		return nil, errors.New("problem in id dim constants")
+	}
+	// TODO (Access id address from vartable scope instead of curr address)
+	// TODO (Check dimensions)
+	// calculate current address occuppied in context
+	current_address := globalIdCount + memory.IdOffset
+	globalIdCount++ // assign next available address
+	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+}
+
+func FinishOutput(idList Attrib) (int, error) {
+	id_list, ok := idList.([]*Exp)
+	if !ok {
+		return -1, errors.New("problem casting constant in input")
+	}
+	for _, id := range id_list {
+		curr_quad := quadruples.Cuadruplo{"WRITE","-1","-1",fmt.Sprint(id.const_.Address())}
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+	}
+	return 1, nil
+}
+
+func NewOutput(id, idList Attrib) ([]*Exp, error){
+	new_id, ok := id.(*Exp)
+	id_list, _ := idList.([]*Exp)
+	if !ok {
+		return nil, errors.New("problem casting constant in output")
+	}
+	return append([]*Exp{new_id} ,id_list...), nil // Prepend (Add first)
+}
+
+func Return(exp Attrib) (*Exp, error) {
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return nil, errors.New("problem casting exp in return")
+	}
+	curr_top, ok := globalStackOperands.Top()
+	if !ok {
+		return nil, errors.New("stack is empty in return")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	curr_quad := quadruples.Cuadruplo{"RETURN","-1","-1",curr_top}
+	globalCurrQuads = append(globalCurrQuads, curr_quad)
+	return new_exp, nil
 }

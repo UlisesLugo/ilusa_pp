@@ -23,6 +23,7 @@ const (
 	NotEqual = "!="
 	Assign   = "="
 	GOTO     = "GOTO"
+	Read	 = "READ"
 )
 
 type OperationsDict struct {
@@ -46,6 +47,7 @@ func NewOperationsDict() *OperationsDict {
 			10: "*",
 			11: "/",
 			12: "GOTO",
+			13: "READ",
 		},
 	}
 }
@@ -68,6 +70,7 @@ func NewOperatorKey() *OperatorKey {
 	// 	indexes 10-11: 4
 	return &OperatorKey{
 		map[string]int{
+			"READ": -1,
 			// super low hierarchy (right association)
 			"!":  0,
 			"=":  1,

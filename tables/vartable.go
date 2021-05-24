@@ -110,9 +110,9 @@ func (vt *VarTable) Parent() *VarTable {
 */
 func (vt *VarTable) AddRow(id string, curr_type types.CoreType, token *token.Token) error {
 	// Testing adding row
-	var row *VarRow
-	row = new(VarRow)
+	row := new(VarRow)
 	row.SetId("ulises")
+	vt.table[id] = row
 	// TODO: Add to var table (?)
 	return nil
 }

@@ -37,8 +37,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"expr_test.txt",
-		// "second_test.txt",
+		"linear_test_1.txt",
 	}
 
 	for _, test := range tests {
@@ -59,13 +58,14 @@ func TestDuck(t *testing.T) {
 		prog, ok := st.(*ast.Program)
 		if !ok {
 			t.Error("Program failed")
-		}
-		fmt.Println("Program name:", prog)
-		fmt.Println("------------")
-		fmt.Println("Quads")
-		fmt.Println("------------")
-		for cuad := range prog.Quads() {
-			fmt.Println(prog.Quads()[cuad])
+		} else {
+			fmt.Println("Program name:", prog)
+			fmt.Println("------------")
+			fmt.Println("Quads")
+			fmt.Println("------------")
+			for cuad := range prog.Quads() {
+				fmt.Println(prog.Quads()[cuad])
+			}
 		}
 	}
 }
