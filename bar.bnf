@@ -52,8 +52,9 @@ F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
 F4 : empty | F ;
 
-EST : AS | DEC | ESC | LEC << ast.FinishInput($0) >>
-| LLAM | RET | REP;
+EST : AS | DEC | ESC << ast.FinishOutput($0) >>
+ | LEC << ast.FinishInput($0) >>
+ | LLAM | RET | REP;
 
 AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
 
@@ -66,9 +67,9 @@ RET : "return" "(" H_EXP ")" ";" ;
 LEC : "input" "(" VAR LEC1 ")" ";" << ast.NewInput($2,$3) >>;
 LEC1 : empty | "," VAR LEC1 << ast.NewInput($1,$2) >>;
 
-ESC : "output" "(" ESC1 ESC2 ")" ";" ;
+ESC : "output" "(" ESC1 ESC2 ")" ";" << ast.NewOutput($2, $3) >>;
 ESC1 : H_EXP | cte_string ;
-ESC2 : empty | "," ESC1 ESC2 ;
+ESC2 : empty | "," ESC1 ESC2 << ast.NewOutput($1, $2) >> ;
 
 DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 ;
 DEC1 : empty | "else" "{" EST B1 "}" ;

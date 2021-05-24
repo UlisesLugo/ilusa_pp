@@ -315,7 +315,6 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 
 func FinishInput(idList Attrib) (int, error) {
 	id_list, ok := idList.([]*Constant)
-	fmt.Println("In Finish Input", id_list)
 	if !ok {
 		return -1, errors.New("problem casting constant in input")
 	}
@@ -351,4 +350,26 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	current_address := globalIdCount + memory.IdOffset
 	globalIdCount++ // assign next available address
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+}
+
+func FinishOutput(idList Attrib) (int, error) {
+	id_list, ok := idList.([]*Exp)
+	fmt.Println("In Finish Output", id_list)
+	if !ok {
+		return -1, errors.New("problem casting constant in input")
+	}
+	for _, id := range id_list {
+		curr_quad := quadruples.Cuadruplo{"WRITE","-1","-1",fmt.Sprint(id.const_.Address())}
+		globalCurrQuads = append(globalCurrQuads, curr_quad)
+	}
+	return 1, nil
+}
+
+func NewOutput(id, idList Attrib) ([]*Exp, error){
+	new_id, ok := id.(*Exp)
+	id_list, _ := idList.([]*Exp)
+	if !ok {
+		return nil, errors.New("problem casting constant in input")
+	}
+	return append([]*Exp{new_id} ,id_list...), nil // Prepend (Add first)
 }
