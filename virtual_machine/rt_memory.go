@@ -17,6 +17,39 @@ type MemorySegment struct {
 }
 
 /**
+	GetValue
+	gets value stored in given address
+	@param addr address of stored value
+	return value
+**/
+func (mem_segment MemorySegment) GetValue(addr memory.Address) (interface{}, error) {
+	if addr < 0 {
+		return nil, errors.New("Address out of scope.")
+	}
+
+	switch {
+	case addr >= 0 && addr <= 999:
+		// Get integer
+		return mem_segment.integers[addr], nil
+	case addr >= 1000 && addr <= 1999:
+		// Get float
+		return mem_segment.floats[addr], nil
+	case addr >= 2000 && addr <= 2999:
+		// Get char
+		return mem_segment.chars[addr], nil
+	case addr >= 3000 && addr <= 3999:
+		// Get bool
+		return mem_segment.booleans[addr], nil
+	case addr >= 4000 && addr <= 4999:
+		// Get id
+		return mem_segment.ids[addr], nil
+
+	default:
+		return nil, errors.New("Address out of scope")
+	}
+}
+
+/**
 	SetValue
 	sets value to a specific address for run-time
 	@param value to put at address
