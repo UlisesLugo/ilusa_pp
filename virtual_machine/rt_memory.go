@@ -6,6 +6,7 @@ import (
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
 
+// Memory Segment for Run-time
 type MemorySegment struct {
 	baseAddr memory.Address
 	id       string                 // id for memory segment
