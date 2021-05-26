@@ -5,6 +5,8 @@ import (
 	"os"
 	"testing"
 
+	"encoding/json"
+
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
 	"github.com/uliseslugo/ilusa_pp/gocc/parser"
@@ -62,10 +64,12 @@ func TestDuck(t *testing.T) {
 		if !ok {
 			t.Error("Program failed")
 		} else {
-			fmt.Println("Program name:", prog)
-			fmt.Println("------------")
-			fmt.Println("Quads")
-			fmt.Println("------------")
+			f, err := os.Create("encoding.obj")
+			if err != nil {
+				panic(err)
+			}
+			enc := json.NewEncoder(f)
+			enc.Encode(prog.Quads())
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])
 			}
