@@ -37,7 +37,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"linear_test_1.txt",
+		"expr_test_2.txt",
 	}
 
 	for _, test := range tests {
@@ -56,6 +56,9 @@ func TestDuck(t *testing.T) {
 		}
 
 		prog, ok := st.(*ast.Program)
+
+		// TODO: create obj_test
+
 		if !ok {
 			t.Error("Program failed")
 		} else {

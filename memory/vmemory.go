@@ -7,6 +7,7 @@ import (
 )
 
 // Virtual memory struct with address counters & constants map
+// TODO: esto no se como lo vamos a usar
 type VirtualMemory struct {
 	// global segment
 	global_int_count   int
