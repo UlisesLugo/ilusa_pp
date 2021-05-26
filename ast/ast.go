@@ -291,7 +291,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextGlobalTemp(types.Integer) // TODO Check Types (Validate type with semantic cube)
+	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Integer, current_address}, nil
