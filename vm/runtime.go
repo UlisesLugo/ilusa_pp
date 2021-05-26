@@ -6,21 +6,18 @@ import (
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
 
-// TODO: ??????
-
 // Memory Segment for Run-time
 type MemorySegment struct {
 	baseAddr memory.Address
-	id       string // id for memory segment
-	integers []int  // address - value -> TODO: del tama;o de los contadores de ese contexto
-	floats   []float64
-	chars    []rune
-	booleans []int
-	ids      []string
+	id       string                 // id for memory segment (Example: Global)
+	integers map[memory.Address]int // address - value -> TODO: del tama;o de los contadores de ese contexto
+	floats   map[memory.Address]float64
+	chars    map[memory.Address]rune
+	booleans map[memory.Address]int
+	ids      map[memory.Address]string
 }
 
 // TODO: main directory for memory addresses separated by scope
-
 // // Memory represents the virtual memory for the virtual machine
 // // it contains one MemorySegment for each segment
 // type Memory struct {
@@ -33,36 +30,35 @@ type MemorySegment struct {
 
 /**
 	GetValue
-	gets value stored in given address
+	gets value stored in given address of runtime memory
 	@param addr address of stored value
 	return value
 **/
 func (mem_segment MemorySegment) GetValue(addr memory.Address) (interface{}, error) {
+	// If memory in local segment
+	// mem_segment.baseAddr = 0
+	baseAddr := addr - mem_segment.baseAddr
+
 	if addr < 0 {
 		return nil, errors.New("Address out of scope.")
 	}
 
 	switch {
-	case addr >= 0 && addr <= 999:
+	case baseAddr >= 0 && baseAddr <= 999:
 		// Get integer
-		type_addr := int(addr - memory.IntOffset) // value of 5003 -> integers[3]
-		return mem_segment.integers[type_addr], nil
+		return mem_segment.integers[baseAddr], nil
 	case addr >= 1000 && addr <= 1999:
 		// Get float
-		type_addr := int(addr - memory.FloatOffset)
-		return mem_segment.floats[type_addr], nil
+		return mem_segment.floats[baseAddr], nil
 	case addr >= 2000 && addr <= 2999:
 		// Get char
-		type_addr := int(addr - memory.CharOffset)
-		return mem_segment.chars[type_addr], nil
+		return mem_segment.chars[baseAddr], nil
 	case addr >= 3000 && addr <= 3999:
 		// Get bool
-		type_addr := int(addr - memory.BoolOffset)
-		return mem_segment.booleans[type_addr], nil
+		return mem_segment.booleans[baseAddr], nil
 	case addr >= 4000 && addr <= 4999:
 		// Get id
-		type_addr := int(addr - memory.IdOffset)
-		return mem_segment.ids[type_addr], nil
+		return mem_segment.ids[baseAddr], nil
 
 	default:
 		return nil, errors.New("Address out of scope")
