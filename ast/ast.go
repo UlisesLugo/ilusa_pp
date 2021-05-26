@@ -17,7 +17,7 @@ import (
 
 var globalIntCount int
 var globalFloatCount int
-var globalIdCount int
+var localIdCount int
 var globalTempIntCount int
 var globalTempFloatCount int
 var globalTempCharCount int
@@ -28,17 +28,18 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
-var globalCurrentScope string
+var globalCurrentScope int
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
-	globalIntCount = memory.GlobalContext + memory.IntOffset
-	globalFloatCount = memory.GlobalContext + memory.FloatOffset
+	globalCurrentScope = memory.GlobalContext
+	globalIntCount = globalCurrentScope + memory.IntOffset
+	globalFloatCount = globalCurrentScope + memory.FloatOffset
 	// TODO: add
-	globalIdCount = memory.GlobalContext + memory.IdOffset
-	globalTempIntCount = memory.GlobalContext + memory.TempIntOffset
+	localIdCount = globalCurrentScope + memory.IdOffset
+	globalTempIntCount = globalCurrentScope + memory.TempIntOffset
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
@@ -112,19 +113,25 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
+func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, error) {
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
+	new_rows, _ := rows.([]*tables.VarRow)
+	fmt.Println("In New variable", dim1, dim2)
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
+	new_dim1, _ := dim1.(*token.Token).Int32Value()
+	new_dim2, _ := dim1.(*token.Token).Int32Value()
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
+	row.SetDim1(int(new_dim1))
+	row.SetDim2(int(new_dim2))
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
 	fmt.Println("New var:", row.Id())
-	return row, nil // return row
+	return append([]*tables.VarRow{row} ,new_rows...), nil
 }
 
 /*
@@ -142,15 +149,15 @@ func NewAssignation(id, exp Attrib) (int, error) {
 	}
 	globalStackOperators = globalStackOperators.Push(semantic.Assign)
 	fmt.Println("Id: ", string(tok.Lit))
-	current_address := globalIdCount + memory.IdOffset
-	globalIdCount++ // assign next available address
+	current_address := localIdCount + memory.IdOffset
+	localIdCount++ // assign next available address
 	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 	_, exp_ok := exp.(*Exp)
 	if exp_ok {
 		createUnaryQuadruple(semantic.Equal)
 	}
-	return globalIdCount, nil // return row
+	return localIdCount, nil // return row
 }
 
 /*
@@ -274,8 +281,8 @@ func NewIdConst(id Attrib) (*Constant, error) {
 		return nil, errors.New("problem in id constants")
 	}
 	// calculate current address occuppied in context
-	current_address := globalIdCount + memory.IdOffset
-	globalIdCount++ // assign next available address
+	current_address := localIdCount + memory.IdOffset
+	localIdCount++ // assign next available address
 	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
@@ -291,7 +298,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	current_address := globalIdCount + memory.IntOffset
+	current_address := localIdCount + memory.IntOffset
 	globalIntCount++ // assign next available address
 	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	return &Constant{string(val.Lit), val, types.Integer, memory.Address(current_address)}, nil
@@ -308,7 +315,7 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
-	current_address := globalIdCount + memory.FloatOffset
+	current_address := localIdCount + memory.FloatOffset
 	globalFloatCount++ // assign next available address
 	return &Constant{string(val.Lit), val, types.Float, memory.Address(current_address)}, nil
 }
@@ -347,8 +354,8 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	// TODO (Access id address from vartable scope instead of curr address)
 	// TODO (Check dimensions)
 	// calculate current address occuppied in context
-	current_address := globalIdCount + memory.IdOffset
-	globalIdCount++ // assign next available address
+	current_address := localIdCount + memory.IdOffset
+	localIdCount++ // assign next available address
 	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 }
 

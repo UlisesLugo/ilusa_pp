@@ -16,6 +16,7 @@ cte_string : '"' {.} '"' ;
 
 /* Syntax part */
 << import "github.com/uliseslugo/ilusa_pp/ast" >>
+<< import "github.com/uliseslugo/ilusa_pp/semantic" >>
 
 P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
 P1 : empty | CL ;
@@ -35,13 +36,16 @@ ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
 DV : "variables" "{" DV1 "}" ;
 DV1 : empty | DV2 ";" DV1 ;
-DV2 : TIP_COMP id DV4 | DV6 DV5 ;
+DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
 DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
 DV4 : empty | "," id DV4 ;
-DV5 : empty | "," DV6 DV5;
-DV6 : TIP_SIMP id << ast.NewVariable($1,0,0) >> 
- |    TIP_SIMP id DV3 << ast.NewVariable($1,$2,0) >> 
- |    TIP_SIMP id DV3 DV3 << ast.NewVariable($1,$2,$3) >> ;
+DV5 : empty 
+ | "," id DV5<< ast.NewVariable(nil,$1,0,0, $2) >>
+ | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,0, $3) >> 
+ | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3, $4) >> ;
+DV6 : TIP_SIMP id << ast.NewVariable($0,$1,0,0, nil) >> 
+ |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,0, nil) >> 
+ |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3, nil) >> ;
 
 TIP_SIMP : "int" | "char" | "float" ;
 TIP_COMP : id ;
