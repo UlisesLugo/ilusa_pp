@@ -2,7 +2,9 @@
 
 package parser
 
-import "github.com/uliseslugo/ilusa_pp/ast"
+import (
+    "github.com/uliseslugo/ilusa_pp/ast"
+    "github.com/uliseslugo/ilusa_pp/types")
 
 type (
 	ProdTab      [numProductions]ProdTabEntry
@@ -280,13 +282,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV2 : DV6 DV5	<<  >>`,
+		String: `DV2 : DV6 DV5	<< ast.NewTypeVariables(X[0],X[1]) >>`,
 		Id:         "DV2",
 		NTType:     16,
 		Index:      26,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewTypeVariables(X[0],X[1])
 		},
 	},
 	ProdTabEntry{
@@ -330,93 +332,93 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV5	<< ast.NewVariable(X[1],0,0) >>`,
+		String: `DV5 : "," id DV5	<< ast.NewVariable(nil,X[1],0,0, X[2]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      31,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],0,0)
+			return ast.NewVariable(nil,X[1],0,0, X[2])
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV3 DV5	<< ast.NewVariable(X[1],X[2],0) >>`,
+		String: `DV5 : "," id DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],0, X[3]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      32,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],X[2],0)
+			return ast.NewVariable(nil,X[1],X[2],0, X[3])
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV3 DV3 DV5	<< ast.NewVariable(X[1],X[2],X[3]) >>`,
+		String: `DV5 : "," id DV3 DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],X[3], X[4]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      33,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],X[2],X[3])
+			return ast.NewVariable(nil,X[1],X[2],X[3], X[4])
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id	<< ast.NewVariable(X[1],0,0) >>`,
+		String: `DV6 : TIP_SIMP id	<< ast.NewVariable(X[0],X[1],0,0, nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      34,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],0,0)
+			return ast.NewVariable(X[0],X[1],0,0, nil)
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id DV3	<< ast.NewVariable(X[1],X[2],0) >>`,
+		String: `DV6 : TIP_SIMP id DV3	<< ast.NewVariable(X[0],X[1],X[2],0, nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      35,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],X[2],0)
+			return ast.NewVariable(X[0],X[1],X[2],0, nil)
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id DV3 DV3	<< ast.NewVariable(X[1],X[2],X[3]) >>`,
+		String: `DV6 : TIP_SIMP id DV3 DV3	<< ast.NewVariable(X[0],X[1],X[2],X[3], nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      36,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[1],X[2],X[3])
+			return ast.NewVariable(X[0],X[1],X[2],X[3], nil)
 		},
 	},
 	ProdTabEntry{
-		String: `TIP_SIMP : "int"	<<  >>`,
+		String: `TIP_SIMP : "int"	<< types.Integer, nil >>`,
 		Id:         "TIP_SIMP",
 		NTType:     21,
 		Index:      37,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return types.Integer, nil
 		},
 	},
 	ProdTabEntry{
-		String: `TIP_SIMP : "char"	<<  >>`,
+		String: `TIP_SIMP : "char"	<< types.Char, nil >>`,
 		Id:         "TIP_SIMP",
 		NTType:     21,
 		Index:      38,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return types.Char, nil
 		},
 	},
 	ProdTabEntry{
-		String: `TIP_SIMP : "float"	<<  >>`,
+		String: `TIP_SIMP : "float"	<< types.Float, nil >>`,
 		Id:         "TIP_SIMP",
 		NTType:     21,
 		Index:      39,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return types.Float, nil
 		},
 	},
 	ProdTabEntry{

@@ -103,6 +103,28 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 }
 
 /*
+	NewTypeVariables
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, error) {
+	new_typed_var, ok := typed_var.([]*tables.VarRow)
+	fmt.Println("In new typed var")
+	curr_map := make(map[string]*tables.VarRow)
+	if !ok || len(new_typed_var) != 1 {
+		return nil, errors.New("problem in casting typed variable")
+	}
+	curr_map[new_typed_var[0].Id()] = new_typed_var[0]
+	if var_list != nil {
+		new_var_list := var_list.([]*tables.VarRow)
+		fmt.Println("\t Len of list",len(new_var_list))
+	}
+	return curr_map, nil
+}
+
+/*
 	NewVariable
 	@param id Attrib
 	@param dim1 Attrib
@@ -117,12 +139,15 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
-	new_dim1, _ := dim1.(*token.Token).Int32Value()
-	new_dim2, _ := dim1.(*token.Token).Int32Value()
+	new_dim1, _ := dim1.(int)
+	new_dim2, _ := dim1.(int)
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
-	row.SetDim1(int(new_dim1))
-	row.SetDim2(int(new_dim2))
+	if curr_type != nil {
+		row.SetType(curr_type.(types.CoreType))
+	}
+	row.SetDim1(new_dim1)
+	row.SetDim2(new_dim2)
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)

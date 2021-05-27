@@ -15,8 +15,9 @@ cte_string : '"' {.} '"' ;
 !whitespace : '\t' | '\n' | '\r' | ' ' ;
 
 /* Syntax part */
-<< import "github.com/uliseslugo/ilusa_pp/ast" >>
-<< import "github.com/uliseslugo/ilusa_pp/semantic" >>
+<< import (
+    "github.com/uliseslugo/ilusa_pp/ast"
+    "github.com/uliseslugo/ilusa_pp/types") >>
 
 P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
 P1 : empty | CL ;
@@ -47,7 +48,9 @@ DV6 : TIP_SIMP id << ast.NewVariable($0,$1,0,0, nil) >>
  |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,0, nil) >> 
  |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3, nil) >> ;
 
-TIP_SIMP : "int" | "char" | "float" ;
+TIP_SIMP : "int" << types.Integer, nil >>
+ | "char"  << types.Char, nil >>
+ | "float" << types.Float, nil >>;
 TIP_COMP : id ;
 
 F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2) >> ;
