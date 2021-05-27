@@ -69,7 +69,15 @@ func TestDuck(t *testing.T) {
 			// 	panic(err)
 			// }
 			// enc := json.NewEncoder(f)
-			// enc.Encode(prog.Quads())
+
+			// obj_map := make(map[string]interface{}) // map of key: json object
+
+			// // set key for Quads
+			// obj_map["Quads"] = prog.Quads()
+
+			// // encodigin map
+			// enc.Encode(obj_map)
+
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])
 			}
