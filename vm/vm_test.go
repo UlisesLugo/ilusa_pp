@@ -10,22 +10,16 @@ func TestReadJSON(t *testing.T) {
 
 	vm.ReadJSON()
 
+	fmt.Println("Constants now are", vm.constants)
 	fmt.Println("Quads in runtime memory:")
 	for _, q := range vm.quads {
 		fmt.Println(q)
 	}
 
-	fmt.Println("Constants in runtime memory:")
+	fmt.Println("Constants in virtual machine:")
 	for key, element := range vm.constants {
 		fmt.Println(key, element)
 	}
-}
-
-func TestRunMachine(t *testing.T) {
-
-	vm := NewVirtualMachine()
-
-	vm.ReadJSON()
 
 	vm.RunMachine()
 

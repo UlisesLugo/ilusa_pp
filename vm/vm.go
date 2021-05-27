@@ -35,6 +35,31 @@ func NewVirtualMachine() *VirtualMachine {
 	}
 }
 
+func (vm *VirtualMachine) GetConstValue(addr int) interface{} {
+	if vm.constants == nil {
+		return errors.New("Constants map empty in VM.")
+	}
+
+	a := memory.Address(addr)
+	return vm.mm.mem_constant.memlist[a]
+
+}
+
+func (vm *VirtualMachine) GetContext(addr string) string {
+	switch a := addr; {
+	case a >= "0" && a < "8000":
+		return "Global"
+	case a >= "8000" && a < "16000":
+		return "Local"
+	case a >= "16000" && a < "20000":
+		return "Constants"
+	case a >= "20000" && a < "30000":
+		return "Pointers"
+	}
+
+	return "Null"
+}
+
 func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
@@ -42,13 +67,19 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		return errors.New("Couldn't cast to Cuadruplo.")
 	}
 
-	// leftOperator := quad.Var1
-	// rightOperator := quad.Var2
+	lop, _ := strconv.Atoi(quad.Var1)
+	leftVal := vm.GetConstValue(lop)
 
-	//fmt.Println("lop"+leftOperator, "rop"+rightOperator)
+	rop, _ := strconv.Atoi(quad.Var2)
+	rightVal := vm.GetConstValue(rop)
+
+	fmt.Println(leftVal)
+	fmt.Println(rightVal)
+	// fmt.Println("lop"+leftOperator, "rop"+rightOperator)
 
 	switch quad.Op {
 	case "+":
+		// fmt.Println("Res", right_int+left_int)
 		return nil
 	case "-":
 		return nil
@@ -98,48 +129,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	return nil
 }
 
-func (vm *VirtualMachine) LoadConstants() error {
-	if vm.constants == nil {
-		return errors.New("Constants map empty in VM.")
-	}
-
-	for key, val := range vm.constants {
-		addr := memory.Address(val) - vm.mm.mem_constant.baseAddr
-
-		// get value
-		if addr >= 0 && addr < 1000 {
-			int_val, err_cast := strconv.Atoi(key)
-			vm.mm.mem_constant.integers[addr] = int_val
-			if err_cast != nil {
-				fmt.Println(err_cast)
-			}
-			return err_cast
-		} else if addr >= 1000 && addr < 2000 {
-			flt_val, err_cast := strconv.ParseFloat(key, 64)
-			vm.mm.mem_constant.floats[addr] = flt_val
-			if err_cast != nil {
-				fmt.Println(err_cast)
-			}
-			return err_cast
-		} else if addr >= 2000 && addr < 3000 {
-			char_val := key[0]
-			vm.mm.mem_constant.chars[addr] = rune(char_val)
-			return nil
-		} else if addr >= 3000 && addr < 4000 {
-			bool_val, err_cast := strconv.Atoi(key)
-			vm.mm.mem_constant.booleans[addr] = bool_val
-			if err_cast != nil {
-				fmt.Println(err_cast)
-			}
-			return err_cast
-		} else {
-			return errors.New("Error loading consant " + key + "in address " + fmt.Sprint(val))
-		}
-	}
-
-	return nil
-}
-
 func (vm *VirtualMachine) RunMachine() {
 	if len(vm.quads) <= 0 {
 		fmt.Println("Quadruples list is empty.")
@@ -153,7 +142,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// Load Constants Map from VM to memory
 	fmt.Println("Constants in MM")
-	fmt.Println(vm.mm.mem_constant.integers)
+	fmt.Println(vm.mm.mem_constant.memlist)
 
 	// TODO: Push main activation record
 

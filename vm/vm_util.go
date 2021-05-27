@@ -5,7 +5,11 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 
+	"errors"
+
+	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/quadruples"
 )
 
@@ -24,6 +28,11 @@ type Consts struct {
 	Consts map[string]int `json:"Consts"`
 }
 
+/**
+	ReadJSON
+	@param vm VirtualMachine
+	reads obj JSON encoding
+**/
 func (vm *VirtualMachine) ReadJSON() {
 	jsonFile, err := os.Open("../encoding.obj")
 	// if we os.Open returns an error then handle it
@@ -31,7 +40,6 @@ func (vm *VirtualMachine) ReadJSON() {
 		fmt.Println(err)
 	}
 
-	fmt.Println("Successfully Opened OBJ")
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 
@@ -68,5 +76,36 @@ func (vm *VirtualMachine) ReadJSON() {
 	}
 
 	vm.constants = consts.Consts
+}
 
+/**
+	LoadConstants
+	@param vm Virtual Machine
+	returns error
+	loads constants from virtual memory constants map to run time memory
+**/
+func (vm *VirtualMachine) LoadConstants() error {
+	if vm.constants == nil {
+		return errors.New("Constants map empty in VM.")
+	}
+
+	fmt.Println("Constants in Load", vm.constants)
+	for key, val := range vm.constants {
+		addr := memory.Address(val)
+
+		// insert value in constants memory
+		switch a := addr; {
+		case a >= 16000 && a < 17000:
+			int_val, _ := strconv.Atoi(key)
+			vm.mm.mem_constant.memlist[addr] = int_val
+		case a >= 17000 && a < 18000:
+			flt_val, _ := strconv.ParseFloat(key, 64)
+			vm.mm.mem_constant.memlist[addr] = flt_val
+		case addr >= 18000 && addr < 19000:
+			char_val := key[0]
+			vm.mm.mem_constant.memlist[addr] = rune(char_val)
+		}
+	}
+
+	return nil
 }
