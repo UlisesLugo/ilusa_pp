@@ -109,3 +109,5 @@ func (vm *VirtualMachine) LoadConstants() error {
 
 	return nil
 }
+
+// TODO: Get type of address so we know what type to cast it with

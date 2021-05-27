@@ -41,7 +41,7 @@ func (vm *VirtualMachine) GetConstValue(addr int) interface{} {
 	}
 
 	a := memory.Address(addr)
-	return vm.mm.mem_constant.memlist[a]
+	return vm.mm.mem_constant.memlist[a].(int)
 
 }
 
@@ -68,10 +68,10 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	}
 
 	lop, _ := strconv.Atoi(quad.Var1)
-	leftVal := vm.GetConstValue(lop)
+	leftVal := vm.GetConstValue(lop).(int)
 
 	rop, _ := strconv.Atoi(quad.Var2)
-	rightVal := vm.GetConstValue(rop)
+	rightVal := vm.GetConstValue(rop).(int)
 
 	fmt.Println(leftVal)
 	fmt.Println(rightVal)
@@ -79,7 +79,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 
 	switch quad.Op {
 	case "+":
-		// fmt.Println("Res", right_int+left_int)
+		fmt.Println(leftVal + rightVal)
 		return nil
 	case "-":
 		return nil
