@@ -16,6 +16,7 @@ import (
 )
 
 var vmemory *memory.VirtualMemory
+var constantsMap map[string]int 
 
 var globalStackOperators stacks.Stack
 var globalStackOperands stacks.Stack
@@ -23,13 +24,15 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
-var globalCurrentScope string
+var globalCurrentScope int
 
 var quadsCounter int
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
+	globalFuncTable = tables.NewFuncTable()
 	vmemory = memory.NewVirtualMemory()
+	constantsMap = vmemory.ConstantMap()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
@@ -49,7 +52,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -61,7 +64,7 @@ func NewProgram(id Attrib) (*Program, error) {
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	quadsCounter++
-	return &Program{nombre, globalCurrQuads, new_id}, nil
+	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
 }
 
 /*
@@ -85,9 +88,6 @@ func NewClass(id Attrib) (string, error) {
 	returns function row in funciton directory
 */
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
-	if globalFuncTable == nil {
-		globalFuncTable = tables.NewFuncTable()
-	}
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errors.New("problem reading function")
@@ -103,25 +103,56 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 }
 
 /*
+	NewTypeVariables
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, error) {
+	new_typed_var, ok := typed_var.([]*tables.VarRow)
+	fmt.Println("In new typed var")
+	curr_map := make(map[string]*tables.VarRow)
+	if !ok || len(new_typed_var) != 1 {
+		return nil, errors.New("problem in casting typed variable")
+	}
+	curr_map[new_typed_var[0].Id()] = new_typed_var[0]
+	if var_list != nil {
+		new_var_list := var_list.([]*tables.VarRow)
+		fmt.Println("\t Len of list",len(new_var_list))
+	}
+	return curr_map, nil
+}
+
+/*
 	NewVariable
 	@param id Attrib
 	@param dim1 Attrib
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewVariable(id, dim1, dim2 Attrib) (*tables.VarRow, error) {
+func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, error) {
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
+	new_rows, _ := rows.([]*tables.VarRow)
+	fmt.Println("In New variable", dim1, dim2)
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
+	new_dim1, _ := dim1.(int)
+	new_dim2, _ := dim1.(int)
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
+	if curr_type != nil {
+		row.SetType(curr_type.(types.CoreType))
+	}
+	row.SetDim1(new_dim1)
+	row.SetDim2(new_dim2)
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
 	fmt.Println("New var:", row.Id())
-	return row, nil // return row
+	return append([]*tables.VarRow{row} ,new_rows...), nil
 }
 
 /*
@@ -294,7 +325,9 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
-	return &Constant{string(val.Lit), val, types.Integer, current_address}, nil
+	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
+	constantsMap[string(val.Lit)] = int(current_address)
+	return curr_constant, nil
 }
 
 /*

@@ -75,6 +75,9 @@ func TestDuck(t *testing.T) {
 			// set key for Quads
 			obj_map["Quads"] = prog.Quads()
 
+			// set key for Constants Table
+			obj_map["Consts"] = prog.Consts()
+
 			// encodigin map
 			enc.Encode(obj_map)
 
