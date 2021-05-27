@@ -31,6 +31,7 @@ var quadsCounter int
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalFuncTable = tables.NewFuncTable()
+	globalConstants = make(map[int]*Constant)
 	vmemory = memory.NewVirtualMemory()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
@@ -51,7 +52,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, globalConstants)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -324,7 +325,9 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
-	return &Constant{string(val.Lit), val, types.Integer, current_address}, nil
+	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
+	globalConstants[int(current_address)] = curr_constant
+	return curr_constant, nil
 }
 
 /*
