@@ -38,4 +38,9 @@ func TestReadJSON(t *testing.T) {
 	for _, q := range vm.quads {
 		fmt.Println(q)
 	}
+
+	fmt.Println("Constants in runtime memory:")
+	for key, element := range vm.constants {
+		fmt.Println(key, element)
+	}
 }

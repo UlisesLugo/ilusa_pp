@@ -14,8 +14,9 @@ type VirtualMachine struct {
 	funcTable tables.FuncTable
 	quads     []quadruples.Cuadruplo
 	// memory    memory.VirtualMemory
-	ip     int // instruction pointer
-	paramp int // param pointer
+	ip        int // instruction pointer
+	paramp    int // param pointer
+	constants map[string]int
 	// TODO: Add functions attributes (Act_Records)
 	// TODO: Pasarle los contextos
 }
@@ -27,6 +28,7 @@ func NewVirtualMachine() *VirtualMachine {
 		make([]quadruples.Cuadruplo, 0),
 		0,
 		0,
+		make(map[string]int),
 	}
 }
 

@@ -20,6 +20,10 @@ type Quads struct {
 	Quads []Quad `json:"Quads"`
 }
 
+type Consts struct {
+	Consts map[string]int `json:"Consts"`
+}
+
 func (vm *VirtualMachine) ReadJSON() {
 	jsonFile, err := os.Open("../encoding.obj")
 	// if we os.Open returns an error then handle it
@@ -54,5 +58,15 @@ func (vm *VirtualMachine) ReadJSON() {
 		// Load quad in vm
 		vm.quads = append(vm.quads, quadruples.Cuadruplo{Op: op, Var1: var1, Var2: var2, Res: res})
 	}
+
+	var consts Consts
+
+	error_ctes := json.Unmarshal([]byte(OBJFile), &consts)
+
+	if error_ctes != nil {
+		fmt.Println(error_ctes)
+	}
+
+	vm.constants = consts.Consts
 
 }
