@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/quadruples"
 	"github.com/uliseslugo/ilusa_pp/tables"
 )
@@ -14,9 +13,9 @@ type Attrib interface{}
 type VirtualMachine struct {
 	funcTable tables.FuncTable
 	quads     []quadruples.Cuadruplo
-	memory    memory.VirtualMemory
-	ip        int // instruction pointer
-	paramp    int // param pointer
+	// memory    memory.VirtualMemory
+	ip     int // instruction pointer
+	paramp int // param pointer
 	// TODO: Add functions attributes (Act_Records)
 	// TODO: Pasarle los contextos
 }
@@ -26,16 +25,10 @@ func NewVirtualMachine() *VirtualMachine {
 	return &VirtualMachine{
 		tables.FuncTable{},
 		make([]quadruples.Cuadruplo, 0),
-		memory.VirtualMemory{},
 		0,
 		0,
 	}
 }
-
-// // LoadProgram takes a path to a file and parses its contents to quadruples and constants
-// func (vm *VirtualMachine) LoadObj(path string) {
-// 	//input, err := readFile(path)
-// }
 
 func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
@@ -101,10 +94,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	}
 	return nil
 }
-
-// TODO: Load program
-// TODO: Load quads
-// TODO: Load constants
 
 func (vm *VirtualMachine) RunMachine() error {
 	if len(vm.quads) <= 0 {
