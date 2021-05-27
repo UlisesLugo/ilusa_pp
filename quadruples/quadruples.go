@@ -12,7 +12,7 @@ import (
 	addr3: reference to result variable
 */
 type Cuadruplo struct {
-	Op   string
+	Op   string // TODO: Change to semantic.Operation
 	Var1 string
 	Var2 string
 	Res  string

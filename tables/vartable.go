@@ -3,6 +3,7 @@ package tables
 import (
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
+	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
@@ -20,6 +21,7 @@ type VarRow struct {
 	token_ *token.Token
 	dim1_  int
 	dim2_  int
+	dirV   memory.Address // virtual memory address
 }
 
 // TESTED

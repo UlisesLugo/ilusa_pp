@@ -15,13 +15,8 @@ import (
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
-var globalIntCount int
-var globalFloatCount int
-var localIdCount int
-var globalTempIntCount int
-var globalTempFloatCount int
-var globalTempCharCount int
-var globalTempBoolCount int
+var vmemory *memory.VirtualMemory
+
 var globalStackOperators stacks.Stack
 var globalStackOperands stacks.Stack
 var globalStackTypes stacks.Stack
@@ -30,21 +25,21 @@ var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
 var globalCurrentScope int
 
+var quadsCounter int
+
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
+	vmemory = memory.NewVirtualMemory()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
-	globalCurrentScope = memory.GlobalContext
-	globalIntCount = globalCurrentScope + memory.IntOffset
-	globalFloatCount = globalCurrentScope + memory.FloatOffset
-	// TODO: add
-	localIdCount = globalCurrentScope + memory.IdOffset
-	globalTempIntCount = globalCurrentScope + memory.TempIntOffset
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
+	globalStackTypes = make(stacks.Stack, 0)
+
 	fmt.Println("Defining globals")
 	fmt.Println("\tOperatorsStack:", globalStackOperators)
 	fmt.Println("\tOperandsStack:", globalStackOperands)
 	fmt.Println("\tQuad:", globalCurrQuads)
+	fmt.Println("\tVirtual Memory:", vmemory)
 }
 
 /*
@@ -65,6 +60,7 @@ func NewProgram(id Attrib) (*Program, error) {
 	// Prepend main quad
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
+	quadsCounter++
 	return &Program{nombre, globalCurrQuads, new_id}, nil
 }
 
@@ -89,7 +85,7 @@ func NewClass(id Attrib) (string, error) {
 	returns function row in funciton directory
 */
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
-	if (globalFuncTable == nil){
+	if globalFuncTable == nil {
 		globalFuncTable = tables.NewFuncTable()
 	}
 	tok, ok := id.(*token.Token)
@@ -147,17 +143,22 @@ func NewAssignation(id, exp Attrib) (int, error) {
 	if !tok_ok {
 		return -1, errors.New("Problem in casting id token")
 	}
+
 	globalStackOperators = globalStackOperators.Push(semantic.Assign)
 	fmt.Println("Id: ", string(tok.Lit))
-	current_address := localIdCount + memory.IdOffset
-	localIdCount++ // assign next available address
+	current_address, addr_ok := vmemory.NextGlobal(types.Integer) // TODO Check Types
+
+	if addr_ok != nil {
+		return -1, addr_ok
+	}
+
 	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
 	_, exp_ok := exp.(*Exp)
 	if exp_ok {
 		createUnaryQuadruple(semantic.Equal)
 	}
-	return localIdCount, nil // return row
+	return 1, nil // return row
 }
 
 /*
@@ -216,20 +217,19 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 	for ok && top_level <= level_id { // top level has higher hierarchy level
 		// pop top operator
 		globalStackOperators, _ = globalStackOperators.Pop()
-		// get operand 1
-		curr_top1, _ := globalStackOperands.Top()
-		// pop operand 1
-		globalStackOperands, _ = globalStackOperands.Pop()
 		// get operand 2
 		curr_top2, _ := globalStackOperands.Top()
 		// pop operand 2
 		globalStackOperands, _ = globalStackOperands.Pop()
+		// get operand 1
+		curr_top1, _ := globalStackOperands.Top()
+		// pop operand 1
+		globalStackOperands, _ = globalStackOperands.Pop()
 
 		// generate quad
-		curr_temp := fmt.Sprint(globalTempIntCount) // TODO (Validate type with semantic cube)
-		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, curr_temp}
-		globalStackOperands = globalStackOperands.Push(curr_temp)
-		globalTempIntCount++
+		current_address, _ := vmemory.NextGlobalTemp(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
+		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 
 		top, ok = globalStackOperators.Top()
@@ -247,7 +247,7 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 	top, ok := globalStackOperators.Top()        // get top operator
 	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
 
-	fmt.Println("\tTop",globalStackOperands)
+	fmt.Println("\tTop", globalStackOperands)
 	for ok && top_level <= level_id { // top level has higher hierarchy level
 		// pop top operator
 		globalStackOperators, _ = globalStackOperators.Pop()
@@ -280,11 +280,10 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("problem in id constants")
 	}
+	current_address, _ := vmemory.NextGlobalTemp(types.Ids) // TODO Check Types (Validate type with semantic cube)
 	// calculate current address occuppied in context
-	current_address := localIdCount + memory.IdOffset
-	localIdCount++ // assign next available address
-	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
-	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
 }
 
 /*
@@ -298,10 +297,10 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	current_address := localIdCount + memory.IntOffset
-	globalIntCount++ // assign next available address
-	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
-	return &Constant{string(val.Lit), val, types.Integer, memory.Address(current_address)}, nil
+	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+	fmt.Println("id=", string(val.Lit), " addr=", current_address)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	return &Constant{string(val.Lit), val, types.Integer, current_address}, nil
 }
 
 /*
@@ -315,9 +314,10 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
-	current_address := localIdCount + memory.FloatOffset
-	globalFloatCount++ // assign next available address
-	return &Constant{string(val.Lit), val, types.Float, memory.Address(current_address)}, nil
+	current_address, _ := vmemory.NextGlobalTemp(types.Float) // TODO Check Types (Validate type with semantic cube)
+	fmt.Println("id=", val.Lit, " addr=", current_address)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	return &Constant{string(val.Lit), val, types.Float, current_address}, nil
 }
 
 func FinishInput(idList Attrib) (int, error) {
@@ -326,19 +326,19 @@ func FinishInput(idList Attrib) (int, error) {
 		return -1, errors.New("problem casting constant in input")
 	}
 	for _, id := range id_list {
-		curr_quad := quadruples.Cuadruplo{"READ","-1","-1",fmt.Sprint(id.Address())}
+		curr_quad := quadruples.Cuadruplo{"READ", "-1", "-1", fmt.Sprint(id.Address())}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 	}
 	return 1, nil
 }
 
-func NewInput(id, idList Attrib) ([]*Constant, error){
+func NewInput(id, idList Attrib) ([]*Constant, error) {
 	new_id, ok := id.(*Constant)
 	id_list, _ := idList.([]*Constant)
 	if !ok {
 		return nil, errors.New("problem casting constant in input")
 	}
-	return append([]*Constant{new_id} ,id_list...), nil // Prepend (Add first)
+	return append([]*Constant{new_id}, id_list...), nil // Prepend (Add first)
 }
 
 /*
@@ -354,30 +354,37 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	// TODO (Access id address from vartable scope instead of curr address)
 	// TODO (Check dimensions)
 	// calculate current address occuppied in context
-	current_address := localIdCount + memory.IdOffset
-	localIdCount++ // assign next available address
-	return &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
+	current_address, _ := vmemory.NextGlobalTemp(types.Ids) // TODO Check Types (Validate type with semantic cube)
+	return &Constant{string(val.Lit), val, types.Ids, current_address}, nil
 }
 
 func FinishOutput(idList Attrib) (int, error) {
 	id_list, ok := idList.([]*Exp)
+
 	if !ok {
 		return -1, errors.New("problem casting constant in input")
 	}
-	for _, id := range id_list {
-		curr_quad := quadruples.Cuadruplo{"WRITE","-1","-1",fmt.Sprint(id.const_.Address())}
+	for i, _ := range id_list {
+		fmt.Println("In write id list#", i)
+		output_str, ok := globalStackOperands.Top()
+		if !ok {
+			return -1, errors.New("stack is empty in writing")
+		}
+		globalStackOperands, _ = globalStackOperands.Pop()
+
+		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", output_str}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
 	}
 	return 1, nil
 }
 
-func NewOutput(id, idList Attrib) ([]*Exp, error){
+func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	new_id, ok := id.(*Exp)
 	id_list, _ := idList.([]*Exp)
 	if !ok {
 		return nil, errors.New("problem casting constant in output")
 	}
-	return append([]*Exp{new_id} ,id_list...), nil // Prepend (Add first)
+	return append([]*Exp{new_id}, id_list...), nil // Prepend (Add first)
 }
 
 func Return(exp Attrib) (*Exp, error) {
@@ -390,7 +397,7 @@ func Return(exp Attrib) (*Exp, error) {
 		return nil, errors.New("stack is empty in return")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
-	curr_quad := quadruples.Cuadruplo{"RETURN","-1","-1",curr_top}
+	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
 	globalCurrQuads = append(globalCurrQuads, curr_quad)
 	return new_exp, nil
 }

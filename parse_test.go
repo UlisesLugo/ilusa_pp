@@ -5,6 +5,8 @@ import (
 	"os"
 	"testing"
 
+	"encoding/json"
+
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
 	"github.com/uliseslugo/ilusa_pp/gocc/parser"
@@ -37,7 +39,11 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
+<<<<<<< HEAD
 		"vars_test_1.txt",
+=======
+		"expr_test_2.txt",
+>>>>>>> 93eb5621e2e24fe71401d6ded6fe97e774cce622
 	}
 
 	for _, test := range tests {
@@ -56,13 +62,18 @@ func TestDuck(t *testing.T) {
 		}
 
 		prog, ok := st.(*ast.Program)
+
+		// TODO: create obj_test
+
 		if !ok {
 			t.Error("Program failed")
 		} else {
-			fmt.Println("Program name:", prog)
-			fmt.Println("------------")
-			fmt.Println("Quads")
-			fmt.Println("------------")
+			f, err := os.Create("encoding.obj")
+			if err != nil {
+				panic(err)
+			}
+			enc := json.NewEncoder(f)
+			enc.Encode(prog.Quads())
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])
 			}
