@@ -23,12 +23,14 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
+var globalConstants map[int]*Constant
 var globalCurrentScope int
 
 var quadsCounter int
 
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
+	globalFuncTable = tables.NewFuncTable()
 	vmemory = memory.NewVirtualMemory()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
@@ -85,9 +87,6 @@ func NewClass(id Attrib) (string, error) {
 	returns function row in funciton directory
 */
 func NewFunction(id Attrib) (*tables.FuncRow, error) {
-	if globalFuncTable == nil {
-		globalFuncTable = tables.NewFuncTable()
-	}
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errors.New("problem reading function")
