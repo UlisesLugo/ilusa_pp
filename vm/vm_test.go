@@ -1,6 +1,7 @@
 package vm
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -33,4 +34,8 @@ func TestReadJSON(t *testing.T) {
 
 	vm.ReadJSON()
 
+	fmt.Println("Quads in runtime memory:")
+	for _, q := range vm.quads {
+		fmt.Println(q)
+	}
 }
