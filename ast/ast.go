@@ -16,6 +16,7 @@ import (
 )
 
 var vmemory *memory.VirtualMemory
+var constantsMap map[string]int 
 
 var globalStackOperators stacks.Stack
 var globalStackOperands stacks.Stack
@@ -23,7 +24,6 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
-var globalConstants map[int]*Constant
 var globalCurrentScope int
 
 var quadsCounter int
@@ -31,8 +31,8 @@ var quadsCounter int
 func init() {
 	// globalSemanticCube := semantic.NewSemanticCube()
 	globalFuncTable = tables.NewFuncTable()
-	globalConstants = make(map[int]*Constant)
 	vmemory = memory.NewVirtualMemory()
+	constantsMap = vmemory.ConstantMap()
 	globalStackOperands := make(stacks.Stack, 0)
 	globalStackOperators := make(stacks.Stack, 0)
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
@@ -52,7 +52,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, globalConstants)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -64,7 +64,7 @@ func NewProgram(id Attrib) (*Program, error) {
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	quadsCounter++
-	return &Program{nombre, globalCurrQuads, new_id}, nil
+	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
 }
 
 /*
@@ -326,7 +326,7 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
-	globalConstants[int(current_address)] = curr_constant
+	constantsMap[string(val.Lit)] = int(current_address)
 	return curr_constant, nil
 }
 

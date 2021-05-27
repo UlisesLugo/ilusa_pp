@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	// "encoding/json"
+	"encoding/json"
 
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
@@ -39,7 +39,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"vars_test_1.txt",
+		"expr_test_2.txt",
 	}
 
 	for _, test := range tests {
@@ -64,19 +64,22 @@ func TestDuck(t *testing.T) {
 		if !ok {
 			t.Error("Program failed")
 		} else {
-			// f, err := os.Create("encoding.obj")
-			// if err != nil {
-			// 	panic(err)
-			// }
-			// enc := json.NewEncoder(f)
+			f, err := os.Create("encoding.obj")
+			if err != nil {
+				panic(err)
+			}
+			enc := json.NewEncoder(f)
 
-			// obj_map := make(map[string]interface{}) // map of key: json object
+			obj_map := make(map[string]interface{}) // map of key: json object
 
-			// // set key for Quads
-			// obj_map["Quads"] = prog.Quads()
+			// set key for Quads
+			obj_map["Quads"] = prog.Quads()
 
-			// // encodigin map
-			// enc.Encode(obj_map)
+			// set key for Constants Table
+			obj_map["Consts"] = prog.Consts()
+
+			// encodigin map
+			enc.Encode(obj_map)
 
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])

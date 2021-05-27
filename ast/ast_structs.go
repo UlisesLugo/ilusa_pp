@@ -25,6 +25,7 @@ type Program struct {
 	nombre string
 	quads_ []quadruples.Cuadruplo
 	id     *token.Token
+	constants map[string]int
 }
 
 func (p *Program) String() string {
@@ -33,6 +34,10 @@ func (p *Program) String() string {
 
 func (p *Program) Quads() []quadruples.Cuadruplo {
 	return p.quads_
+}
+
+func (p *Program) Consts() map[string]int {
+	return p.constants
 }
 
 /*
