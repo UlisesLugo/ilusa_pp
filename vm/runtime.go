@@ -7,9 +7,9 @@ import (
 )
 
 // Memory Segment for Run-time
-type MemorySegment struct {
+type MemoryBlock struct {
 	baseAddr memory.Address
-	id       string                 // id for memory segment (Example: Global)
+	id       string                 // id for memory block (Example: Global)
 	integers map[memory.Address]int // address - value -> TODO: del tama;o de los contadores de ese contexto
 	floats   map[memory.Address]float64
 	chars    map[memory.Address]rune
@@ -17,16 +17,34 @@ type MemorySegment struct {
 	ids      map[memory.Address]string
 }
 
-// TODO: main directory for memory addresses separated by scope
-// // Memory represents the virtual memory for the virtual machine
-// // it contains one MemorySegment for each segment
-// type Memory struct {
-// 	memglobal   *MemorySegment
-// 	memlocal    *MemorySegment
-// 	memtemp     *MemorySegment
-// 	memconstant *MemorySegment
-// 	memscope    *MemorySegment
-// }
+func NewMemoryBlock(context_id string, context_start int) *MemoryBlock {
+	return &MemoryBlock{
+		memory.Address(context_start),
+		context_id,
+		make(map[memory.Address]int),
+		make(map[memory.Address]float64),
+		make(map[memory.Address]rune),
+		make(map[memory.Address]int),
+		make(map[memory.Address]string),
+	}
+}
+
+// Memory represents the virtual memory for the virtual machine
+type Memory struct {
+	mem_global   *MemoryBlock
+	mem_local    *MemoryBlock
+	mem_constant *MemoryBlock
+	mem_scope    *MemoryBlock
+}
+
+func NewMemory() *Memory {
+	return &Memory{
+		NewMemoryBlock("GlobalContext", memory.GlobalContext),
+		NewMemoryBlock("LocalContext", memory.LocalContext),
+		NewMemoryBlock("ConstantsContext", memory.ConstantsContext),
+		NewMemoryBlock("PointersContext", memory.PointersContext),
+	}
+}
 
 /**
 	GetValue
@@ -34,10 +52,10 @@ type MemorySegment struct {
 	@param addr address of stored value
 	return value
 **/
-func (mem_segment MemorySegment) GetValue(addr memory.Address) (interface{}, error) {
+func (mb MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 	// If memory in local segment
 	// mem_segment.baseAddr = 0
-	baseAddr := addr - mem_segment.baseAddr
+	baseAddr := addr - mb.baseAddr
 
 	if addr < 0 {
 		return nil, errors.New("Address out of scope.")
@@ -46,19 +64,19 @@ func (mem_segment MemorySegment) GetValue(addr memory.Address) (interface{}, err
 	switch {
 	case baseAddr >= 0 && baseAddr <= 999:
 		// Get integer
-		return mem_segment.integers[baseAddr], nil
+		return mb.integers[baseAddr], nil
 	case addr >= 1000 && addr <= 1999:
 		// Get float
-		return mem_segment.floats[baseAddr], nil
+		return mb.floats[baseAddr], nil
 	case addr >= 2000 && addr <= 2999:
 		// Get char
-		return mem_segment.chars[baseAddr], nil
+		return mb.chars[baseAddr], nil
 	case addr >= 3000 && addr <= 3999:
 		// Get bool
-		return mem_segment.booleans[baseAddr], nil
+		return mb.booleans[baseAddr], nil
 	case addr >= 4000 && addr <= 4999:
 		// Get id
-		return mem_segment.ids[baseAddr], nil
+		return mb.ids[baseAddr], nil
 
 	default:
 		return nil, errors.New("Address out of scope")
@@ -71,7 +89,7 @@ func (mem_segment MemorySegment) GetValue(addr memory.Address) (interface{}, err
 	@param value to put at address -> Hay que pasarle el int(address - offset) (Ejemplo: si la dir es 5003 -> pasarle 3)
 	@param addr address for Run-time memory
 **/
-func (mem_segment MemorySegment) SetValue(value interface{}, addr memory.Address) error {
+func (mem_segment MemoryBlock) SetValue(value interface{}, addr memory.Address) error {
 	if addr < 0 {
 		return errors.New("Address out of scope.")
 	}
