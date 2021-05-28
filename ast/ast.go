@@ -305,7 +305,8 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("problem in id constants")
 	}
-	current_address, _ := vmemory.NextGlobalTemp(types.Ids) // TODO Check Types (Validate type with semantic cube)
+	// TODO (Check that variable is declared in var table)
+	current_address, _ := vmemory.NextGlobalTemp(types.Ids)
 	// calculate current address occuppied in context
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
@@ -322,11 +323,16 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+	var current_address memory.Address
+	if addr, ok := constantsMap[string(val.Lit)]; ok {
+		current_address = memory.Address(addr)
+	} else {
+		current_address, _ = vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		constantsMap[string(val.Lit)] = int(current_address)
+	}
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
-	constantsMap[string(val.Lit)] = int(current_address)
 	return curr_constant, nil
 }
 
@@ -341,7 +347,13 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextGlobalTemp(types.Float) // TODO Check Types (Validate type with semantic cube)
+	var current_address memory.Address
+	if addr, ok := constantsMap[string(val.Lit)]; ok {
+		current_address = memory.Address(addr)
+	} else {
+		current_address, _ = vmemory.NextConst(types.Float) // TODO Check Types (Validate type with semantic cube)
+		constantsMap[string(val.Lit)] = int(current_address)
+	}
 	fmt.Println("id=", val.Lit, " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Float, current_address}, nil
