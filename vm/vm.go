@@ -35,31 +35,6 @@ func NewVirtualMachine() *VirtualMachine {
 	}
 }
 
-func (vm *VirtualMachine) GetConstValue(addr int) interface{} {
-	if vm.constants == nil {
-		return errors.New("Constants map empty in VM.")
-	}
-
-	a := memory.Address(addr)
-	return vm.mm.mem_constant.memlist[a].(int)
-
-}
-
-func (vm *VirtualMachine) GetContext(addr string) string {
-	switch a := addr; {
-	case a >= "0" && a < "8000":
-		return "Global"
-	case a >= "8000" && a < "16000":
-		return "Local"
-	case a >= "16000" && a < "20000":
-		return "Constants"
-	case a >= "20000" && a < "30000":
-		return "Pointers"
-	}
-
-	return "Null"
-}
-
 func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
@@ -67,20 +42,27 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		return errors.New("Couldn't cast to Cuadruplo.")
 	}
 
-	lop, _ := strconv.Atoi(quad.Var1)
-	leftVal := vm.GetConstValue(lop).(int)
+	// cast string values from quads to address
+	int_var1, err_v1 := strconv.Atoi(quad.Var1)
+	int_var2, err_v2 := strconv.Atoi(quad.Var2)
+	int_var3, err_v3 := strconv.Atoi(quad.Res)
 
-	rop, _ := strconv.Atoi(quad.Var2)
-	rightVal := vm.GetConstValue(rop).(int)
+	if err_v1 != nil || err_v2 != nil || err_v3 != nil {
+		return errors.New("Couldn't cast quad addresses from string to memory Address type")
+	}
 
-	fmt.Println(leftVal)
-	fmt.Println(rightVal)
-	// fmt.Println("lop"+leftOperator, "rop"+rightOperator)
+	addr_1 := memory.Address(int_var1)
+	addr_2 := memory.Address(int_var2)
+	addr_res := memory.Address(int_var3)
 
 	switch quad.Op {
 	case "+":
-		fmt.Println(leftVal + rightVal)
-		return nil
+		fmt.Println("Add ", addr_1, addr_2)
+		op_err := vm.Add(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 	case "-":
 		return nil
 	case "*":
@@ -129,34 +111,39 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	return nil
 }
 
+func (vm *VirtualMachine) RunQuad(q Attrib) error {
+	quad, ok := q.(quadruples.Cuadruplo)
+
+	if !ok {
+		return errors.New("Error running quad " + fmt.Sprint(vm.ip))
+	}
+
+	if quad.Var1 == "-1" || quad.Var2 == "-1" {
+		fmt.Println("Running uniry quad", vm.ip)
+		vm.RunUnaryQuad(q)
+	} else {
+		fmt.Println("Running binary quad", vm.ip)
+		vm.RunBinaryQuad(q)
+	}
+	return nil
+}
+
 func (vm *VirtualMachine) RunMachine() {
 	if len(vm.quads) <= 0 {
 		fmt.Println("Quadruples list is empty.")
 	}
 
-	err_cte := vm.LoadConstants()
+	err_ctes := vm.LoadConstants()
 
-	if err_cte != nil {
+	if err_ctes != nil {
 		fmt.Println("Couldn't load constants to main memory.")
 	}
-
-	// Load Constants Map from VM to memory
-	fmt.Println("Constants in MM")
-	fmt.Println(vm.mm.mem_constant.memlist)
 
 	// TODO: Push main activation record
 
 	// execute quad
 	for i := range vm.quads {
 		q := vm.quads[i]
-		if q.Var1 == "-1" || q.Var2 == "-1" {
-			fmt.Println("Running uniry quad", vm.ip)
-			vm.RunUnaryQuad(q)
-			vm.ip++
-		} else {
-			fmt.Println("Running binary quad", vm.ip)
-			vm.RunBinaryQuad(q)
-			vm.ip++
-		}
+		vm.RunQuad(q)
 	}
 }

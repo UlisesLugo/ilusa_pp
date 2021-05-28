@@ -89,25 +89,47 @@ func (vm *VirtualMachine) LoadConstants() error {
 		return errors.New("Constants map empty in VM.")
 	}
 
-	fmt.Println("Constants in Load", vm.constants)
 	for key, val := range vm.constants {
-		addr := memory.Address(val)
-
 		// insert value in constants memory
-		switch a := addr; {
-		case a >= 16000 && a < 17000:
+		switch a := memory.Address(val) - vm.mm.mem_constant.baseAddr; {
+		case a >= 0 && a < 1000:
 			int_val, _ := strconv.Atoi(key)
-			vm.mm.mem_constant.memlist[addr] = int_val
-		case a >= 17000 && a < 18000:
+			vm.mm.mem_constant.integers[a] = int_val
+		case a >= 1000 && a < 2000:
 			flt_val, _ := strconv.ParseFloat(key, 64)
-			vm.mm.mem_constant.memlist[addr] = flt_val
-		case addr >= 18000 && addr < 19000:
+			vm.mm.mem_constant.floats[a] = flt_val
+		case a >= 2000 && a < 3000:
 			char_val := key[0]
-			vm.mm.mem_constant.memlist[addr] = rune(char_val)
+			vm.mm.mem_constant.chars[a] = rune(char_val)
 		}
 	}
 
 	return nil
 }
 
-// TODO: Get type of address so we know what type to cast it with
+// get num
+func getNum(val interface{}) (int, error) {
+	int_, ok := val.(int)
+
+	if !ok {
+		return 0, errors.New("Cannot convert current value to num")
+	}
+
+	return int_, nil
+}
+
+func getFloat(val interface{}) (float64, error) {
+	flt_, ok := val.(float64)
+
+	if !ok {
+		return 0, errors.New("Cannot convert current value to num")
+	}
+
+	return flt_, nil
+}
+
+// TODO: get char
+
+// get bool
+
+// get id
