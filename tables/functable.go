@@ -59,6 +59,14 @@ func (fr *FuncRow) SetParams(curr_params []types.CoreType) {
 	fr.params = curr_params
 }
 
+func (fr *FuncRow) LocalVars() *VarTable {
+	return fr.local_vars
+}
+
+func (fr *FuncRow) SetLocalVars(local_vars_ *VarTable) {
+	fr.local_vars = local_vars_
+}
+
 // Getter for Function Table
 func (ft *FuncTable) Table() map[string]*FuncRow {
 	return ft.table

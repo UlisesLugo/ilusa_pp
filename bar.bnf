@@ -21,7 +21,7 @@ cte_string : '"' {.} '"' ;
 
 P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
 P1 : empty | CL ;
-P2 : empty | DV ;
+P2 : empty | DV << ast.GlobalVarDec($0) >>;
 P3 : empty | F ;
 
 B : "main" "(" ")" "{" B1 "}" ;
@@ -53,10 +53,10 @@ TIP_SIMP : "int" << types.Integer, nil >>
  | "float" << types.Float, nil >>;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2) >> ;
+F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2, $7) >> ;
 F1 : TIP_SIMP | "void" ;
-F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
-F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
+F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1, nil) >>;
+F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2, nil) >>;
 F4 : empty | F ;
 
 EST : AS | DEC | ESC << ast.FinishOutput($0) >>

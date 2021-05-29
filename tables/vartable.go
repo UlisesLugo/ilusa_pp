@@ -103,6 +103,14 @@ func (vt *VarTable) Parent() *VarTable {
 	return vt.parent
 }
 
+func (vt *VarTable) SetTable(table_ map[string]*VarRow){
+	vt.table = table_
+} 
+
+func (vt *VarTable) SetParent(parent_ *VarTable){
+	vt.parent = parent_
+}
+
 /*
 	AddRow
 	@param id

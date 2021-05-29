@@ -1,18 +1,18 @@
 8 LR-1 conflicts: 
 	S141
 		symbol: [
-			Shift(209)
 			Reduce(79:VAR1 : empty	<<  >>)
+			Shift(209)
 	S643
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
 		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
+		symbol: float
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(22)
 	S654
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
@@ -25,8 +25,8 @@
 			Shift(22)
 	S666
 		symbol: int
-			Shift(20)
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
@@ -35,8 +35,8 @@
 			Shift(22)
 	S670
 		symbol: int
-			Shift(20)
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
@@ -55,14 +55,14 @@
 			Shift(22)
 	S678
 		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 	S680
 		symbol: function
 			Reduce(48:F4 : empty	<<  >>)

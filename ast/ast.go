@@ -25,6 +25,7 @@ var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
 var globalCurrentScope int
+var globalVarTable *tables.VarTable
 
 var quadsCounter int
 
@@ -87,7 +88,7 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id Attrib) (*tables.FuncRow, error) {
+func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errors.New("problem reading function")
@@ -96,10 +97,30 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
 	row.SetId(idName)
+	if var_map != nil {
+		new_var_map, _ := var_map.(map[string]*tables.VarRow)
+		new_var_table := &tables.VarTable{}
+		new_var_table.SetParent(globalVarTable) // Sets global table as parent
+		new_var_table.SetTable(new_var_map)
+		row.SetLocalVars(new_var_table)
+	}
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
 	fmt.Println("Function:", row.Id())
 	return row, nil
+}
+
+/* GlobalVarDec
+*/
+func GlobalVarDec(var_map Attrib) (int, error){
+	if var_map == nil{
+		return 0, nil
+	}
+	new_var_map, _ := var_map.(map[string]*tables.VarRow)
+	globalVarTable = &tables.VarTable{}
+	globalVarTable.SetTable(new_var_map)
+	fmt.Println("In global var dec", globalVarTable.Table())
+	return 1,nil
 }
 
 
