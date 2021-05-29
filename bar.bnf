@@ -35,8 +35,8 @@ ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
 ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-DV : "variables" "{" DV1 "}" ;
-DV1 : empty | DV2 ";" DV1 ;
+DV : "variables" "{" DV1 "}" << $2, nil >>;
+DV1 : empty | DV2 ";" DV1 << ast.NewBlockVariables($0,$2) >> ;
 DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
 DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
 DV4 : empty | "," id DV4 ;

@@ -242,13 +242,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV : "variables" "{" DV1 "}"	<<  >>`,
+		String: `DV : "variables" "{" DV1 "}"	<< X[2], nil >>`,
 		Id:         "DV",
 		NTType:     14,
 		Index:      22,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return X[2], nil
 		},
 	},
 	ProdTabEntry{
@@ -262,13 +262,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : DV2 ";" DV1	<<  >>`,
+		String: `DV1 : DV2 ";" DV1	<< ast.NewBlockVariables(X[0],X[2]) >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      24,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewBlockVariables(X[0],X[2])
 		},
 	},
 	ProdTabEntry{

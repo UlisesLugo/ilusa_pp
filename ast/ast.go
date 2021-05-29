@@ -102,6 +102,32 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	return row, nil
 }
 
+
+/*
+	NewTypeVariables
+	@param var_map Attrib
+	@param next_var_map Attrib
+	returns variable map[string]VarRow
+*/
+func NewBlockVariables(var_map, next_var_map Attrib)(map[string]*tables.VarRow,error){
+	new_var_map, ok := var_map.(map[string]*tables.VarRow)
+	if !ok {
+		return nil, errors.New("Problem in casting var map in block variable")
+	}
+	if next_var_map == nil {
+		return new_var_map, nil
+	}
+	new_next_var_map, _ := next_var_map.(map[string]*tables.VarRow)
+	for _, val := range new_next_var_map {
+		if _, ok := new_var_map[val.Id()]; ok {
+			return nil, errors.New(fmt.Sprint("Id redeclaration:",val.Id()))
+		}
+		new_var_map[val.Id()] = val
+	}
+	return new_var_map, nil
+}
+
+
 /*
 	NewTypeVariables
 	@param id Attrib
@@ -111,7 +137,6 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 */
 func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, error) {
 	new_typed_var, ok := typed_var.([]*tables.VarRow)
-	fmt.Println("In new typed var")
 	curr_map := make(map[string]*tables.VarRow)
 	if !ok || len(new_typed_var) != 1 {
 		return nil, errors.New("problem in casting typed variable")
@@ -119,7 +144,13 @@ func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, er
 	curr_map[new_typed_var[0].Id()] = new_typed_var[0]
 	if var_list != nil {
 		new_var_list := var_list.([]*tables.VarRow)
-		fmt.Println("\t Len of list",len(new_var_list))
+		for _, row := range new_var_list {
+			// Check if id is already declared (same type only)
+			if _, ok := curr_map[row.Id()]; ok {
+				return nil, errors.New(fmt.Sprint("Id redeclaration:",row.Id()))
+			}
+			curr_map[row.Id()] = row
+		}
 	}
 	return curr_map, nil
 }
@@ -135,7 +166,6 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
 	new_rows, _ := rows.([]*tables.VarRow)
-	fmt.Println("In New variable", dim1, dim2)
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
@@ -151,7 +181,6 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
-	fmt.Println("New var:", row.Id())
 	return append([]*tables.VarRow{row} ,new_rows...), nil
 }
 
