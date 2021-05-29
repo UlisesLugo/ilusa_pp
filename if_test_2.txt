@@ -1,0 +1,6 @@
+Program firstTest :
+  main() {
+      if(2 > 1){
+          output(2);
+      }
+  }
