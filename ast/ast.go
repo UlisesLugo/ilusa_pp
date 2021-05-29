@@ -202,7 +202,42 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
+	current_address, err := vmemory.NextGlobal(types.Ids)
+	if err != nil {
+		return nil, err
+	}
+	row.SetDirV(current_address)
+	fmt.Println("In Var dec",row)
 	return append([]*tables.VarRow{row} ,new_rows...), nil
+}
+
+
+/*
+	New If
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewIf(exp, est, est_list Attrib) (int, error) {
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return -1, errors.New("problem in casting h_exp @if")
+	}
+	fmt.Println("In new If", new_exp)
+	return 0,nil
+}
+
+/*
+	NewElse
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewElse(est, est_list Attrib) (int, error) {
+	fmt.Println("In new else", est)
+	return 0,nil
 }
 
 /*
@@ -303,6 +338,7 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 
 		// generate quad
 		current_address, _ := vmemory.NextGlobalTemp(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		fmt.Println("Adding quad temp", current_address)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
@@ -356,7 +392,11 @@ func NewIdConst(id Attrib) (*Constant, error) {
 		return nil, errors.New("problem in id constants")
 	}
 	// TODO (Check that variable is declared in var table)
-	current_address, _ := vmemory.NextGlobalTemp(types.Ids)
+	addr, ok := globalVarTable.Table()[string(val.Lit)]
+	if !ok {
+		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
+	}
+	current_address := memory.Address(addr.DirV())
 	// calculate current address occuppied in context
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Char, current_address}, nil

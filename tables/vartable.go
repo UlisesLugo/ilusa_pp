@@ -21,7 +21,7 @@ type VarRow struct {
 	token_ *token.Token
 	dim1_  int
 	dim2_  int
-	dirV   memory.Address // virtual memory address
+	dirV_   memory.Address // virtual memory address
 }
 
 // TESTED
@@ -56,6 +56,10 @@ func (vr *VarRow) Dim2() int {
 	return vr.dim2_
 }
 
+func (vr *VarRow) DirV() memory.Address {
+	return vr.dirV_
+}
+
 // TESTED
 
 // Setter
@@ -81,6 +85,10 @@ func (vr *VarRow) SetDim1(dim1 int) {
 // Setter
 func (vr *VarRow) SetDim2(dim2 int) {
 	vr.dim2_ = dim2
+}
+
+func (vr *VarRow) SetDirV(dirV memory.Address){
+	vr.dirV_ = dirV
 }
 
 /*

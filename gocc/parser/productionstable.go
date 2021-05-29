@@ -742,13 +742,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<<  >>`,
+		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6]) >>`,
 		Id:         "DEC",
 		NTType:     39,
 		Index:      72,
 		NumSymbols: 9,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewIf(X[2],X[5],X[6])
 		},
 	},
 	ProdTabEntry{
@@ -762,13 +762,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC1 : "else" "{" EST B1 "}"	<<  >>`,
+		String: `DEC1 : "else" "{" EST B1 "}"	<< ast.NewElse(X[2],X[3]) >>`,
 		Id:         "DEC1",
 		NTType:     40,
 		Index:      74,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewElse(X[2],X[3])
 		},
 	},
 	ProdTabEntry{
