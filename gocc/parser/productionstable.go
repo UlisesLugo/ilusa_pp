@@ -532,13 +532,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `EST : DEC	<<  >>`,
+		String: `EST : DEC	<< ast.FinishIf(X[0]) >>`,
 		Id:         "EST",
 		NTType:     28,
 		Index:      51,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.FinishIf(X[0])
 		},
 	},
 	ProdTabEntry{

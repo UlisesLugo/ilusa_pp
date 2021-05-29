@@ -4,6 +4,7 @@ import (
 	// go packages
 	"errors"
 	"fmt"
+	"strconv"
 
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
@@ -63,8 +64,10 @@ func NewProgram(id Attrib) (*Program, error) {
 	}
 	// Prepend main quad
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
+	end_quad := quadruples.Cuadruplo{"END","-1","-1","-1"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
-	quadsCounter++
+	globalCurrQuads = append(globalCurrQuads, end_quad)
+	quadsCounter+= 2
 	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
 }
 
@@ -217,14 +220,42 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewIf(exp, est, est_list Attrib) (int, error) {
+func NewIf(exp, est, est_list Attrib) (quadruples.Cuadruplo, error) {
 	_, ok := exp.(*Exp)
 	if !ok {
-		return -1, errors.New("problem in casting h_exp @if")
+		return quadruples.Cuadruplo{}, errors.New("problem in casting h_exp @if")
 	}
-	// Validate boolean expr in stack types
-	fmt.Println("In new If", globalStackOperands, quadsCounter)
-	return 0,nil
+	// TODO Validate boolean expr in stack types
+	// get operand 1
+	curr_top1, ok := globalStackOperands.Top() // Get result
+	if !ok {
+		return quadruples.Cuadruplo{}, errors.New("Cannot make if without expr")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	curr_quad := quadruples.Cuadruplo{"GOTOF", curr_top1,"-1","-2"}
+	globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
+	globalCurrQuads = append(globalCurrQuads, curr_quad)
+	quadsCounter++
+
+	new_quads, ok := est.([]quadruples.Cuadruplo)
+	if ok {
+		for _, quad := range new_quads {
+			globalCurrQuads = append(globalCurrQuads, quad)
+			quadsCounter++
+		}
+	}
+	return curr_quad,nil
+}
+
+func FinishIf(decision Attrib) (int, error) {
+	new_end, ok := globalStackJumps.Top()
+	if !ok {
+		return -1, errors.New("expected finish of if")
+	}
+	int_end, _ := strconv.Atoi(new_end)
+	globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+1)
+	globalStackJumps, _ = globalStackJumps.Pop()
+	return 1, nil
 }
 
 /*
@@ -503,25 +534,25 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	return &Constant{string(val.Lit), val, types.Ids, current_address}, nil
 }
 
-func FinishOutput(idList Attrib) (int, error) {
+func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	id_list, ok := idList.([]*Exp)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
 
 	if !ok {
-		return -1, errors.New("problem casting constant in input")
+		return nil, errors.New("problem casting constant in input")
 	}
 	for i, _ := range id_list {
 		fmt.Println("In write id list#", i)
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
-			return -1, errors.New("stack is empty in writing")
+			return nil, errors.New("stack is empty in writing")
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
 
 		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", output_str}
-		globalCurrQuads = append(globalCurrQuads, curr_quad)
-		quadsCounter++
+		curr_quads = append(curr_quads, curr_quad)
 	}
-	return 1, nil
+	return curr_quads, nil
 }
 
 func NewOutput(id, idList Attrib) ([]*Exp, error) {
