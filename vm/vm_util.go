@@ -118,6 +118,7 @@ func getNum(val interface{}) (int, error) {
 	return int_, nil
 }
 
+// getFloat
 func getFloat(val interface{}) (float64, error) {
 	flt_, ok := val.(float64)
 

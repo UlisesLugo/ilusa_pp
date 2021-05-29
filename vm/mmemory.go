@@ -51,7 +51,7 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 		}
 		return val, nil
 	case addr < memory.Scopestart: // Referring to Global var
-		// TODO: indirect addressing
+		// TODO-ISA: indirect addressing
 		// val, err := mm.mem_pointers.GetValue(addr)
 		// if err != nil {
 		// 	return nil, err
@@ -62,6 +62,12 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 	return nil, errors.New("Address out of scope")
 }
 
+/**
+	SetValue
+	@param addr memory address
+	@param val value to be stored
+	checks the context of the address and calls setValue of given context
+**/
 func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 	switch {
 	case addr < memory.GlobalContext: // < 0
@@ -86,7 +92,7 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		return nil
 
 	case addr < memory.Scopestart: // Referring to Global var
-		// TODO: indirect addressing
+		// TODO-ISA: indirect addressing
 		// err := mm.mem_global.SetValue(addr, val)
 		// if err != nil {
 		// 	return err

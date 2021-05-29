@@ -6,16 +6,15 @@ import (
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
 
-// Memory Segment for Run-time
+// Memory Segment for Run-time Memory
 type MemoryBlock struct {
 	baseAddr memory.Address
-	id       string // id for memory block (Example: Global)
-	// memlist  map[memory.Address]interface{}
-	integers [100]int
-	floats   [100]float64
-	chars    [100]rune
-	bools    [100]int
-	ids      [100]string
+	id       string       // id for memory block (Example: Global)
+	integers [100]int     // integeres memory
+	floats   [100]float64 // floats memory
+	chars    [100]rune    // chars memory
+	bools    [100]int     // bools memory
+	ids      [100]string  // ids memory
 }
 
 func NewMemoryBlock(context_id string, context_start int) *MemoryBlock {
@@ -90,7 +89,7 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		typeAddr := int(idx - memory.CharOffset)
 		mb.chars[typeAddr] = val.(rune) // set
 		return nil
-		// TODO: case idx < memory.IdOffset: // id
+		// TODO-ISA: case idx < memory.IdOffset: // id
 		// 	return nil, nil
 	}
 	return errors.New("Address out of scope")

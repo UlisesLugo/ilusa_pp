@@ -12,29 +12,39 @@ import (
 
 type Attrib interface{}
 
+// Our virtual machine structure
 type VirtualMachine struct {
-	funcTable tables.FuncTable
-	quads     []quadruples.Cuadruplo
-	ip        int // instruction pointer
-	paramp    int // param pointer
-	constants map[string]int
-	mm        *Memory
+	funcTable tables.FuncTable       // function directory
+	quads     []quadruples.Cuadruplo // code
+	ip        int                    // instruction pointer
+	paramp    int                    // param pointer
+	constants map[string]int         // constants in virtual memory
+	mm        *Memory                // memory of vm
 	// TODO: Add functions attributes (Act_Records)
-	// TODO: Pasarle los contextos
 }
 
-// TODO: NewVirtualMachine
+/**
+	NewVirtualMachine
+	return vm
+	initializes VM struct
+**/
 func NewVirtualMachine() *VirtualMachine {
 	return &VirtualMachine{
-		tables.FuncTable{},
-		make([]quadruples.Cuadruplo, 0),
-		0,
-		0,
-		make(map[string]int), // constants map
-		NewMemory(),          // main memory
+		tables.FuncTable{},              // functable
+		make([]quadruples.Cuadruplo, 0), // quads[]
+		0,                               // ip
+		0,                               // paramp
+		make(map[string]int),            // constants map
+		NewMemory(),                     // main memory of machine
 	}
 }
 
+/**
+	RunBinaryQuad
+	@param q quad
+	returns error
+	executes operation for binary quadruple
+**/
 func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
@@ -42,7 +52,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		return errors.New("Couldn't cast to Cuadruplo.")
 	}
 
-	// cast string values from quads to address
+	// cast string values from quads to integers
 	int_var1, err_v1 := strconv.Atoi(quad.Var1)
 	int_var2, err_v2 := strconv.Atoi(quad.Var2)
 	int_var3, err_v3 := strconv.Atoi(quad.Res)
@@ -51,13 +61,14 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		return errors.New("Couldn't cast quad addresses from string to memory Address type")
 	}
 
+	// cast int values to memory addresses
 	addr_1 := memory.Address(int_var1)
 	addr_2 := memory.Address(int_var2)
 	addr_res := memory.Address(int_var3)
 
+	// Execute binary operation
 	switch quad.Op {
 	case "+":
-		fmt.Println("Add ", addr_1, addr_2)
 		op_err := vm.Add(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -90,6 +101,14 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	return nil
 }
 
+/**
+	RunUnaryQuad
+	@param q quad
+	returns error
+	executes operation for unary quadruple
+
+	// TODO-ISA: add operator parameter
+**/
 func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
@@ -111,6 +130,12 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	return nil
 }
 
+/**
+	RunQuad
+	@param q quad
+	returns error
+	calls RunBinaryQuad or RunUnaryQuad according to q
+**/
 func (vm *VirtualMachine) RunQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
@@ -128,6 +153,10 @@ func (vm *VirtualMachine) RunQuad(q Attrib) error {
 	return nil
 }
 
+/**
+	RunMachine
+	calls LoadConstants and executes vm quads
+**/
 func (vm *VirtualMachine) RunMachine() {
 	if len(vm.quads) <= 0 {
 		fmt.Println("Quadruples list is empty.")
