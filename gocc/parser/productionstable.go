@@ -72,13 +72,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `P2 : DV	<<  >>`,
+		String: `P2 : DV	<< ast.GlobalVarDec(X[0]) >>`,
 		Id:         "P2",
 		NTType:     3,
 		Index:      5,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.GlobalVarDec(X[0])
 		},
 	},
 	ProdTabEntry{
@@ -242,13 +242,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV : "variables" "{" DV1 "}"	<<  >>`,
+		String: `DV : "variables" "{" DV1 "}"	<< X[2], nil >>`,
 		Id:         "DV",
 		NTType:     14,
 		Index:      22,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return X[2], nil
 		},
 	},
 	ProdTabEntry{
@@ -262,13 +262,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV1 : DV2 ";" DV1	<<  >>`,
+		String: `DV1 : DV2 ";" DV1	<< ast.NewBlockVariables(X[0],X[2]) >>`,
 		Id:         "DV1",
 		NTType:     15,
 		Index:      24,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewBlockVariables(X[0],X[2])
 		},
 	},
 	ProdTabEntry{
@@ -432,13 +432,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2]) >>`,
+		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2], X[7]) >>`,
 		Id:         "F",
 		NTType:     23,
 		Index:      41,
 		NumSymbols: 15,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[2])
+			return ast.NewFunction(X[2], X[7])
 		},
 	},
 	ProdTabEntry{
@@ -472,13 +472,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F2 : TIP_SIMP id F3	<< ast.NewFunction(X[1]) >>`,
+		String: `F2 : TIP_SIMP id F3	<< ast.NewFunction(X[1], nil) >>`,
 		Id:         "F2",
 		NTType:     25,
 		Index:      45,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[1])
+			return ast.NewFunction(X[1], nil)
 		},
 	},
 	ProdTabEntry{
@@ -492,13 +492,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunction(X[2]) >>`,
+		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunction(X[2], nil) >>`,
 		Id:         "F3",
 		NTType:     26,
 		Index:      47,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[2])
+			return ast.NewFunction(X[2], nil)
 		},
 	},
 	ProdTabEntry{
@@ -742,13 +742,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<<  >>`,
+		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6]) >>`,
 		Id:         "DEC",
 		NTType:     39,
 		Index:      72,
 		NumSymbols: 9,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewIf(X[2],X[5],X[6])
 		},
 	},
 	ProdTabEntry{
@@ -762,13 +762,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC1 : "else" "{" EST B1 "}"	<<  >>`,
+		String: `DEC1 : "else" "{" EST B1 "}"	<< ast.NewElse(X[2],X[3]) >>`,
 		Id:         "DEC1",
 		NTType:     40,
 		Index:      74,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewElse(X[2],X[3])
 		},
 	},
 	ProdTabEntry{

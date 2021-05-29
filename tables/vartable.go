@@ -21,7 +21,7 @@ type VarRow struct {
 	token_ *token.Token
 	dim1_  int
 	dim2_  int
-	dirV   memory.Address // virtual memory address
+	dirV_   memory.Address // virtual memory address
 }
 
 // TESTED
@@ -56,6 +56,10 @@ func (vr *VarRow) Dim2() int {
 	return vr.dim2_
 }
 
+func (vr *VarRow) DirV() memory.Address {
+	return vr.dirV_
+}
+
 // TESTED
 
 // Setter
@@ -83,6 +87,10 @@ func (vr *VarRow) SetDim2(dim2 int) {
 	vr.dim2_ = dim2
 }
 
+func (vr *VarRow) SetDirV(dirV memory.Address){
+	vr.dirV_ = dirV
+}
+
 /*
 	Variable Table struct
 	table map with var rows
@@ -101,6 +109,14 @@ func (vt *VarTable) Table() map[string]*VarRow {
 // Getter
 func (vt *VarTable) Parent() *VarTable {
 	return vt.parent
+}
+
+func (vt *VarTable) SetTable(table_ map[string]*VarRow){
+	vt.table = table_
+} 
+
+func (vt *VarTable) SetParent(parent_ *VarTable){
+	vt.parent = parent_
 }
 
 /*

@@ -21,7 +21,7 @@ cte_string : '"' {.} '"' ;
 
 P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
 P1 : empty | CL ;
-P2 : empty | DV ;
+P2 : empty | DV << ast.GlobalVarDec($0) >>;
 P3 : empty | F ;
 
 B : "main" "(" ")" "{" B1 "}" ;
@@ -35,8 +35,8 @@ ATR_CL : "public" ":" ATR_SIMP "private" ":" ATR_SIMP "protected" ":" ATR_SIMP ;
 ATR_SIMP : TIP_SIMP id DV2 ";" ATR_SIMP1 ;
 ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 
-DV : "variables" "{" DV1 "}" ;
-DV1 : empty | DV2 ";" DV1 ;
+DV : "variables" "{" DV1 "}" << $2, nil >>;
+DV1 : empty | DV2 ";" DV1 << ast.NewBlockVariables($0,$2) >> ;
 DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
 DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
 DV4 : empty | "," id DV4 ;
@@ -53,10 +53,10 @@ TIP_SIMP : "int" << types.Integer, nil >>
  | "float" << types.Float, nil >>;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2) >> ;
+F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2, $7) >> ;
 F1 : TIP_SIMP | "void" ;
-F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1) >>;
-F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2) >>;
+F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1, nil) >>;
+F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2, nil) >>;
 F4 : empty | F ;
 
 EST : AS | DEC | ESC << ast.FinishOutput($0) >>
@@ -78,8 +78,8 @@ ESC : "output" "(" ESC1 ESC2 ")" ";" << ast.NewOutput($2, $3) >>;
 ESC1 : H_EXP | cte_string ;
 ESC2 : empty | "," ESC1 ESC2 << ast.NewOutput($1, $2) >> ;
 
-DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 ;
-DEC1 : empty | "else" "{" EST B1 "}" ;
+DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 << ast.NewIf($2,$5,$6) >>;
+DEC1 : empty | "else" "{" EST B1 "}" << ast.NewElse($2,$3) >>;
 
 REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
 REP1 : ")" "{" EST B1 "}" ;

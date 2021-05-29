@@ -25,6 +25,7 @@ var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
 var globalCurrentScope int
+var globalVarTable *tables.VarTable
 
 var quadsCounter int
 
@@ -87,7 +88,7 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id Attrib) (*tables.FuncRow, error) {
+func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
 	tok, ok := id.(*token.Token)
 	if !ok {
 		return nil, errors.New("problem reading function")
@@ -96,11 +97,57 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
 	row.SetId(idName)
+	if var_map != nil {
+		new_var_map, _ := var_map.(map[string]*tables.VarRow)
+		new_var_table := &tables.VarTable{}
+		new_var_table.SetParent(globalVarTable) // Sets global table as parent
+		new_var_table.SetTable(new_var_map)
+		row.SetLocalVars(new_var_table)
+	}
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
 	fmt.Println("Function:", row.Id())
 	return row, nil
 }
+
+/* GlobalVarDec
+*/
+func GlobalVarDec(var_map Attrib) (int, error){
+	if var_map == nil{
+		return 0, nil
+	}
+	new_var_map, _ := var_map.(map[string]*tables.VarRow)
+	globalVarTable = &tables.VarTable{}
+	globalVarTable.SetTable(new_var_map)
+	fmt.Println("In global var dec", globalVarTable.Table())
+	return 1,nil
+}
+
+
+/*
+	NewTypeVariables
+	@param var_map Attrib
+	@param next_var_map Attrib
+	returns variable map[string]VarRow
+*/
+func NewBlockVariables(var_map, next_var_map Attrib)(map[string]*tables.VarRow,error){
+	new_var_map, ok := var_map.(map[string]*tables.VarRow)
+	if !ok {
+		return nil, errors.New("Problem in casting var map in block variable")
+	}
+	if next_var_map == nil {
+		return new_var_map, nil
+	}
+	new_next_var_map, _ := next_var_map.(map[string]*tables.VarRow)
+	for _, val := range new_next_var_map {
+		if _, ok := new_var_map[val.Id()]; ok {
+			return nil, errors.New(fmt.Sprint("Id redeclaration:",val.Id()))
+		}
+		new_var_map[val.Id()] = val
+	}
+	return new_var_map, nil
+}
+
 
 /*
 	NewTypeVariables
@@ -111,7 +158,6 @@ func NewFunction(id Attrib) (*tables.FuncRow, error) {
 */
 func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, error) {
 	new_typed_var, ok := typed_var.([]*tables.VarRow)
-	fmt.Println("In new typed var")
 	curr_map := make(map[string]*tables.VarRow)
 	if !ok || len(new_typed_var) != 1 {
 		return nil, errors.New("problem in casting typed variable")
@@ -119,7 +165,13 @@ func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, er
 	curr_map[new_typed_var[0].Id()] = new_typed_var[0]
 	if var_list != nil {
 		new_var_list := var_list.([]*tables.VarRow)
-		fmt.Println("\t Len of list",len(new_var_list))
+		for _, row := range new_var_list {
+			// Check if id is already declared (same type only)
+			if _, ok := curr_map[row.Id()]; ok {
+				return nil, errors.New(fmt.Sprint("Id redeclaration:",row.Id()))
+			}
+			curr_map[row.Id()] = row
+		}
 	}
 	return curr_map, nil
 }
@@ -135,7 +187,6 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
 	new_rows, _ := rows.([]*tables.VarRow)
-	fmt.Println("In New variable", dim1, dim2)
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
@@ -151,8 +202,42 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
-	fmt.Println("New var:", row.Id())
+	current_address, err := vmemory.NextGlobal(types.Ids)
+	if err != nil {
+		return nil, err
+	}
+	row.SetDirV(current_address)
+	fmt.Println("In Var dec",row)
 	return append([]*tables.VarRow{row} ,new_rows...), nil
+}
+
+
+/*
+	New If
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewIf(exp, est, est_list Attrib) (int, error) {
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return -1, errors.New("problem in casting h_exp @if")
+	}
+	fmt.Println("In new If", new_exp)
+	return 0,nil
+}
+
+/*
+	NewElse
+	@param id Attrib
+	@param dim1 Attrib
+	@param dim2 Attrib
+	returns variable entry
+*/
+func NewElse(est, est_list Attrib) (int, error) {
+	fmt.Println("In new else", est)
+	return 0,nil
 }
 
 /*
@@ -253,6 +338,7 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 
 		// generate quad
 		current_address, _ := vmemory.NextGlobalTemp(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		fmt.Println("Adding quad temp", current_address)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
@@ -305,7 +391,12 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("problem in id constants")
 	}
-	current_address, _ := vmemory.NextGlobalTemp(types.Ids) // TODO Check Types (Validate type with semantic cube)
+	// TODO (Check that variable is declared in var table)
+	addr, ok := globalVarTable.Table()[string(val.Lit)]
+	if !ok {
+		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
+	}
+	current_address := memory.Address(addr.DirV())
 	// calculate current address occuppied in context
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
@@ -322,11 +413,16 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+	var current_address memory.Address
+	if addr, ok := constantsMap[string(val.Lit)]; ok {
+		current_address = memory.Address(addr)
+	} else {
+		current_address, _ = vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		constantsMap[string(val.Lit)] = int(current_address)
+	}
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
-	constantsMap[string(val.Lit)] = int(current_address)
 	return curr_constant, nil
 }
 
@@ -341,7 +437,13 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextGlobalTemp(types.Float) // TODO Check Types (Validate type with semantic cube)
+	var current_address memory.Address
+	if addr, ok := constantsMap[string(val.Lit)]; ok {
+		current_address = memory.Address(addr)
+	} else {
+		current_address, _ = vmemory.NextConst(types.Float) // TODO Check Types (Validate type with semantic cube)
+		constantsMap[string(val.Lit)] = int(current_address)
+	}
 	fmt.Println("id=", val.Lit, " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Float, current_address}, nil

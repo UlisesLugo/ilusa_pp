@@ -1,0 +1,10 @@
+Program firstTest :
+  variables {
+    int a;
+  }
+  main() {
+      if(a > 1){
+          a = 1;
+          output(a);
+      }
+  }
