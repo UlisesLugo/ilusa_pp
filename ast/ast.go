@@ -220,7 +220,7 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewIf(exp, est, est_list Attrib) (quadruples.Cuadruplo, error) {
+func NewIf(exp, est, est_list, else_res Attrib) (quadruples.Cuadruplo, error) {
 	_, ok := exp.(*Exp)
 	if !ok {
 		return quadruples.Cuadruplo{}, errors.New("problem in casting h_exp @if")
@@ -244,6 +244,24 @@ func NewIf(exp, est, est_list Attrib) (quadruples.Cuadruplo, error) {
 			quadsCounter++
 		}
 	}
+	// TODO (Add append for est list)
+	
+	if else_res != nil {
+		new_end, ok := globalStackJumps.Top()
+		if !ok {
+			return quadruples.Cuadruplo{}, errors.New("expected finish of else")
+		}
+		int_end, _ := strconv.Atoi(new_end)
+		globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+2) // FILL(false,cont)
+		globalStackJumps, _ = globalStackJumps.Pop()
+		globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
+		else_quads, _ := else_res.([]quadruples.Cuadruplo)
+		for _, quad := range else_quads {
+			globalCurrQuads = append(globalCurrQuads, quad)
+			quadsCounter++
+		}
+	}
+
 	return curr_quad,nil
 }
 
@@ -265,9 +283,19 @@ func FinishIf(decision Attrib) (int, error) {
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewElse(est, est_list Attrib) (int, error) {
-	fmt.Println("In new else", est)
-	return 0,nil
+func NewElse(est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
+	curr_quads := make([]quadruples.Cuadruplo,0)
+	curr_quads = append(curr_quads, quadruples.Cuadruplo{"GOTO", "-1","-1","-2"})
+	
+	new_quads, ok_1 := est.([]quadruples.Cuadruplo)
+	if ok_1 {
+		for _, quad := range new_quads {
+			curr_quads = append(curr_quads, quad)
+		}
+	}
+	fmt.Println("In new else", curr_quads, globalStackJumps)
+	// TODO Add range for est_list
+	return curr_quads,nil
 }
 
 /*
@@ -564,18 +592,12 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	return append([]*Exp{new_id}, id_list...), nil // Prepend (Add first)
 }
 
-func Return(exp Attrib) (*Exp, error) {
-	new_exp, ok := exp.(*Exp)
-	if !ok {
-		return nil, errors.New("problem casting exp in return")
-	}
+func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
 	curr_top, ok := globalStackOperands.Top()
 	if !ok {
 		return nil, errors.New("stack is empty in return")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
 	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
-	globalCurrQuads = append(globalCurrQuads, curr_quad)
-	quadsCounter++
-	return new_exp, nil
+	return []quadruples.Cuadruplo{curr_quad}, nil
 }

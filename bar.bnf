@@ -59,10 +59,13 @@ F2 : empty | TIP_SIMP id F3 << ast.NewFunction($1, nil) >>;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2, nil) >>;
 F4 : empty | F ;
 
-EST : AS | DEC << ast.FinishIf($0) >>
+EST : AS 
+ | DEC << ast.FinishIf($0) >>
  | ESC << ast.FinishOutput($0) >>
  | LEC << ast.FinishInput($0) >>
- | LLAM | RET | REP;
+ | LLAM 
+ | RET
+ | REP;
 
 AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
 
@@ -79,7 +82,7 @@ ESC : "output" "(" ESC1 ESC2 ")" ";" << ast.NewOutput($2, $3) >>;
 ESC1 : H_EXP | cte_string ;
 ESC2 : empty | "," ESC1 ESC2 << ast.NewOutput($1, $2) >> ;
 
-DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 << ast.NewIf($2,$5,$6) >>;
+DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 << ast.NewIf($2,$5,$6,$8) >>;
 DEC1 : empty | "else" "{" EST B1 "}" << ast.NewElse($2,$3) >>;
 
 REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;

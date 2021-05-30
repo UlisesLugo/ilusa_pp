@@ -742,13 +742,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6]) >>`,
+		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6], X[8]) >>`,
 		Id:         "DEC",
 		NTType:     39,
 		Index:      72,
 		NumSymbols: 9,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIf(X[2],X[5],X[6])
+			return ast.NewIf(X[2],X[5],X[6], X[8])
 		},
 	},
 	ProdTabEntry{
