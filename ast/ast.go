@@ -4,6 +4,7 @@ import (
 	// go packages
 	"errors"
 	"fmt"
+	"strconv"
 
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
@@ -26,6 +27,7 @@ var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
 var globalCurrentScope int
 var globalVarTable *tables.VarTable
+var globalOperatorsDict *semantic.HierarchyDict
 
 var quadsCounter int
 
@@ -34,16 +36,15 @@ func init() {
 	globalFuncTable = tables.NewFuncTable()
 	vmemory = memory.NewVirtualMemory()
 	constantsMap = vmemory.ConstantMap()
-	globalStackOperands := make(stacks.Stack, 0)
-	globalStackOperators := make(stacks.Stack, 0)
+	globalOperatorsDict = semantic.NewHierarchyDict() // operators hierarchy table
+	globalStackOperands = make(stacks.Stack, 0)
+	globalStackOperators = make(stacks.Stack, 0)
+	globalStackJumps = make(stacks.Stack,0)
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	globalStackTypes = make(stacks.Stack, 0)
+	quadsCounter = 0
 
 	fmt.Println("Defining globals")
-	fmt.Println("\tOperatorsStack:", globalStackOperators)
-	fmt.Println("\tOperandsStack:", globalStackOperands)
-	fmt.Println("\tQuad:", globalCurrQuads)
-	fmt.Println("\tVirtual Memory:", vmemory)
 }
 
 /*
@@ -63,8 +64,10 @@ func NewProgram(id Attrib) (*Program, error) {
 	}
 	// Prepend main quad
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
+	end_quad := quadruples.Cuadruplo{"END","-1","-1","-1"}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
-	quadsCounter++
+	globalCurrQuads = append(globalCurrQuads, end_quad)
+	quadsCounter+= 2
 	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
 }
 
@@ -119,7 +122,6 @@ func GlobalVarDec(var_map Attrib) (int, error){
 	new_var_map, _ := var_map.(map[string]*tables.VarRow)
 	globalVarTable = &tables.VarTable{}
 	globalVarTable.SetTable(new_var_map)
-	fmt.Println("In global var dec", globalVarTable.Table())
 	return 1,nil
 }
 
@@ -207,7 +209,6 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 		return nil, err
 	}
 	row.SetDirV(current_address)
-	fmt.Println("In Var dec",row)
 	return append([]*tables.VarRow{row} ,new_rows...), nil
 }
 
@@ -219,13 +220,60 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewIf(exp, est, est_list Attrib) (int, error) {
-	new_exp, ok := exp.(*Exp)
+func NewIf(exp, est, est_list, else_res Attrib) (quadruples.Cuadruplo, error) {
+	_, ok := exp.(*Exp)
 	if !ok {
-		return -1, errors.New("problem in casting h_exp @if")
+		return quadruples.Cuadruplo{}, errors.New("problem in casting h_exp @if")
 	}
-	fmt.Println("In new If", new_exp)
-	return 0,nil
+	// TODO Validate boolean expr in stack types
+	// get operand 1
+	curr_top1, ok := globalStackOperands.Top() // Get result
+	if !ok {
+		return quadruples.Cuadruplo{}, errors.New("Cannot make if without expr")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	curr_quad := quadruples.Cuadruplo{"GOTOF", curr_top1,"-1","-2"}
+	globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
+	globalCurrQuads = append(globalCurrQuads, curr_quad)
+	quadsCounter++
+
+	new_quads, ok := est.([]quadruples.Cuadruplo)
+	if ok {
+		for _, quad := range new_quads {
+			globalCurrQuads = append(globalCurrQuads, quad)
+			quadsCounter++
+		}
+	}
+	// TODO (Add append for est list)
+	
+	if else_res != nil {
+		new_end, ok := globalStackJumps.Top()
+		if !ok {
+			return quadruples.Cuadruplo{}, errors.New("expected finish of else")
+		}
+		int_end, _ := strconv.Atoi(new_end)
+		globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+2) // FILL(false,cont)
+		globalStackJumps, _ = globalStackJumps.Pop()
+		globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
+		else_quads, _ := else_res.([]quadruples.Cuadruplo)
+		for _, quad := range else_quads {
+			globalCurrQuads = append(globalCurrQuads, quad)
+			quadsCounter++
+		}
+	}
+
+	return curr_quad,nil
+}
+
+func FinishIf(decision Attrib) (int, error) {
+	new_end, ok := globalStackJumps.Top()
+	if !ok {
+		return -1, errors.New("expected finish of if")
+	}
+	int_end, _ := strconv.Atoi(new_end)
+	globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+1)
+	globalStackJumps, _ = globalStackJumps.Pop()
+	return 1, nil
 }
 
 /*
@@ -235,9 +283,19 @@ func NewIf(exp, est, est_list Attrib) (int, error) {
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewElse(est, est_list Attrib) (int, error) {
-	fmt.Println("In new else", est)
-	return 0,nil
+func NewElse(est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
+	curr_quads := make([]quadruples.Cuadruplo,0)
+	curr_quads = append(curr_quads, quadruples.Cuadruplo{"GOTO", "-1","-1","-2"})
+	
+	new_quads, ok_1 := est.([]quadruples.Cuadruplo)
+	if ok_1 {
+		for _, quad := range new_quads {
+			curr_quads = append(curr_quads, quad)
+		}
+	}
+	fmt.Println("In new else", curr_quads, globalStackJumps)
+	// TODO Add range for est_list
+	return curr_quads,nil
 }
 
 /*
@@ -247,28 +305,39 @@ func NewElse(est, est_list Attrib) (int, error) {
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewAssignation(id, exp Attrib) (int, error) {
+func NewAssignation(id, exp Attrib) (quadruples.Cuadruplo, error) {
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
 	if !tok_ok {
-		return -1, errors.New("Problem in casting id token")
+		return quadruples.Cuadruplo{}, errors.New("Problem in casting id token")
 	}
 
-	globalStackOperators = globalStackOperators.Push(semantic.Assign)
-	fmt.Println("Id: ", string(tok.Lit))
-	current_address, addr_ok := vmemory.NextGlobal(types.Integer) // TODO Check Types
-
-	if addr_ok != nil {
-		return -1, addr_ok
+	
+	var_row, ok := globalVarTable.Table()[string(tok.Lit)]
+	if !ok {
+		return quadruples.Cuadruplo{}, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
 	}
+	current_address := memory.Address(var_row.DirV())
+	
+	// get operand 1
+	curr_top1, ok := globalStackOperands.Top()
+	if !ok {
+		return quadruples.Cuadruplo{}, errors.New("Cannot assign to bad expr")
+	}
+	// pop operand 1
+	globalStackOperands, _ = globalStackOperands.Pop()
+	fmt.Println("Assign:",var_row.Id(), var_row.DirV()) // TODO Check Types
+	fmt.Println("\t Stacks status",globalStackOperands, globalStackOperators)
 
-	globalStackOperands = globalStackOperands.Push(fmt.Sprintf("%v", current_address))
 	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
-	_, exp_ok := exp.(*Exp)
-	if exp_ok {
-		createUnaryQuadruple(semantic.Equal)
-	}
-	return 1, nil // return row
+	// _, exp_ok := exp.(*Exp)
+	// if exp_ok {
+	// 	createUnaryQuadruple(semantic.Equal)
+	// }
+	// curr_quad := quadruples.Cuadruplo{top, curr_top2, "-1", curr_top1}
+	// globalCurrQuads = append(globalCurrQuads, curr_quad)
+	// quadsCounter++;
+	return quadruples.Cuadruplo{semantic.Assign,fmt.Sprint(current_address),"-1", curr_top1}, nil // return row
 }
 
 /*
@@ -316,15 +385,16 @@ func NewOperation(op, exp Attrib) (*Op_exp, error) {
 }
 
 func createBinaryQuadruple(new_op semantic.Operation) {
-	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
 	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
 
-	level_id := operatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
+	level_id := globalOperatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
 
 	top, ok := globalStackOperators.Top()        // get top operator
-	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+	top_level := globalOperatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+	quadsToAdd := make([]quadruples.Cuadruplo, 0)
 
 	for ok && top_level <= level_id { // top level has higher hierarchy level
+		fmt.Println("Curr Level", new_op, ", top_level",top)
 		// pop top operator
 		globalStackOperators, _ = globalStackOperators.Pop()
 		// get operand 2
@@ -341,22 +411,23 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 		fmt.Println("Adding quad temp", current_address)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
-		globalCurrQuads = append(globalCurrQuads, curr_quad)
+		quadsToAdd = append([]quadruples.Cuadruplo{curr_quad}, quadsToAdd...)
+		quadsCounter++;
 
 		top, ok = globalStackOperators.Top()
-		top_level = operatorsDict.Op_hierarchy[top]
+		top_level = globalOperatorsDict.Op_hierarchy[top]
 	}
+	globalCurrQuads = append(globalCurrQuads, quadsToAdd...)
 }
 
 func createUnaryQuadruple(new_op semantic.Operation) {
-	fmt.Println("\tCreating unary cuad")
-	operatorsDict := semantic.NewHierarchyDict() // operators hierarchy table
+	fmt.Println("\tCreating unary cuad") // operators hierarchy table
 	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
 
-	level_id := operatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
+	level_id := globalOperatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
 
 	top, ok := globalStackOperators.Top()        // get top operator
-	top_level := operatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
+	top_level := globalOperatorsDict.Op_hierarchy[top] // get hierarchy level of top operator
 
 	fmt.Println("\tTop", globalStackOperands)
 	for ok && top_level <= level_id { // top level has higher hierarchy level
@@ -376,9 +447,10 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 		// generate quad
 		curr_quad := quadruples.Cuadruplo{top, curr_top2, "-1", curr_top1}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
+		quadsCounter++;
 
 		top, ok = globalStackOperators.Top()
-		top_level = operatorsDict.Op_hierarchy[top]
+		top_level = globalOperatorsDict.Op_hierarchy[top]
 	}
 }
 
@@ -391,8 +463,10 @@ func NewIdConst(id Attrib) (*Constant, error) {
 	if !ok {
 		return nil, errors.New("problem in id constants")
 	}
-	// TODO (Check that variable is declared in var table)
-	addr, ok := globalVarTable.Table()[string(val.Lit)]
+	if globalVarTable.Table() == nil {
+		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
+	}
+	addr, ok := globalVarTable.Table()[string(val.Lit)] // Checking varTable
 	if !ok {
 		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
 	}
@@ -457,6 +531,7 @@ func FinishInput(idList Attrib) (int, error) {
 	for _, id := range id_list {
 		curr_quad := quadruples.Cuadruplo{"READ", "-1", "-1", fmt.Sprint(id.Address())}
 		globalCurrQuads = append(globalCurrQuads, curr_quad)
+		quadsCounter++
 	}
 	return 1, nil
 }
@@ -487,24 +562,25 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	return &Constant{string(val.Lit), val, types.Ids, current_address}, nil
 }
 
-func FinishOutput(idList Attrib) (int, error) {
+func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	id_list, ok := idList.([]*Exp)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
 
 	if !ok {
-		return -1, errors.New("problem casting constant in input")
+		return nil, errors.New("problem casting constant in input")
 	}
 	for i, _ := range id_list {
 		fmt.Println("In write id list#", i)
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
-			return -1, errors.New("stack is empty in writing")
+			return nil, errors.New("stack is empty in writing")
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
 
 		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", output_str}
-		globalCurrQuads = append(globalCurrQuads, curr_quad)
+		curr_quads = append(curr_quads, curr_quad)
 	}
-	return 1, nil
+	return curr_quads, nil
 }
 
 func NewOutput(id, idList Attrib) ([]*Exp, error) {
@@ -516,17 +592,12 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	return append([]*Exp{new_id}, id_list...), nil // Prepend (Add first)
 }
 
-func Return(exp Attrib) (*Exp, error) {
-	new_exp, ok := exp.(*Exp)
-	if !ok {
-		return nil, errors.New("problem casting exp in return")
-	}
+func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
 	curr_top, ok := globalStackOperands.Top()
 	if !ok {
 		return nil, errors.New("stack is empty in return")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
 	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
-	globalCurrQuads = append(globalCurrQuads, curr_quad)
-	return new_exp, nil
+	return []quadruples.Cuadruplo{curr_quad}, nil
 }

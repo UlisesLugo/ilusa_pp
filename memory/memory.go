@@ -25,10 +25,10 @@ const BoolOffset = 3000
 const IdOffset = 4000 // Ask Ulises (functions)
 
 // Offset for temporals
-const TempIntOffset = 4000
-const TempFloatOffset = 5000
-const TempCharOffset = 6000
-const TempBoolOffset = 7000
+const TempIntOffset = 5000
+const TempFloatOffset = 6000
+const TempCharOffset = 7000
+const TempBoolOffset = 8000
 
 // const TempIdOffset = 8000
 
