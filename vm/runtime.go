@@ -56,13 +56,15 @@ func (mb *MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 			return nil, errors.New("Character address out of scope.")
 		}
 		return mb.chars[typeAddr], nil
-		// TODO: case idx < memory.IdOffset: // id
-		// 	return nil, nil
+	case idx < memory.TempIntOffset:
+		typeAddr := int(idx - memory.IdOffset)
+		if len(mb.ids)-1 < typeAddr {
+			return nil, errors.New("Ids address out of scope.")
+		}
+		return mb.ids[typeAddr], nil
 	}
 	return nil, errors.New("Address out of scope")
 }
-
-// TODO: Get value of address from main memory
 
 /**
 	SetValue
@@ -89,8 +91,14 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		typeAddr := int(idx - memory.CharOffset)
 		mb.chars[typeAddr] = val.(rune) // set
 		return nil
-		// TODO-ISA: case idx < memory.IdOffset: // id
-		// 	return nil, nil
+	case idx < memory.IdOffset:
+		typeAddr := int(idx - memory.BoolOffset)
+		mb.bools[typeAddr] = val.(int)
+		return nil
+	case idx < memory.TempIntOffset:
+		typeAddr := int(idx - memory.IdOffset)
+		mb.ids[typeAddr] = val.(string)
+		return nil
 	}
 	return errors.New("Address out of scope")
 }
