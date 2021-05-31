@@ -28,13 +28,13 @@ var globalFuncTable *tables.FuncTable
 var globalCurrentScope int
 var globalVarTable *tables.VarTable
 var globalOperatorsDict *semantic.HierarchyDict
+var globalSemanticCube *semantic.SemanticCube
 
 var quadsCounter int
 
 func init() {
-	// globalSemanticCube := semantic.NewSemanticCube()
-	globalFuncTable = tables.NewFuncTable()
-	vmemory = memory.NewVirtualMemory()
+	globalFuncTable = tables.NewFuncTable() // Function Directory
+	vmemory = memory.NewVirtualMemory()     // Virtual Memory
 	constantsMap = vmemory.ConstantMap()
 	globalOperatorsDict = semantic.NewHierarchyDict() // operators hierarchy table
 	globalStackOperands = make(stacks.Stack, 0)
@@ -42,6 +42,7 @@ func init() {
 	globalStackJumps = make(stacks.Stack, 0)
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	globalStackTypes = make(stacks.Stack, 0)
+	globalSemanticCube = semantic.NewSemanticCube()
 	quadsCounter = 0
 
 	fmt.Println("Defining globals")
@@ -454,17 +455,33 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		fmt.Println("Curr Level", new_op, ", top_level", top)
 		// pop top operator
 		globalStackOperators, _ = globalStackOperators.Pop()
-		// get operand 2
+		// get operand 2 & type 2
 		curr_top2, _ := globalStackOperands.Top()
-		// pop operand 2
+		curr_type2, _ := globalStackJumps.Top()
+		// pop operand 2 & type 2
 		globalStackOperands, _ = globalStackOperands.Pop()
-		// get operand 1
+		globalStackTypes, _ = globalStackTypes.Pop()
+
+		// get operand 1 & type 1
 		curr_top1, _ := globalStackOperands.Top()
-		// pop operand 1
+		curr_type1, _ := globalStackTypes.Top()
+		// pop operand 1 & type 1
 		globalStackOperands, _ = globalStackOperands.Pop()
+		globalStackTypes, _ = globalStackTypes.Pop()
+
+		// casting from string to int
+		type_1, _ := strconv.Atoi(curr_type1)
+		type_2, _ := strconv.Atoi(curr_type2)
+
+		// Check Types (Validate type with semantic cube)
+		cube_type, err_cube := globalSemanticCube.GetReturnType(semantic.Operation(top), types.CoreType(type_1), types.CoreType(type_2))
+		if err_cube != nil {
+			// TODO: Return error
+			fmt.Println("Error in Semantic Cube", err_cube)
+		}
 
 		// generate quad
-		current_address, _ := vmemory.NextGlobalTemp(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		current_address, _ := vmemory.NextGlobalTemp(cube_type)
 		fmt.Println("Adding quad temp", current_address)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
@@ -548,11 +565,12 @@ func NewIntConst(value Attrib) (*Constant, error) {
 	if addr, ok := constantsMap[string(val.Lit)]; ok {
 		current_address = memory.Address(addr)
 	} else {
-		current_address, _ = vmemory.NextConst(types.Integer) // TODO Check Types (Validate type with semantic cube)
+		current_address, _ = vmemory.NextConst(types.Integer)
 		constantsMap[string(val.Lit)] = int(current_address)
 	}
 	fmt.Println("id=", string(val.Lit), " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	globalStackTypes = globalStackTypes.Push("0")
 	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
 	return curr_constant, nil
 }
@@ -572,29 +590,35 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	if addr, ok := constantsMap[string(val.Lit)]; ok {
 		current_address = memory.Address(addr)
 	} else {
-		current_address, _ = vmemory.NextConst(types.Float) // TODO Check Types (Validate type with semantic cube)
+		current_address, _ = vmemory.NextConst(types.Float)
 		constantsMap[string(val.Lit)] = int(current_address)
 	}
 	fmt.Println("id=", val.Lit, " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	globalStackTypes = globalStackTypes.Push("1")
 	return &Constant{string(val.Lit), val, types.Float, current_address}, nil
 }
 
+/*
+	NewCharConst
+	@param value Attrib
+*/
 func NewCharConst(value Attrib) (*Constant, error) {
 	val, ok := value.(*token.Token)
 	if !ok {
-		return nil, errors.New("problem in float constants")
+		return nil, errors.New("problem in char constants")
 	}
 	// calculate current address occuppied in context
 	var current_address memory.Address
 	if addr, ok := constantsMap[string(val.Lit)]; ok {
 		current_address = memory.Address(addr)
 	} else {
-		current_address, _ = vmemory.NextConst(types.Char) // TODO Check Types (Validate type with semantic cube)
+		current_address, _ = vmemory.NextConst(types.Char)
 		constantsMap[string(val.Lit)] = int(current_address)
 	}
-	fmt.Println("id=", string(val.Lit), " addr=", current_address)
+	fmt.Println("id=", val.Lit, " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	globalStackTypes = globalStackTypes.Push("2")
 	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
 }
 
