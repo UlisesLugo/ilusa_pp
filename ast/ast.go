@@ -25,7 +25,7 @@ var globalStackTypes stacks.Stack
 var globalStackJumps stacks.Stack
 var globalCurrQuads []quadruples.Cuadruplo
 var globalFuncTable *tables.FuncTable
-var globalCurrentScope int
+var globalCurrentScope map[string]*tables.VarRow
 var globalVarTable *tables.VarTable
 var globalOperatorsDict *semantic.HierarchyDict
 
@@ -122,6 +122,30 @@ func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
 	return row, nil
 }
 
+func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error){
+	tok, ok := id.(*token.Token)
+	val := string(tok.Lit)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
+	if !ok {
+		return nil, errors.New("problem reading function")
+	}
+	if globalFuncTable == nil || globalFuncTable.Table()==nil {
+		return nil, errors.New(fmt.Sprint("undefined function ",val))
+	}
+	func_row, ok := globalFuncTable.Table()[val]
+	if !ok {
+		return nil, errors.New(fmt.Sprint("undefined function ",val))
+	}
+
+	era_quad := quadruples.Cuadruplo{"ERA","-1","-1",func_row.Id()}
+	curr_quads = append(curr_quads, era_quad)
+
+	// TODO Add parameter verification
+	sub_quad := quadruples.Cuadruplo{"GOSUB","-1","-1",func_row.Id()}
+	curr_quads = append(curr_quads, sub_quad)
+	return curr_quads,nil
+}
+
 func NewStatements(est, est_list Attrib) ([]quadruples.Cuadruplo, error){
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	new_quads, ok := est.([]quadruples.Cuadruplo)
@@ -167,6 +191,7 @@ func NewBlockVariables(var_map, next_var_map Attrib)(map[string]*tables.VarRow,e
 		}
 		new_var_map[val.Id()] = val
 	}
+	globalCurrentScope = new_var_map
 	return new_var_map, nil
 }
 
@@ -195,6 +220,7 @@ func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, er
 			curr_map[row.Id()] = row
 		}
 	}
+	globalCurrentScope = curr_map
 	return curr_map, nil
 }
 
@@ -321,13 +347,16 @@ func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
+	val := string(tok.Lit)
 
-	
-	var_row, ok := globalVarTable.Table()[string(tok.Lit)]
-	if !ok {
-		return nil, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
+	var current_address memory.Address
+	if globalCurrentScope != nil {
+		var_row, ok := globalCurrentScope[val]
+		if !ok {
+			return nil, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
+		}
+		current_address = memory.Address(var_row.DirV())// TODO Check Types
 	}
-	current_address := memory.Address(var_row.DirV())
 	
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top()
@@ -336,7 +365,6 @@ func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 	}
 	// pop operand 1
 	globalStackOperands, _ = globalStackOperands.Pop()
-	fmt.Println("Assign:",var_row.Id(), var_row.DirV()) // TODO Check Types
 	quadToAdd := quadruples.Cuadruplo{semantic.Assign,fmt.Sprint(current_address),"-1", curr_top1}
 	return []quadruples.Cuadruplo{quadToAdd}, nil // return row
 }
@@ -512,20 +540,30 @@ func createUnaryQuadruple(new_op semantic.Operation) {
 */
 func NewIdConst(id Attrib) (*Constant, error) {
 	val, ok := id.(*token.Token)
+	str_val := string(val.Lit)
 	if !ok {
 		return nil, errors.New("problem in id constants")
 	}
-	if globalVarTable.Table() == nil {
-		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
+	if globalCurrentScope != nil {
+		addr, ok := globalCurrentScope[str_val]
+		if ok {
+			current_address := memory.Address(addr.DirV())
+			return &Constant{str_val, val, types.Char, current_address}, nil
+		}
 	}
-	addr, ok := globalVarTable.Table()[string(val.Lit)] // Checking varTable
+
+	if globalVarTable ==nil || globalVarTable.Table() == nil {
+		fmt.Println(globalCurrentScope)
+		return nil, errors.New(fmt.Sprint("Variable ",str_val," has not been declared"))
+	}
+	addr, ok := globalVarTable.Table()[str_val] // Checking varTable
 	if !ok {
-		return nil, errors.New(fmt.Sprint("Variable",string(val.Lit),"has not been declared"))
+		return nil, errors.New(fmt.Sprint("Variable",str_val,"has not been declared"))
 	}
 	current_address := memory.Address(addr.DirV())
 	// calculate current address occuppied in context
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
-	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
+	return &Constant{str_val, val, types.Char, current_address}, nil
 }
 
 /*

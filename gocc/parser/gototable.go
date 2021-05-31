@@ -9793,14 +9793,14 @@ var gotoTab = gotoTable{
 		-1,  // VAR1
 		-1,  // H_EXP
 		-1,  // H_EXP1
-		235, // S_EXP
+		236, // S_EXP
 		-1,  // S_EXP1
-		236, // EXP
+		237, // EXP
 		-1,  // EXP1
-		237, // TERM
+		238, // TERM
 		-1,  // TERM1
-		240, // FAC
-		241, // VAR_CTE
+		241, // FAC
+		242, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -10090,12 +10090,12 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		247, // EXP
+		248, // EXP
 		-1,  // EXP1
-		248, // TERM
+		249, // TERM
 		-1,  // TERM1
-		251, // FAC
-		252, // VAR_CTE
+		252, // FAC
+		253, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -10503,7 +10503,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		255, // EXP
+		256, // EXP
 		-1,  // EXP1
 		111, // TERM
 		-1,  // TERM1
@@ -10562,7 +10562,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		256, // EXP
+		257, // EXP
 		-1,  // EXP1
 		111, // TERM
 		-1,  // TERM1
@@ -10800,7 +10800,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		257, // TERM
+		258, // TERM
 		-1,  // TERM1
 		114, // FAC
 		115, // VAR_CTE
@@ -10859,7 +10859,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		258, // TERM
+		259, // TERM
 		-1,  // TERM1
 		114, // FAC
 		115, // VAR_CTE
@@ -11091,14 +11091,14 @@ var gotoTab = gotoTable{
 		-1,  // VAR1
 		-1,  // H_EXP
 		-1,  // H_EXP1
-		263, // S_EXP
+		264, // S_EXP
 		-1,  // S_EXP1
-		264, // EXP
+		265, // EXP
 		-1,  // EXP1
-		265, // TERM
+		266, // TERM
 		-1,  // TERM1
-		268, // FAC
-		269, // VAR_CTE
+		269, // FAC
+		270, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -11211,12 +11211,12 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		275, // EXP
+		276, // EXP
 		-1,  // EXP1
-		276, // TERM
+		277, // TERM
 		-1,  // TERM1
-		279, // FAC
-		280, // VAR_CTE
+		280, // FAC
+		281, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -11329,7 +11329,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		283, // EXP
+		284, // EXP
 		-1,  // EXP1
 		124, // TERM
 		-1,  // TERM1
@@ -11388,7 +11388,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		284, // EXP
+		285, // EXP
 		-1,  // EXP1
 		124, // TERM
 		-1,  // TERM1
@@ -11626,7 +11626,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		285, // TERM
+		286, // TERM
 		-1,  // TERM1
 		127, // FAC
 		128, // VAR_CTE
@@ -11685,7 +11685,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		286, // TERM
+		287, // TERM
 		-1,  // TERM1
 		127, // FAC
 		128, // VAR_CTE
@@ -11917,14 +11917,14 @@ var gotoTab = gotoTable{
 		-1,  // VAR1
 		-1,  // H_EXP
 		-1,  // H_EXP1
-		292, // S_EXP
+		293, // S_EXP
 		-1,  // S_EXP1
-		293, // EXP
+		294, // EXP
 		-1,  // EXP1
-		294, // TERM
+		295, // TERM
 		-1,  // TERM1
-		297, // FAC
-		298, // VAR_CTE
+		298, // FAC
+		299, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -12037,12 +12037,12 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		304, // EXP
+		305, // EXP
 		-1,  // EXP1
-		305, // TERM
+		306, // TERM
 		-1,  // TERM1
-		308, // FAC
-		309, // VAR_CTE
+		309, // FAC
+		310, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -12155,7 +12155,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		312, // EXP
+		313, // EXP
 		-1,  // EXP1
 		137, // TERM
 		-1,  // TERM1
@@ -12214,7 +12214,7 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		313, // EXP
+		314, // EXP
 		-1,  // EXP1
 		137, // TERM
 		-1,  // TERM1
@@ -12452,7 +12452,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		314, // TERM
+		315, // TERM
 		-1,  // TERM1
 		140, // FAC
 		141, // VAR_CTE
@@ -12511,7 +12511,7 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
-		315, // TERM
+		316, // TERM
 		-1,  // TERM1
 		140, // FAC
 		141, // VAR_CTE
@@ -12564,16 +12564,16 @@ var gotoTab = gotoTable{
 		-1,  // REP1
 		-1,  // VAR
 		-1,  // VAR1
-		319, // H_EXP
+		320, // H_EXP
 		-1,  // H_EXP1
-		320, // S_EXP
+		321, // S_EXP
 		-1,  // S_EXP1
-		321, // EXP
+		322, // EXP
 		-1,  // EXP1
-		322, // TERM
+		323, // TERM
 		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
+		326, // FAC
+		327, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -12622,7 +12622,7 @@ var gotoTab = gotoTable{
 		-1,  // REP
 		-1,  // REP1
 		-1,  // VAR
-		330, // VAR1
+		331, // VAR1
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
@@ -12680,7 +12680,7 @@ var gotoTab = gotoTable{
 		-1,  // DEC1
 		-1,  // REP
 		-1,  // REP1
-		331, // VAR
+		332, // VAR
 		-1,  // VAR1
 		-1,  // H_EXP
 		-1,  // H_EXP1
@@ -12792,7 +12792,7 @@ var gotoTab = gotoTable{
 		-1,  // LEC
 		-1,  // LEC1
 		-1,  // ESC
-		333, // ESC1
+		334, // ESC1
 		-1,  // ESC2
 		-1,  // DEC
 		-1,  // DEC1
@@ -13095,7 +13095,7 @@ var gotoTab = gotoTable{
 		-1,  // REP1
 		-1,  // VAR
 		-1,  // VAR1
-		337, // H_EXP
+		338, // H_EXP
 		-1,  // H_EXP1
 		122, // S_EXP
 		-1,  // S_EXP1
@@ -13154,7 +13154,7 @@ var gotoTab = gotoTable{
 		-1,  // REP1
 		-1,  // VAR
 		-1,  // VAR1
-		338, // H_EXP
+		339, // H_EXP
 		-1,  // H_EXP1
 		122, // S_EXP
 		-1,  // S_EXP1
@@ -13194,7 +13194,7 @@ var gotoTab = gotoTable{
 		-1,  // F
 		-1,  // F1
 		-1,  // F2
-		339, // F3
+		340, // F3
 		-1,  // F4
 		-1,  // EST
 		-1,  // AS
@@ -13301,7 +13301,7 @@ var gotoTab = gotoTable{
 		-1,  // ATR_SIMP
 		-1,  // ATR_SIMP1
 		-1,  // DV
-		341, // DV1
+		342, // DV1
 		27,  // DV2
 		-1,  // DV3
 		-1,  // DV4
@@ -13427,7 +13427,7 @@ var gotoTab = gotoTable{
 		-1,  // DV6
 		-1,  // TIP_SIMP
 		-1,  // TIP_COMP
-		342, // F
+		343, // F
 		-1,  // F1
 		-1,  // F2
 		-1,  // F3
@@ -13538,7 +13538,7 @@ var gotoTab = gotoTable{
 		-1,  // ATR_SIMP1
 		-1,  // DV
 		-1,  // DV1
-		345, // DV2
+		346, // DV2
 		-1,  // DV3
 		-1,  // DV4
 		-1,  // DV5
@@ -13672,7 +13672,7 @@ var gotoTab = gotoTable{
 		-1,  // AS
 		-1,  // LLAM
 		-1,  // LLAM1
-		346, // LLAM2
+		347, // LLAM2
 		-1,  // RET
 		-1,  // LEC
 		-1,  // LEC1
@@ -13758,65 +13758,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S233
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		347, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S234
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -13874,6 +13815,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S234
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		348, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S235
 		-1, // S'
@@ -13935,63 +13935,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S236
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		348, // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		349, // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S237
 		-1,  // S'
@@ -14042,15 +14042,15 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
-		-1,  // S_EXP1
+		349, // S_EXP1
 		-1,  // EXP
-		350, // EXP1
+		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
 		-1,  // LOG
-		-1,  // REL
+		350, // REL
 	},
 	gotoRow{ // S238
 		-1,  // S'
@@ -14103,11 +14103,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		351, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		353, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -14223,70 +14223,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		355, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		355, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S241
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		356, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S242
 		-1, // S'
@@ -14466,65 +14466,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S245
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		358, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S246
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -14582,6 +14523,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S246
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		359, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S247
 		-1, // S'
@@ -14643,63 +14643,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S248
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		359, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S249
 		-1,  // S'
@@ -14752,11 +14752,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		360, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		362, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -14872,70 +14872,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		364, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		364, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S252
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		365, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S253
 		-1, // S'
@@ -15410,65 +15410,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S261
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		367, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S262
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -15526,6 +15467,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S262
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		368, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S263
 		-1, // S'
@@ -15587,63 +15587,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S264
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		368, // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		369, // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S265
 		-1,  // S'
@@ -15694,15 +15694,15 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
-		-1,  // S_EXP1
+		369, // S_EXP1
 		-1,  // EXP
-		370, // EXP1
+		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
 		-1,  // LOG
-		-1,  // REL
+		370, // REL
 	},
 	gotoRow{ // S266
 		-1,  // S'
@@ -15755,11 +15755,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		371, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		373, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -15875,70 +15875,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		375, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		375, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S269
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		376, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S270
 		-1, // S'
@@ -16118,65 +16118,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S273
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		378, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S274
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -16234,6 +16175,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S274
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		379, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S275
 		-1, // S'
@@ -16295,63 +16295,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S276
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		379, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S277
 		-1,  // S'
@@ -16404,11 +16404,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		380, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		382, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -16524,70 +16524,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		384, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		384, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S280
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		385, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S281
 		-1, // S'
@@ -17121,65 +17121,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S290
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		387, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S291
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -17237,6 +17178,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S291
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		388, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S292
 		-1, // S'
@@ -17298,63 +17298,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S293
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		388, // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		389, // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S294
 		-1,  // S'
@@ -17405,15 +17405,15 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
-		-1,  // S_EXP1
+		389, // S_EXP1
 		-1,  // EXP
-		390, // EXP1
+		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
 		-1,  // LOG
-		-1,  // REL
+		390, // REL
 	},
 	gotoRow{ // S295
 		-1,  // S'
@@ -17466,11 +17466,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		391, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		393, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -17586,70 +17586,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		395, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		395, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S298
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		396, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S299
 		-1, // S'
@@ -17829,65 +17829,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S302
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		398, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S303
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -17945,6 +17886,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S303
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		399, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S304
 		-1, // S'
@@ -18006,63 +18006,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S305
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		399, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S306
 		-1,  // S'
@@ -18115,11 +18115,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		400, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		402, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -18235,70 +18235,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		404, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		404, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S309
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		405, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S310
 		-1, // S'
@@ -18714,65 +18714,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S317
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		407, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S318
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -18830,6 +18771,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S318
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		408, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S319
 		-1, // S'
@@ -18891,63 +18891,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S320
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		409, // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		410, // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S321
 		-1,  // S'
@@ -18996,17 +18996,17 @@ var gotoTab = gotoTable{
 		-1,  // VAR
 		-1,  // VAR1
 		-1,  // H_EXP
-		-1,  // H_EXP1
+		410, // H_EXP1
 		-1,  // S_EXP
-		411, // S_EXP1
+		-1,  // S_EXP1
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
-		-1,  // LOG
-		412, // REL
+		411, // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S322
 		-1,  // S'
@@ -19057,15 +19057,15 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
-		-1,  // S_EXP1
+		412, // S_EXP1
 		-1,  // EXP
-		413, // EXP1
+		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
 		-1,  // LOG
-		-1,  // REL
+		413, // REL
 	},
 	gotoRow{ // S323
 		-1,  // S'
@@ -19118,11 +19118,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		414, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		416, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -19238,70 +19238,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		418, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		418, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S326
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		419, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S327
 		-1, // S'
@@ -19422,183 +19422,242 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S329
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		421, // H_EXP
-		-1,  // H_EXP1
-		320, // S_EXP
-		-1,  // S_EXP1
-		321, // EXP
-		-1,  // EXP1
-		322, // TERM
-		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S330
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		422, // H_EXP
+		-1,  // H_EXP1
+		321, // S_EXP
+		-1,  // S_EXP1
+		322, // EXP
+		-1,  // EXP1
+		323, // TERM
+		-1,  // TERM1
+		326, // FAC
+		327, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S331
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		422, // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S332
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		423, // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S333
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -19657,7 +19716,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S333
+	gotoRow{ // S334
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -19696,7 +19755,7 @@ var gotoTab = gotoTable{
 		-1,  // LEC1
 		-1,  // ESC
 		-1,  // ESC1
-		424, // ESC2
+		425, // ESC2
 		-1,  // DEC
 		-1,  // DEC1
 		-1,  // REP
@@ -19716,7 +19775,7 @@ var gotoTab = gotoTable{
 		-1,  // LOG
 		-1,  // REL
 	},
-	gotoRow{ // S334
+	gotoRow{ // S335
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -19774,65 +19833,6 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
-	},
-	gotoRow{ // S335
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		426, // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
 	},
 	gotoRow{ // S336
 		-1,  // S'
@@ -19894,63 +19894,63 @@ var gotoTab = gotoTable{
 		-1,  // REL
 	},
 	gotoRow{ // S337
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		428, // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S338
 		-1, // S'
@@ -20071,65 +20071,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S340
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		430, // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S341
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -20188,66 +20129,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S342
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		433, // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		432, // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S343
+	gotoRow{ // S341
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -20269,10 +20151,128 @@ var gotoTab = gotoTable{
 		-1,  // DV4
 		-1,  // DV5
 		-1,  // DV6
-		19,  // TIP_SIMP
+		-1,  // TIP_SIMP
 		-1,  // TIP_COMP
 		-1,  // F
-		434, // F1
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		431, // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S342
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
+	},
+	gotoRow{ // S343
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		434, // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		433, // F
+		-1,  // F1
 		-1,  // F2
 		-1,  // F3
 		-1,  // F4
@@ -20319,7 +20319,7 @@ var gotoTab = gotoTable{
 		-1,  // MET_CL
 		-1,  // MET_CL1
 		-1,  // ATR_CL
-		435, // ATR_SIMP
+		-1,  // ATR_SIMP
 		-1,  // ATR_SIMP1
 		-1,  // DV
 		-1,  // DV1
@@ -20328,7 +20328,66 @@ var gotoTab = gotoTable{
 		-1,  // DV4
 		-1,  // DV5
 		-1,  // DV6
-		436, // TIP_SIMP
+		19,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		435, // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S345
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		436, // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		437, // TIP_SIMP
 		-1,  // TIP_COMP
 		-1,  // F
 		-1,  // F1
@@ -20364,65 +20423,6 @@ var gotoTab = gotoTable{
 		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
-	},
-	gotoRow{ // S345
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
 	},
 	gotoRow{ // S346
 		-1, // S'
@@ -20602,65 +20602,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S349
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		442, // EXP
-		-1,  // EXP1
-		443, // TERM
-		-1,  // TERM1
-		446, // FAC
-		447, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S350
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -20719,7 +20660,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S351
+	gotoRow{ // S350
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -20769,14 +20710,73 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		450, // EXP
+		443, // EXP
 		-1,  // EXP1
-		237, // TERM
+		444, // TERM
 		-1,  // TERM1
-		240, // FAC
-		241, // VAR_CTE
+		447, // FAC
+		448, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
+	},
+	gotoRow{ // S351
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S352
 		-1,  // S'
@@ -20830,71 +20830,71 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		451, // EXP
 		-1,  // EXP1
-		237, // TERM
+		238, // TERM
 		-1,  // TERM1
-		240, // FAC
-		241, // VAR_CTE
+		241, // FAC
+		242, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S353
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		452, // EXP
+		-1,  // EXP1
+		238, // TERM
+		-1,  // TERM1
+		241, // FAC
+		242, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S354
 		-1, // S'
@@ -21015,124 +21015,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S356
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		452, // TERM
-		-1,  // TERM1
-		240, // FAC
-		241, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S357
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		453, // TERM
-		-1,  // TERM1
-		240, // FAC
-		241, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S358
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -21190,6 +21072,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S357
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		453, // TERM
+		-1,  // TERM1
+		241, // FAC
+		242, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S358
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		454, // TERM
+		-1,  // TERM1
+		241, // FAC
+		242, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S359
 		-1, // S'
@@ -21251,124 +21251,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S360
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		455, // EXP
-		-1,  // EXP1
-		248, // TERM
-		-1,  // TERM1
-		251, // FAC
-		252, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S361
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		456, // EXP
-		-1,  // EXP1
-		248, // TERM
-		-1,  // TERM1
-		251, // FAC
-		252, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S362
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -21426,6 +21308,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S361
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		456, // EXP
+		-1,  // EXP1
+		249, // TERM
+		-1,  // TERM1
+		252, // FAC
+		253, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S362
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		457, // EXP
+		-1,  // EXP1
+		249, // TERM
+		-1,  // TERM1
+		252, // FAC
+		253, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S363
 		-1, // S'
@@ -21546,124 +21546,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S365
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		457, // TERM
-		-1,  // TERM1
-		251, // FAC
-		252, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S366
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		458, // TERM
-		-1,  // TERM1
-		251, // FAC
-		252, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S367
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -21721,6 +21603,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S366
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		458, // TERM
+		-1,  // TERM1
+		252, // FAC
+		253, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S367
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		459, // TERM
+		-1,  // TERM1
+		252, // FAC
+		253, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S368
 		-1, // S'
@@ -21782,65 +21782,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S369
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		463, // EXP
-		-1,  // EXP1
-		464, // TERM
-		-1,  // TERM1
-		467, // FAC
-		468, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S370
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -21899,7 +21840,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S371
+	gotoRow{ // S370
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -21949,14 +21890,73 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		471, // EXP
+		464, // EXP
 		-1,  // EXP1
-		265, // TERM
+		465, // TERM
 		-1,  // TERM1
-		268, // FAC
-		269, // VAR_CTE
+		468, // FAC
+		469, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
+	},
+	gotoRow{ // S371
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S372
 		-1,  // S'
@@ -22010,71 +22010,71 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		472, // EXP
 		-1,  // EXP1
-		265, // TERM
+		266, // TERM
 		-1,  // TERM1
-		268, // FAC
-		269, // VAR_CTE
+		269, // FAC
+		270, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S373
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		473, // EXP
+		-1,  // EXP1
+		266, // TERM
+		-1,  // TERM1
+		269, // FAC
+		270, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S374
 		-1, // S'
@@ -22195,124 +22195,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S376
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		473, // TERM
-		-1,  // TERM1
-		268, // FAC
-		269, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S377
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		474, // TERM
-		-1,  // TERM1
-		268, // FAC
-		269, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S378
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -22370,6 +22252,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S377
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		474, // TERM
+		-1,  // TERM1
+		269, // FAC
+		270, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S378
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		475, // TERM
+		-1,  // TERM1
+		269, // FAC
+		270, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S379
 		-1, // S'
@@ -22431,124 +22431,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S380
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		476, // EXP
-		-1,  // EXP1
-		276, // TERM
-		-1,  // TERM1
-		279, // FAC
-		280, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S381
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		477, // EXP
-		-1,  // EXP1
-		276, // TERM
-		-1,  // TERM1
-		279, // FAC
-		280, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S382
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -22606,6 +22488,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S381
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		477, // EXP
+		-1,  // EXP1
+		277, // TERM
+		-1,  // TERM1
+		280, // FAC
+		281, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S382
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		478, // EXP
+		-1,  // EXP1
+		277, // TERM
+		-1,  // TERM1
+		280, // FAC
+		281, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S383
 		-1, // S'
@@ -22726,124 +22726,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S385
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		478, // TERM
-		-1,  // TERM1
-		279, // FAC
-		280, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S386
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		479, // TERM
-		-1,  // TERM1
-		279, // FAC
-		280, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S387
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -22901,6 +22783,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S386
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		479, // TERM
+		-1,  // TERM1
+		280, // FAC
+		281, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S387
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		480, // TERM
+		-1,  // TERM1
+		280, // FAC
+		281, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S388
 		-1, // S'
@@ -22962,65 +22962,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S389
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		484, // EXP
-		-1,  // EXP1
-		485, // TERM
-		-1,  // TERM1
-		488, // FAC
-		489, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S390
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -23079,7 +23020,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S391
+	gotoRow{ // S390
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -23129,14 +23070,73 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		492, // EXP
+		485, // EXP
 		-1,  // EXP1
-		294, // TERM
+		486, // TERM
 		-1,  // TERM1
-		297, // FAC
-		298, // VAR_CTE
+		489, // FAC
+		490, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
+	},
+	gotoRow{ // S391
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S392
 		-1,  // S'
@@ -23190,71 +23190,71 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		493, // EXP
 		-1,  // EXP1
-		294, // TERM
+		295, // TERM
 		-1,  // TERM1
-		297, // FAC
-		298, // VAR_CTE
+		298, // FAC
+		299, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S393
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		494, // EXP
+		-1,  // EXP1
+		295, // TERM
+		-1,  // TERM1
+		298, // FAC
+		299, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S394
 		-1, // S'
@@ -23375,124 +23375,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S396
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		494, // TERM
-		-1,  // TERM1
-		297, // FAC
-		298, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S397
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		495, // TERM
-		-1,  // TERM1
-		297, // FAC
-		298, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S398
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -23550,6 +23432,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S397
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		495, // TERM
+		-1,  // TERM1
+		298, // FAC
+		299, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S398
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		496, // TERM
+		-1,  // TERM1
+		298, // FAC
+		299, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S399
 		-1, // S'
@@ -23611,124 +23611,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S400
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		497, // EXP
-		-1,  // EXP1
-		305, // TERM
-		-1,  // TERM1
-		308, // FAC
-		309, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S401
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		498, // EXP
-		-1,  // EXP1
-		305, // TERM
-		-1,  // TERM1
-		308, // FAC
-		309, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S402
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -23786,6 +23668,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S401
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		498, // EXP
+		-1,  // EXP1
+		306, // TERM
+		-1,  // TERM1
+		309, // FAC
+		310, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S402
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		499, // EXP
+		-1,  // EXP1
+		306, // TERM
+		-1,  // TERM1
+		309, // FAC
+		310, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S403
 		-1, // S'
@@ -23906,124 +23906,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S405
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		499, // TERM
-		-1,  // TERM1
-		308, // FAC
-		309, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S406
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		500, // TERM
-		-1,  // TERM1
-		308, // FAC
-		309, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S407
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -24081,6 +23963,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S406
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		500, // TERM
+		-1,  // TERM1
+		309, // FAC
+		310, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S407
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		501, // TERM
+		-1,  // TERM1
+		309, // FAC
+		310, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S408
 		-1, // S'
@@ -24201,183 +24201,124 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S410
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		505, // S_EXP
-		-1,  // S_EXP1
-		506, // EXP
-		-1,  // EXP1
-		507, // TERM
-		-1,  // TERM1
-		510, // FAC
-		511, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S411
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		506, // S_EXP
+		-1,  // S_EXP1
+		507, // EXP
+		-1,  // EXP1
+		508, // TERM
+		-1,  // TERM1
+		511, // FAC
+		512, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S412
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		517, // EXP
-		-1,  // EXP1
-		518, // TERM
-		-1,  // TERM1
-		521, // FAC
-		522, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S413
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -24436,7 +24377,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S414
+	gotoRow{ // S413
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -24486,14 +24427,73 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		525, // EXP
+		518, // EXP
 		-1,  // EXP1
-		322, // TERM
+		519, // TERM
 		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
+		522, // FAC
+		523, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
+	},
+	gotoRow{ // S414
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S415
 		-1,  // S'
@@ -24547,71 +24547,71 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		526, // EXP
 		-1,  // EXP1
-		322, // TERM
+		323, // TERM
 		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
+		326, // FAC
+		327, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S416
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		527, // EXP
+		-1,  // EXP1
+		323, // TERM
+		-1,  // TERM1
+		326, // FAC
+		327, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S417
 		-1, // S'
@@ -24732,124 +24732,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S419
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		527, // TERM
-		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S420
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		528, // TERM
-		-1,  // TERM1
-		325, // FAC
-		326, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S421
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -24907,6 +24789,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S420
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		528, // TERM
+		-1,  // TERM1
+		326, // FAC
+		327, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S421
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		529, // TERM
+		-1,  // TERM1
+		326, // FAC
+		327, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S422
 		-1, // S'
@@ -25145,63 +25145,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S426
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		530, // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		64,  // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S427
 		-1,  // S'
@@ -25263,131 +25263,13 @@ var gotoTab = gotoTable{
 		-1,  // REL
 	},
 	gotoRow{ // S428
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
-	},
-	gotoRow{ // S429
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
 		-1,  // P2
 		-1,  // P3
 		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		532, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S430
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		533, // B1
+		532, // B1
 		-1,  // CL
 		-1,  // INH
 		-1,  // MET_CL
@@ -25439,7 +25321,7 @@ var gotoTab = gotoTable{
 		-1,  // LOG
 		-1,  // REL
 	},
-	gotoRow{ // S431
+	gotoRow{ // S429
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -25498,7 +25380,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S432
+	gotoRow{ // S430
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -25509,7 +25391,7 @@ var gotoTab = gotoTable{
 		-1,  // CL
 		-1,  // INH
 		-1,  // MET_CL
-		534, // MET_CL1
+		-1,  // MET_CL1
 		-1,  // ATR_CL
 		-1,  // ATR_SIMP
 		-1,  // ATR_SIMP1
@@ -25522,7 +25404,184 @@ var gotoTab = gotoTable{
 		-1,  // DV6
 		-1,  // TIP_SIMP
 		-1,  // TIP_COMP
-		432, // F
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		533, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S431
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		534, // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		64,  // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S432
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
+	},
+	gotoRow{ // S433
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		535, // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		433, // F
 		-1,  // F1
 		-1,  // F2
 		-1,  // F3
@@ -25556,65 +25615,6 @@ var gotoTab = gotoTable{
 		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
-	},
-	gotoRow{ // S433
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
 	},
 	gotoRow{ // S434
 		-1, // S'
@@ -25794,65 +25794,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S437
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		539, // ATR_SIMP
-		541, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		540, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S438
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -25910,6 +25851,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S438
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		540, // ATR_SIMP
+		542, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		541, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S439
 		-1, // S'
@@ -25971,65 +25971,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S440
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		542, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S441
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -26087,6 +26028,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S441
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		543, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S442
 		-1, // S'
@@ -26148,63 +26148,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S443
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		543, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S444
 		-1,  // S'
@@ -26257,11 +26257,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		544, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		546, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -26377,70 +26377,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		548, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		548, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S447
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		549, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S448
 		-1, // S'
@@ -27210,65 +27210,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S461
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		551, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S462
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -27326,6 +27267,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S462
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		552, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S463
 		-1, // S'
@@ -27387,63 +27387,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S464
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		552, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S465
 		-1,  // S'
@@ -27496,11 +27496,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		553, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		555, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -27616,70 +27616,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		557, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		557, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S468
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		558, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S469
 		-1, // S'
@@ -28449,65 +28449,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S482
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		560, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S483
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -28565,6 +28506,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S483
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		561, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S484
 		-1, // S'
@@ -28626,63 +28626,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S485
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		561, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S486
 		-1,  // S'
@@ -28735,11 +28735,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		562, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		564, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -28855,70 +28855,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		566, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		566, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S489
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		567, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S490
 		-1, // S'
@@ -29688,65 +29688,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S503
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		569, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S504
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -29804,6 +29745,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S504
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		570, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S505
 		-1, // S'
@@ -29865,63 +29865,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S506
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		570, // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		571, // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S507
 		-1,  // S'
@@ -29972,15 +29972,15 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP
 		-1,  // H_EXP1
 		-1,  // S_EXP
-		-1,  // S_EXP1
+		571, // S_EXP1
 		-1,  // EXP
-		572, // EXP1
+		-1,  // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
 		-1,  // VAR_CTE
 		-1,  // LOG
-		-1,  // REL
+		572, // REL
 	},
 	gotoRow{ // S508
 		-1,  // S'
@@ -30033,11 +30033,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		573, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		575, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -30153,70 +30153,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		577, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		577, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S511
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		578, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S512
 		-1, // S'
@@ -30396,65 +30396,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S515
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		580, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S516
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -30512,6 +30453,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S516
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		581, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S517
 		-1, // S'
@@ -30573,63 +30573,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S518
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		581, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S519
 		-1,  // S'
@@ -30682,11 +30682,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		582, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		584, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -30802,70 +30802,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		586, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		586, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S522
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		587, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S523
 		-1, // S'
@@ -31399,65 +31399,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S532
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		591, // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S533
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -31515,6 +31456,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S533
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		592, // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S534
 		-1, // S'
@@ -31753,124 +31753,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S538
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		595, // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		30,  // DV6
-		26,  // TIP_SIMP
-		29,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S539
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		539, // ATR_SIMP
-		596, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		540, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S540
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -31928,6 +31810,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S539
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		596, // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		30,  // DV6
+		26,  // TIP_SIMP
+		29,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S540
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		540, // ATR_SIMP
+		597, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		541, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S541
 		-1, // S'
@@ -32107,124 +32107,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S544
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		599, // EXP
-		-1,  // EXP1
-		443, // TERM
-		-1,  // TERM1
-		446, // FAC
-		447, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S545
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		600, // EXP
-		-1,  // EXP1
-		443, // TERM
-		-1,  // TERM1
-		446, // FAC
-		447, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S546
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -32282,6 +32164,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S545
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		600, // EXP
+		-1,  // EXP1
+		444, // TERM
+		-1,  // TERM1
+		447, // FAC
+		448, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S546
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		601, // EXP
+		-1,  // EXP1
+		444, // TERM
+		-1,  // TERM1
+		447, // FAC
+		448, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S547
 		-1, // S'
@@ -32402,124 +32402,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S549
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		601, // TERM
-		-1,  // TERM1
-		446, // FAC
-		447, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S550
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		602, // TERM
-		-1,  // TERM1
-		446, // FAC
-		447, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S551
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -32577,6 +32459,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S550
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		602, // TERM
+		-1,  // TERM1
+		447, // FAC
+		448, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S551
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		603, // TERM
+		-1,  // TERM1
+		447, // FAC
+		448, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S552
 		-1, // S'
@@ -32638,124 +32638,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S553
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		604, // EXP
-		-1,  // EXP1
-		464, // TERM
-		-1,  // TERM1
-		467, // FAC
-		468, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S554
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		605, // EXP
-		-1,  // EXP1
-		464, // TERM
-		-1,  // TERM1
-		467, // FAC
-		468, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S555
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -32813,6 +32695,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S554
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		605, // EXP
+		-1,  // EXP1
+		465, // TERM
+		-1,  // TERM1
+		468, // FAC
+		469, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S555
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		606, // EXP
+		-1,  // EXP1
+		465, // TERM
+		-1,  // TERM1
+		468, // FAC
+		469, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S556
 		-1, // S'
@@ -32933,124 +32933,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S558
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		606, // TERM
-		-1,  // TERM1
-		467, // FAC
-		468, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S559
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		607, // TERM
-		-1,  // TERM1
-		467, // FAC
-		468, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S560
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -33108,6 +32990,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S559
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		607, // TERM
+		-1,  // TERM1
+		468, // FAC
+		469, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S560
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		608, // TERM
+		-1,  // TERM1
+		468, // FAC
+		469, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S561
 		-1, // S'
@@ -33169,124 +33169,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S562
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		609, // EXP
-		-1,  // EXP1
-		485, // TERM
-		-1,  // TERM1
-		488, // FAC
-		489, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S563
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		610, // EXP
-		-1,  // EXP1
-		485, // TERM
-		-1,  // TERM1
-		488, // FAC
-		489, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S564
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -33344,6 +33226,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S563
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		610, // EXP
+		-1,  // EXP1
+		486, // TERM
+		-1,  // TERM1
+		489, // FAC
+		490, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S564
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		611, // EXP
+		-1,  // EXP1
+		486, // TERM
+		-1,  // TERM1
+		489, // FAC
+		490, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S565
 		-1, // S'
@@ -33464,124 +33464,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S567
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		611, // TERM
-		-1,  // TERM1
-		488, // FAC
-		489, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S568
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		612, // TERM
-		-1,  // TERM1
-		488, // FAC
-		489, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S569
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -33639,6 +33521,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S568
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		612, // TERM
+		-1,  // TERM1
+		489, // FAC
+		490, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S569
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		613, // TERM
+		-1,  // TERM1
+		489, // FAC
+		490, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S570
 		-1, // S'
@@ -33700,65 +33700,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S571
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		617, // EXP
-		-1,  // EXP1
-		618, // TERM
-		-1,  // TERM1
-		621, // FAC
-		622, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S572
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -33817,7 +33758,7 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S573
+	gotoRow{ // S572
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -33867,14 +33808,73 @@ var gotoTab = gotoTable{
 		-1,  // H_EXP1
 		-1,  // S_EXP
 		-1,  // S_EXP1
-		625, // EXP
+		618, // EXP
 		-1,  // EXP1
-		507, // TERM
+		619, // TERM
 		-1,  // TERM1
-		510, // FAC
-		511, // VAR_CTE
+		622, // FAC
+		623, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
+	},
+	gotoRow{ // S573
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S574
 		-1,  // S'
@@ -33928,71 +33928,71 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP1
 		626, // EXP
 		-1,  // EXP1
-		507, // TERM
+		508, // TERM
 		-1,  // TERM1
-		510, // FAC
-		511, // VAR_CTE
+		511, // FAC
+		512, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S575
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		627, // EXP
+		-1,  // EXP1
+		508, // TERM
+		-1,  // TERM1
+		511, // FAC
+		512, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S576
 		-1, // S'
@@ -34113,124 +34113,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S578
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		627, // TERM
-		-1,  // TERM1
-		510, // FAC
-		511, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S579
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		628, // TERM
-		-1,  // TERM1
-		510, // FAC
-		511, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S580
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -34288,6 +34170,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S579
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		628, // TERM
+		-1,  // TERM1
+		511, // FAC
+		512, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S580
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		629, // TERM
+		-1,  // TERM1
+		511, // FAC
+		512, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S581
 		-1, // S'
@@ -34349,124 +34349,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S582
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		630, // EXP
-		-1,  // EXP1
-		518, // TERM
-		-1,  // TERM1
-		521, // FAC
-		522, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S583
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		631, // EXP
-		-1,  // EXP1
-		518, // TERM
-		-1,  // TERM1
-		521, // FAC
-		522, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S584
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -34524,6 +34406,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S583
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		631, // EXP
+		-1,  // EXP1
+		519, // TERM
+		-1,  // TERM1
+		522, // FAC
+		523, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S584
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		632, // EXP
+		-1,  // EXP1
+		519, // TERM
+		-1,  // TERM1
+		522, // FAC
+		523, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S585
 		-1, // S'
@@ -34644,183 +34644,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S587
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		632, // TERM
-		-1,  // TERM1
-		521, // FAC
-		522, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S588
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		633, // TERM
-		-1,  // TERM1
-		521, // FAC
-		522, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S589
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		634, // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S590
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -34878,6 +34701,183 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S588
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		633, // TERM
+		-1,  // TERM1
+		522, // FAC
+		523, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S589
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		634, // TERM
+		-1,  // TERM1
+		522, // FAC
+		523, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S590
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		635, // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S591
 		-1, // S'
@@ -34998,124 +34998,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S593
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		53,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		637, // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S594
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		638, // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		639, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S595
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -35173,6 +35055,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S594
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		53,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		638, // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S595
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		639, // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		640, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S596
 		-1, // S'
@@ -35234,65 +35234,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S597
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		641, // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		30,  // DV6
-		26,  // TIP_SIMP
-		29,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S598
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -35350,6 +35291,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S598
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		642, // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		30,  // DV6
+		26,  // TIP_SIMP
+		29,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S599
 		-1, // S'
@@ -36296,65 +36296,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S615
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		642, // H_EXP
-		-1,  // H_EXP1
-		135, // S_EXP
-		-1,  // S_EXP1
-		136, // EXP
-		-1,  // EXP1
-		137, // TERM
-		-1,  // TERM1
-		140, // FAC
-		141, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S616
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -36412,6 +36353,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S616
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		643, // H_EXP
+		-1,  // H_EXP1
+		135, // S_EXP
+		-1,  // S_EXP1
+		136, // EXP
+		-1,  // EXP1
+		137, // TERM
+		-1,  // TERM1
+		140, // FAC
+		141, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S617
 		-1, // S'
@@ -36473,63 +36473,63 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S618
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		643, // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S619
 		-1,  // S'
@@ -36582,11 +36582,11 @@ var gotoTab = gotoTable{
 		-1,  // S_EXP
 		-1,  // S_EXP1
 		-1,  // EXP
-		-1,  // EXP1
+		644, // EXP1
 		-1,  // TERM
 		-1,  // TERM1
 		-1,  // FAC
-		646, // VAR_CTE
+		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
@@ -36702,70 +36702,70 @@ var gotoTab = gotoTable{
 		-1,  // EXP
 		-1,  // EXP1
 		-1,  // TERM
-		648, // TERM1
+		-1,  // TERM1
 		-1,  // FAC
-		-1,  // VAR_CTE
+		648, // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
 	},
 	gotoRow{ // S622
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		649, // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S623
 		-1, // S'
@@ -37535,65 +37535,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S636
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		652, // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		653, // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S637
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -37651,6 +37592,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S637
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		653, // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		654, // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S638
 		-1, // S'
@@ -37771,65 +37771,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S640
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		656, // ATR_SIMP
-		658, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		657, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S641
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -37887,6 +37828,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S641
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		657, // ATR_SIMP
+		659, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		658, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S642
 		-1, // S'
@@ -38007,124 +38007,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S644
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		661, // EXP
-		-1,  // EXP1
-		618, // TERM
-		-1,  // TERM1
-		621, // FAC
-		622, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S645
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		662, // EXP
-		-1,  // EXP1
-		618, // TERM
-		-1,  // TERM1
-		621, // FAC
-		622, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S646
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -38182,6 +38064,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S645
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		662, // EXP
+		-1,  // EXP1
+		619, // TERM
+		-1,  // TERM1
+		622, // FAC
+		623, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S646
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		663, // EXP
+		-1,  // EXP1
+		619, // TERM
+		-1,  // TERM1
+		622, // FAC
+		623, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S647
 		-1, // S'
@@ -38302,183 +38302,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S649
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		663, // TERM
-		-1,  // TERM1
-		621, // FAC
-		622, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S650
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		664, // TERM
-		-1,  // TERM1
-		621, // FAC
-		622, // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S651
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		665, // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S652
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -38536,6 +38359,183 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S650
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		664, // TERM
+		-1,  // TERM1
+		622, // FAC
+		623, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S651
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		665, // TERM
+		-1,  // TERM1
+		622, // FAC
+		623, // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S652
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		666, // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S653
 		-1, // S'
@@ -38656,124 +38656,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S655
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		667, // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		30,  // DV6
-		26,  // TIP_SIMP
-		29,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S656
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		656, // ATR_SIMP
-		668, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		657, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S657
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -38831,6 +38713,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S656
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		668, // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		30,  // DV6
+		26,  // TIP_SIMP
+		29,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S657
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		657, // ATR_SIMP
+		669, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		658, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S658
 		-1, // S'
@@ -38892,65 +38892,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S659
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		670, // ATR_SIMP
-		671, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		540, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S660
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -39008,6 +38949,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S660
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		671, // ATR_SIMP
+		672, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		541, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S661
 		-1, // S'
@@ -39246,124 +39246,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S665
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		672, // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		64,  // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S666
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		673, // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S667
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -39421,6 +39303,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S666
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		673, // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		64,  // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S667
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		674, // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S668
 		-1, // S'
@@ -39482,124 +39482,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S669
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		675, // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		30,  // DV6
-		26,  // TIP_SIMP
-		29,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S670
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		670, // ATR_SIMP
-		676, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		540, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S671
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -39657,6 +39539,124 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S670
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		676, // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		30,  // DV6
+		26,  // TIP_SIMP
+		29,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S671
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		671, // ATR_SIMP
+		677, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		541, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S672
 		-1, // S'
@@ -39777,65 +39777,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S674
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		679, // ATR_SIMP
-		681, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		680, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S675
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -39893,6 +39834,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S675
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		680, // ATR_SIMP
+		682, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		681, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S676
 		-1, // S'
@@ -40072,65 +40072,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S679
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		679, // ATR_SIMP
-		684, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		680, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S680
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -40188,6 +40129,65 @@ var gotoTab = gotoTable{
 		-1, // VAR_CTE
 		-1, // LOG
 		-1, // REL
+	},
+	gotoRow{ // S680
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		680, // ATR_SIMP
+		685, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		681, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
 	},
 	gotoRow{ // S681
 		-1, // S'
@@ -40249,124 +40249,6 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S682
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		686, // ATR_SIMP
-		687, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		657, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S683
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		-1,  // ATR_SIMP
-		-1,  // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		-1,  // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		688, // EST
-		65,  // AS
-		69,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		70,  // RET
-		68,  // LEC
-		-1,  // LEC1
-		67,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		66,  // DEC
-		-1,  // DEC1
-		71,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
-	},
-	gotoRow{ // S684
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -40425,7 +40307,66 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S685
+	gotoRow{ // S683
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		687, // ATR_SIMP
+		688, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		658, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S684
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -40442,7 +40383,125 @@ var gotoTab = gotoTable{
 		-1,  // ATR_SIMP1
 		-1,  // DV
 		-1,  // DV1
-		689, // DV2
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		-1,  // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		689, // EST
+		65,  // AS
+		69,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		70,  // RET
+		68,  // LEC
+		-1,  // LEC1
+		67,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		66,  // DEC
+		-1,  // DEC1
+		71,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
+	gotoRow{ // S685
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
+	},
+	gotoRow{ // S686
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		-1,  // ATR_SIMP
+		-1,  // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		690, // DV2
 		-1,  // DV3
 		-1,  // DV4
 		-1,  // DV5
@@ -40484,7 +40543,7 @@ var gotoTab = gotoTable{
 		-1,  // LOG
 		-1,  // REL
 	},
-	gotoRow{ // S686
+	gotoRow{ // S687
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -40497,8 +40556,8 @@ var gotoTab = gotoTable{
 		-1,  // MET_CL
 		-1,  // MET_CL1
 		-1,  // ATR_CL
-		686, // ATR_SIMP
-		690, // ATR_SIMP1
+		687, // ATR_SIMP
+		691, // ATR_SIMP1
 		-1,  // DV
 		-1,  // DV1
 		-1,  // DV2
@@ -40506,7 +40565,7 @@ var gotoTab = gotoTable{
 		-1,  // DV4
 		-1,  // DV5
 		-1,  // DV6
-		657, // TIP_SIMP
+		658, // TIP_SIMP
 		-1,  // TIP_COMP
 		-1,  // F
 		-1,  // F1
@@ -40543,7 +40602,7 @@ var gotoTab = gotoTable{
 		-1,  // LOG
 		-1,  // REL
 	},
-	gotoRow{ // S687
+	gotoRow{ // S688
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -40602,14 +40661,14 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
-	gotoRow{ // S688
+	gotoRow{ // S689
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
 		-1,  // P2
 		-1,  // P3
 		-1,  // B
-		691, // B1
+		692, // B1
 		-1,  // CL
 		-1,  // INH
 		-1,  // MET_CL
@@ -40660,65 +40719,6 @@ var gotoTab = gotoTable{
 		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
-	},
-	gotoRow{ // S689
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
 	},
 	gotoRow{ // S690
 		-1, // S'
@@ -40839,124 +40839,65 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S692
-		-1,  // S'
-		-1,  // P
-		-1,  // P1
-		-1,  // P2
-		-1,  // P3
-		-1,  // B
-		-1,  // B1
-		-1,  // CL
-		-1,  // INH
-		-1,  // MET_CL
-		-1,  // MET_CL1
-		-1,  // ATR_CL
-		694, // ATR_SIMP
-		695, // ATR_SIMP1
-		-1,  // DV
-		-1,  // DV1
-		-1,  // DV2
-		-1,  // DV3
-		-1,  // DV4
-		-1,  // DV5
-		-1,  // DV6
-		680, // TIP_SIMP
-		-1,  // TIP_COMP
-		-1,  // F
-		-1,  // F1
-		-1,  // F2
-		-1,  // F3
-		-1,  // F4
-		-1,  // EST
-		-1,  // AS
-		-1,  // LLAM
-		-1,  // LLAM1
-		-1,  // LLAM2
-		-1,  // RET
-		-1,  // LEC
-		-1,  // LEC1
-		-1,  // ESC
-		-1,  // ESC1
-		-1,  // ESC2
-		-1,  // DEC
-		-1,  // DEC1
-		-1,  // REP
-		-1,  // REP1
-		-1,  // VAR
-		-1,  // VAR1
-		-1,  // H_EXP
-		-1,  // H_EXP1
-		-1,  // S_EXP
-		-1,  // S_EXP1
-		-1,  // EXP
-		-1,  // EXP1
-		-1,  // TERM
-		-1,  // TERM1
-		-1,  // FAC
-		-1,  // VAR_CTE
-		-1,  // LOG
-		-1,  // REL
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
 	},
 	gotoRow{ // S693
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
-	},
-	gotoRow{ // S694
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -40969,8 +40910,8 @@ var gotoTab = gotoTable{
 		-1,  // MET_CL
 		-1,  // MET_CL1
 		-1,  // ATR_CL
-		694, // ATR_SIMP
-		697, // ATR_SIMP1
+		695, // ATR_SIMP
+		696, // ATR_SIMP1
 		-1,  // DV
 		-1,  // DV1
 		-1,  // DV2
@@ -40978,7 +40919,7 @@ var gotoTab = gotoTable{
 		-1,  // DV4
 		-1,  // DV5
 		-1,  // DV6
-		680, // TIP_SIMP
+		681, // TIP_SIMP
 		-1,  // TIP_COMP
 		-1,  // F
 		-1,  // F1
@@ -41015,7 +40956,7 @@ var gotoTab = gotoTable{
 		-1,  // LOG
 		-1,  // REL
 	},
-	gotoRow{ // S695
+	gotoRow{ // S694
 		-1, // S'
 		-1, // P
 		-1, // P1
@@ -41074,7 +41015,125 @@ var gotoTab = gotoTable{
 		-1, // LOG
 		-1, // REL
 	},
+	gotoRow{ // S695
+		-1,  // S'
+		-1,  // P
+		-1,  // P1
+		-1,  // P2
+		-1,  // P3
+		-1,  // B
+		-1,  // B1
+		-1,  // CL
+		-1,  // INH
+		-1,  // MET_CL
+		-1,  // MET_CL1
+		-1,  // ATR_CL
+		695, // ATR_SIMP
+		698, // ATR_SIMP1
+		-1,  // DV
+		-1,  // DV1
+		-1,  // DV2
+		-1,  // DV3
+		-1,  // DV4
+		-1,  // DV5
+		-1,  // DV6
+		681, // TIP_SIMP
+		-1,  // TIP_COMP
+		-1,  // F
+		-1,  // F1
+		-1,  // F2
+		-1,  // F3
+		-1,  // F4
+		-1,  // EST
+		-1,  // AS
+		-1,  // LLAM
+		-1,  // LLAM1
+		-1,  // LLAM2
+		-1,  // RET
+		-1,  // LEC
+		-1,  // LEC1
+		-1,  // ESC
+		-1,  // ESC1
+		-1,  // ESC2
+		-1,  // DEC
+		-1,  // DEC1
+		-1,  // REP
+		-1,  // REP1
+		-1,  // VAR
+		-1,  // VAR1
+		-1,  // H_EXP
+		-1,  // H_EXP1
+		-1,  // S_EXP
+		-1,  // S_EXP1
+		-1,  // EXP
+		-1,  // EXP1
+		-1,  // TERM
+		-1,  // TERM1
+		-1,  // FAC
+		-1,  // VAR_CTE
+		-1,  // LOG
+		-1,  // REL
+	},
 	gotoRow{ // S696
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
+	},
+	gotoRow{ // S697
 		-1,  // S'
 		-1,  // P
 		-1,  // P1
@@ -41098,11 +41157,11 @@ var gotoTab = gotoTable{
 		-1,  // DV6
 		-1,  // TIP_SIMP
 		-1,  // TIP_COMP
-		698, // F
+		699, // F
 		-1,  // F1
 		-1,  // F2
 		-1,  // F3
-		699, // F4
+		700, // F4
 		-1,  // EST
 		-1,  // AS
 		-1,  // LLAM
@@ -41132,65 +41191,6 @@ var gotoTab = gotoTable{
 		-1,  // VAR_CTE
 		-1,  // LOG
 		-1,  // REL
-	},
-	gotoRow{ // S697
-		-1, // S'
-		-1, // P
-		-1, // P1
-		-1, // P2
-		-1, // P3
-		-1, // B
-		-1, // B1
-		-1, // CL
-		-1, // INH
-		-1, // MET_CL
-		-1, // MET_CL1
-		-1, // ATR_CL
-		-1, // ATR_SIMP
-		-1, // ATR_SIMP1
-		-1, // DV
-		-1, // DV1
-		-1, // DV2
-		-1, // DV3
-		-1, // DV4
-		-1, // DV5
-		-1, // DV6
-		-1, // TIP_SIMP
-		-1, // TIP_COMP
-		-1, // F
-		-1, // F1
-		-1, // F2
-		-1, // F3
-		-1, // F4
-		-1, // EST
-		-1, // AS
-		-1, // LLAM
-		-1, // LLAM1
-		-1, // LLAM2
-		-1, // RET
-		-1, // LEC
-		-1, // LEC1
-		-1, // ESC
-		-1, // ESC1
-		-1, // ESC2
-		-1, // DEC
-		-1, // DEC1
-		-1, // REP
-		-1, // REP1
-		-1, // VAR
-		-1, // VAR1
-		-1, // H_EXP
-		-1, // H_EXP1
-		-1, // S_EXP
-		-1, // S_EXP1
-		-1, // EXP
-		-1, // EXP1
-		-1, // TERM
-		-1, // TERM1
-		-1, // FAC
-		-1, // VAR_CTE
-		-1, // LOG
-		-1, // REL
 	},
 	gotoRow{ // S698
 		-1, // S'
@@ -41252,6 +41252,65 @@ var gotoTab = gotoTable{
 		-1, // REL
 	},
 	gotoRow{ // S699
+		-1, // S'
+		-1, // P
+		-1, // P1
+		-1, // P2
+		-1, // P3
+		-1, // B
+		-1, // B1
+		-1, // CL
+		-1, // INH
+		-1, // MET_CL
+		-1, // MET_CL1
+		-1, // ATR_CL
+		-1, // ATR_SIMP
+		-1, // ATR_SIMP1
+		-1, // DV
+		-1, // DV1
+		-1, // DV2
+		-1, // DV3
+		-1, // DV4
+		-1, // DV5
+		-1, // DV6
+		-1, // TIP_SIMP
+		-1, // TIP_COMP
+		-1, // F
+		-1, // F1
+		-1, // F2
+		-1, // F3
+		-1, // F4
+		-1, // EST
+		-1, // AS
+		-1, // LLAM
+		-1, // LLAM1
+		-1, // LLAM2
+		-1, // RET
+		-1, // LEC
+		-1, // LEC1
+		-1, // ESC
+		-1, // ESC1
+		-1, // ESC2
+		-1, // DEC
+		-1, // DEC1
+		-1, // REP
+		-1, // REP1
+		-1, // VAR
+		-1, // VAR1
+		-1, // H_EXP
+		-1, // H_EXP1
+		-1, // S_EXP
+		-1, // S_EXP1
+		-1, // EXP
+		-1, // EXP1
+		-1, // TERM
+		-1, // TERM1
+		-1, // FAC
+		-1, // VAR_CTE
+		-1, // LOG
+		-1, // REL
+	},
+	gotoRow{ // S700
 		-1, // S'
 		-1, // P
 		-1, // P1

@@ -602,13 +602,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LLAM : id "(" LLAM1 ")"	<<  >>`,
+		String: `LLAM : id "(" LLAM1 ")" ";"	<< ast.NewFunctionCall(X[0], X[2]) >>`,
 		Id:         "LLAM",
 		NTType:     30,
 		Index:      58,
-		NumSymbols: 4,
+		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunctionCall(X[0], X[2])
 		},
 	},
 	ProdTabEntry{
