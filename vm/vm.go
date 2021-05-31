@@ -75,26 +75,74 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		}
 		vm.ip++
 	case "-":
+		op_err := vm.Sub(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "*":
+		op_err := vm.Mult(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "/":
+		op_err := vm.Div(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "&&":
+		op_err := vm.And(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "||":
-		return nil
-	case "!":
+		op_err := vm.Or(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "<":
+		op_err := vm.LessT(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case ">":
+		op_err := vm.GreaterT(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "==":
+		op_err := vm.EqualT(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "!=":
+		op_err := vm.NotEqualT(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "=":
+		op_err := vm.Assign(addr_1, addr_2, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 		// GOSUB, ERA, PARAM, ENDFUNC, RETURN,
 	}
@@ -115,7 +163,27 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	if !ok {
 		return errors.New("Couldn't cast to Cuadruplo.")
 	}
+
+	// cast string values from quads to integers
+	int_var1, err_v1 := strconv.Atoi(quad.Var1)
+	int_res, err_res := strconv.Atoi(quad.Res)
+
+	if err_v1 != nil || err_res != nil {
+		return errors.New("Couldn't cast quad addresses from string to memory Address type")
+	}
+
+	// cast int values to memory addresses
+	addr_1 := memory.Address(int_var1)
+	addr_res := memory.Address(int_res)
+
 	switch quad.Op {
+	case "!":
+		op_err := vm.Not(addr_1, addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
+		return nil
 	case "PRINT":
 		return nil
 	case "GOTO":
@@ -144,10 +212,8 @@ func (vm *VirtualMachine) RunQuad(q Attrib) error {
 	}
 
 	if quad.Var1 == "-1" || quad.Var2 == "-1" {
-		fmt.Println("Running uniry quad", vm.ip)
 		vm.RunUnaryQuad(q)
 	} else {
-		fmt.Println("Running binary quad", vm.ip)
 		vm.RunBinaryQuad(q)
 	}
 	return nil
@@ -174,5 +240,11 @@ func (vm *VirtualMachine) RunMachine() {
 	for i := range vm.quads {
 		q := vm.quads[i]
 		vm.RunQuad(q)
+	}
+
+	// Debugging quads
+	fmt.Println("QUADS:")
+	for i := range vm.quads {
+		fmt.Println(vm.quads[i])
 	}
 }

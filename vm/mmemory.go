@@ -2,6 +2,7 @@ package vm
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
@@ -84,6 +85,7 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		}
 		return nil
 	case addr < memory.PointersContext: // Referring to Constant 16 - 20
+		fmt.Println("Constant addr", addr)
 		err := mm.mem_constant.SetValue(addr, val)
 		if err != nil {
 			return err
