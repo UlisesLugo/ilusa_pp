@@ -4,7 +4,7 @@ import (
 	// go packages
 	"errors"
 	"fmt"
-	"strconv"
+	// "strconv"
 
 	// internal packages
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
@@ -240,60 +240,51 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewIf(exp, est, est_list, else_res Attrib) (quadruples.Cuadruplo, error) {
-	_, ok := exp.(*Exp)
+func NewIf(exp, est, est_list, else_res Attrib) ([]quadruples.Cuadruplo, error) {
+	new_exp, ok := exp.(*Exp)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
+	new_quads, _ := est.([]quadruples.Cuadruplo)
 	if !ok {
-		return quadruples.Cuadruplo{}, errors.New("problem in casting h_exp @if")
+		return nil, errors.New("problem in casting h_exp @if")
 	}
+	curr_quads = append(curr_quads, new_exp.quads_...)
 	// TODO Validate boolean expr in stack types
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top() // Get result
 	if !ok {
-		return quadruples.Cuadruplo{}, errors.New("Cannot make if without expr")
+		return nil, errors.New("Cannot make if without expr")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
-	curr_quad := quadruples.Cuadruplo{"GOTOF", curr_top1,"-1","-2"}
-	globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
-	globalCurrQuads = append(globalCurrQuads, curr_quad) // CHANGE to return []
-	quadsCounter++
-
-	new_quads, ok := est.([]quadruples.Cuadruplo)
-	if ok {
-		for _, quad := range new_quads {
-			globalCurrQuads = append(globalCurrQuads, quad)
-			quadsCounter++
-		}
+	// Determine gotof location
+	location := quadsCounter+len(new_exp.quads_)+3 // One for main, one for gotof and one for est
+	if est_list != nil {
+		est_list_quads := est.([]quadruples.Cuadruplo)
+		location += len(est_list_quads)
 	}
+	if else_res != nil {
+		location += 1 // Adding to skip goto instruction
+	}
+	curr_quad := quadruples.Cuadruplo{"GOTOF", curr_top1,"-1",fmt.Sprint(location)}
+	curr_quads = append(curr_quads, curr_quad)
+	// quadsCounter++
+
+	curr_quads = append(curr_quads, new_quads...)
+	
 	// TODO (Add append for est list)
+	if est_list != nil {
+		est_list_quads := est.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, est_list_quads...)
+	}
 	
 	if else_res != nil {
-		new_end, ok := globalStackJumps.Top()
-		if !ok {
-			return quadruples.Cuadruplo{}, errors.New("expected finish of else")
-		}
-		int_end, _ := strconv.Atoi(new_end)
-		globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+2) // FILL(false,cont)
-		globalStackJumps, _ = globalStackJumps.Pop()
-		globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
 		else_quads, _ := else_res.([]quadruples.Cuadruplo)
-		for _, quad := range else_quads {
-			globalCurrQuads = append(globalCurrQuads, quad)
-			quadsCounter++
-		}
+		goto_location := location + len(else_quads)
+		goto_quad := quadruples.Cuadruplo{"GOTO", "-1","-1",fmt.Sprint(goto_location)}
+		curr_quads = append(curr_quads, goto_quad)
+		curr_quads = append(curr_quads, else_quads...)
 	}
 
-	return curr_quad,nil
-}
-
-func FinishIf(decision Attrib) (int, error) {
-	new_end, ok := globalStackJumps.Top()
-	if !ok {
-		return -1, errors.New("expected finish of if")
-	}
-	int_end, _ := strconv.Atoi(new_end)
-	globalCurrQuads[int_end].Res = fmt.Sprint(quadsCounter+1)
-	globalStackJumps, _ = globalStackJumps.Pop()
-	return 1, nil
+	return curr_quads,nil
 }
 
 /*
@@ -305,7 +296,6 @@ func FinishIf(decision Attrib) (int, error) {
 */
 func NewElse(est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
 	curr_quads := make([]quadruples.Cuadruplo,0)
-	curr_quads = append(curr_quads, quadruples.Cuadruplo{"GOTO", "-1","-1","-2"})
 	
 	new_quads, ok_1 := est.([]quadruples.Cuadruplo)
 	if ok_1 {
