@@ -1,4 +1,4 @@
 Program unitFuncTest :
   main () {
-      z = a + b < c - d;
+      output(4 + 3 * 2, 4/1, 5);
   }
