@@ -53,7 +53,7 @@ func init() {
 	reads the program name id
 	returns progam name as a literal
 */
-func NewProgram(id, main_est Attrib) (*Program, error) {
+func NewProgram(id, func_est,main_est Attrib) (*Program, error) {
 	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
@@ -63,16 +63,26 @@ func NewProgram(id, main_est Attrib) (*Program, error) {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
 	// Prepend main quad
-	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
-	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
-
+	
 	fmt.Println("\tmain stmts",main_est)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
-	new_quads, ok := main_est.([]quadruples.Cuadruplo)
+	
+	func_quads, ok := func_est.([]quadruples.Cuadruplo)
 	if ok {
-		curr_quads = append(curr_quads, new_quads...)
+		curr_quads = append(curr_quads, func_quads...)
+		quadsCounter += len(func_quads)
+	} 
+	globalCurrQuads = append(globalCurrQuads, func_quads...)
+	
+	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter+1)}
+	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
+
+	est_quads, ok := main_est.([]quadruples.Cuadruplo)
+	if ok {
+		curr_quads = append(curr_quads, est_quads...)
 	}
-	globalCurrQuads = append(globalCurrQuads, new_quads...)
+	globalCurrQuads = append(globalCurrQuads, est_quads...)
+
 
 	end_quad := quadruples.Cuadruplo{"END","-1","-1","-1"}
 	globalCurrQuads = append(globalCurrQuads, end_quad)
@@ -100,8 +110,9 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
+func NewFunction(id, var_map, est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
+	curr_quads := make([]quadruples.Cuadruplo,0)
 	if !ok {
 		return nil, errors.New("problem reading function")
 	}
@@ -118,8 +129,17 @@ func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
 	}
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
-	fmt.Println("Function:", row.Id())
-	return row, nil
+	
+	// Add inner statements
+	new_est, _ := est.([]quadruples.Cuadruplo)
+	curr_quads = append(curr_quads, new_est...)
+	
+	endfunc_quad := quadruples.Cuadruplo{"ENDPROC","-1","-1","-1"}
+	curr_quads = append(curr_quads, endfunc_quad)
+	
+	fmt.Println("Function:", row.Id(), curr_quads)
+
+	return curr_quads, nil
 }
 
 func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error){
