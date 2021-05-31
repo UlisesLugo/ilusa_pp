@@ -140,6 +140,7 @@ LLAM1: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	empty
@@ -166,6 +167,7 @@ ESC1: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	cte_string
@@ -200,6 +202,7 @@ H_EXP: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	id
@@ -214,6 +217,7 @@ S_EXP: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	id
@@ -230,6 +234,7 @@ EXP: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	id
@@ -243,6 +248,7 @@ TERM: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	id
@@ -256,11 +262,13 @@ FAC: {
 	(
 	+
 	-
+	cte_char
 	cte_float
 	cte_i
 	id
 }
 VAR_CTE: {
+	cte_char
 	cte_float
 	cte_i
 	id

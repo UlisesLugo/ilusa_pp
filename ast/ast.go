@@ -325,39 +325,30 @@ func NewElse(est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
 	@param dim2 Attrib
 	returns variable entry
 */
-func NewAssignation(id, exp Attrib) (quadruples.Cuadruplo, error) {
+func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 	// cast id to token
 	tok, tok_ok := id.(*token.Token)
 	if !tok_ok {
-		return quadruples.Cuadruplo{}, errors.New("Problem in casting id token")
+		return nil, errors.New("Problem in casting id token")
 	}
 
 	
 	var_row, ok := globalVarTable.Table()[string(tok.Lit)]
 	if !ok {
-		return quadruples.Cuadruplo{}, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
+		return nil, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
 	}
 	current_address := memory.Address(var_row.DirV())
 	
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top()
 	if !ok {
-		return quadruples.Cuadruplo{}, errors.New("Cannot assign to bad expr")
+		return nil, errors.New("Cannot assign to bad expr")
 	}
 	// pop operand 1
 	globalStackOperands, _ = globalStackOperands.Pop()
 	fmt.Println("Assign:",var_row.Id(), var_row.DirV()) // TODO Check Types
-	fmt.Println("\t Stacks status",globalStackOperands, globalStackOperators)
-
-	// Add to scope &Constant{string(val.Lit), val, types.Char, memory.Address(current_address)}, nil
-	// _, exp_ok := exp.(*Exp)
-	// if exp_ok {
-	// 	createUnaryQuadruple(semantic.Equal)
-	// }
-	// curr_quad := quadruples.Cuadruplo{top, curr_top2, "-1", curr_top1}
-	// globalCurrQuads = append(globalCurrQuads, curr_quad)
-	// quadsCounter++;
-	return quadruples.Cuadruplo{semantic.Assign,fmt.Sprint(current_address),"-1", curr_top1}, nil // return row
+	quadToAdd := quadruples.Cuadruplo{semantic.Assign,fmt.Sprint(current_address),"-1", curr_top1}
+	return []quadruples.Cuadruplo{quadToAdd}, nil // return row
 }
 
 func NewWhile(exp, est Attrib)([]quadruples.Cuadruplo,error){
@@ -592,6 +583,24 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 	fmt.Println("id=", val.Lit, " addr=", current_address)
 	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 	return &Constant{string(val.Lit), val, types.Float, current_address}, nil
+}
+
+func NewCharConst(value Attrib) (*Constant, error) {
+	val, ok := value.(*token.Token)
+	if !ok {
+		return nil, errors.New("problem in float constants")
+	}
+	// calculate current address occuppied in context
+	var current_address memory.Address
+	if addr, ok := constantsMap[string(val.Lit)]; ok {
+		current_address = memory.Address(addr)
+	} else {
+		current_address, _ = vmemory.NextConst(types.Char) // TODO Check Types (Validate type with semantic cube)
+		constantsMap[string(val.Lit)] = int(current_address)
+	}
+	fmt.Println("id=", string(val.Lit), " addr=", current_address)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
 }
 
 func FinishInput(idList Attrib) (int, error) {
