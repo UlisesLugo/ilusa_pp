@@ -64,6 +64,7 @@ func (exp *Exp) Quads() []quadruples.Cuadruplo{
 type Op_exp struct {
 	operation semantic.Operation
 	const_    *Constant
+	exp *Exp
 }
 
 /*

@@ -32,13 +32,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `P : "Program" id ":" P1 P2 P3 B	<< ast.NewProgram(X[1]) >>`,
+		String: `P : "Program" id ":" P1 P2 P3 B	<< ast.NewProgram(X[1],X[6]) >>`,
 		Id:         "P",
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 7,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewProgram(X[1])
+			return ast.NewProgram(X[1],X[6])
 		},
 	},
 	ProdTabEntry{
@@ -102,13 +102,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `B : "main" "(" ")" "{" B1 "}"	<<  >>`,
+		String: `B : "main" "(" ")" "{" B1 "}"	<< X[4], nil >>`,
 		Id:         "B",
 		NTType:     5,
 		Index:      8,
 		NumSymbols: 6,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return X[4], nil
 		},
 	},
 	ProdTabEntry{
@@ -122,13 +122,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `B1 : EST B1	<<  >>`,
+		String: `B1 : EST B1	<< ast.NewStatements(X[0],X[1]) >>`,
 		Id:         "B1",
 		NTType:     6,
 		Index:      10,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewStatements(X[0],X[1])
 		},
 	},
 	ProdTabEntry{

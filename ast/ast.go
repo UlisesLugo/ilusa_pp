@@ -53,7 +53,7 @@ func init() {
 	reads the program name id
 	returns progam name as a literal
 */
-func NewProgram(id Attrib) (*Program, error) {
+func NewProgram(id, main_est Attrib) (*Program, error) {
 	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
@@ -64,8 +64,17 @@ func NewProgram(id Attrib) (*Program, error) {
 	}
 	// Prepend main quad
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
+	globalCurrQuads = append(globalCurrQuads,main_quad)
+
+	fmt.Println("\tmain stmts",main_est)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
+	new_quads, ok := main_est.([]quadruples.Cuadruplo)
+	if ok {
+		curr_quads = append(curr_quads, new_quads...)
+	}
+	globalCurrQuads = append(globalCurrQuads, new_quads...)
+
 	end_quad := quadruples.Cuadruplo{"END","-1","-1","-1"}
-	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 	globalCurrQuads = append(globalCurrQuads, end_quad)
 	quadsCounter+= 2
 	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
@@ -111,6 +120,17 @@ func NewFunction(id, var_map Attrib) (*tables.FuncRow, error) {
 	// TODO Add type checking and check to repeated func
 	fmt.Println("Function:", row.Id())
 	return row, nil
+}
+
+func NewStatements(est, est_list Attrib) ([]quadruples.Cuadruplo, error){
+	curr_quads := make([]quadruples.Cuadruplo, 0)
+	new_quads, ok := est.([]quadruples.Cuadruplo)
+	if ok {
+		curr_quads = append(curr_quads, new_quads...)
+	}
+	new_est_list, _ := est_list.([]quadruples.Cuadruplo)
+	curr_quads = append(curr_quads, new_est_list...)
+	return curr_quads, nil
 }
 
 /* GlobalVarDec
@@ -234,7 +254,7 @@ func NewIf(exp, est, est_list, else_res Attrib) (quadruples.Cuadruplo, error) {
 	globalStackOperands, _ = globalStackOperands.Pop()
 	curr_quad := quadruples.Cuadruplo{"GOTOF", curr_top1,"-1","-2"}
 	globalStackJumps = globalStackJumps.Push(fmt.Sprint(quadsCounter))
-	globalCurrQuads = append(globalCurrQuads, curr_quad)
+	globalCurrQuads = append(globalCurrQuads, curr_quad) // CHANGE to return []
 	quadsCounter++
 
 	new_quads, ok := est.([]quadruples.Cuadruplo)
@@ -401,16 +421,18 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		if new_exp1.op_exp_ != nil {
 			quads_to_add := createBinaryQuadruple(new_exp1.op_exp_.operation)
 			curr_quads = append(quads_to_add, curr_quads...)
-			fmt.Println("Adding quad in exp1",curr_quads)
 		}
-
+		
 	}
 	new_exp2, exp2_ok := exp2.(*Op_exp)
 	if exp2_ok {
 		quads_to_add := createBinaryQuadruple(new_exp2.operation)
 		curr_quads = append(quads_to_add, curr_quads...)
-		fmt.Println("Adding quad in exp2",curr_quads)
+		if new_exp2.exp != nil {
+			curr_quads = append(new_exp2.exp.quads_,curr_quads...)
+		}
 	}
+	// fmt.Println("Adding quad in exp",new_exp1, new_exp2, curr_quads)
 	return &Exp{new_exp1, new_exp2, new_const, curr_quads}, nil
 }
 
@@ -423,12 +445,14 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 func NewOperation(op, exp Attrib) (*Op_exp, error) {
 	tok, t_ok := op.(*token.Token)
 	if !t_ok {
-		return &Op_exp{semantic.Operation(""), nil}, errors.New("problem in casting operator")
+		return nil, errors.New("problem in casting operator")
 	}
 	new_op := semantic.Operation(tok.Lit)
 	globalStackOperators = globalStackOperators.Push(string(new_op))
 	new_const, _ := exp.(*Constant)
-	return &Op_exp{new_op, new_const}, nil
+	new_exp, _ := exp.(*Exp)
+	fmt.Println("In new op", new_exp)
+	return &Op_exp{new_op, new_const, new_exp}, nil
 }
 
 func createBinaryQuadruple(new_op semantic.Operation)([]quadruples.Cuadruplo) {
@@ -616,17 +640,19 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	if !ok {
 		return nil, errors.New("problem casting constant in input")
 	}
-	for i, _ := range id_list {
-		fmt.Println("In write id list#", i)
+	for _, val := range id_list {
+		curr_quads = append(curr_quads, val.Quads()...)
+
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
 			return nil, errors.New("stack is empty in writing")
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
-
+		
 		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", output_str}
 		curr_quads = append(curr_quads, curr_quad)
 	}
+	fmt.Println("Output quads", curr_quads)
 	return curr_quads, nil
 }
 

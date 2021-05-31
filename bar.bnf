@@ -19,13 +19,13 @@ cte_string : '"' {.} '"' ;
     "github.com/uliseslugo/ilusa_pp/ast"
     "github.com/uliseslugo/ilusa_pp/types") >>
 
-P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1) >> ;
+P : "Program" id ":" P1 P2 P3 B << ast.NewProgram($1,$6) >> ;
 P1 : empty | CL ;
 P2 : empty | DV << ast.GlobalVarDec($0) >>;
 P3 : empty | F ;
 
-B : "main" "(" ")" "{" B1 "}" ;
-B1 : empty | EST B1 ;
+B : "main" "(" ")" "{" B1 "}" << $4, nil >>;
+B1 : empty | EST B1 << ast.NewStatements($0,$1) >>;
 
 CL : "Class" id ":" INH "{" "atributes" "{" ATR_CL "}" MET_CL "}" << ast.NewClass($1) >>;
 INH : empty | "inherits" id ;
