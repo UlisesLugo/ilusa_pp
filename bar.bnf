@@ -2,6 +2,8 @@
 
 id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit} ;
 
+cte_char: '\'' . '\'' ;
+
 _digit : '0'-'9' ;
 
 _num : _digit {_digit} ;
@@ -115,7 +117,8 @@ FAC : "(" H_EXP ")"
 
 VAR_CTE : id << ast.NewIdConst($0) >>
  | cte_i << ast.NewIntConst($0) >>
- | cte_float << ast.NewFloatConst($0) >>;
+ | cte_float << ast.NewFloatConst($0) >>
+ | cte_char << ast.NewCharConst($0) >>;
 
 LOG : "&&" | "||" | "!=" ;
 REL : "<" | ">" | ">=" | "<=" | "==" ;

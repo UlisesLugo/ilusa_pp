@@ -1,6 +1,7 @@
 Item sets:
 S0{
 	id : •  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit}
+	cte_char : • ''' . '''
 	cte_i : • _num
 	cte_float : • _num '.' _num ['e' ['+' | '-'] _num]
 	cte_string : • '"' {.} '"'
@@ -64,47 +65,48 @@ Transitions:
 	['!','!'] -> S2
 	['"','"'] -> S3
 	['&','&'] -> S4
-	['(','('] -> S5
-	[')',')'] -> S6
-	['*','*'] -> S7
-	['+','+'] -> S8
-	[',',','] -> S9
-	['-','-'] -> S10
-	['/','/'] -> S11
-	['0','9'] -> S12
-	[':',':'] -> S13
-	[';',';'] -> S14
-	['<','<'] -> S15
-	['=','='] -> S16
-	['>','>'] -> S17
-	['C','C'] -> S18
-	['P','P'] -> S19
-	['[','['] -> S20
-	[']',']'] -> S21
-	['a','a'] -> S22
-	['b','b'] -> S23
-	['c','c'] -> S24
-	['d','d'] -> S25
-	['e','e'] -> S26
-	['f','f'] -> S27
-	['g','h'] -> S25
-	['i','i'] -> S28
-	['j','l'] -> S25
-	['m','m'] -> S29
-	['n','n'] -> S25
-	['o','o'] -> S30
-	['p','p'] -> S31
-	['q','q'] -> S25
-	['r','r'] -> S32
-	['s','u'] -> S25
-	['v','v'] -> S33
-	['w','w'] -> S34
-	['x','z'] -> S25
-	['{','{'] -> S35
-	['|','|'] -> S36
-	['}','}'] -> S37
+	[''','''] -> S5
+	['(','('] -> S6
+	[')',')'] -> S7
+	['*','*'] -> S8
+	['+','+'] -> S9
+	[',',','] -> S10
+	['-','-'] -> S11
+	['/','/'] -> S12
+	['0','9'] -> S13
+	[':',':'] -> S14
+	[';',';'] -> S15
+	['<','<'] -> S16
+	['=','='] -> S17
+	['>','>'] -> S18
+	['C','C'] -> S19
+	['P','P'] -> S20
+	['[','['] -> S21
+	[']',']'] -> S22
+	['a','a'] -> S23
+	['b','b'] -> S24
+	['c','c'] -> S25
+	['d','d'] -> S26
+	['e','e'] -> S27
+	['f','f'] -> S28
+	['g','h'] -> S26
+	['i','i'] -> S29
+	['j','l'] -> S26
+	['m','m'] -> S30
+	['n','n'] -> S26
+	['o','o'] -> S31
+	['p','p'] -> S32
+	['q','q'] -> S26
+	['r','r'] -> S33
+	['s','u'] -> S26
+	['v','v'] -> S34
+	['w','w'] -> S35
+	['x','z'] -> S26
+	['{','{'] -> S36
+	['|','|'] -> S37
+	['}','}'] -> S38
 Action: nil
-Symbols classes: {['\t','\t'], ['\n','\n'], ['\r','\r'], [' ',' '], ['!','!'], ['"','"'], ['&','&'], ['(','('], [')',')'], ['*','*'], ['+','+'], [',',','], ['-','-'], ['/','/'], ['0','9'], [':',':'], [';',';'], ['<','<'], ['=','='], ['>','>'], ['C','C'], ['P','P'], ['[','['], [']',']'], ['a','a'], ['b','b'], ['c','c'], ['d','d'], ['e','e'], ['f','f'], ['g','h'], ['i','i'], ['j','l'], ['m','m'], ['n','n'], ['o','o'], ['p','p'], ['q','q'], ['r','r'], ['s','u'], ['v','v'], ['w','w'], ['x','z'], ['{','{'], ['|','|'], ['}','}']}
+Symbols classes: {['\t','\t'], ['\n','\n'], ['\r','\r'], [' ',' '], ['!','!'], ['"','"'], ['&','&'], [''','''], ['(','('], [')',')'], ['*','*'], ['+','+'], [',',','], ['-','-'], ['/','/'], ['0','9'], [':',':'], [';',';'], ['<','<'], ['=','='], ['>','>'], ['C','C'], ['P','P'], ['[','['], [']',']'], ['a','a'], ['b','b'], ['c','c'], ['d','d'], ['e','e'], ['f','f'], ['g','h'], ['i','i'], ['j','l'], ['m','m'], ['n','n'], ['o','o'], ['p','p'], ['q','q'], ['r','r'], ['s','u'], ['v','v'], ['w','w'], ['x','z'], ['{','{'], ['|','|'], ['}','}']}
 
 S1{
 	!whitespace : ('\t' | '\n' | '\r' | ' ') •
@@ -117,7 +119,7 @@ S2{
 	!= : '!' • '='
 }
 Transitions:
-	['=','='] -> S38
+	['=','='] -> S39
 Action: nil
 Symbols classes: {['=','=']}
 
@@ -126,7 +128,7 @@ S3{
 	cte_string : '"' {• .} '"'
 }
 Transitions:
-	['"','"'] -> S39
+	['"','"'] -> S40
 . -> S3
 Action: nil
 Symbols classes: {['"','"']}
@@ -135,60 +137,68 @@ S4{
 	&& : '&' • '&'
 }
 Transitions:
-	['&','&'] -> S40
+	['&','&'] -> S41
 Action: nil
 Symbols classes: {['&','&']}
 
 S5{
+	cte_char : ''' • . '''
+}
+Transitions:
+. -> S42
+Action: nil
+Symbols classes: {}
+
+S6{
 	( : '(' •
 }
 Transitions:
 Action: Accept("(")
 Symbols classes: {}
 
-S6{
+S7{
 	) : ')' •
 }
 Transitions:
 Action: Accept(")")
 Symbols classes: {}
 
-S7{
+S8{
 	* : '*' •
 }
 Transitions:
 Action: Accept("*")
 Symbols classes: {}
 
-S8{
+S9{
 	+ : '+' •
 }
 Transitions:
 Action: Accept("+")
 Symbols classes: {}
 
-S9{
+S10{
 	, : ',' •
 }
 Transitions:
 Action: Accept(",")
 Symbols classes: {}
 
-S10{
+S11{
 	- : '-' •
 }
 Transitions:
 Action: Accept("-")
 Symbols classes: {}
 
-S11{
+S12{
 	/ : '/' •
 }
 Transitions:
 Action: Accept("/")
 Symbols classes: {}
 
-S12{
+S13{
 	_digit :  '0'-'9' •
 	_num : _digit {_digit} •
 	_num : _digit {• _digit}
@@ -199,83 +209,83 @@ S12{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['.','.'] -> S41
-	['0','9'] -> S12
+	['.','.'] -> S43
+	['0','9'] -> S13
 Action: Accept("cte_i")
 Symbols classes: {['.','.'], ['0','9']}
 
-S13{
+S14{
 	: : ':' •
 }
 Transitions:
 Action: Accept(":")
 Symbols classes: {}
 
-S14{
+S15{
 	; : ';' •
 }
 Transitions:
 Action: Accept(";")
 Symbols classes: {}
 
-S15{
+S16{
 	< : '<' •
 	<= : '<' • '='
 }
 Transitions:
-	['=','='] -> S42
+	['=','='] -> S44
 Action: Accept("<")
 Symbols classes: {['=','=']}
 
-S16{
+S17{
 	= : '=' •
 	== : '=' • '='
 }
 Transitions:
-	['=','='] -> S43
+	['=','='] -> S45
 Action: Accept("=")
 Symbols classes: {['=','=']}
 
-S17{
+S18{
 	> : '>' •
 	>= : '>' • '='
 }
 Transitions:
-	['=','='] -> S44
+	['=','='] -> S46
 Action: Accept(">")
 Symbols classes: {['=','=']}
 
-S18{
+S19{
 	Class : 'C' • 'l' 'a' 's' 's'
 }
 Transitions:
-	['l','l'] -> S45
+	['l','l'] -> S47
 Action: nil
 Symbols classes: {['l','l']}
 
-S19{
+S20{
 	Program : 'P' • 'r' 'o' 'g' 'r' 'a' 'm'
 }
 Transitions:
-	['r','r'] -> S46
+	['r','r'] -> S48
 Action: nil
 Symbols classes: {['r','r']}
 
-S20{
+S21{
 	[ : '[' •
 }
 Transitions:
 Action: Accept("[")
 Symbols classes: {}
 
-S21{
+S22{
 	] : ']' •
 }
 Transitions:
 Action: Accept("]")
 Symbols classes: {}
 
-S22{
+S23{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -284,15 +294,15 @@ S22{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S48
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S50
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S23{
+S24{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -301,15 +311,15 @@ S23{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','n'] -> S25
-	['o','o'] -> S49
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','n'] -> S26
+	['o','o'] -> S51
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','n'], ['o','o'], ['p','z']}
 
-S24{
+S25{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -318,15 +328,15 @@ S24{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','g'] -> S25
-	['h','h'] -> S50
-	['i','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','g'] -> S26
+	['h','h'] -> S52
+	['i','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','g'], ['h','h'], ['i','z']}
 
-S25{
+S26{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -334,13 +344,13 @@ S25{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S26{
+S27{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -349,15 +359,15 @@ S26{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','k'] -> S25
-	['l','l'] -> S51
-	['m','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','k'] -> S26
+	['l','l'] -> S53
+	['m','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','k'], ['l','l'], ['m','z']}
 
-S27{
+S28{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -368,19 +378,19 @@ S27{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','k'] -> S25
-	['l','l'] -> S52
-	['m','n'] -> S25
-	['o','o'] -> S53
-	['p','t'] -> S25
-	['u','u'] -> S54
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','k'] -> S26
+	['l','l'] -> S54
+	['m','n'] -> S26
+	['o','o'] -> S55
+	['p','t'] -> S26
+	['u','u'] -> S56
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','k'], ['l','l'], ['m','n'], ['o','o'], ['p','t'], ['u','u'], ['v','z']}
 
-S28{
+S29{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -392,17 +402,17 @@ S28{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','e'] -> S25
-	['f','f'] -> S55
-	['g','m'] -> S25
-	['n','n'] -> S56
-	['o','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','e'] -> S26
+	['f','f'] -> S57
+	['g','m'] -> S26
+	['n','n'] -> S58
+	['o','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','e'], ['f','f'], ['g','m'], ['n','n'], ['o','z']}
 
-S29{
+S30{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -412,16 +422,16 @@ S29{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S57
-	['b','d'] -> S25
-	['e','e'] -> S58
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S59
+	['b','d'] -> S26
+	['e','e'] -> S60
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','d'], ['e','e'], ['f','z']}
 
-S30{
+S31{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -430,15 +440,15 @@ S30{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','t'] -> S25
-	['u','u'] -> S59
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','t'] -> S26
+	['u','u'] -> S61
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','t'], ['u','u'], ['v','z']}
 
-S31{
+S32{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -449,17 +459,17 @@ S31{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S60
-	['s','t'] -> S25
-	['u','u'] -> S61
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S62
+	['s','t'] -> S26
+	['u','u'] -> S63
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','t'], ['u','u'], ['v','z']}
 
-S32{
+S33{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -468,15 +478,15 @@ S32{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S62
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S64
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S33{
+S34{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -486,16 +496,16 @@ S33{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S63
-	['b','n'] -> S25
-	['o','o'] -> S64
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S65
+	['b','n'] -> S26
+	['o','o'] -> S66
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','n'], ['o','o'], ['p','z']}
 
-S34{
+S35{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -504,105 +514,113 @@ S34{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','g'] -> S25
-	['h','h'] -> S65
-	['i','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','g'] -> S26
+	['h','h'] -> S67
+	['i','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','g'], ['h','h'], ['i','z']}
 
-S35{
+S36{
 	{ : '{' •
 }
 Transitions:
 Action: Accept("{")
 Symbols classes: {}
 
-S36{
+S37{
 	|| : '|' • '|'
 }
 Transitions:
-	['|','|'] -> S66
+	['|','|'] -> S68
 Action: nil
 Symbols classes: {['|','|']}
 
-S37{
+S38{
 	} : '}' •
 }
 Transitions:
 Action: Accept("}")
 Symbols classes: {}
 
-S38{
+S39{
 	!= : '!' '=' •
 }
 Transitions:
 Action: Accept("!=")
 Symbols classes: {}
 
-S39{
+S40{
 	cte_string : '"' {.} '"' •
 }
 Transitions:
 Action: Accept("cte_string")
 Symbols classes: {}
 
-S40{
+S41{
 	&& : '&' '&' •
 }
 Transitions:
 Action: Accept("&&")
 Symbols classes: {}
 
-S41{
+S42{
+	cte_char : ''' . • '''
+}
+Transitions:
+	[''','''] -> S69
+Action: nil
+Symbols classes: {[''',''']}
+
+S43{
 	cte_float : _num '.' • _num ['e' ['+' | '-'] _num]
 	_num : • _digit {_digit}
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S67
+	['0','9'] -> S70
 Action: nil
 Symbols classes: {['0','9']}
 
-S42{
+S44{
 	<= : '<' '=' •
 }
 Transitions:
 Action: Accept("<=")
 Symbols classes: {}
 
-S43{
+S45{
 	== : '=' '=' •
 }
 Transitions:
 Action: Accept("==")
 Symbols classes: {}
 
-S44{
+S46{
 	>= : '>' '=' •
 }
 Transitions:
 Action: Accept(">=")
 Symbols classes: {}
 
-S45{
+S47{
 	Class : 'C' 'l' • 'a' 's' 's'
 }
 Transitions:
-	['a','a'] -> S68
+	['a','a'] -> S71
 Action: nil
 Symbols classes: {['a','a']}
 
-S46{
+S48{
 	Program : 'P' 'r' • 'o' 'g' 'r' 'a' 'm'
 }
 Transitions:
-	['o','o'] -> S69
+	['o','o'] -> S72
 Action: nil
 Symbols classes: {['o','o']}
 
-S47{
+S49{
 	_digit :  '0'-'9' •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
@@ -611,13 +629,13 @@ S47{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S48{
+S50{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -626,15 +644,15 @@ S48{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S70
-	['s','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S73
+	['s','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
 
-S49{
+S51{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -643,15 +661,15 @@ S49{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','c'] -> S25
-	['d','d'] -> S71
-	['e','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','c'] -> S26
+	['d','d'] -> S74
+	['e','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','c'], ['d','d'], ['e','z']}
 
-S50{
+S52{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -660,14 +678,14 @@ S50{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S72
-	['b','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S75
+	['b','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','z']}
 
-S51{
+S53{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -676,15 +694,15 @@ S51{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','r'] -> S25
-	['s','s'] -> S73
-	['t','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','r'] -> S26
+	['s','s'] -> S76
+	['t','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','r'], ['s','s'], ['t','z']}
 
-S52{
+S54{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -693,15 +711,15 @@ S52{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','n'] -> S25
-	['o','o'] -> S74
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','n'] -> S26
+	['o','o'] -> S77
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','n'], ['o','o'], ['p','z']}
 
-S53{
+S55{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -710,15 +728,15 @@ S53{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S75
-	['s','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S78
+	['s','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
 
-S54{
+S56{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -727,15 +745,15 @@ S54{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','m'] -> S25
-	['n','n'] -> S76
-	['o','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','m'] -> S26
+	['n','n'] -> S79
+	['o','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','m'], ['n','n'], ['o','z']}
 
-S55{
+S57{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -744,13 +762,13 @@ S55{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("if")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S56{
+S58{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -761,19 +779,19 @@ S56{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','g'] -> S25
-	['h','h'] -> S77
-	['i','o'] -> S25
-	['p','p'] -> S78
-	['q','s'] -> S25
-	['t','t'] -> S79
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','g'] -> S26
+	['h','h'] -> S80
+	['i','o'] -> S26
+	['p','p'] -> S81
+	['q','s'] -> S26
+	['t','t'] -> S82
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','g'], ['h','h'], ['i','o'], ['p','p'], ['q','s'], ['t','t'], ['u','z']}
 
-S57{
+S59{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -782,15 +800,15 @@ S57{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S80
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S83
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S58{
+S60{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -799,15 +817,15 @@ S58{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S81
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S84
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S59{
+S61{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -816,15 +834,15 @@ S59{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S82
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S85
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S60{
+S62{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -834,17 +852,17 @@ S60{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S83
-	['j','n'] -> S25
-	['o','o'] -> S84
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S86
+	['j','n'] -> S26
+	['o','o'] -> S87
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','n'], ['o','o'], ['p','z']}
 
-S61{
+S63{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -853,15 +871,15 @@ S61{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S25
-	['b','b'] -> S85
-	['c','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S26
+	['b','b'] -> S88
+	['c','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','b'], ['c','z']}
 
-S62{
+S64{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -870,15 +888,15 @@ S62{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S86
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S89
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S63{
+S65{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -887,15 +905,15 @@ S63{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S87
-	['s','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S90
+	['s','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
 
-S64{
+S66{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -904,15 +922,15 @@ S64{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S88
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S91
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S65{
+S67{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -921,22 +939,29 @@ S65{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S89
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S92
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S66{
+S68{
 	|| : '|' '|' •
 }
 Transitions:
 Action: Accept("||")
 Symbols classes: {}
 
-S67{
+S69{
+	cte_char : ''' . ''' •
+}
+Transitions:
+Action: Accept("cte_char")
+Symbols classes: {}
+
+S70{
 	_digit :  '0'-'9' •
 	_num : _digit {_digit} •
 	_num : _digit {• _digit}
@@ -946,28 +971,28 @@ S67{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S67
-	['e','e'] -> S90
+	['0','9'] -> S70
+	['e','e'] -> S93
 Action: Accept("cte_float")
 Symbols classes: {['0','9'], ['e','e']}
 
-S68{
+S71{
 	Class : 'C' 'l' 'a' • 's' 's'
 }
 Transitions:
-	['s','s'] -> S91
+	['s','s'] -> S94
 Action: nil
 Symbols classes: {['s','s']}
 
-S69{
+S72{
 	Program : 'P' 'r' 'o' • 'g' 'r' 'a' 'm'
 }
 Transitions:
-	['g','g'] -> S92
+	['g','g'] -> S95
 Action: nil
 Symbols classes: {['g','g']}
 
-S70{
+S73{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -976,15 +1001,15 @@ S70{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S93
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S96
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S71{
+S74{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -993,15 +1018,15 @@ S71{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','x'] -> S25
-	['y','y'] -> S94
-	['z','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','x'] -> S26
+	['y','y'] -> S97
+	['z','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','x'], ['y','y'], ['z','z']}
 
-S72{
+S75{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1010,15 +1035,15 @@ S72{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S95
-	['s','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S98
+	['s','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
 
-S73{
+S76{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1027,15 +1052,15 @@ S73{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S96
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S99
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S74{
+S77{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1044,14 +1069,14 @@ S74{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S97
-	['b','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S100
+	['b','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','z']}
 
-S75{
+S78{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1060,13 +1085,13 @@ S75{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("for")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S76{
+S79{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1075,15 +1100,15 @@ S76{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','b'] -> S25
-	['c','c'] -> S98
-	['d','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','b'] -> S26
+	['c','c'] -> S101
+	['d','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','b'], ['c','c'], ['d','z']}
 
-S77{
+S80{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1092,15 +1117,15 @@ S77{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S99
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S102
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S78{
+S81{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1109,15 +1134,15 @@ S78{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','t'] -> S25
-	['u','u'] -> S100
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','t'] -> S26
+	['u','u'] -> S103
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','t'], ['u','u'], ['v','z']}
 
-S79{
+S82{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1126,13 +1151,13 @@ S79{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("int")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S80{
+S83{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1141,15 +1166,15 @@ S80{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','m'] -> S25
-	['n','n'] -> S101
-	['o','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','m'] -> S26
+	['n','n'] -> S104
+	['o','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','m'], ['n','n'], ['o','z']}
 
-S81{
+S84{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1158,15 +1183,15 @@ S81{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','g'] -> S25
-	['h','h'] -> S102
-	['i','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','g'] -> S26
+	['h','h'] -> S105
+	['i','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','g'], ['h','h'], ['i','z']}
 
-S82{
+S85{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1175,15 +1200,15 @@ S82{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','o'] -> S25
-	['p','p'] -> S103
-	['q','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','o'] -> S26
+	['p','p'] -> S106
+	['q','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','o'], ['p','p'], ['q','z']}
 
-S83{
+S86{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1192,15 +1217,15 @@ S83{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','u'] -> S25
-	['v','v'] -> S104
-	['w','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','u'] -> S26
+	['v','v'] -> S107
+	['w','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','u'], ['v','v'], ['w','z']}
 
-S84{
+S87{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1209,15 +1234,15 @@ S84{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S105
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S108
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S85{
+S88{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1226,15 +1251,15 @@ S85{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','k'] -> S25
-	['l','l'] -> S106
-	['m','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','k'] -> S26
+	['l','l'] -> S109
+	['m','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','k'], ['l','l'], ['m','z']}
 
-S86{
+S89{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1243,15 +1268,15 @@ S86{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','t'] -> S25
-	['u','u'] -> S107
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','t'] -> S26
+	['u','u'] -> S110
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','t'], ['u','u'], ['v','z']}
 
-S87{
+S90{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1260,15 +1285,15 @@ S87{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S108
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S111
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S88{
+S91{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1277,15 +1302,15 @@ S88{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','c'] -> S25
-	['d','d'] -> S109
-	['e','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','c'] -> S26
+	['d','d'] -> S112
+	['e','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','c'], ['d','d'], ['e','z']}
 
-S89{
+S92{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1294,15 +1319,15 @@ S89{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','k'] -> S25
-	['l','l'] -> S110
-	['m','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','k'] -> S26
+	['l','l'] -> S113
+	['m','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','k'], ['l','l'], ['m','z']}
 
-S90{
+S93{
 	cte_float : _num '.' _num ['e' ['+' | '-'] • _num]
 	cte_float : _num '.' _num ['e' ['+' | • '-'] _num]
 	cte_float : _num '.' _num ['e' [• '+' | '-'] _num]
@@ -1310,29 +1335,29 @@ S90{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['+','+'] -> S111
-	['-','-'] -> S111
-	['0','9'] -> S112
+	['+','+'] -> S114
+	['-','-'] -> S114
+	['0','9'] -> S115
 Action: nil
 Symbols classes: {['+','+'], ['-','-'], ['0','9']}
 
-S91{
+S94{
 	Class : 'C' 'l' 'a' 's' • 's'
 }
 Transitions:
-	['s','s'] -> S113
+	['s','s'] -> S116
 Action: nil
 Symbols classes: {['s','s']}
 
-S92{
+S95{
 	Program : 'P' 'r' 'o' 'g' • 'r' 'a' 'm'
 }
 Transitions:
-	['r','r'] -> S114
+	['r','r'] -> S117
 Action: nil
 Symbols classes: {['r','r']}
 
-S93{
+S96{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1341,15 +1366,15 @@ S93{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S25
-	['b','b'] -> S115
-	['c','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S26
+	['b','b'] -> S118
+	['c','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','b'], ['c','z']}
 
-S94{
+S97{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1358,13 +1383,13 @@ S94{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("body")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S95{
+S98{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1373,13 +1398,13 @@ S95{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("char")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S96{
+S99{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1388,13 +1413,13 @@ S96{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("else")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S97{
+S100{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1403,62 +1428,11 @@ S97{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S116
-	['u','z'] -> S25
-Action: Accept("id")
-Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
-
-S98{
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
-	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
-	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
-	function : 'f' 'u' 'n' 'c' • 't' 'i' 'o' 'n'
-	_digit : •  '0'-'9'
-}
-Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S117
-	['u','z'] -> S25
-Action: Accept("id")
-Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
-
-S99{
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
-	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
-	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
-	inherits : 'i' 'n' 'h' 'e' • 'r' 'i' 't' 's'
-	_digit : •  '0'-'9'
-}
-Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S118
-	['s','z'] -> S25
-Action: Accept("id")
-Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
-
-S100{
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
-	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
-	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
-	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
-	input : 'i' 'n' 'p' 'u' • 't'
-	_digit : •  '0'-'9'
-}
-Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
 	['t','t'] -> S119
-	['u','z'] -> S25
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
@@ -1467,17 +1441,68 @@ S101{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
 	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
+	function : 'f' 'u' 'n' 'c' • 't' 'i' 'o' 'n'
+	_digit : •  '0'-'9'
+}
+Transitions:
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S120
+	['u','z'] -> S26
+Action: Accept("id")
+Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
+
+S102{
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
+	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
+	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
+	inherits : 'i' 'n' 'h' 'e' • 'r' 'i' 't' 's'
+	_digit : •  '0'-'9'
+}
+Transitions:
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S121
+	['s','z'] -> S26
+Action: Accept("id")
+Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
+
+S103{
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
+	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
+	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
+	input : 'i' 'n' 'p' 'u' • 't'
+	_digit : •  '0'-'9'
+}
+Transitions:
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S122
+	['u','z'] -> S26
+Action: Accept("id")
+Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
+
+S104{
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
+	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
+	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
+	id :  'a'-'z' {•  'a'-'z' |  'A'-'Z' | _digit}
 	main : 'm' 'a' 'i' 'n' •
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("main")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S102{
+S105{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1486,15 +1511,15 @@ S102{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','n'] -> S25
-	['o','o'] -> S120
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','n'] -> S26
+	['o','o'] -> S123
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','n'], ['o','o'], ['p','z']}
 
-S103{
+S106{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1503,15 +1528,15 @@ S103{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','t'] -> S25
-	['u','u'] -> S121
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','t'] -> S26
+	['u','u'] -> S124
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','t'], ['u','u'], ['v','z']}
 
-S104{
+S107{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1520,14 +1545,14 @@ S104{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S122
-	['b','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S125
+	['b','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','z']}
 
-S105{
+S108{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1536,15 +1561,15 @@ S105{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S123
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S126
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S106{
+S109{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1553,15 +1578,15 @@ S106{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S124
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S127
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S107{
+S110{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1570,15 +1595,15 @@ S107{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','q'] -> S25
-	['r','r'] -> S125
-	['s','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','q'] -> S26
+	['r','r'] -> S128
+	['s','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','q'], ['r','r'], ['s','z']}
 
-S108{
+S111{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1587,14 +1612,14 @@ S108{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S126
-	['b','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S129
+	['b','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','z']}
 
-S109{
+S112{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1603,13 +1628,13 @@ S109{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("void")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S110{
+S113{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1618,25 +1643,25 @@ S110{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S127
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S130
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S111{
+S114{
 	cte_float : _num '.' _num ['e' ['+' | '-'] • _num]
 	_num : • _digit {_digit}
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S112
+	['0','9'] -> S115
 Action: nil
 Symbols classes: {['0','9']}
 
-S112{
+S115{
 	_digit :  '0'-'9' •
 	_num : _digit {_digit} •
 	_num : _digit {• _digit}
@@ -1645,26 +1670,26 @@ S112{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S112
+	['0','9'] -> S115
 Action: Accept("cte_float")
 Symbols classes: {['0','9']}
 
-S113{
+S116{
 	Class : 'C' 'l' 'a' 's' 's' •
 }
 Transitions:
 Action: Accept("Class")
 Symbols classes: {}
 
-S114{
+S117{
 	Program : 'P' 'r' 'o' 'g' 'r' • 'a' 'm'
 }
 Transitions:
-	['a','a'] -> S128
+	['a','a'] -> S131
 Action: nil
 Symbols classes: {['a','a']}
 
-S115{
+S118{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1673,15 +1698,15 @@ S115{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','t'] -> S25
-	['u','u'] -> S129
-	['v','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','t'] -> S26
+	['u','u'] -> S132
+	['v','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','t'], ['u','u'], ['v','z']}
 
-S116{
+S119{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1690,13 +1715,13 @@ S116{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("float")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S117{
+S120{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1705,15 +1730,15 @@ S117{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S130
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S133
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S118{
+S121{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1722,15 +1747,15 @@ S118{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','h'] -> S25
-	['i','i'] -> S131
-	['j','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','h'] -> S26
+	['i','i'] -> S134
+	['j','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','h'], ['i','i'], ['j','z']}
 
-S119{
+S122{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1739,13 +1764,13 @@ S119{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("input")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S120{
+S123{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1754,15 +1779,15 @@ S120{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','c'] -> S25
-	['d','d'] -> S132
-	['e','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','c'] -> S26
+	['d','d'] -> S135
+	['e','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','c'], ['d','d'], ['e','z']}
 
-S121{
+S124{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1771,15 +1796,15 @@ S121{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S133
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S136
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S122{
+S125{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1788,15 +1813,15 @@ S122{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S134
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S137
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S123{
+S126{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1805,15 +1830,15 @@ S123{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','b'] -> S25
-	['c','c'] -> S135
-	['d','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','b'] -> S26
+	['c','c'] -> S138
+	['d','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','b'], ['c','c'], ['d','z']}
 
-S124{
+S127{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1822,15 +1847,15 @@ S124{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','b'] -> S25
-	['c','c'] -> S136
-	['d','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','b'] -> S26
+	['c','c'] -> S139
+	['d','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','b'], ['c','c'], ['d','z']}
 
-S125{
+S128{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1839,15 +1864,15 @@ S125{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','m'] -> S25
-	['n','n'] -> S137
-	['o','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','m'] -> S26
+	['n','n'] -> S140
+	['o','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','m'], ['n','n'], ['o','z']}
 
-S126{
+S129{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1856,15 +1881,15 @@ S126{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','a'] -> S25
-	['b','b'] -> S138
-	['c','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','a'] -> S26
+	['b','b'] -> S141
+	['c','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','a'], ['b','b'], ['c','z']}
 
-S127{
+S130{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1873,21 +1898,21 @@ S127{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("while")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S128{
+S131{
 	Program : 'P' 'r' 'o' 'g' 'r' 'a' • 'm'
 }
 Transitions:
-	['m','m'] -> S139
+	['m','m'] -> S142
 Action: nil
 Symbols classes: {['m','m']}
 
-S129{
+S132{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1896,15 +1921,15 @@ S129{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S140
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S143
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S130{
+S133{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1913,15 +1938,15 @@ S130{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','n'] -> S25
-	['o','o'] -> S141
-	['p','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','n'] -> S26
+	['o','o'] -> S144
+	['p','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','n'], ['o','o'], ['p','z']}
 
-S131{
+S134{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1930,15 +1955,15 @@ S131{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S142
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S145
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S132{
+S135{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1947,15 +1972,15 @@ S132{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','r'] -> S25
-	['s','s'] -> S143
-	['t','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','r'] -> S26
+	['s','s'] -> S146
+	['t','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','r'], ['s','s'], ['t','z']}
 
-S133{
+S136{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1964,13 +1989,13 @@ S133{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("output")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S134{
+S137{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1979,15 +2004,15 @@ S134{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S144
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S147
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S135{
+S138{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -1996,15 +2021,15 @@ S135{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','s'] -> S25
-	['t','t'] -> S145
-	['u','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','s'] -> S26
+	['t','t'] -> S148
+	['u','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','s'], ['t','t'], ['u','z']}
 
-S136{
+S139{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2013,13 +2038,13 @@ S136{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("public")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S137{
+S140{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2028,13 +2053,13 @@ S137{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("return")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S138{
+S141{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2043,22 +2068,22 @@ S138{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','k'] -> S25
-	['l','l'] -> S146
-	['m','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','k'] -> S26
+	['l','l'] -> S149
+	['m','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','k'], ['l','l'], ['m','z']}
 
-S139{
+S142{
 	Program : 'P' 'r' 'o' 'g' 'r' 'a' 'm' •
 }
 Transitions:
 Action: Accept("Program")
 Symbols classes: {}
 
-S140{
+S143{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2067,15 +2092,15 @@ S140{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S147
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S150
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S141{
+S144{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2084,15 +2109,15 @@ S141{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','m'] -> S25
-	['n','n'] -> S148
-	['o','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','m'] -> S26
+	['n','n'] -> S151
+	['o','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','m'], ['n','n'], ['o','z']}
 
-S142{
+S145{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2101,15 +2126,15 @@ S142{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','r'] -> S25
-	['s','s'] -> S149
-	['t','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','r'] -> S26
+	['s','s'] -> S152
+	['t','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','r'], ['s','s'], ['t','z']}
 
-S143{
+S146{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2118,13 +2143,13 @@ S143{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("methods")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S144{
+S147{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2133,13 +2158,13 @@ S144{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("private")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S145{
+S148{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2148,15 +2173,15 @@ S145{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S150
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S153
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S146{
+S149{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2165,15 +2190,15 @@ S146{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','d'] -> S25
-	['e','e'] -> S151
-	['f','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','d'] -> S26
+	['e','e'] -> S154
+	['f','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','d'], ['e','e'], ['f','z']}
 
-S147{
+S150{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2182,15 +2207,15 @@ S147{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','r'] -> S25
-	['s','s'] -> S152
-	['t','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','r'] -> S26
+	['s','s'] -> S155
+	['t','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','r'], ['s','s'], ['t','z']}
 
-S148{
+S151{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2199,13 +2224,13 @@ S148{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("function")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S149{
+S152{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2214,13 +2239,13 @@ S149{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("inherits")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S150{
+S153{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2229,15 +2254,15 @@ S150{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','c'] -> S25
-	['d','d'] -> S153
-	['e','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','c'] -> S26
+	['d','d'] -> S156
+	['e','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','c'], ['d','d'], ['e','z']}
 
-S151{
+S154{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2246,15 +2271,15 @@ S151{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','r'] -> S25
-	['s','s'] -> S154
-	['t','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','r'] -> S26
+	['s','s'] -> S157
+	['t','z'] -> S26
 Action: Accept("id")
 Symbols classes: {['0','9'], ['A','Z'], ['a','r'], ['s','s'], ['t','z']}
 
-S152{
+S155{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2263,13 +2288,13 @@ S152{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("atributes")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S153{
+S156{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2278,13 +2303,13 @@ S153{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("protected")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 
-S154{
+S157{
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | _digit} •
 	id :  'a'-'z' { 'a'-'z' |  'A'-'Z' | • _digit}
 	id :  'a'-'z' { 'a'-'z' | •  'A'-'Z' | _digit}
@@ -2293,9 +2318,9 @@ S154{
 	_digit : •  '0'-'9'
 }
 Transitions:
-	['0','9'] -> S47
-	['A','Z'] -> S25
-	['a','z'] -> S25
+	['0','9'] -> S49
+	['A','Z'] -> S26
+	['a','z'] -> S26
 Action: Accept("variables")
 Symbols classes: {['0','9'], ['A','Z'], ['a','z']}
 

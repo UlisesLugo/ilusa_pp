@@ -1042,17 +1042,17 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LOG : "&&"	<<  >>`,
-		Id:         "LOG",
-		NTType:     55,
+		String: `VAR_CTE : cte_char	<< ast.NewCharConst(X[0]) >>`,
+		Id:         "VAR_CTE",
+		NTType:     54,
 		Index:      102,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewCharConst(X[0])
 		},
 	},
 	ProdTabEntry{
-		String: `LOG : "||"	<<  >>`,
+		String: `LOG : "&&"	<<  >>`,
 		Id:         "LOG",
 		NTType:     55,
 		Index:      103,
@@ -1062,7 +1062,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LOG : "!="	<<  >>`,
+		String: `LOG : "||"	<<  >>`,
 		Id:         "LOG",
 		NTType:     55,
 		Index:      104,
@@ -1072,9 +1072,9 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : "<"	<<  >>`,
-		Id:         "REL",
-		NTType:     56,
+		String: `LOG : "!="	<<  >>`,
+		Id:         "LOG",
+		NTType:     55,
 		Index:      105,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
@@ -1082,7 +1082,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : ">"	<<  >>`,
+		String: `REL : "<"	<<  >>`,
 		Id:         "REL",
 		NTType:     56,
 		Index:      106,
@@ -1092,7 +1092,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : ">="	<<  >>`,
+		String: `REL : ">"	<<  >>`,
 		Id:         "REL",
 		NTType:     56,
 		Index:      107,
@@ -1102,7 +1102,7 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : "<="	<<  >>`,
+		String: `REL : ">="	<<  >>`,
 		Id:         "REL",
 		NTType:     56,
 		Index:      108,
@@ -1112,10 +1112,20 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REL : "=="	<<  >>`,
+		String: `REL : "<="	<<  >>`,
 		Id:         "REL",
 		NTType:     56,
 		Index:      109,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `REL : "=="	<<  >>`,
+		Id:         "REL",
+		NTType:     56,
+		Index:      110,
 		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil

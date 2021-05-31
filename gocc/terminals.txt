@@ -42,6 +42,7 @@ for
 *
 /
 cte_float
+cte_char
 &&
 ||
 !=
