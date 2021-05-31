@@ -1,0 +1,4 @@
+Program vmExecution :
+  main () {
+    output(1 * 4 - 2);
+  }
