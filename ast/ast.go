@@ -64,7 +64,7 @@ func NewProgram(id, main_est Attrib) (*Program, error) {
 	}
 	// Prepend main quad
 	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", "main"}
-	globalCurrQuads = append(globalCurrQuads,main_quad)
+	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 
 	fmt.Println("\tmain stmts",main_est)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
