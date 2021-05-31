@@ -2,6 +2,8 @@ package memory
 
 import (
 	"errors"
+	"fmt"
+	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -14,14 +16,15 @@ import (
 	returns address of constant
 **/
 func (vm *VirtualMemory) InsertConstant(cte string, t types.CoreType) (Address, error) {
+	fmt.Println("Constant="+cte, "Type "+strconv.Itoa(int(t)))
 	if !vm.FindConstant(cte) { // new constant
-		nextAvailable, next_ok := vm.NextConst(t)
-		if next_ok != nil {
+		nextAvailable, next_err := vm.NextConst(t)
+		if next_err != nil {
 			// add constant
-			vm.constants_map[cte] = int(nextAvailable)
-			return Address(nextAvailable), nil
+			return Address(-1), errors.New("Couldn't find next available address for new constant.")
 		}
-		return Address(-1), errors.New("Couldn't find next available address for new constant.")
+		vm.constants_map[cte] = int(nextAvailable)
+		return Address(nextAvailable), nil
 	}
 	addr := Address(vm.constants_map[cte]) // constant already in map
 	return addr, nil

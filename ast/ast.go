@@ -457,7 +457,7 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		globalStackOperators, _ = globalStackOperators.Pop()
 		// get operand 2 & type 2
 		curr_top2, _ := globalStackOperands.Top()
-		curr_type2, _ := globalStackJumps.Top()
+		curr_type2, _ := globalStackTypes.Top()
 		// pop operand 2 & type 2
 		globalStackOperands, _ = globalStackOperands.Pop()
 		globalStackTypes, _ = globalStackTypes.Pop()
@@ -477,14 +477,16 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		cube_type, err_cube := globalSemanticCube.GetReturnType(semantic.Operation(top), types.CoreType(type_1), types.CoreType(type_2))
 		if err_cube != nil {
 			// TODO: Return error
-			fmt.Println("Error in Semantic Cube", err_cube)
+			fmt.Println("Error in Semantic Cube:", err_cube)
 		}
 
 		// generate quad
+		fmt.Println("Temp type", cube_type)
 		current_address, _ := vmemory.NextGlobalTemp(cube_type)
 		fmt.Println("Adding quad temp", current_address)
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+		globalStackTypes = globalStackTypes.Push(fmt.Sprint(cube_type))
 		quadsToAdd = append([]quadruples.Cuadruplo{curr_quad}, quadsToAdd...)
 
 		top, ok = globalStackOperators.Top()
@@ -561,17 +563,17 @@ func NewIntConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in integer constants")
 	}
 	// calculate current address occuppied in context
-	var current_address memory.Address
-	if addr, ok := constantsMap[string(val.Lit)]; ok {
-		current_address = memory.Address(addr)
-	} else {
-		current_address, _ = vmemory.NextConst(types.Integer)
-		constantsMap[string(val.Lit)] = int(current_address)
+	str_val := string(val.Lit)
+	cte_addr, err_addr := vmemory.InsertConstant(str_val, types.Integer)
+	if err_addr != nil {
+		fmt.Println("Error in Next int const address")
+		fmt.Println(err_addr)
 	}
-	fmt.Println("id=", string(val.Lit), " addr=", current_address)
-	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+
+	fmt.Println("id=", str_val, " addr=", cte_addr)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(cte_addr))
 	globalStackTypes = globalStackTypes.Push("0")
-	curr_constant := &Constant{string(val.Lit), val, types.Integer, current_address}
+	curr_constant := &Constant{str_val, val, types.Integer, cte_addr}
 	return curr_constant, nil
 }
 
@@ -586,17 +588,17 @@ func NewFloatConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in float constants")
 	}
 	// calculate current address occuppied in context
-	var current_address memory.Address
-	if addr, ok := constantsMap[string(val.Lit)]; ok {
-		current_address = memory.Address(addr)
-	} else {
-		current_address, _ = vmemory.NextConst(types.Float)
-		constantsMap[string(val.Lit)] = int(current_address)
+	str_val := string(val.Lit)
+	cte_addr, err_addr := vmemory.InsertConstant(str_val, types.Float)
+	if err_addr != nil {
+		fmt.Println("Error in Next float const address")
+		fmt.Println(err_addr)
 	}
-	fmt.Println("id=", val.Lit, " addr=", current_address)
-	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+
+	fmt.Println("id=", str_val, " addr=", cte_addr)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(cte_addr))
 	globalStackTypes = globalStackTypes.Push("1")
-	return &Constant{string(val.Lit), val, types.Float, current_address}, nil
+	return &Constant{str_val, val, types.Float, cte_addr}, nil
 }
 
 /*
@@ -609,17 +611,17 @@ func NewCharConst(value Attrib) (*Constant, error) {
 		return nil, errors.New("problem in char constants")
 	}
 	// calculate current address occuppied in context
-	var current_address memory.Address
-	if addr, ok := constantsMap[string(val.Lit)]; ok {
-		current_address = memory.Address(addr)
-	} else {
-		current_address, _ = vmemory.NextConst(types.Char)
-		constantsMap[string(val.Lit)] = int(current_address)
+	str_val := string(val.Lit)
+	cte_addr, err_addr := vmemory.InsertConstant(str_val, types.Char)
+	if err_addr != nil {
+		fmt.Println("Error in Next float const address")
+		fmt.Println(err_addr)
 	}
-	fmt.Println("id=", val.Lit, " addr=", current_address)
-	globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+
+	fmt.Println("id=", str_val, " addr=", cte_addr)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(cte_addr))
 	globalStackTypes = globalStackTypes.Push("2")
-	return &Constant{string(val.Lit), val, types.Char, current_address}, nil
+	return &Constant{string(val.Lit), val, types.Char, cte_addr}, nil
 }
 
 func FinishInput(idList Attrib) (int, error) {
