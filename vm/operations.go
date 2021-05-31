@@ -12,7 +12,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	fmt.Println("left", left)
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -21,7 +20,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	// TODO: Check if operation is valid
 
@@ -35,7 +33,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
 		fmt.Println("res", result)
-		fmt.Println("Address", res)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -53,10 +50,7 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 }
 
 func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
-	fmt.Println("SUB1")
 	left_val, err_left := vm.mm.GetValue(left)
-	fmt.Println("SUB2")
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -65,7 +59,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	// TODO: Check if operation is valid
 
@@ -98,7 +91,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -107,7 +99,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	// TODO: Check if operation is valid
 
@@ -141,7 +132,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -150,7 +140,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	// TODO: Check if operation is valid
 
@@ -199,7 +188,6 @@ func (vm *VirtualMachine) Assign(left, right, res memory.Address) error {
 func (vm *VirtualMachine) GreaterT(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -208,7 +196,6 @@ func (vm *VirtualMachine) GreaterT(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	left_flt, _ := getFloat(left_val)
@@ -244,7 +231,6 @@ func (vm *VirtualMachine) GreaterT(left, right, res memory.Address) error {
 func (vm *VirtualMachine) LessT(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -253,7 +239,6 @@ func (vm *VirtualMachine) LessT(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	left_flt, _ := getFloat(left_val)
@@ -289,7 +274,6 @@ func (vm *VirtualMachine) LessT(left, right, res memory.Address) error {
 func (vm *VirtualMachine) EqualT(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -298,7 +282,6 @@ func (vm *VirtualMachine) EqualT(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	if err_ln != nil {
@@ -334,7 +317,6 @@ func (vm *VirtualMachine) EqualT(left, right, res memory.Address) error {
 func (vm *VirtualMachine) NotEqualT(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -343,7 +325,6 @@ func (vm *VirtualMachine) NotEqualT(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	if err_ln != nil {
@@ -380,7 +361,6 @@ func (vm *VirtualMachine) NotEqualT(left, right, res memory.Address) error {
 func (vm *VirtualMachine) And(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -389,7 +369,6 @@ func (vm *VirtualMachine) And(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	if err_ln != nil {
@@ -423,7 +402,6 @@ func (vm *VirtualMachine) And(left, right, res memory.Address) error {
 func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -432,7 +410,6 @@ func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 	if err_right != nil {
 		return err_right
 	}
-	fmt.Println("rv", right_val)
 
 	left_num, err_ln := getNum(left_val)
 	if err_ln != nil {
@@ -466,7 +443,6 @@ func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
-	fmt.Println("lv", left_val)
 	if err_left != nil {
 		return err_left
 	}
@@ -491,5 +467,20 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	if err_res != nil {
 		return err_res
 	}
+	return nil
+}
+
+// Unary Operations
+func (vm *VirtualMachine) Write(res memory.Address) error {
+	result, err_res := vm.mm.GetValue(res)
+	if err_res != nil {
+		fmt.Print("Error in result output")
+		return err_res
+	}
+
+	// Print results
+	fmt.Println("-----------------------------")
+	fmt.Println("Output: ", result)
+	fmt.Println("-----------------------------")
 	return nil
 }

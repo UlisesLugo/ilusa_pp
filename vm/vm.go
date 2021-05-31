@@ -184,13 +184,16 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		}
 		vm.ip++
 		return nil
-	case "PRINT":
+	case "WRITE":
+		op_err := vm.Write(addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "GOTO":
 		return nil
 	case "GOTOF":
-		return nil
-	case "GOTOV":
 		return nil
 	case "READ":
 		return nil

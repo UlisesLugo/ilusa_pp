@@ -77,25 +77,25 @@ func (mb *MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 		if len(mb.temp_ints)-1 < typeAddr {
 			return nil, errors.New("Temp Integers address out of scope.")
 		}
-		return mb.integers[typeAddr], nil
+		return mb.temp_ints[typeAddr], nil
 	case idx < memory.TempCharOffset: // float temp
 		typeAddr := int(idx - memory.TempFloatOffset)
 		if len(mb.temp_floats)-1 < typeAddr {
 			return nil, errors.New("Temp Floats address out of scope.")
 		}
-		return mb.ids[typeAddr], nil
+		return mb.temp_floats[typeAddr], nil
 	case idx < memory.TempBoolOffset: // char temp
 		typeAddr := int(idx - memory.TempCharOffset)
 		if len(mb.temp_chars)-1 < typeAddr {
 			return nil, errors.New("Temp Char address out of scope.")
 		}
-		return mb.ids[typeAddr], nil
+		return mb.temp_chars[typeAddr], nil
 	case idx < 9000: // bool temp
 		typeAddr := int(idx - memory.TempBoolOffset)
 		if len(mb.temp_bools)-1 < typeAddr {
 			return nil, errors.New("Temp Booleans address out of scope.")
 		}
-		return mb.ids[typeAddr], nil
+		return mb.temp_bools[typeAddr], nil
 	}
 	return nil, errors.New("Address out of scope")
 }
@@ -109,7 +109,7 @@ func (mb *MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 	idx := addr - mb.baseAddr
 	fmt.Println("Index to set value", idx)
-	fmt.Println("VALUE", val)
+	fmt.Println("Value to set", val)
 
 	switch {
 	case idx < 0:
@@ -120,7 +120,6 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		return nil
 	case idx >= 1000 && idx < 2000: // float
 		typeAddr := int(idx - memory.FloatOffset)
-		fmt.Println("REFERRING TO", typeAddr)
 		mb.floats[typeAddr] = val.(float64) // set
 		return nil
 	case idx >= 2000 && idx < 3000: // char
@@ -136,7 +135,6 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		mb.ids[typeAddr] = val.(string)
 		return nil
 	case idx >= 5000 && idx < 6000: // int temp
-		fmt.Println("In Integer temporal set")
 		typeAddr := int(idx - memory.TempIntOffset)
 		mb.temp_ints[typeAddr] = val.(int)
 		return nil
