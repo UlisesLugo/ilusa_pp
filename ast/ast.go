@@ -340,6 +340,47 @@ func NewAssignation(id, exp Attrib) (quadruples.Cuadruplo, error) {
 	return quadruples.Cuadruplo{semantic.Assign,fmt.Sprint(current_address),"-1", curr_top1}, nil // return row
 }
 
+func NewWhile(exp, est Attrib)([]quadruples.Cuadruplo,error){
+	curr_quads := make([]quadruples.Cuadruplo,0)
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return nil, errors.New("while must have a valid expression")
+	}
+	curr_quads = append(curr_quads, new_exp.quads_...)
+	est_quads, _ := est.([]quadruples.Cuadruplo)
+	
+	curr_top1, ok := globalStackOperands.Top() // Get result
+	if !ok {
+		return nil, errors.New("Cannot make if without expr")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	gotof_loc := fmt.Sprint(quadsCounter+len(curr_quads)+len(est_quads)+3)
+	gotof_quad := quadruples.Cuadruplo{"GOTOF",curr_top1,"-1",gotof_loc}
+	curr_quads = append(curr_quads, gotof_quad)
+
+	curr_quads = append(curr_quads, est_quads...)
+
+	goto_quad := quadruples.Cuadruplo{"GOTO","-1","-1",fmt.Sprint(quadsCounter+1)}
+	curr_quads = append(curr_quads, goto_quad)
+
+	// quadsCounter += len(curr_quads) + len(est_quads) + 2
+	fmt.Println("In new while",curr_quads)
+	return curr_quads,nil
+}
+
+func LoopStatements(est, est_list Attrib) ([]quadruples.Cuadruplo, error){
+	curr_quads, ok := est.([]quadruples.Cuadruplo)
+	if !ok {
+		return nil,errors.New("loop must contain one statement")
+	}
+	if est_list != nil{
+		new_quads := est_list.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, new_quads...)
+	}
+	return curr_quads,nil
+}
+
+
 /*
 	NewExpression
 	handles logic of creation of new expressions.
@@ -351,20 +392,26 @@ func NewAssignation(id, exp Attrib) (quadruples.Cuadruplo, error) {
 func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	new_exp1, exp1_ok := exp1.(*Exp) // term non-terminal
 	new_const, _ := exp1.(*Constant)
+	curr_quads := make([]quadruples.Cuadruplo,0)
 	if exp1_ok {
+		curr_quads = append(new_exp1.Quads(), curr_quads...)
 		if new_exp1.const_ != nil {
 			new_const = new_exp1.const_
 		}
 		if new_exp1.op_exp_ != nil {
-			createBinaryQuadruple(new_exp1.op_exp_.operation)
+			quads_to_add := createBinaryQuadruple(new_exp1.op_exp_.operation)
+			curr_quads = append(quads_to_add, curr_quads...)
+			fmt.Println("Adding quad in exp1",curr_quads)
 		}
 
 	}
 	new_exp2, exp2_ok := exp2.(*Op_exp)
 	if exp2_ok {
-		createBinaryQuadruple(new_exp2.operation)
+		quads_to_add := createBinaryQuadruple(new_exp2.operation)
+		curr_quads = append(quads_to_add, curr_quads...)
+		fmt.Println("Adding quad in exp2",curr_quads)
 	}
-	return &Exp{new_exp1, new_exp2, new_const}, nil
+	return &Exp{new_exp1, new_exp2, new_const, curr_quads}, nil
 }
 
 /*
@@ -384,7 +431,7 @@ func NewOperation(op, exp Attrib) (*Op_exp, error) {
 	return &Op_exp{new_op, new_const}, nil
 }
 
-func createBinaryQuadruple(new_op semantic.Operation) {
+func createBinaryQuadruple(new_op semantic.Operation)([]quadruples.Cuadruplo) {
 	// operatorsKey := semantic.NewOperatorKey() // operators table with keys
 
 	level_id := globalOperatorsDict.Op_hierarchy[string(new_op)] // get hierarchy level of operator level
@@ -412,12 +459,12 @@ func createBinaryQuadruple(new_op semantic.Operation) {
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		quadsToAdd = append([]quadruples.Cuadruplo{curr_quad}, quadsToAdd...)
-		quadsCounter++;
 
 		top, ok = globalStackOperators.Top()
 		top_level = globalOperatorsDict.Op_hierarchy[top]
 	}
-	globalCurrQuads = append(globalCurrQuads, quadsToAdd...)
+	return quadsToAdd
+	// globalCurrQuads = append(globalCurrQuads, quadsToAdd...)
 }
 
 func createUnaryQuadruple(new_op semantic.Operation) {

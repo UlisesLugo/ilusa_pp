@@ -49,6 +49,11 @@ type Exp struct {
 	exp1    *Exp
 	op_exp_ *Op_exp
 	const_ *Constant
+	quads_ []quadruples.Cuadruplo
+}
+
+func (exp *Exp) Quads() []quadruples.Cuadruplo{
+	return exp.quads_
 }
 
 /*

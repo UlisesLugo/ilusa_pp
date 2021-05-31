@@ -1,0 +1,7 @@
+Program firstTest :
+  main() {
+      while(2 > 1){
+          output(2);
+      }
+  }
+  

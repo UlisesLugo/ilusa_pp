@@ -5,8 +5,8 @@
 			Shift(209)
 	S643
 		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
@@ -14,15 +14,15 @@
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
 	S654
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
+		symbol: char
+			Shift(21)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+		symbol: float
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(22)
 	S666
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
@@ -44,19 +44,19 @@
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
 	S676
+		symbol: char
+			Shift(21)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+		symbol: float
+			Shift(22)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
 	S678
 		symbol: int
-			Shift(20)
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)

@@ -85,8 +85,9 @@ ESC2 : empty | "," ESC1 ESC2 << ast.NewOutput($1, $2) >> ;
 DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1 << ast.NewIf($2,$5,$6,$8) >>;
 DEC1 : empty | "else" "{" EST B1 "}" << ast.NewElse($2,$3) >>;
 
-REP : "while" "(" H_EXP REP1 | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
-REP1 : ")" "{" EST B1 "}" ;
+REP : "while" "(" H_EXP REP1 << ast.NewWhile($2,$3) >>
+ | "for" "(" AS ";" H_EXP ";" H_EXP REP1 ;
+REP1 : ")" "{" EST B1 "}" << ast.LoopStatements($2,$3) >> ;
 
 VAR : id VAR1 VAR1 << ast.GetIdDimConst($0, $1, $2) >>;
 VAR1 : empty | "[" H_EXP "]" << $1, nil >>;

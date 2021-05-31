@@ -742,13 +742,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6], X[8]) >>`,
+		String: `DEC : "if" "(" H_EXP ")" "{" EST B1 "}" DEC1	<< ast.NewIf(X[2],X[5],X[6],X[8]) >>`,
 		Id:         "DEC",
 		NTType:     39,
 		Index:      72,
 		NumSymbols: 9,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIf(X[2],X[5],X[6], X[8])
+			return ast.NewIf(X[2],X[5],X[6],X[8])
 		},
 	},
 	ProdTabEntry{
@@ -772,13 +772,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REP : "while" "(" H_EXP REP1	<<  >>`,
+		String: `REP : "while" "(" H_EXP REP1	<< ast.NewWhile(X[2],X[3]) >>`,
 		Id:         "REP",
 		NTType:     41,
 		Index:      75,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewWhile(X[2],X[3])
 		},
 	},
 	ProdTabEntry{
@@ -792,13 +792,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `REP1 : ")" "{" EST B1 "}"	<<  >>`,
+		String: `REP1 : ")" "{" EST B1 "}"	<< ast.LoopStatements(X[2],X[3]) >>`,
 		Id:         "REP1",
 		NTType:     42,
 		Index:      77,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.LoopStatements(X[2],X[3])
 		},
 	},
 	ProdTabEntry{
