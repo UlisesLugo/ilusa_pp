@@ -1,0 +1,8 @@
+Program firstTest:
+  variables {
+      int a;
+  }
+  main() {
+      input(a);
+  }
+  
