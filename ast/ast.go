@@ -124,12 +124,25 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 	row := new(tables.FuncRow)
 	row.SetId(idName)
 	function_map := make(map[string]*tables.VarRow)
+	curr_params_counter := 0
+	params_map := make(map[int]types.CoreType)
 	new_var_table := &tables.VarTable{}
 
 	if attrib_map != nil {
 		new_attrib_map := attrib_map.(map[string]*tables.VarRow)
 		function_map = new_attrib_map
+		for _, val := range new_attrib_map {
+			if val.Order() > 0{
+				curr_params_counter++
+			}
+		}
+		for _,val := range new_attrib_map {
+			if val.Order() > 0{
+			params_map[curr_params_counter-val.Order()] = val.Type()
+			}
+		}
 	}
+	row.SetParams(params_map)
 
 	if var_map != nil {
 		new_var_map, _ := var_map.(map[string]*tables.VarRow)
@@ -163,11 +176,7 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 		curr_quads = append(curr_quads, new_func_quads...)
 	}
 
-	fmt.Println("Function:", row.Id(), curr_quads)
-
-	// // Reset local memory and currFunc string
-	// globalCurrentScope = nil
-	// vmemory.ResetLocalMemory()
+	fmt.Println("Function:", row.Id())
 
 	return curr_quads, nil
 }
@@ -199,6 +208,7 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error) {
 	tok, ok := id.(*token.Token)
 	val := string(tok.Lit)
+	paramOrder++;
 	// currFunc = val
 	curr_map := make(map[string]*tables.VarRow)
 	if !ok {
@@ -210,12 +220,13 @@ func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error)
 	row.SetDim1(0)
 	row.SetDim2(0)
 	curr_type, _ := tipo.(types.CoreType)
+	row.SetType(curr_type)
 	addr, _ := vmemory.NextLocalTemp(curr_type)
 	row.SetDirV(addr)
+	row.SetOrder(paramOrder)
 	if rest == nil {
 		curr_map[val] = row
 		globalCurrentScope = curr_map
-		fmt.Println("Reading attr", curr_map)
 		return curr_map, nil
 	}
 	rest_map, _ := rest.(map[string]*tables.VarRow)
@@ -569,6 +580,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 func ResetLocalMemory() (int, error) {
 	fmt.Println("Resets Local Memory for new function.")
 	vmemory.ResetLocalMemory()
+	paramOrder = 0
 	globalCurrentScope = nil
 	return 0, nil
 }

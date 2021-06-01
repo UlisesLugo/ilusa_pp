@@ -10,7 +10,7 @@ import (
 type FuncRow struct {
 	id         string
 	return_val types.CoreType
-	params     []types.CoreType
+	params     map[int]types.CoreType
 	// scope int
 	local_vars *VarTable
 	address memory.Address
@@ -62,12 +62,12 @@ func (fr *FuncRow) SetReturnValue(curr_type types.CoreType) {
 }
 
 // Getter for params
-func (fr *FuncRow) Params() []types.CoreType {
+func (fr *FuncRow) Params() map[int]types.CoreType {
 	return fr.params
 }
 
 // Setter for params
-func (fr *FuncRow) SetParams(curr_params []types.CoreType) {
+func (fr *FuncRow) SetParams(curr_params map[int]types.CoreType) {
 	fr.params = curr_params
 }
 
