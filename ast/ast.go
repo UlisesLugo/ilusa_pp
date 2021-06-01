@@ -112,7 +112,7 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
+func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	if !ok {
@@ -122,13 +122,23 @@ func NewFunction(id, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cua
 	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
 	row.SetId(idName)
+	function_map := make(map[string]*tables.VarRow)
+	new_var_table := &tables.VarTable{}
+
+	if attrib_map != nil {
+		new_attrib_map := attrib_map.(map[string]*tables.VarRow)
+		function_map = new_attrib_map
+	}
+
 	if var_map != nil {
 		new_var_map, _ := var_map.(map[string]*tables.VarRow)
-		new_var_table := &tables.VarTable{}
-		new_var_table.SetParent(globalVarTable) // Sets global table as parent
-		new_var_table.SetTable(new_var_map)
-		row.SetLocalVars(new_var_table)
+		for _, var_row := range new_var_map {
+			function_map[var_row.Id()] = var_row
+		}
 	}
+	new_var_table.SetParent(globalVarTable) // Sets global table as parent
+	new_var_table.SetTable(function_map)
+	row.SetLocalVars(new_var_table)
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
 
@@ -190,20 +200,27 @@ func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error)
 	if !ok {
 		return nil, errors.New("problem reading function attribute")
 	}
+	row := &tables.VarRow{}
+	row.SetId(val)
+	row.SetToken(tok)
+	row.SetDim1(0)
+	row.SetDim2(0)
+	curr_type, _ := tipo.(types.CoreType)
+	addr, _ := vmemory.NextLocalTemp(curr_type)
+	row.SetDirV(addr)
 	if rest == nil {
-		row := &tables.VarRow{}
-		row.SetId(val)
-		row.SetToken(tok)
-		row.SetDim1(0)
-		row.SetDim2(0)
-		curr_type, _ := tipo.(types.CoreType)
-		addr, _ := vmemory.NextLocalTemp(curr_type)
-		row.SetDirV(addr)
 		curr_map[val] = row
+		globalCurrentScope = curr_map
 		fmt.Println("Reading attr", curr_map)
 		return curr_map, nil
 	}
-	return curr_map, nil
+	rest_map, _ := rest.(map[string]*tables.VarRow)
+	if _, ok := rest_map[val]; ok {
+		return nil, errors.New(fmt.Sprint("cannot declare multiple times variable", val))
+	}
+	rest_map[val] = row
+	globalCurrentScope = rest_map
+	return rest_map, nil
 }
 
 func NewStatements(est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
@@ -250,7 +267,6 @@ func NewBlockVariables(var_map, next_var_map Attrib) (map[string]*tables.VarRow,
 		}
 		new_var_map[val.Id()] = val
 	}
-	globalCurrentScope = new_var_map
 	return new_var_map, nil
 }
 
@@ -278,7 +294,16 @@ func NewTypeVariables(typed_var, var_list Attrib) (map[string]*tables.VarRow, er
 			curr_map[row.Id()] = row
 		}
 	}
-	globalCurrentScope = curr_map
+	if globalCurrentScope != nil {
+		for _, var_row := range curr_map {
+			if _, ok := globalCurrentScope[var_row.Id()]; ok {
+				return nil, errors.New("cannot redlecare variable " + var_row.Id())
+			}
+			globalCurrentScope[var_row.Id()] = var_row
+		}
+	} else {
+		globalCurrentScope = curr_map
+	}
 	return curr_map, nil
 }
 
