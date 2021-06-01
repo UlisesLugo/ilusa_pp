@@ -62,7 +62,7 @@ F3 : empty | "," TIP_SIMP id F3 << ast.NewFunction($2, nil) >>;
 F4 : empty | F ;
 
 EST : AS 
- | DEC << ast.FinishIf($0) >>
+ | DEC
  | ESC << ast.FinishOutput($0) >>
  | LEC << ast.FinishInput($0) >>
  | LLAM 
