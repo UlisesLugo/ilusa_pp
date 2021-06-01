@@ -89,8 +89,9 @@ func NewProgram(id, func_est, main_est Attrib) (*Program, error) {
 	end_quad := quadruples.Cuadruplo{"END", "-1", "-1", "-1"}
 	globalCurrQuads = append(globalCurrQuads, end_quad)
 	quadruples.ParseQuadruples(globalCurrQuads)
-	quadruples.ParseFunctionAdresses(globalCurrQuads, globalFuncTable)
-	return &Program{nombre, globalCurrQuads, new_id, constantsMap, nil}, nil
+	// [] tablerow
+	rows := quadruples.ParseFunctionAdresses(globalCurrQuads, globalFuncTable)
+	return &Program{nombre, globalCurrQuads, new_id, constantsMap, rows}, nil
 }
 
 /*

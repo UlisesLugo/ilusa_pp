@@ -31,9 +31,9 @@ func ParseQuadruples(quads_list []Cuadruplo) {
 	}
 }
 
-func ParseFunctionAdresses(quads []Cuadruplo, functable *tables.FuncTable) {
+func ParseFunctionAdresses(quads []Cuadruplo, functable *tables.FuncTable) []tables.FuncRow{
 	if functable == nil || functable.Table() == nil {
-		return 
+		return nil
 	}
 
 	for i,quad := range quads {
@@ -41,4 +41,9 @@ func ParseFunctionAdresses(quads []Cuadruplo, functable *tables.FuncTable) {
 			functable.Table()[quad.Res].SetAddress(memory.Address(i+1))
 		}
 	}
+	res := make([]tables.FuncRow,0)
+	for _,row := range functable.Table() {
+		res = append(res, *row)
+	}
+	return res
 }

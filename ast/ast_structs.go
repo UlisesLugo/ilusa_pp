@@ -27,7 +27,7 @@ type Program struct {
 	quads_ []quadruples.Cuadruplo
 	id     *token.Token
 	constants map[string]int
-	functable map[string]tables.FuncRow
+	functable []tables.FuncRow
 }
 
 func (p *Program) String() string {
@@ -42,7 +42,7 @@ func (p *Program) Consts() map[string]int {
 	return p.constants
 }
 
-func (p *Program) FuncTable() map[string]tables.FuncRow {
+func (p *Program) FuncTable() []tables.FuncRow {
 	return p.functable
 }
 
