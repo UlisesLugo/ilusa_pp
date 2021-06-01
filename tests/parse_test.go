@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"encoding/json"
+	"encoding/gob"
 
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
@@ -39,7 +39,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"expr_test_1.isa",
+		"call_test_3.isa",
 	}
 
 	for _, test := range tests {
@@ -68,7 +68,7 @@ func TestDuck(t *testing.T) {
 			if err != nil {
 				panic(err)
 			}
-			enc := json.NewEncoder(f)
+			enc := gob.NewEncoder(f)
 
 			obj_map := make(map[string]interface{}) // map of key: json object
 
@@ -77,6 +77,9 @@ func TestDuck(t *testing.T) {
 
 			// set key for Constants Table
 			obj_map["Consts"] = prog.Consts()
+
+			// set key for Functable
+			enc.Encode(prog.FuncTable())
 
 			// encodigin map
 			enc.Encode(obj_map)

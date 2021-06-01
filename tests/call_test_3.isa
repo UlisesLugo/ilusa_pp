@@ -1,0 +1,20 @@
+Program unitFuncTest :
+  function void isa(int a, float d){
+    variables{
+      int b, c;
+    }
+    body{
+      output(b);
+    }
+  }
+
+  function void ulises(int a){
+    variables{}
+    body{
+      output(2);
+    }
+  }
+  main () {
+      isa(2,3);
+      ulises(1);
+  }

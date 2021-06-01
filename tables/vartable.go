@@ -22,6 +22,7 @@ type VarRow struct {
 	dim1_  int
 	dim2_  int
 	dirV_   memory.Address // virtual memory address
+	order_ int
 }
 
 // TESTED
@@ -60,6 +61,10 @@ func (vr *VarRow) DirV() memory.Address {
 	return vr.dirV_
 }
 
+func (vr *VarRow) Order() int {
+	return vr.order_
+}
+
 // TESTED
 
 // Setter
@@ -89,6 +94,10 @@ func (vr *VarRow) SetDim2(dim2 int) {
 
 func (vr *VarRow) SetDirV(dirV memory.Address){
 	vr.dirV_ = dirV
+}
+
+func (vr *VarRow) SetOrder(order int){
+	vr.order_ = order
 }
 
 /*
