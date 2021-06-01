@@ -1,10 +1,4 @@
 Program vmExecution :
   main () {
     output(5 + 10);
-    output(3 * 4);
-    output(3.4 - 3.4);
-    output(5 + 2);
-    output(2 / 2);
-    output(10.5 + 3.4);
-    output(1.2 * 4.3 - 2.4);
   }

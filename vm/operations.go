@@ -1,6 +1,7 @@
 package vm
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -440,6 +441,7 @@ func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 	return nil
 }
 
+// Unary operations
 func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
@@ -470,7 +472,6 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	return nil
 }
 
-// Unary Operations
 func (vm *VirtualMachine) Write(res memory.Address) error {
 	result, err_res := vm.mm.GetValue(res)
 	if err_res != nil {
@@ -482,5 +483,40 @@ func (vm *VirtualMachine) Write(res memory.Address) error {
 	fmt.Println("-----------------------------")
 	fmt.Println("Output: ", result)
 	fmt.Println("-----------------------------")
+	return nil
+}
+
+func (vm *VirtualMachine) Goto(res int) error {
+	if res < 0 {
+		return errors.New("Invalid value for instruction pointer")
+	}
+	// set instruction pointer to res value
+	vm.ip = res
+	return nil
+}
+
+func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
+	left_val, err_left := vm.mm.GetValue(left)
+	if err_left != nil {
+		fmt.Println("Error in left value for GOTOF")
+		return err_left
+	}
+
+	left_num, err_ln := getNum(left_val)
+	if err_ln != nil {
+		fmt.Println("Error in left value for GOTOF, not a number")
+		return err_ln
+	}
+
+	fmt.Println("Value found for GOTOF", left_num)
+
+	if left_num == 0 {
+		fmt.Println("Falso")
+		vm.ip = jump
+		fmt.Println(vm.ip)
+	} else {
+		vm.ip++
+	}
+
 	return nil
 }

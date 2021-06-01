@@ -160,6 +160,11 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
+	if quad.Res == "main" {
+		vm.ip++
+		return nil
+	}
+
 	if !ok {
 		return errors.New("Couldn't cast to Cuadruplo.")
 	}
@@ -192,10 +197,21 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "GOTO":
+		op_err := vm.Goto(int(addr_res))
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "GOTOF":
+		op_err := vm.GotoF(addr_1, int(addr_res))
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
 		return nil
 	case "READ":
+		// TODO
 		return nil
 	}
 	return nil
