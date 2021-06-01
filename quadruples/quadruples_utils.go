@@ -20,7 +20,7 @@ func ParseQuadruples(quads_list []Cuadruplo) {
 				quads_list[i+1].Res= fmt.Sprint(next_pos)
 			case "GOTOF":
 				curr_pos,_ := strconv.Atoi(quad.Res)
-				next_pos := curr_pos + loc_stack[len(loc_stack)-1]
+				next_pos := curr_pos + loc_stack[len(loc_stack)-1]-1
 				quads_list[i+1].Res= fmt.Sprint(next_pos)
 
 
