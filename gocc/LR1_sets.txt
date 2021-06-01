@@ -595,14 +595,14 @@ S52{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -738,14 +738,14 @@ S62{
 	AS : id •= H_EXP ; «return»
 	AS : id •= H_EXP ; «while»
 	AS : id •= H_EXP ; «}»
-	LLAM : id •( LLAM1 ) «for»
-	LLAM : id •( LLAM1 ) «id»
-	LLAM : id •( LLAM1 ) «if»
-	LLAM : id •( LLAM1 ) «input»
-	LLAM : id •( LLAM1 ) «output»
-	LLAM : id •( LLAM1 ) «return»
-	LLAM : id •( LLAM1 ) «while»
-	LLAM : id •( LLAM1 ) «}»
+	LLAM : id •( LLAM1 ) ; «for»
+	LLAM : id •( LLAM1 ) ; «id»
+	LLAM : id •( LLAM1 ) ; «if»
+	LLAM : id •( LLAM1 ) ; «input»
+	LLAM : id •( LLAM1 ) ; «output»
+	LLAM : id •( LLAM1 ) ; «return»
+	LLAM : id •( LLAM1 ) ; «while»
+	LLAM : id •( LLAM1 ) ; «}»
 }
 Transitions:
 	( -> 87
@@ -851,14 +851,14 @@ S64{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -1152,14 +1152,14 @@ Transitions:
 
 
 S87{
-	LLAM : id ( •LLAM1 ) «for»
-	LLAM : id ( •LLAM1 ) «id»
-	LLAM : id ( •LLAM1 ) «if»
-	LLAM : id ( •LLAM1 ) «input»
-	LLAM : id ( •LLAM1 ) «output»
-	LLAM : id ( •LLAM1 ) «return»
-	LLAM : id ( •LLAM1 ) «while»
-	LLAM : id ( •LLAM1 ) «}»
+	LLAM : id ( •LLAM1 ) ; «for»
+	LLAM : id ( •LLAM1 ) ; «id»
+	LLAM : id ( •LLAM1 ) ; «if»
+	LLAM : id ( •LLAM1 ) ; «input»
+	LLAM : id ( •LLAM1 ) ; «output»
+	LLAM : id ( •LLAM1 ) ; «return»
+	LLAM : id ( •LLAM1 ) ; «while»
+	LLAM : id ( •LLAM1 ) ; «}»
 	LLAM1 : empty• «)»
 	LLAM1 : •H_EXP LLAM2 «)»
 	H_EXP : •S_EXP H_EXP1 «)»
@@ -2437,14 +2437,14 @@ Transitions:
 
 
 S108{
-	LLAM : id ( LLAM1 •) «for»
-	LLAM : id ( LLAM1 •) «id»
-	LLAM : id ( LLAM1 •) «if»
-	LLAM : id ( LLAM1 •) «input»
-	LLAM : id ( LLAM1 •) «output»
-	LLAM : id ( LLAM1 •) «return»
-	LLAM : id ( LLAM1 •) «while»
-	LLAM : id ( LLAM1 •) «}»
+	LLAM : id ( LLAM1 •) ; «for»
+	LLAM : id ( LLAM1 •) ; «id»
+	LLAM : id ( LLAM1 •) ; «if»
+	LLAM : id ( LLAM1 •) ; «input»
+	LLAM : id ( LLAM1 •) ; «output»
+	LLAM : id ( LLAM1 •) ; «return»
+	LLAM : id ( LLAM1 •) ; «while»
+	LLAM : id ( LLAM1 •) ; «}»
 }
 Transitions:
 	) -> 163
@@ -4435,16 +4435,17 @@ Transitions:
 
 
 S163{
-	LLAM : id ( LLAM1 )• «for»
-	LLAM : id ( LLAM1 )• «id»
-	LLAM : id ( LLAM1 )• «if»
-	LLAM : id ( LLAM1 )• «input»
-	LLAM : id ( LLAM1 )• «output»
-	LLAM : id ( LLAM1 )• «return»
-	LLAM : id ( LLAM1 )• «while»
-	LLAM : id ( LLAM1 )• «}»
+	LLAM : id ( LLAM1 ) •; «for»
+	LLAM : id ( LLAM1 ) •; «id»
+	LLAM : id ( LLAM1 ) •; «if»
+	LLAM : id ( LLAM1 ) •; «input»
+	LLAM : id ( LLAM1 ) •; «output»
+	LLAM : id ( LLAM1 ) •; «return»
+	LLAM : id ( LLAM1 ) •; «while»
+	LLAM : id ( LLAM1 ) •; «}»
 }
 Transitions:
+	; -> 232
 
 
 S164{
@@ -4565,18 +4566,18 @@ S165{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	( -> 233
-	cte_i -> 234
-	S_EXP -> 235
-	EXP -> 236
-	TERM -> 237
-	+ -> 238
-	- -> 239
-	FAC -> 240
-	VAR_CTE -> 241
-	cte_float -> 242
-	cte_char -> 243
+	id -> 233
+	( -> 234
+	cte_i -> 235
+	S_EXP -> 236
+	EXP -> 237
+	TERM -> 238
+	+ -> 239
+	- -> 240
+	FAC -> 241
+	VAR_CTE -> 242
+	cte_float -> 243
+	cte_char -> 244
 
 
 S166{
@@ -4717,17 +4718,17 @@ S170{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	( -> 245
-	cte_i -> 246
-	EXP -> 247
-	TERM -> 248
-	+ -> 249
-	- -> 250
-	FAC -> 251
-	VAR_CTE -> 252
-	cte_float -> 253
-	cte_char -> 254
+	id -> 245
+	( -> 246
+	cte_i -> 247
+	EXP -> 248
+	TERM -> 249
+	+ -> 250
+	- -> 251
+	FAC -> 252
+	VAR_CTE -> 253
+	cte_float -> 254
+	cte_char -> 255
 
 
 S171{
@@ -4962,7 +4963,7 @@ Transitions:
 	VAR_CTE -> 115
 	cte_float -> 116
 	cte_char -> 117
-	EXP -> 255
+	EXP -> 256
 
 
 S178{
@@ -5122,7 +5123,7 @@ Transitions:
 	VAR_CTE -> 115
 	cte_float -> 116
 	cte_char -> 117
-	EXP -> 256
+	EXP -> 257
 
 
 S179{
@@ -5328,7 +5329,7 @@ Transitions:
 	VAR_CTE -> 115
 	cte_float -> 116
 	cte_char -> 117
-	TERM -> 257
+	TERM -> 258
 
 
 S183{
@@ -5479,7 +5480,7 @@ Transitions:
 	VAR_CTE -> 115
 	cte_float -> 116
 	cte_char -> 117
-	TERM -> 258
+	TERM -> 259
 
 
 S184{
@@ -5498,7 +5499,7 @@ S184{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 259
+	) -> 260
 
 
 S185{
@@ -5619,18 +5620,18 @@ S187{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	( -> 261
-	cte_i -> 262
-	S_EXP -> 263
-	EXP -> 264
-	TERM -> 265
-	+ -> 266
-	- -> 267
-	FAC -> 268
-	VAR_CTE -> 269
-	cte_float -> 270
-	cte_char -> 271
+	id -> 261
+	( -> 262
+	cte_i -> 263
+	S_EXP -> 264
+	EXP -> 265
+	TERM -> 266
+	+ -> 267
+	- -> 268
+	FAC -> 269
+	VAR_CTE -> 270
+	cte_float -> 271
+	cte_char -> 272
 
 
 S188{
@@ -5723,17 +5724,17 @@ S189{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	( -> 273
-	cte_i -> 274
-	EXP -> 275
-	TERM -> 276
-	+ -> 277
-	- -> 278
-	FAC -> 279
-	VAR_CTE -> 280
-	cte_float -> 281
-	cte_char -> 282
+	id -> 273
+	( -> 274
+	cte_i -> 275
+	EXP -> 276
+	TERM -> 277
+	+ -> 278
+	- -> 279
+	FAC -> 280
+	VAR_CTE -> 281
+	cte_float -> 282
+	cte_char -> 283
 
 
 S190{
@@ -5896,7 +5897,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	EXP -> 283
+	EXP -> 284
 
 
 S192{
@@ -6045,7 +6046,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	EXP -> 284
+	EXP -> 285
 
 
 S193{
@@ -6238,7 +6239,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	TERM -> 285
+	TERM -> 286
 
 
 S197{
@@ -6379,7 +6380,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	TERM -> 286
+	TERM -> 287
 
 
 S198{
@@ -6398,7 +6399,7 @@ S198{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 287
+	) -> 288
 
 
 S199{
@@ -6412,7 +6413,7 @@ S199{
 	RET : return ( H_EXP ) •; «}»
 }
 Transitions:
-	; -> 288
+	; -> 289
 
 
 S200{
@@ -6520,18 +6521,18 @@ S201{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	( -> 290
-	cte_i -> 291
-	S_EXP -> 292
-	EXP -> 293
-	TERM -> 294
-	+ -> 295
-	- -> 296
-	FAC -> 297
-	VAR_CTE -> 298
-	cte_float -> 299
-	cte_char -> 300
+	id -> 290
+	( -> 291
+	cte_i -> 292
+	S_EXP -> 293
+	EXP -> 294
+	TERM -> 295
+	+ -> 296
+	- -> 297
+	FAC -> 298
+	VAR_CTE -> 299
+	cte_float -> 300
+	cte_char -> 301
 
 
 S202{
@@ -6624,17 +6625,17 @@ S203{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	( -> 302
-	cte_i -> 303
-	EXP -> 304
-	TERM -> 305
-	+ -> 306
-	- -> 307
-	FAC -> 308
-	VAR_CTE -> 309
-	cte_float -> 310
-	cte_char -> 311
+	id -> 302
+	( -> 303
+	cte_i -> 304
+	EXP -> 305
+	TERM -> 306
+	+ -> 307
+	- -> 308
+	FAC -> 309
+	VAR_CTE -> 310
+	cte_float -> 311
+	cte_char -> 312
 
 
 S204{
@@ -6797,7 +6798,7 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	EXP -> 312
+	EXP -> 313
 
 
 S206{
@@ -6946,7 +6947,7 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	EXP -> 313
+	EXP -> 314
 
 
 S207{
@@ -7139,7 +7140,7 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	TERM -> 314
+	TERM -> 315
 
 
 S211{
@@ -7280,7 +7281,7 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	TERM -> 315
+	TERM -> 316
 
 
 S212{
@@ -7418,19 +7419,19 @@ S212{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	H_EXP -> 319
-	S_EXP -> 320
-	EXP -> 321
-	TERM -> 322
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	H_EXP -> 320
+	S_EXP -> 321
+	EXP -> 322
+	TERM -> 323
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
 
 
 S213{
@@ -7442,8 +7443,8 @@ S213{
 	VAR1 : •[ H_EXP ] «,»
 }
 Transitions:
-	[ -> 329
-	VAR1 -> 330
+	[ -> 330
+	VAR1 -> 331
 
 
 S214{
@@ -7453,7 +7454,7 @@ S214{
 }
 Transitions:
 	id -> 144
-	VAR -> 331
+	VAR -> 332
 
 
 S215{
@@ -7467,7 +7468,7 @@ S215{
 	LEC : input ( VAR LEC1 •) ; «}»
 }
 Transitions:
-	) -> 332
+	) -> 333
 
 
 S216{
@@ -7633,7 +7634,7 @@ Transitions:
 	cte_char -> 117
 	H_EXP -> 146
 	cte_string -> 148
-	ESC1 -> 333
+	ESC1 -> 334
 
 
 S217{
@@ -7647,7 +7648,7 @@ S217{
 	ESC : output ( ESC1 ESC2 •) ; «}»
 }
 Transitions:
-	) -> 334
+	) -> 335
 
 
 S218{
@@ -7661,7 +7662,7 @@ S218{
 	DEC : if ( H_EXP ) •{ EST B1 } DEC1 «}»
 }
 Transitions:
-	{ -> 335
+	{ -> 336
 
 
 S219{
@@ -7675,7 +7676,7 @@ S219{
 	REP1 : ) •{ EST B1 } «}»
 }
 Transitions:
-	{ -> 336
+	{ -> 337
 
 
 S220{
@@ -7836,7 +7837,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	H_EXP -> 337
+	H_EXP -> 338
 
 
 S222{
@@ -7991,7 +7992,7 @@ Transitions:
 	VAR_CTE -> 128
 	cte_float -> 129
 	cte_char -> 130
-	H_EXP -> 338
+	H_EXP -> 339
 
 
 S223{
@@ -8001,14 +8002,14 @@ S223{
 }
 Transitions:
 	, -> 97
-	F3 -> 339
+	F3 -> 340
 
 
 S224{
 	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «main»
 }
 Transitions:
-	{ -> 340
+	{ -> 341
 
 
 S225{
@@ -8037,7 +8038,7 @@ Transitions:
 	DV2 -> 27
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV1 -> 341
+	DV1 -> 342
 
 
 S226{
@@ -8054,15 +8055,15 @@ S227{
 	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	F -> 342
-	function -> 343
+	F -> 343
+	function -> 344
 
 
 S228{
 	ATR_CL : public : ATR_SIMP private •: ATR_SIMP protected : ATR_SIMP «}»
 }
 Transitions:
-	: -> 344
+	: -> 345
 
 
 S229{
@@ -8088,7 +8089,7 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 345
+	DV2 -> 346
 
 
 S230{
@@ -8117,10 +8118,23 @@ S231{
 }
 Transitions:
 	, -> 161
-	LLAM2 -> 346
+	LLAM2 -> 347
 
 
 S232{
+	LLAM : id ( LLAM1 ) ;• «for»
+	LLAM : id ( LLAM1 ) ;• «id»
+	LLAM : id ( LLAM1 ) ;• «if»
+	LLAM : id ( LLAM1 ) ;• «input»
+	LLAM : id ( LLAM1 ) ;• «output»
+	LLAM : id ( LLAM1 ) ;• «return»
+	LLAM : id ( LLAM1 ) ;• «while»
+	LLAM : id ( LLAM1 ) ;• «}»
+}
+Transitions:
+
+
+S233{
 	VAR_CTE : id• «)»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -8136,7 +8150,7 @@ S232{
 Transitions:
 
 
-S233{
+S234{
 	FAC : ( •H_EXP ) «)»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -8291,10 +8305,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 347
+	H_EXP -> 348
 
 
-S234{
+S235{
 	VAR_CTE : cte_i• «)»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -8310,14 +8324,14 @@ S234{
 Transitions:
 
 
-S235{
+S236{
 	H_EXP1 : LOG S_EXP• «)»
 	H_EXP1 : LOG S_EXP• «,»
 }
 Transitions:
 
 
-S236{
+S237{
 	S_EXP : EXP •S_EXP1 «)»
 	S_EXP : EXP •S_EXP1 «,»
 	S_EXP1 : empty• «)»
@@ -8366,11 +8380,11 @@ Transitions:
 	>= -> 173
 	<= -> 174
 	== -> 175
-	S_EXP1 -> 348
-	REL -> 349
+	S_EXP1 -> 349
+	REL -> 350
 
 
-S237{
+S238{
 	EXP : TERM •EXP1 «)»
 	EXP : TERM •EXP1 «<»
 	EXP : TERM •EXP1 «<=»
@@ -8401,12 +8415,12 @@ S237{
 	EXP1 : •- EXP «,»
 }
 Transitions:
-	EXP1 -> 350
-	+ -> 351
-	- -> 352
+	EXP1 -> 351
+	+ -> 352
+	- -> 353
 
 
-S238{
+S239{
 	FAC : + •VAR_CTE «)»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -8464,14 +8478,14 @@ S238{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	cte_i -> 234
-	cte_float -> 242
-	cte_char -> 243
-	VAR_CTE -> 353
+	id -> 233
+	cte_i -> 235
+	cte_float -> 243
+	cte_char -> 244
+	VAR_CTE -> 354
 
 
-S239{
+S240{
 	FAC : - •VAR_CTE «)»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -8529,14 +8543,14 @@ S239{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	cte_i -> 234
-	cte_float -> 242
-	cte_char -> 243
-	VAR_CTE -> 354
+	id -> 233
+	cte_i -> 235
+	cte_float -> 243
+	cte_char -> 244
+	VAR_CTE -> 355
 
 
-S240{
+S241{
 	TERM : FAC •TERM1 «)»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -8575,12 +8589,12 @@ S240{
 	TERM1 : •/ TERM «,»
 }
 Transitions:
-	TERM1 -> 355
-	* -> 356
-	/ -> 357
+	TERM1 -> 356
+	* -> 357
+	/ -> 358
 
 
-S241{
+S242{
 	FAC : VAR_CTE• «)»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -8596,7 +8610,7 @@ S241{
 Transitions:
 
 
-S242{
+S243{
 	VAR_CTE : cte_float• «)»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -8612,7 +8626,7 @@ S242{
 Transitions:
 
 
-S243{
+S244{
 	VAR_CTE : cte_char• «)»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -8628,7 +8642,7 @@ S243{
 Transitions:
 
 
-S244{
+S245{
 	VAR_CTE : id• «!=»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -8642,7 +8656,7 @@ S244{
 Transitions:
 
 
-S245{
+S246{
 	FAC : ( •H_EXP ) «!=»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -8795,10 +8809,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 358
+	H_EXP -> 359
 
 
-S246{
+S247{
 	VAR_CTE : cte_i• «!=»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -8812,7 +8826,7 @@ S246{
 Transitions:
 
 
-S247{
+S248{
 	S_EXP1 : REL EXP• «!=»
 	S_EXP1 : REL EXP• «&&»
 	S_EXP1 : REL EXP• «)»
@@ -8822,7 +8836,7 @@ S247{
 Transitions:
 
 
-S248{
+S249{
 	EXP : TERM •EXP1 «!=»
 	EXP : TERM •EXP1 «&&»
 	EXP : TERM •EXP1 «)»
@@ -8845,12 +8859,12 @@ S248{
 	EXP1 : •- EXP «,»
 }
 Transitions:
-	EXP1 -> 359
-	+ -> 360
-	- -> 361
+	EXP1 -> 360
+	+ -> 361
+	- -> 362
 
 
-S249{
+S250{
 	FAC : + •VAR_CTE «!=»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -8898,14 +8912,14 @@ S249{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	cte_i -> 246
-	cte_float -> 253
-	cte_char -> 254
-	VAR_CTE -> 362
+	id -> 245
+	cte_i -> 247
+	cte_float -> 254
+	cte_char -> 255
+	VAR_CTE -> 363
 
 
-S250{
+S251{
 	FAC : - •VAR_CTE «!=»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -8953,14 +8967,14 @@ S250{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	cte_i -> 246
-	cte_float -> 253
-	cte_char -> 254
-	VAR_CTE -> 363
+	id -> 245
+	cte_i -> 247
+	cte_float -> 254
+	cte_char -> 255
+	VAR_CTE -> 364
 
 
-S251{
+S252{
 	TERM : FAC •TERM1 «!=»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -8991,12 +9005,12 @@ S251{
 	TERM1 : •/ TERM «,»
 }
 Transitions:
-	TERM1 -> 364
-	* -> 365
-	/ -> 366
+	TERM1 -> 365
+	* -> 366
+	/ -> 367
 
 
-S252{
+S253{
 	FAC : VAR_CTE• «!=»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -9010,7 +9024,7 @@ S252{
 Transitions:
 
 
-S253{
+S254{
 	VAR_CTE : cte_float• «!=»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -9024,7 +9038,7 @@ S253{
 Transitions:
 
 
-S254{
+S255{
 	VAR_CTE : cte_char• «!=»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -9038,7 +9052,7 @@ S254{
 Transitions:
 
 
-S255{
+S256{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -9053,7 +9067,7 @@ S255{
 Transitions:
 
 
-S256{
+S257{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -9068,7 +9082,7 @@ S256{
 Transitions:
 
 
-S257{
+S258{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -9085,7 +9099,7 @@ S257{
 Transitions:
 
 
-S258{
+S259{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -9102,7 +9116,7 @@ S258{
 Transitions:
 
 
-S259{
+S260{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -9120,7 +9134,7 @@ S259{
 Transitions:
 
 
-S260{
+S261{
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «+»
 	VAR_CTE : id• «/»
@@ -9135,7 +9149,7 @@ S260{
 Transitions:
 
 
-S261{
+S262{
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «+»
 	FAC : ( •H_EXP ) «/»
@@ -9289,10 +9303,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 367
+	H_EXP -> 368
 
 
-S262{
+S263{
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «+»
 	VAR_CTE : cte_i• «/»
@@ -9307,13 +9321,13 @@ S262{
 Transitions:
 
 
-S263{
+S264{
 	H_EXP1 : LOG S_EXP• «;»
 }
 Transitions:
 
 
-S264{
+S265{
 	S_EXP : EXP •S_EXP1 «;»
 	S_EXP1 : empty• «;»
 	S_EXP1 : •REL EXP «;»
@@ -9359,11 +9373,11 @@ Transitions:
 	>= -> 173
 	<= -> 174
 	== -> 175
-	S_EXP1 -> 368
-	REL -> 369
+	S_EXP1 -> 369
+	REL -> 370
 
 
-S265{
+S266{
 	EXP : TERM •EXP1 «;»
 	EXP : TERM •EXP1 «<»
 	EXP : TERM •EXP1 «<=»
@@ -9390,12 +9404,12 @@ S265{
 	EXP1 : •- EXP «>=»
 }
 Transitions:
-	EXP1 -> 370
-	+ -> 371
-	- -> 372
+	EXP1 -> 371
+	+ -> 372
+	- -> 373
 
 
-S266{
+S267{
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «+»
 	FAC : + •VAR_CTE «/»
@@ -9448,14 +9462,14 @@ S266{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	cte_i -> 262
-	cte_float -> 270
-	cte_char -> 271
-	VAR_CTE -> 373
+	id -> 261
+	cte_i -> 263
+	cte_float -> 271
+	cte_char -> 272
+	VAR_CTE -> 374
 
 
-S267{
+S268{
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «+»
 	FAC : - •VAR_CTE «/»
@@ -9508,14 +9522,14 @@ S267{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	cte_i -> 262
-	cte_float -> 270
-	cte_char -> 271
-	VAR_CTE -> 374
+	id -> 261
+	cte_i -> 263
+	cte_float -> 271
+	cte_char -> 272
+	VAR_CTE -> 375
 
 
-S268{
+S269{
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
 	TERM : FAC •TERM1 «;»
@@ -9550,12 +9564,12 @@ S268{
 	TERM1 : •/ TERM «>=»
 }
 Transitions:
-	TERM1 -> 375
-	* -> 376
-	/ -> 377
+	TERM1 -> 376
+	* -> 377
+	/ -> 378
 
 
-S269{
+S270{
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «+»
 	FAC : VAR_CTE• «/»
@@ -9570,7 +9584,7 @@ S269{
 Transitions:
 
 
-S270{
+S271{
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «+»
 	VAR_CTE : cte_float• «/»
@@ -9585,7 +9599,7 @@ S270{
 Transitions:
 
 
-S271{
+S272{
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «+»
 	VAR_CTE : cte_char• «/»
@@ -9600,7 +9614,7 @@ S271{
 Transitions:
 
 
-S272{
+S273{
 	VAR_CTE : id• «!=»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -9613,7 +9627,7 @@ S272{
 Transitions:
 
 
-S273{
+S274{
 	FAC : ( •H_EXP ) «!=»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -9765,10 +9779,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 378
+	H_EXP -> 379
 
 
-S274{
+S275{
 	VAR_CTE : cte_i• «!=»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -9781,7 +9795,7 @@ S274{
 Transitions:
 
 
-S275{
+S276{
 	S_EXP1 : REL EXP• «!=»
 	S_EXP1 : REL EXP• «&&»
 	S_EXP1 : REL EXP• «;»
@@ -9790,7 +9804,7 @@ S275{
 Transitions:
 
 
-S276{
+S277{
 	EXP : TERM •EXP1 «!=»
 	EXP : TERM •EXP1 «&&»
 	EXP : TERM •EXP1 «;»
@@ -9809,12 +9823,12 @@ S276{
 	EXP1 : •- EXP «||»
 }
 Transitions:
-	EXP1 -> 379
-	+ -> 380
-	- -> 381
+	EXP1 -> 380
+	+ -> 381
+	- -> 382
 
 
-S277{
+S278{
 	FAC : + •VAR_CTE «!=»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -9857,14 +9871,14 @@ S277{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	cte_i -> 274
-	cte_float -> 281
-	cte_char -> 282
-	VAR_CTE -> 382
+	id -> 273
+	cte_i -> 275
+	cte_float -> 282
+	cte_char -> 283
+	VAR_CTE -> 383
 
 
-S278{
+S279{
 	FAC : - •VAR_CTE «!=»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -9907,14 +9921,14 @@ S278{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	cte_i -> 274
-	cte_float -> 281
-	cte_char -> 282
-	VAR_CTE -> 383
+	id -> 273
+	cte_i -> 275
+	cte_float -> 282
+	cte_char -> 283
+	VAR_CTE -> 384
 
 
-S279{
+S280{
 	TERM : FAC •TERM1 «!=»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -9941,12 +9955,12 @@ S279{
 	TERM1 : •/ TERM «||»
 }
 Transitions:
-	TERM1 -> 384
-	* -> 385
-	/ -> 386
+	TERM1 -> 385
+	* -> 386
+	/ -> 387
 
 
-S280{
+S281{
 	FAC : VAR_CTE• «!=»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -9959,7 +9973,7 @@ S280{
 Transitions:
 
 
-S281{
+S282{
 	VAR_CTE : cte_float• «!=»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -9972,7 +9986,7 @@ S281{
 Transitions:
 
 
-S282{
+S283{
 	VAR_CTE : cte_char• «!=»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -9985,7 +9999,7 @@ S282{
 Transitions:
 
 
-S283{
+S284{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -9999,7 +10013,7 @@ S283{
 Transitions:
 
 
-S284{
+S285{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -10013,7 +10027,7 @@ S284{
 Transitions:
 
 
-S285{
+S286{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -10029,7 +10043,7 @@ S285{
 Transitions:
 
 
-S286{
+S287{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -10045,7 +10059,7 @@ S286{
 Transitions:
 
 
-S287{
+S288{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -10063,7 +10077,7 @@ S287{
 Transitions:
 
 
-S288{
+S289{
 	RET : return ( H_EXP ) ;• «for»
 	RET : return ( H_EXP ) ;• «id»
 	RET : return ( H_EXP ) ;• «if»
@@ -10076,7 +10090,7 @@ S288{
 Transitions:
 
 
-S289{
+S290{
 	VAR_CTE : id• «)»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -10091,7 +10105,7 @@ S289{
 Transitions:
 
 
-S290{
+S291{
 	FAC : ( •H_EXP ) «)»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -10245,10 +10259,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 387
+	H_EXP -> 388
 
 
-S291{
+S292{
 	VAR_CTE : cte_i• «)»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -10263,13 +10277,13 @@ S291{
 Transitions:
 
 
-S292{
+S293{
 	H_EXP1 : LOG S_EXP• «)»
 }
 Transitions:
 
 
-S293{
+S294{
 	S_EXP : EXP •S_EXP1 «)»
 	S_EXP1 : empty• «)»
 	S_EXP1 : •REL EXP «)»
@@ -10315,11 +10329,11 @@ Transitions:
 	>= -> 173
 	<= -> 174
 	== -> 175
-	S_EXP1 -> 388
-	REL -> 389
+	S_EXP1 -> 389
+	REL -> 390
 
 
-S294{
+S295{
 	EXP : TERM •EXP1 «)»
 	EXP : TERM •EXP1 «<»
 	EXP : TERM •EXP1 «<=»
@@ -10346,12 +10360,12 @@ S294{
 	EXP1 : •- EXP «>=»
 }
 Transitions:
-	EXP1 -> 390
-	+ -> 391
-	- -> 392
+	EXP1 -> 391
+	+ -> 392
+	- -> 393
 
 
-S295{
+S296{
 	FAC : + •VAR_CTE «)»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -10404,14 +10418,14 @@ S295{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	cte_i -> 291
-	cte_float -> 299
-	cte_char -> 300
-	VAR_CTE -> 393
+	id -> 290
+	cte_i -> 292
+	cte_float -> 300
+	cte_char -> 301
+	VAR_CTE -> 394
 
 
-S296{
+S297{
 	FAC : - •VAR_CTE «)»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -10464,14 +10478,14 @@ S296{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	cte_i -> 291
-	cte_float -> 299
-	cte_char -> 300
-	VAR_CTE -> 394
+	id -> 290
+	cte_i -> 292
+	cte_float -> 300
+	cte_char -> 301
+	VAR_CTE -> 395
 
 
-S297{
+S298{
 	TERM : FAC •TERM1 «)»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -10506,12 +10520,12 @@ S297{
 	TERM1 : •/ TERM «>=»
 }
 Transitions:
-	TERM1 -> 395
-	* -> 396
-	/ -> 397
+	TERM1 -> 396
+	* -> 397
+	/ -> 398
 
 
-S298{
+S299{
 	FAC : VAR_CTE• «)»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -10526,7 +10540,7 @@ S298{
 Transitions:
 
 
-S299{
+S300{
 	VAR_CTE : cte_float• «)»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -10541,7 +10555,7 @@ S299{
 Transitions:
 
 
-S300{
+S301{
 	VAR_CTE : cte_char• «)»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -10556,7 +10570,7 @@ S300{
 Transitions:
 
 
-S301{
+S302{
 	VAR_CTE : id• «!=»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -10569,7 +10583,7 @@ S301{
 Transitions:
 
 
-S302{
+S303{
 	FAC : ( •H_EXP ) «!=»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -10721,10 +10735,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 398
+	H_EXP -> 399
 
 
-S303{
+S304{
 	VAR_CTE : cte_i• «!=»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -10737,7 +10751,7 @@ S303{
 Transitions:
 
 
-S304{
+S305{
 	S_EXP1 : REL EXP• «!=»
 	S_EXP1 : REL EXP• «&&»
 	S_EXP1 : REL EXP• «)»
@@ -10746,7 +10760,7 @@ S304{
 Transitions:
 
 
-S305{
+S306{
 	EXP : TERM •EXP1 «!=»
 	EXP : TERM •EXP1 «&&»
 	EXP : TERM •EXP1 «)»
@@ -10765,12 +10779,12 @@ S305{
 	EXP1 : •- EXP «||»
 }
 Transitions:
-	EXP1 -> 399
-	+ -> 400
-	- -> 401
+	EXP1 -> 400
+	+ -> 401
+	- -> 402
 
 
-S306{
+S307{
 	FAC : + •VAR_CTE «!=»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -10813,14 +10827,14 @@ S306{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	cte_i -> 303
-	cte_float -> 310
-	cte_char -> 311
-	VAR_CTE -> 402
+	id -> 302
+	cte_i -> 304
+	cte_float -> 311
+	cte_char -> 312
+	VAR_CTE -> 403
 
 
-S307{
+S308{
 	FAC : - •VAR_CTE «!=»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -10863,14 +10877,14 @@ S307{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	cte_i -> 303
-	cte_float -> 310
-	cte_char -> 311
-	VAR_CTE -> 403
+	id -> 302
+	cte_i -> 304
+	cte_float -> 311
+	cte_char -> 312
+	VAR_CTE -> 404
 
 
-S308{
+S309{
 	TERM : FAC •TERM1 «!=»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -10897,12 +10911,12 @@ S308{
 	TERM1 : •/ TERM «||»
 }
 Transitions:
-	TERM1 -> 404
-	* -> 405
-	/ -> 406
+	TERM1 -> 405
+	* -> 406
+	/ -> 407
 
 
-S309{
+S310{
 	FAC : VAR_CTE• «!=»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -10915,7 +10929,7 @@ S309{
 Transitions:
 
 
-S310{
+S311{
 	VAR_CTE : cte_float• «!=»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -10928,7 +10942,7 @@ S310{
 Transitions:
 
 
-S311{
+S312{
 	VAR_CTE : cte_char• «!=»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -10941,7 +10955,7 @@ S311{
 Transitions:
 
 
-S312{
+S313{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -10955,7 +10969,7 @@ S312{
 Transitions:
 
 
-S313{
+S314{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -10969,7 +10983,7 @@ S313{
 Transitions:
 
 
-S314{
+S315{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -10985,7 +10999,7 @@ S314{
 Transitions:
 
 
-S315{
+S316{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -11001,7 +11015,7 @@ S315{
 Transitions:
 
 
-S316{
+S317{
 	VAR_CTE : id• «!=»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -11019,7 +11033,7 @@ S316{
 Transitions:
 
 
-S317{
+S318{
 	FAC : ( •H_EXP ) «!=»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -11176,10 +11190,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 407
+	H_EXP -> 408
 
 
-S318{
+S319{
 	VAR_CTE : cte_i• «!=»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -11197,16 +11211,16 @@ S318{
 Transitions:
 
 
-S319{
+S320{
 	VAR1 : [ H_EXP •] «)»
 	VAR1 : [ H_EXP •] «[»
 	VAR1 : [ H_EXP •] «,»
 }
 Transitions:
-	] -> 408
+	] -> 409
 
 
-S320{
+S321{
 	H_EXP : S_EXP •H_EXP1 «]»
 	H_EXP1 : empty• «]»
 	H_EXP1 : •LOG S_EXP «]»
@@ -11236,11 +11250,11 @@ Transitions:
 	&& -> 166
 	|| -> 167
 	!= -> 168
-	H_EXP1 -> 409
-	LOG -> 410
+	H_EXP1 -> 410
+	LOG -> 411
 
 
-S321{
+S322{
 	S_EXP : EXP •S_EXP1 «!=»
 	S_EXP : EXP •S_EXP1 «&&»
 	S_EXP : EXP •S_EXP1 «]»
@@ -11295,11 +11309,11 @@ Transitions:
 	>= -> 173
 	<= -> 174
 	== -> 175
-	S_EXP1 -> 411
-	REL -> 412
+	S_EXP1 -> 412
+	REL -> 413
 
 
-S322{
+S323{
 	EXP : TERM •EXP1 «!=»
 	EXP : TERM •EXP1 «<»
 	EXP : TERM •EXP1 «<=»
@@ -11338,12 +11352,12 @@ S322{
 	EXP1 : •- EXP «||»
 }
 Transitions:
-	EXP1 -> 413
-	+ -> 414
-	- -> 415
+	EXP1 -> 414
+	+ -> 415
+	- -> 416
 
 
-S323{
+S324{
 	FAC : + •VAR_CTE «!=»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -11411,14 +11425,14 @@ S323{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	cte_i -> 318
-	cte_float -> 327
-	cte_char -> 328
-	VAR_CTE -> 416
+	id -> 317
+	cte_i -> 319
+	cte_float -> 328
+	cte_char -> 329
+	VAR_CTE -> 417
 
 
-S324{
+S325{
 	FAC : - •VAR_CTE «!=»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -11486,14 +11500,14 @@ S324{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	cte_i -> 318
-	cte_float -> 327
-	cte_char -> 328
-	VAR_CTE -> 417
+	id -> 317
+	cte_i -> 319
+	cte_float -> 328
+	cte_char -> 329
+	VAR_CTE -> 418
 
 
-S325{
+S326{
 	TERM : FAC •TERM1 «!=»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -11540,12 +11554,12 @@ S325{
 	TERM1 : •/ TERM «||»
 }
 Transitions:
-	TERM1 -> 418
-	* -> 419
-	/ -> 420
+	TERM1 -> 419
+	* -> 420
+	/ -> 421
 
 
-S326{
+S327{
 	FAC : VAR_CTE• «!=»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -11563,7 +11577,7 @@ S326{
 Transitions:
 
 
-S327{
+S328{
 	VAR_CTE : cte_float• «!=»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -11581,7 +11595,7 @@ S327{
 Transitions:
 
 
-S328{
+S329{
 	VAR_CTE : cte_char• «!=»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -11599,7 +11613,7 @@ S328{
 Transitions:
 
 
-S329{
+S330{
 	VAR1 : [ •H_EXP ] «)»
 	VAR1 : [ •H_EXP ] «,»
 	H_EXP : •S_EXP H_EXP1 «]»
@@ -11733,39 +11747,39 @@ S329{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	S_EXP -> 320
-	EXP -> 321
-	TERM -> 322
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
-	H_EXP -> 421
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	S_EXP -> 321
+	EXP -> 322
+	TERM -> 323
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
+	H_EXP -> 422
 
 
-S330{
+S331{
 	VAR : id VAR1 VAR1• «)»
 	VAR : id VAR1 VAR1• «,»
 }
 Transitions:
 
 
-S331{
+S332{
 	LEC1 : , VAR •LEC1 «)»
 	LEC1 : empty• «)»
 	LEC1 : •, VAR LEC1 «)»
 }
 Transitions:
 	, -> 214
-	LEC1 -> 422
+	LEC1 -> 423
 
 
-S332{
+S333{
 	LEC : input ( VAR LEC1 ) •; «for»
 	LEC : input ( VAR LEC1 ) •; «id»
 	LEC : input ( VAR LEC1 ) •; «if»
@@ -11776,20 +11790,20 @@ S332{
 	LEC : input ( VAR LEC1 ) •; «}»
 }
 Transitions:
-	; -> 423
+	; -> 424
 
 
-S333{
+S334{
 	ESC2 : , ESC1 •ESC2 «)»
 	ESC2 : empty• «)»
 	ESC2 : •, ESC1 ESC2 «)»
 }
 Transitions:
 	, -> 216
-	ESC2 -> 424
+	ESC2 -> 425
 
 
-S334{
+S335{
 	ESC : output ( ESC1 ESC2 ) •; «for»
 	ESC : output ( ESC1 ESC2 ) •; «id»
 	ESC : output ( ESC1 ESC2 ) •; «if»
@@ -11800,10 +11814,10 @@ S334{
 	ESC : output ( ESC1 ESC2 ) •; «}»
 }
 Transitions:
-	; -> 425
+	; -> 426
 
 
-S335{
+S336{
 	DEC : if ( H_EXP ) { •EST B1 } DEC1 «for»
 	DEC : if ( H_EXP ) { •EST B1 } DEC1 «id»
 	DEC : if ( H_EXP ) { •EST B1 } DEC1 «if»
@@ -11900,14 +11914,14 @@ S335{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -11948,10 +11962,10 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	EST -> 426
+	EST -> 427
 
 
-S336{
+S337{
 	REP1 : ) { •EST B1 } «for»
 	REP1 : ) { •EST B1 } «id»
 	REP1 : ) { •EST B1 } «if»
@@ -12048,14 +12062,14 @@ S336{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -12096,17 +12110,17 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	EST -> 427
-
-
-S337{
-	AS : id = H_EXP •; «;»
-}
-Transitions:
-	; -> 428
+	EST -> 428
 
 
 S338{
+	AS : id = H_EXP •; «;»
+}
+Transitions:
+	; -> 429
+
+
+S339{
 	REP : for ( AS ; H_EXP •; H_EXP REP1 «for»
 	REP : for ( AS ; H_EXP •; H_EXP REP1 «id»
 	REP : for ( AS ; H_EXP •; H_EXP REP1 «if»
@@ -12117,16 +12131,16 @@ S338{
 	REP : for ( AS ; H_EXP •; H_EXP REP1 «}»
 }
 Transitions:
-	; -> 429
+	; -> 430
 
 
-S339{
+S340{
 	F3 : , TIP_SIMP id F3• «)»
 }
 Transitions:
 
 
-S340{
+S341{
 	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «main»
 	EST : •AS «for»
 	EST : •AS «id»
@@ -12216,14 +12230,14 @@ S340{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -12264,17 +12278,17 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	EST -> 430
-
-
-S341{
-	DV : variables { DV1 •} «body»
-}
-Transitions:
-	} -> 431
+	EST -> 431
 
 
 S342{
+	DV : variables { DV1 •} «body»
+}
+Transitions:
+	} -> 432
+
+
+S343{
 	MET_CL : methods { F •MET_CL1 } «}»
 	MET_CL1 : empty• «}»
 	MET_CL1 : •F MET_CL1 «}»
@@ -12282,12 +12296,12 @@ S342{
 	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	function -> 343
-	F -> 432
-	MET_CL1 -> 433
+	function -> 344
+	F -> 433
+	MET_CL1 -> 434
 
 
-S343{
+S344{
 	F : function •F1 id ( F2 ) { DV body { EST B1 } } F4 «function»
 	F : function •F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 	F1 : •TIP_SIMP «id»
@@ -12302,10 +12316,10 @@ Transitions:
 	char -> 21
 	float -> 22
 	void -> 24
-	F1 -> 434
+	F1 -> 435
 
 
-S344{
+S345{
 	ATR_CL : public : ATR_SIMP private : •ATR_SIMP protected : ATR_SIMP «}»
 	ATR_SIMP : •TIP_SIMP id DV2 ; ATR_SIMP1 «protected»
 	TIP_SIMP : •int «id»
@@ -12316,24 +12330,24 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 435
-	TIP_SIMP -> 436
-
-
-S345{
-	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «private»
-}
-Transitions:
-	; -> 437
+	ATR_SIMP -> 436
+	TIP_SIMP -> 437
 
 
 S346{
+	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «private»
+}
+Transitions:
+	; -> 438
+
+
+S347{
 	LLAM2 : , H_EXP LLAM2• «)»
 }
 Transitions:
 
 
-S347{
+S348{
 	FAC : ( H_EXP •) «)»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -12347,17 +12361,17 @@ S347{
 	FAC : ( H_EXP •) «,»
 }
 Transitions:
-	) -> 438
+	) -> 439
 
 
-S348{
+S349{
 	S_EXP : EXP S_EXP1• «)»
 	S_EXP : EXP S_EXP1• «,»
 }
 Transitions:
 
 
-S349{
+S350{
 	S_EXP1 : REL •EXP «)»
 	S_EXP1 : REL •EXP «,»
 	EXP : •TERM EXP1 «)»
@@ -12416,20 +12430,20 @@ S349{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	( -> 440
-	cte_i -> 441
-	EXP -> 442
-	TERM -> 443
-	+ -> 444
-	- -> 445
-	FAC -> 446
-	VAR_CTE -> 447
-	cte_float -> 448
-	cte_char -> 449
+	id -> 440
+	( -> 441
+	cte_i -> 442
+	EXP -> 443
+	TERM -> 444
+	+ -> 445
+	- -> 446
+	FAC -> 447
+	VAR_CTE -> 448
+	cte_float -> 449
+	cte_char -> 450
 
 
-S350{
+S351{
 	EXP : TERM EXP1• «)»
 	EXP : TERM EXP1• «<»
 	EXP : TERM EXP1• «<=»
@@ -12441,7 +12455,7 @@ S350{
 Transitions:
 
 
-S351{
+S352{
 	EXP1 : + •EXP «)»
 	EXP1 : + •EXP «<»
 	EXP1 : + •EXP «<=»
@@ -12555,20 +12569,20 @@ S351{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	( -> 233
-	cte_i -> 234
-	TERM -> 237
-	+ -> 238
-	- -> 239
-	FAC -> 240
-	VAR_CTE -> 241
-	cte_float -> 242
-	cte_char -> 243
-	EXP -> 450
+	id -> 233
+	( -> 234
+	cte_i -> 235
+	TERM -> 238
+	+ -> 239
+	- -> 240
+	FAC -> 241
+	VAR_CTE -> 242
+	cte_float -> 243
+	cte_char -> 244
+	EXP -> 451
 
 
-S352{
+S353{
 	EXP1 : - •EXP «)»
 	EXP1 : - •EXP «<»
 	EXP1 : - •EXP «<=»
@@ -12682,20 +12696,20 @@ S352{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	( -> 233
-	cte_i -> 234
-	TERM -> 237
-	+ -> 238
-	- -> 239
-	FAC -> 240
-	VAR_CTE -> 241
-	cte_float -> 242
-	cte_char -> 243
-	EXP -> 451
+	id -> 233
+	( -> 234
+	cte_i -> 235
+	TERM -> 238
+	+ -> 239
+	- -> 240
+	FAC -> 241
+	VAR_CTE -> 242
+	cte_float -> 243
+	cte_char -> 244
+	EXP -> 452
 
 
-S353{
+S354{
 	FAC : + VAR_CTE• «)»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -12711,7 +12725,7 @@ S353{
 Transitions:
 
 
-S354{
+S355{
 	FAC : - VAR_CTE• «)»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -12727,7 +12741,7 @@ S354{
 Transitions:
 
 
-S355{
+S356{
 	TERM : FAC TERM1• «)»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -12741,7 +12755,7 @@ S355{
 Transitions:
 
 
-S356{
+S357{
 	TERM1 : * •TERM «)»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -12850,19 +12864,19 @@ S356{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	( -> 233
-	cte_i -> 234
-	+ -> 238
-	- -> 239
-	FAC -> 240
-	VAR_CTE -> 241
-	cte_float -> 242
-	cte_char -> 243
-	TERM -> 452
+	id -> 233
+	( -> 234
+	cte_i -> 235
+	+ -> 239
+	- -> 240
+	FAC -> 241
+	VAR_CTE -> 242
+	cte_float -> 243
+	cte_char -> 244
+	TERM -> 453
 
 
-S357{
+S358{
 	TERM1 : / •TERM «)»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -12971,19 +12985,19 @@ S357{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 232
-	( -> 233
-	cte_i -> 234
-	+ -> 238
-	- -> 239
-	FAC -> 240
-	VAR_CTE -> 241
-	cte_float -> 242
-	cte_char -> 243
-	TERM -> 453
+	id -> 233
+	( -> 234
+	cte_i -> 235
+	+ -> 239
+	- -> 240
+	FAC -> 241
+	VAR_CTE -> 242
+	cte_float -> 243
+	cte_char -> 244
+	TERM -> 454
 
 
-S358{
+S359{
 	FAC : ( H_EXP •) «!=»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -12995,10 +13009,10 @@ S358{
 	FAC : ( H_EXP •) «,»
 }
 Transitions:
-	) -> 454
+	) -> 455
 
 
-S359{
+S360{
 	EXP : TERM EXP1• «!=»
 	EXP : TERM EXP1• «&&»
 	EXP : TERM EXP1• «)»
@@ -13008,7 +13022,7 @@ S359{
 Transitions:
 
 
-S360{
+S361{
 	EXP1 : + •EXP «!=»
 	EXP1 : + •EXP «&&»
 	EXP1 : + •EXP «)»
@@ -13100,20 +13114,20 @@ S360{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	( -> 245
-	cte_i -> 246
-	TERM -> 248
-	+ -> 249
-	- -> 250
-	FAC -> 251
-	VAR_CTE -> 252
-	cte_float -> 253
-	cte_char -> 254
-	EXP -> 455
+	id -> 245
+	( -> 246
+	cte_i -> 247
+	TERM -> 249
+	+ -> 250
+	- -> 251
+	FAC -> 252
+	VAR_CTE -> 253
+	cte_float -> 254
+	cte_char -> 255
+	EXP -> 456
 
 
-S361{
+S362{
 	EXP1 : - •EXP «!=»
 	EXP1 : - •EXP «&&»
 	EXP1 : - •EXP «)»
@@ -13205,20 +13219,20 @@ S361{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	( -> 245
-	cte_i -> 246
-	TERM -> 248
-	+ -> 249
-	- -> 250
-	FAC -> 251
-	VAR_CTE -> 252
-	cte_float -> 253
-	cte_char -> 254
-	EXP -> 456
+	id -> 245
+	( -> 246
+	cte_i -> 247
+	TERM -> 249
+	+ -> 250
+	- -> 251
+	FAC -> 252
+	VAR_CTE -> 253
+	cte_float -> 254
+	cte_char -> 255
+	EXP -> 457
 
 
-S362{
+S363{
 	FAC : + VAR_CTE• «!=»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -13232,7 +13246,7 @@ S362{
 Transitions:
 
 
-S363{
+S364{
 	FAC : - VAR_CTE• «!=»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -13246,7 +13260,7 @@ S363{
 Transitions:
 
 
-S364{
+S365{
 	TERM : FAC TERM1• «!=»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -13258,7 +13272,7 @@ S364{
 Transitions:
 
 
-S365{
+S366{
 	TERM1 : * •TERM «!=»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -13347,19 +13361,19 @@ S365{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	( -> 245
-	cte_i -> 246
-	+ -> 249
-	- -> 250
-	FAC -> 251
-	VAR_CTE -> 252
-	cte_float -> 253
-	cte_char -> 254
-	TERM -> 457
+	id -> 245
+	( -> 246
+	cte_i -> 247
+	+ -> 250
+	- -> 251
+	FAC -> 252
+	VAR_CTE -> 253
+	cte_float -> 254
+	cte_char -> 255
+	TERM -> 458
 
 
-S366{
+S367{
 	TERM1 : / •TERM «!=»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -13448,19 +13462,19 @@ S366{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 244
-	( -> 245
-	cte_i -> 246
-	+ -> 249
-	- -> 250
-	FAC -> 251
-	VAR_CTE -> 252
-	cte_float -> 253
-	cte_char -> 254
-	TERM -> 458
+	id -> 245
+	( -> 246
+	cte_i -> 247
+	+ -> 250
+	- -> 251
+	FAC -> 252
+	VAR_CTE -> 253
+	cte_float -> 254
+	cte_char -> 255
+	TERM -> 459
 
 
-S367{
+S368{
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «+»
 	FAC : ( H_EXP •) «/»
@@ -13473,16 +13487,16 @@ S367{
 	FAC : ( H_EXP •) «>=»
 }
 Transitions:
-	) -> 459
+	) -> 460
 
 
-S368{
+S369{
 	S_EXP : EXP S_EXP1• «;»
 }
 Transitions:
 
 
-S369{
+S370{
 	S_EXP1 : REL •EXP «;»
 	EXP : •TERM EXP1 «;»
 	TERM : •FAC TERM1 «+»
@@ -13530,20 +13544,20 @@ S369{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	( -> 461
-	cte_i -> 462
-	EXP -> 463
-	TERM -> 464
-	+ -> 465
-	- -> 466
-	FAC -> 467
-	VAR_CTE -> 468
-	cte_float -> 469
-	cte_char -> 470
+	id -> 461
+	( -> 462
+	cte_i -> 463
+	EXP -> 464
+	TERM -> 465
+	+ -> 466
+	- -> 467
+	FAC -> 468
+	VAR_CTE -> 469
+	cte_float -> 470
+	cte_char -> 471
 
 
-S370{
+S371{
 	EXP : TERM EXP1• «;»
 	EXP : TERM EXP1• «<»
 	EXP : TERM EXP1• «<=»
@@ -13554,7 +13568,7 @@ S370{
 Transitions:
 
 
-S371{
+S372{
 	EXP1 : + •EXP «;»
 	EXP1 : + •EXP «<»
 	EXP1 : + •EXP «<=»
@@ -13657,20 +13671,20 @@ S371{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	( -> 261
-	cte_i -> 262
-	TERM -> 265
-	+ -> 266
-	- -> 267
-	FAC -> 268
-	VAR_CTE -> 269
-	cte_float -> 270
-	cte_char -> 271
-	EXP -> 471
+	id -> 261
+	( -> 262
+	cte_i -> 263
+	TERM -> 266
+	+ -> 267
+	- -> 268
+	FAC -> 269
+	VAR_CTE -> 270
+	cte_float -> 271
+	cte_char -> 272
+	EXP -> 472
 
 
-S372{
+S373{
 	EXP1 : - •EXP «;»
 	EXP1 : - •EXP «<»
 	EXP1 : - •EXP «<=»
@@ -13773,20 +13787,20 @@ S372{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	( -> 261
-	cte_i -> 262
-	TERM -> 265
-	+ -> 266
-	- -> 267
-	FAC -> 268
-	VAR_CTE -> 269
-	cte_float -> 270
-	cte_char -> 271
-	EXP -> 472
+	id -> 261
+	( -> 262
+	cte_i -> 263
+	TERM -> 266
+	+ -> 267
+	- -> 268
+	FAC -> 269
+	VAR_CTE -> 270
+	cte_float -> 271
+	cte_char -> 272
+	EXP -> 473
 
 
-S373{
+S374{
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «+»
 	FAC : + VAR_CTE• «/»
@@ -13801,7 +13815,7 @@ S373{
 Transitions:
 
 
-S374{
+S375{
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «+»
 	FAC : - VAR_CTE• «/»
@@ -13816,7 +13830,7 @@ S374{
 Transitions:
 
 
-S375{
+S376{
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
 	TERM : FAC TERM1• «;»
@@ -13829,7 +13843,7 @@ S375{
 Transitions:
 
 
-S376{
+S377{
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
 	TERM1 : * •TERM «;»
@@ -13928,19 +13942,19 @@ S376{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	( -> 261
-	cte_i -> 262
-	+ -> 266
-	- -> 267
-	FAC -> 268
-	VAR_CTE -> 269
-	cte_float -> 270
-	cte_char -> 271
-	TERM -> 473
+	id -> 261
+	( -> 262
+	cte_i -> 263
+	+ -> 267
+	- -> 268
+	FAC -> 269
+	VAR_CTE -> 270
+	cte_float -> 271
+	cte_char -> 272
+	TERM -> 474
 
 
-S377{
+S378{
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
 	TERM1 : / •TERM «;»
@@ -14039,19 +14053,19 @@ S377{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 260
-	( -> 261
-	cte_i -> 262
-	+ -> 266
-	- -> 267
-	FAC -> 268
-	VAR_CTE -> 269
-	cte_float -> 270
-	cte_char -> 271
-	TERM -> 474
+	id -> 261
+	( -> 262
+	cte_i -> 263
+	+ -> 267
+	- -> 268
+	FAC -> 269
+	VAR_CTE -> 270
+	cte_float -> 271
+	cte_char -> 272
+	TERM -> 475
 
 
-S378{
+S379{
 	FAC : ( H_EXP •) «!=»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -14062,10 +14076,10 @@ S378{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 475
+	) -> 476
 
 
-S379{
+S380{
 	EXP : TERM EXP1• «!=»
 	EXP : TERM EXP1• «&&»
 	EXP : TERM EXP1• «;»
@@ -14074,7 +14088,7 @@ S379{
 Transitions:
 
 
-S380{
+S381{
 	EXP1 : + •EXP «!=»
 	EXP1 : + •EXP «&&»
 	EXP1 : + •EXP «;»
@@ -14155,20 +14169,20 @@ S380{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	( -> 273
-	cte_i -> 274
-	TERM -> 276
-	+ -> 277
-	- -> 278
-	FAC -> 279
-	VAR_CTE -> 280
-	cte_float -> 281
-	cte_char -> 282
-	EXP -> 476
+	id -> 273
+	( -> 274
+	cte_i -> 275
+	TERM -> 277
+	+ -> 278
+	- -> 279
+	FAC -> 280
+	VAR_CTE -> 281
+	cte_float -> 282
+	cte_char -> 283
+	EXP -> 477
 
 
-S381{
+S382{
 	EXP1 : - •EXP «!=»
 	EXP1 : - •EXP «&&»
 	EXP1 : - •EXP «;»
@@ -14249,20 +14263,20 @@ S381{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	( -> 273
-	cte_i -> 274
-	TERM -> 276
-	+ -> 277
-	- -> 278
-	FAC -> 279
-	VAR_CTE -> 280
-	cte_float -> 281
-	cte_char -> 282
-	EXP -> 477
+	id -> 273
+	( -> 274
+	cte_i -> 275
+	TERM -> 277
+	+ -> 278
+	- -> 279
+	FAC -> 280
+	VAR_CTE -> 281
+	cte_float -> 282
+	cte_char -> 283
+	EXP -> 478
 
 
-S382{
+S383{
 	FAC : + VAR_CTE• «!=»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -14275,7 +14289,7 @@ S382{
 Transitions:
 
 
-S383{
+S384{
 	FAC : - VAR_CTE• «!=»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -14288,7 +14302,7 @@ S383{
 Transitions:
 
 
-S384{
+S385{
 	TERM : FAC TERM1• «!=»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -14299,7 +14313,7 @@ S384{
 Transitions:
 
 
-S385{
+S386{
 	TERM1 : * •TERM «!=»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -14378,19 +14392,19 @@ S385{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	( -> 273
-	cte_i -> 274
-	+ -> 277
-	- -> 278
-	FAC -> 279
-	VAR_CTE -> 280
-	cte_float -> 281
-	cte_char -> 282
-	TERM -> 478
+	id -> 273
+	( -> 274
+	cte_i -> 275
+	+ -> 278
+	- -> 279
+	FAC -> 280
+	VAR_CTE -> 281
+	cte_float -> 282
+	cte_char -> 283
+	TERM -> 479
 
 
-S386{
+S387{
 	TERM1 : / •TERM «!=»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -14469,19 +14483,19 @@ S386{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 272
-	( -> 273
-	cte_i -> 274
-	+ -> 277
-	- -> 278
-	FAC -> 279
-	VAR_CTE -> 280
-	cte_float -> 281
-	cte_char -> 282
-	TERM -> 479
+	id -> 273
+	( -> 274
+	cte_i -> 275
+	+ -> 278
+	- -> 279
+	FAC -> 280
+	VAR_CTE -> 281
+	cte_float -> 282
+	cte_char -> 283
+	TERM -> 480
 
 
-S387{
+S388{
 	FAC : ( H_EXP •) «)»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -14494,16 +14508,16 @@ S387{
 	FAC : ( H_EXP •) «>=»
 }
 Transitions:
-	) -> 480
+	) -> 481
 
 
-S388{
+S389{
 	S_EXP : EXP S_EXP1• «)»
 }
 Transitions:
 
 
-S389{
+S390{
 	S_EXP1 : REL •EXP «)»
 	EXP : •TERM EXP1 «)»
 	TERM : •FAC TERM1 «)»
@@ -14551,20 +14565,20 @@ S389{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	( -> 482
-	cte_i -> 483
-	EXP -> 484
-	TERM -> 485
-	+ -> 486
-	- -> 487
-	FAC -> 488
-	VAR_CTE -> 489
-	cte_float -> 490
-	cte_char -> 491
+	id -> 482
+	( -> 483
+	cte_i -> 484
+	EXP -> 485
+	TERM -> 486
+	+ -> 487
+	- -> 488
+	FAC -> 489
+	VAR_CTE -> 490
+	cte_float -> 491
+	cte_char -> 492
 
 
-S390{
+S391{
 	EXP : TERM EXP1• «)»
 	EXP : TERM EXP1• «<»
 	EXP : TERM EXP1• «<=»
@@ -14575,7 +14589,7 @@ S390{
 Transitions:
 
 
-S391{
+S392{
 	EXP1 : + •EXP «)»
 	EXP1 : + •EXP «<»
 	EXP1 : + •EXP «<=»
@@ -14678,20 +14692,20 @@ S391{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	( -> 290
-	cte_i -> 291
-	TERM -> 294
-	+ -> 295
-	- -> 296
-	FAC -> 297
-	VAR_CTE -> 298
-	cte_float -> 299
-	cte_char -> 300
-	EXP -> 492
+	id -> 290
+	( -> 291
+	cte_i -> 292
+	TERM -> 295
+	+ -> 296
+	- -> 297
+	FAC -> 298
+	VAR_CTE -> 299
+	cte_float -> 300
+	cte_char -> 301
+	EXP -> 493
 
 
-S392{
+S393{
 	EXP1 : - •EXP «)»
 	EXP1 : - •EXP «<»
 	EXP1 : - •EXP «<=»
@@ -14794,20 +14808,20 @@ S392{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	( -> 290
-	cte_i -> 291
-	TERM -> 294
-	+ -> 295
-	- -> 296
-	FAC -> 297
-	VAR_CTE -> 298
-	cte_float -> 299
-	cte_char -> 300
-	EXP -> 493
+	id -> 290
+	( -> 291
+	cte_i -> 292
+	TERM -> 295
+	+ -> 296
+	- -> 297
+	FAC -> 298
+	VAR_CTE -> 299
+	cte_float -> 300
+	cte_char -> 301
+	EXP -> 494
 
 
-S393{
+S394{
 	FAC : + VAR_CTE• «)»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -14822,7 +14836,7 @@ S393{
 Transitions:
 
 
-S394{
+S395{
 	FAC : - VAR_CTE• «)»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -14837,7 +14851,7 @@ S394{
 Transitions:
 
 
-S395{
+S396{
 	TERM : FAC TERM1• «)»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -14850,7 +14864,7 @@ S395{
 Transitions:
 
 
-S396{
+S397{
 	TERM1 : * •TERM «)»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -14949,19 +14963,19 @@ S396{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	( -> 290
-	cte_i -> 291
-	+ -> 295
-	- -> 296
-	FAC -> 297
-	VAR_CTE -> 298
-	cte_float -> 299
-	cte_char -> 300
-	TERM -> 494
+	id -> 290
+	( -> 291
+	cte_i -> 292
+	+ -> 296
+	- -> 297
+	FAC -> 298
+	VAR_CTE -> 299
+	cte_float -> 300
+	cte_char -> 301
+	TERM -> 495
 
 
-S397{
+S398{
 	TERM1 : / •TERM «)»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -15060,19 +15074,19 @@ S397{
 	VAR_CTE : •cte_char «>=»
 }
 Transitions:
-	id -> 289
-	( -> 290
-	cte_i -> 291
-	+ -> 295
-	- -> 296
-	FAC -> 297
-	VAR_CTE -> 298
-	cte_float -> 299
-	cte_char -> 300
-	TERM -> 495
+	id -> 290
+	( -> 291
+	cte_i -> 292
+	+ -> 296
+	- -> 297
+	FAC -> 298
+	VAR_CTE -> 299
+	cte_float -> 300
+	cte_char -> 301
+	TERM -> 496
 
 
-S398{
+S399{
 	FAC : ( H_EXP •) «!=»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -15083,10 +15097,10 @@ S398{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 496
+	) -> 497
 
 
-S399{
+S400{
 	EXP : TERM EXP1• «!=»
 	EXP : TERM EXP1• «&&»
 	EXP : TERM EXP1• «)»
@@ -15095,7 +15109,7 @@ S399{
 Transitions:
 
 
-S400{
+S401{
 	EXP1 : + •EXP «!=»
 	EXP1 : + •EXP «&&»
 	EXP1 : + •EXP «)»
@@ -15176,20 +15190,20 @@ S400{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	( -> 302
-	cte_i -> 303
-	TERM -> 305
-	+ -> 306
-	- -> 307
-	FAC -> 308
-	VAR_CTE -> 309
-	cte_float -> 310
-	cte_char -> 311
-	EXP -> 497
+	id -> 302
+	( -> 303
+	cte_i -> 304
+	TERM -> 306
+	+ -> 307
+	- -> 308
+	FAC -> 309
+	VAR_CTE -> 310
+	cte_float -> 311
+	cte_char -> 312
+	EXP -> 498
 
 
-S401{
+S402{
 	EXP1 : - •EXP «!=»
 	EXP1 : - •EXP «&&»
 	EXP1 : - •EXP «)»
@@ -15270,20 +15284,20 @@ S401{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	( -> 302
-	cte_i -> 303
-	TERM -> 305
-	+ -> 306
-	- -> 307
-	FAC -> 308
-	VAR_CTE -> 309
-	cte_float -> 310
-	cte_char -> 311
-	EXP -> 498
+	id -> 302
+	( -> 303
+	cte_i -> 304
+	TERM -> 306
+	+ -> 307
+	- -> 308
+	FAC -> 309
+	VAR_CTE -> 310
+	cte_float -> 311
+	cte_char -> 312
+	EXP -> 499
 
 
-S402{
+S403{
 	FAC : + VAR_CTE• «!=»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -15296,7 +15310,7 @@ S402{
 Transitions:
 
 
-S403{
+S404{
 	FAC : - VAR_CTE• «!=»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -15309,7 +15323,7 @@ S403{
 Transitions:
 
 
-S404{
+S405{
 	TERM : FAC TERM1• «!=»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -15320,7 +15334,7 @@ S404{
 Transitions:
 
 
-S405{
+S406{
 	TERM1 : * •TERM «!=»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -15399,19 +15413,19 @@ S405{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	( -> 302
-	cte_i -> 303
-	+ -> 306
-	- -> 307
-	FAC -> 308
-	VAR_CTE -> 309
-	cte_float -> 310
-	cte_char -> 311
-	TERM -> 499
+	id -> 302
+	( -> 303
+	cte_i -> 304
+	+ -> 307
+	- -> 308
+	FAC -> 309
+	VAR_CTE -> 310
+	cte_float -> 311
+	cte_char -> 312
+	TERM -> 500
 
 
-S406{
+S407{
 	TERM1 : / •TERM «!=»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -15490,19 +15504,19 @@ S406{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 301
-	( -> 302
-	cte_i -> 303
-	+ -> 306
-	- -> 307
-	FAC -> 308
-	VAR_CTE -> 309
-	cte_float -> 310
-	cte_char -> 311
-	TERM -> 500
+	id -> 302
+	( -> 303
+	cte_i -> 304
+	+ -> 307
+	- -> 308
+	FAC -> 309
+	VAR_CTE -> 310
+	cte_float -> 311
+	cte_char -> 312
+	TERM -> 501
 
 
-S407{
+S408{
 	FAC : ( H_EXP •) «!=»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -15518,10 +15532,10 @@ S407{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 501
+	) -> 502
 
 
-S408{
+S409{
 	VAR1 : [ H_EXP ]• «)»
 	VAR1 : [ H_EXP ]• «[»
 	VAR1 : [ H_EXP ]• «,»
@@ -15529,13 +15543,13 @@ S408{
 Transitions:
 
 
-S409{
+S410{
 	H_EXP : S_EXP H_EXP1• «]»
 }
 Transitions:
 
 
-S410{
+S411{
 	H_EXP1 : LOG •S_EXP «]»
 	S_EXP : •EXP S_EXP1 «]»
 	EXP : •TERM EXP1 «<»
@@ -15634,21 +15648,21 @@ S410{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	( -> 503
-	cte_i -> 504
-	S_EXP -> 505
-	EXP -> 506
-	TERM -> 507
-	+ -> 508
-	- -> 509
-	FAC -> 510
-	VAR_CTE -> 511
-	cte_float -> 512
-	cte_char -> 513
+	id -> 503
+	( -> 504
+	cte_i -> 505
+	S_EXP -> 506
+	EXP -> 507
+	TERM -> 508
+	+ -> 509
+	- -> 510
+	FAC -> 511
+	VAR_CTE -> 512
+	cte_float -> 513
+	cte_char -> 514
 
 
-S411{
+S412{
 	S_EXP : EXP S_EXP1• «!=»
 	S_EXP : EXP S_EXP1• «&&»
 	S_EXP : EXP S_EXP1• «]»
@@ -15657,7 +15671,7 @@ S411{
 Transitions:
 
 
-S412{
+S413{
 	S_EXP1 : REL •EXP «!=»
 	S_EXP1 : REL •EXP «&&»
 	S_EXP1 : REL •EXP «]»
@@ -15738,20 +15752,20 @@ S412{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	( -> 515
-	cte_i -> 516
-	EXP -> 517
-	TERM -> 518
-	+ -> 519
-	- -> 520
-	FAC -> 521
-	VAR_CTE -> 522
-	cte_float -> 523
-	cte_char -> 524
+	id -> 515
+	( -> 516
+	cte_i -> 517
+	EXP -> 518
+	TERM -> 519
+	+ -> 520
+	- -> 521
+	FAC -> 522
+	VAR_CTE -> 523
+	cte_float -> 524
+	cte_char -> 525
 
 
-S413{
+S414{
 	EXP : TERM EXP1• «!=»
 	EXP : TERM EXP1• «<»
 	EXP : TERM EXP1• «<=»
@@ -15765,7 +15779,7 @@ S413{
 Transitions:
 
 
-S414{
+S415{
 	EXP1 : + •EXP «!=»
 	EXP1 : + •EXP «<»
 	EXP1 : + •EXP «<=»
@@ -15901,20 +15915,20 @@ S414{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	TERM -> 322
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
-	EXP -> 525
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	TERM -> 323
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
+	EXP -> 526
 
 
-S415{
+S416{
 	EXP1 : - •EXP «!=»
 	EXP1 : - •EXP «<»
 	EXP1 : - •EXP «<=»
@@ -16050,20 +16064,20 @@ S415{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	TERM -> 322
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
-	EXP -> 526
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	TERM -> 323
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
+	EXP -> 527
 
 
-S416{
+S417{
 	FAC : + VAR_CTE• «!=»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -16081,7 +16095,7 @@ S416{
 Transitions:
 
 
-S417{
+S418{
 	FAC : - VAR_CTE• «!=»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -16099,7 +16113,7 @@ S417{
 Transitions:
 
 
-S418{
+S419{
 	TERM : FAC TERM1• «!=»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -16115,7 +16129,7 @@ S418{
 Transitions:
 
 
-S419{
+S420{
 	TERM1 : * •TERM «!=»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -16244,19 +16258,19 @@ S419{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
-	TERM -> 527
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
+	TERM -> 528
 
 
-S420{
+S421{
 	TERM1 : / •TERM «!=»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -16385,33 +16399,33 @@ S420{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 316
-	( -> 317
-	cte_i -> 318
-	+ -> 323
-	- -> 324
-	FAC -> 325
-	VAR_CTE -> 326
-	cte_float -> 327
-	cte_char -> 328
-	TERM -> 528
+	id -> 317
+	( -> 318
+	cte_i -> 319
+	+ -> 324
+	- -> 325
+	FAC -> 326
+	VAR_CTE -> 327
+	cte_float -> 328
+	cte_char -> 329
+	TERM -> 529
 
 
-S421{
+S422{
 	VAR1 : [ H_EXP •] «)»
 	VAR1 : [ H_EXP •] «,»
 }
 Transitions:
-	] -> 529
+	] -> 530
 
 
-S422{
+S423{
 	LEC1 : , VAR LEC1• «)»
 }
 Transitions:
 
 
-S423{
+S424{
 	LEC : input ( VAR LEC1 ) ;• «for»
 	LEC : input ( VAR LEC1 ) ;• «id»
 	LEC : input ( VAR LEC1 ) ;• «if»
@@ -16424,13 +16438,13 @@ S423{
 Transitions:
 
 
-S424{
+S425{
 	ESC2 : , ESC1 ESC2• «)»
 }
 Transitions:
 
 
-S425{
+S426{
 	ESC : output ( ESC1 ESC2 ) ;• «for»
 	ESC : output ( ESC1 ESC2 ) ;• «id»
 	ESC : output ( ESC1 ESC2 ) ;• «if»
@@ -16443,7 +16457,7 @@ S425{
 Transitions:
 
 
-S426{
+S427{
 	DEC : if ( H_EXP ) { EST •B1 } DEC1 «for»
 	DEC : if ( H_EXP ) { EST •B1 } DEC1 «id»
 	DEC : if ( H_EXP ) { EST •B1 } DEC1 «if»
@@ -16542,14 +16556,14 @@ S426{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -16591,10 +16605,10 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	B1 -> 530
+	B1 -> 531
 
 
-S427{
+S428{
 	REP1 : ) { EST •B1 } «for»
 	REP1 : ) { EST •B1 } «id»
 	REP1 : ) { EST •B1 } «if»
@@ -16693,14 +16707,14 @@ S427{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -16742,16 +16756,16 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	B1 -> 531
+	B1 -> 532
 
 
-S428{
+S429{
 	AS : id = H_EXP ;• «;»
 }
 Transitions:
 
 
-S429{
+S430{
 	REP : for ( AS ; H_EXP ; •H_EXP REP1 «for»
 	REP : for ( AS ; H_EXP ; •H_EXP REP1 «id»
 	REP : for ( AS ; H_EXP ; •H_EXP REP1 «if»
@@ -16903,10 +16917,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 532
+	H_EXP -> 533
 
 
-S430{
+S431{
 	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «main»
 	B1 : empty• «}»
 	B1 : •EST B1 «}»
@@ -16998,14 +17012,14 @@ S430{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -17047,16 +17061,16 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	B1 -> 533
+	B1 -> 534
 
 
-S431{
+S432{
 	DV : variables { DV1 }• «body»
 }
 Transitions:
 
 
-S432{
+S433{
 	MET_CL1 : F •MET_CL1 «}»
 	MET_CL1 : empty• «}»
 	MET_CL1 : •F MET_CL1 «}»
@@ -17064,41 +17078,41 @@ S432{
 	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	function -> 343
-	F -> 432
-	MET_CL1 -> 534
-
-
-S433{
-	MET_CL : methods { F MET_CL1 •} «}»
-}
-Transitions:
-	} -> 535
+	function -> 344
+	F -> 433
+	MET_CL1 -> 535
 
 
 S434{
+	MET_CL : methods { F MET_CL1 •} «}»
+}
+Transitions:
+	} -> 536
+
+
+S435{
 	F : function F1 •id ( F2 ) { DV body { EST B1 } } F4 «function»
 	F : function F1 •id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	id -> 536
-
-
-S435{
-	ATR_CL : public : ATR_SIMP private : ATR_SIMP •protected : ATR_SIMP «}»
-}
-Transitions:
-	protected -> 537
+	id -> 537
 
 
 S436{
-	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «protected»
+	ATR_CL : public : ATR_SIMP private : ATR_SIMP •protected : ATR_SIMP «}»
 }
 Transitions:
-	id -> 538
+	protected -> 538
 
 
 S437{
+	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «protected»
+}
+Transitions:
+	id -> 539
+
+
+S438{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «private»
 	ATR_SIMP1 : empty• «private»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «private»
@@ -17114,12 +17128,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 539
-	TIP_SIMP -> 540
-	ATR_SIMP1 -> 541
+	ATR_SIMP -> 540
+	TIP_SIMP -> 541
+	ATR_SIMP1 -> 542
 
 
-S438{
+S439{
 	FAC : ( H_EXP )• «)»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -17135,7 +17149,7 @@ S438{
 Transitions:
 
 
-S439{
+S440{
 	VAR_CTE : id• «)»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -17146,7 +17160,7 @@ S439{
 Transitions:
 
 
-S440{
+S441{
 	FAC : ( •H_EXP ) «)»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -17296,10 +17310,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 542
+	H_EXP -> 543
 
 
-S441{
+S442{
 	VAR_CTE : cte_i• «)»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -17310,14 +17324,14 @@ S441{
 Transitions:
 
 
-S442{
+S443{
 	S_EXP1 : REL EXP• «)»
 	S_EXP1 : REL EXP• «,»
 }
 Transitions:
 
 
-S443{
+S444{
 	EXP : TERM •EXP1 «)»
 	EXP : TERM •EXP1 «,»
 	EXP1 : empty• «)»
@@ -17328,12 +17342,12 @@ S443{
 	EXP1 : •- EXP «,»
 }
 Transitions:
-	EXP1 -> 543
-	+ -> 544
-	- -> 545
+	EXP1 -> 544
+	+ -> 545
+	- -> 546
 
 
-S444{
+S445{
 	FAC : + •VAR_CTE «)»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -17366,14 +17380,14 @@ S444{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	cte_i -> 441
-	cte_float -> 448
-	cte_char -> 449
-	VAR_CTE -> 546
+	id -> 440
+	cte_i -> 442
+	cte_float -> 449
+	cte_char -> 450
+	VAR_CTE -> 547
 
 
-S445{
+S446{
 	FAC : - •VAR_CTE «)»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -17406,14 +17420,14 @@ S445{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	cte_i -> 441
-	cte_float -> 448
-	cte_char -> 449
-	VAR_CTE -> 547
+	id -> 440
+	cte_i -> 442
+	cte_float -> 449
+	cte_char -> 450
+	VAR_CTE -> 548
 
 
-S446{
+S447{
 	TERM : FAC •TERM1 «)»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -17432,12 +17446,12 @@ S446{
 	TERM1 : •/ TERM «,»
 }
 Transitions:
-	TERM1 -> 548
-	* -> 549
-	/ -> 550
+	TERM1 -> 549
+	* -> 550
+	/ -> 551
 
 
-S447{
+S448{
 	FAC : VAR_CTE• «)»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -17448,7 +17462,7 @@ S447{
 Transitions:
 
 
-S448{
+S449{
 	VAR_CTE : cte_float• «)»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -17459,7 +17473,7 @@ S448{
 Transitions:
 
 
-S449{
+S450{
 	VAR_CTE : cte_char• «)»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -17470,7 +17484,7 @@ S449{
 Transitions:
 
 
-S450{
+S451{
 	EXP1 : + EXP• «)»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -17482,7 +17496,7 @@ S450{
 Transitions:
 
 
-S451{
+S452{
 	EXP1 : - EXP• «)»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -17494,7 +17508,7 @@ S451{
 Transitions:
 
 
-S452{
+S453{
 	TERM1 : * TERM• «)»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -17508,7 +17522,7 @@ S452{
 Transitions:
 
 
-S453{
+S454{
 	TERM1 : / TERM• «)»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -17522,7 +17536,7 @@ S453{
 Transitions:
 
 
-S454{
+S455{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -17536,7 +17550,7 @@ S454{
 Transitions:
 
 
-S455{
+S456{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «&&»
 	EXP1 : + EXP• «)»
@@ -17546,7 +17560,7 @@ S455{
 Transitions:
 
 
-S456{
+S457{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «&&»
 	EXP1 : - EXP• «)»
@@ -17556,7 +17570,7 @@ S456{
 Transitions:
 
 
-S457{
+S458{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -17568,7 +17582,7 @@ S457{
 Transitions:
 
 
-S458{
+S459{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -17580,7 +17594,7 @@ S458{
 Transitions:
 
 
-S459{
+S460{
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «+»
 	FAC : ( H_EXP )• «/»
@@ -17595,7 +17609,7 @@ S459{
 Transitions:
 
 
-S460{
+S461{
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «+»
 	VAR_CTE : id• «/»
@@ -17605,7 +17619,7 @@ S460{
 Transitions:
 
 
-S461{
+S462{
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «+»
 	FAC : ( •H_EXP ) «/»
@@ -17754,10 +17768,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 551
+	H_EXP -> 552
 
 
-S462{
+S463{
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «+»
 	VAR_CTE : cte_i• «/»
@@ -17767,25 +17781,25 @@ S462{
 Transitions:
 
 
-S463{
+S464{
 	S_EXP1 : REL EXP• «;»
 }
 Transitions:
 
 
-S464{
+S465{
 	EXP : TERM •EXP1 «;»
 	EXP1 : empty• «;»
 	EXP1 : •+ EXP «;»
 	EXP1 : •- EXP «;»
 }
 Transitions:
-	EXP1 -> 552
-	+ -> 553
-	- -> 554
+	EXP1 -> 553
+	+ -> 554
+	- -> 555
 
 
-S465{
+S466{
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «+»
 	FAC : + •VAR_CTE «/»
@@ -17813,14 +17827,14 @@ S465{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	cte_i -> 462
-	cte_float -> 469
-	cte_char -> 470
-	VAR_CTE -> 555
+	id -> 461
+	cte_i -> 463
+	cte_float -> 470
+	cte_char -> 471
+	VAR_CTE -> 556
 
 
-S466{
+S467{
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «+»
 	FAC : - •VAR_CTE «/»
@@ -17848,14 +17862,14 @@ S466{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	cte_i -> 462
-	cte_float -> 469
-	cte_char -> 470
-	VAR_CTE -> 556
+	id -> 461
+	cte_i -> 463
+	cte_float -> 470
+	cte_char -> 471
+	VAR_CTE -> 557
 
 
-S467{
+S468{
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
 	TERM : FAC •TERM1 «;»
@@ -17870,12 +17884,12 @@ S467{
 	TERM1 : •/ TERM «;»
 }
 Transitions:
-	TERM1 -> 557
-	* -> 558
-	/ -> 559
+	TERM1 -> 558
+	* -> 559
+	/ -> 560
 
 
-S468{
+S469{
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «+»
 	FAC : VAR_CTE• «/»
@@ -17885,7 +17899,7 @@ S468{
 Transitions:
 
 
-S469{
+S470{
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «+»
 	VAR_CTE : cte_float• «/»
@@ -17895,7 +17909,7 @@ S469{
 Transitions:
 
 
-S470{
+S471{
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «+»
 	VAR_CTE : cte_char• «/»
@@ -17905,7 +17919,7 @@ S470{
 Transitions:
 
 
-S471{
+S472{
 	EXP1 : + EXP• «;»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -17916,7 +17930,7 @@ S471{
 Transitions:
 
 
-S472{
+S473{
 	EXP1 : - EXP• «;»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -17927,7 +17941,7 @@ S472{
 Transitions:
 
 
-S473{
+S474{
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
 	TERM1 : * TERM• «;»
@@ -17940,7 +17954,7 @@ S473{
 Transitions:
 
 
-S474{
+S475{
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
 	TERM1 : / TERM• «;»
@@ -17953,7 +17967,7 @@ S474{
 Transitions:
 
 
-S475{
+S476{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -17966,7 +17980,7 @@ S475{
 Transitions:
 
 
-S476{
+S477{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «&&»
 	EXP1 : + EXP• «;»
@@ -17975,7 +17989,7 @@ S476{
 Transitions:
 
 
-S477{
+S478{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «&&»
 	EXP1 : - EXP• «;»
@@ -17984,7 +17998,7 @@ S477{
 Transitions:
 
 
-S478{
+S479{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -17995,7 +18009,7 @@ S478{
 Transitions:
 
 
-S479{
+S480{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -18006,7 +18020,7 @@ S479{
 Transitions:
 
 
-S480{
+S481{
 	FAC : ( H_EXP )• «)»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -18021,7 +18035,7 @@ S480{
 Transitions:
 
 
-S481{
+S482{
 	VAR_CTE : id• «)»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -18031,7 +18045,7 @@ S481{
 Transitions:
 
 
-S482{
+S483{
 	FAC : ( •H_EXP ) «)»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -18180,10 +18194,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 560
+	H_EXP -> 561
 
 
-S483{
+S484{
 	VAR_CTE : cte_i• «)»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -18193,25 +18207,25 @@ S483{
 Transitions:
 
 
-S484{
+S485{
 	S_EXP1 : REL EXP• «)»
 }
 Transitions:
 
 
-S485{
+S486{
 	EXP : TERM •EXP1 «)»
 	EXP1 : empty• «)»
 	EXP1 : •+ EXP «)»
 	EXP1 : •- EXP «)»
 }
 Transitions:
-	EXP1 -> 561
-	+ -> 562
-	- -> 563
+	EXP1 -> 562
+	+ -> 563
+	- -> 564
 
 
-S486{
+S487{
 	FAC : + •VAR_CTE «)»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -18239,14 +18253,14 @@ S486{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	cte_i -> 483
-	cte_float -> 490
-	cte_char -> 491
-	VAR_CTE -> 564
+	id -> 482
+	cte_i -> 484
+	cte_float -> 491
+	cte_char -> 492
+	VAR_CTE -> 565
 
 
-S487{
+S488{
 	FAC : - •VAR_CTE «)»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -18274,14 +18288,14 @@ S487{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	cte_i -> 483
-	cte_float -> 490
-	cte_char -> 491
-	VAR_CTE -> 565
+	id -> 482
+	cte_i -> 484
+	cte_float -> 491
+	cte_char -> 492
+	VAR_CTE -> 566
 
 
-S488{
+S489{
 	TERM : FAC •TERM1 «)»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -18296,12 +18310,12 @@ S488{
 	TERM1 : •/ TERM «-»
 }
 Transitions:
-	TERM1 -> 566
-	* -> 567
-	/ -> 568
+	TERM1 -> 567
+	* -> 568
+	/ -> 569
 
 
-S489{
+S490{
 	FAC : VAR_CTE• «)»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -18311,7 +18325,7 @@ S489{
 Transitions:
 
 
-S490{
+S491{
 	VAR_CTE : cte_float• «)»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -18321,7 +18335,7 @@ S490{
 Transitions:
 
 
-S491{
+S492{
 	VAR_CTE : cte_char• «)»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -18331,7 +18345,7 @@ S491{
 Transitions:
 
 
-S492{
+S493{
 	EXP1 : + EXP• «)»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -18342,7 +18356,7 @@ S492{
 Transitions:
 
 
-S493{
+S494{
 	EXP1 : - EXP• «)»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -18353,7 +18367,7 @@ S493{
 Transitions:
 
 
-S494{
+S495{
 	TERM1 : * TERM• «)»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -18366,7 +18380,7 @@ S494{
 Transitions:
 
 
-S495{
+S496{
 	TERM1 : / TERM• «)»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -18379,7 +18393,7 @@ S495{
 Transitions:
 
 
-S496{
+S497{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -18392,7 +18406,7 @@ S496{
 Transitions:
 
 
-S497{
+S498{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «&&»
 	EXP1 : + EXP• «)»
@@ -18401,7 +18415,7 @@ S497{
 Transitions:
 
 
-S498{
+S499{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «&&»
 	EXP1 : - EXP• «)»
@@ -18410,7 +18424,7 @@ S498{
 Transitions:
 
 
-S499{
+S500{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -18421,7 +18435,7 @@ S499{
 Transitions:
 
 
-S500{
+S501{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -18432,7 +18446,7 @@ S500{
 Transitions:
 
 
-S501{
+S502{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -18450,7 +18464,7 @@ S501{
 Transitions:
 
 
-S502{
+S503{
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «+»
 	VAR_CTE : id• «/»
@@ -18465,7 +18479,7 @@ S502{
 Transitions:
 
 
-S503{
+S504{
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «+»
 	FAC : ( •H_EXP ) «/»
@@ -18619,10 +18633,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 569
+	H_EXP -> 570
 
 
-S504{
+S505{
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «+»
 	VAR_CTE : cte_i• «/»
@@ -18637,13 +18651,13 @@ S504{
 Transitions:
 
 
-S505{
+S506{
 	H_EXP1 : LOG S_EXP• «]»
 }
 Transitions:
 
 
-S506{
+S507{
 	S_EXP : EXP •S_EXP1 «]»
 	S_EXP1 : empty• «]»
 	S_EXP1 : •REL EXP «]»
@@ -18689,11 +18703,11 @@ Transitions:
 	>= -> 173
 	<= -> 174
 	== -> 175
-	S_EXP1 -> 570
-	REL -> 571
+	S_EXP1 -> 571
+	REL -> 572
 
 
-S507{
+S508{
 	EXP : TERM •EXP1 «<»
 	EXP : TERM •EXP1 «<=»
 	EXP : TERM •EXP1 «==»
@@ -18720,12 +18734,12 @@ S507{
 	EXP1 : •- EXP «]»
 }
 Transitions:
-	EXP1 -> 572
-	+ -> 573
-	- -> 574
+	EXP1 -> 573
+	+ -> 574
+	- -> 575
 
 
-S508{
+S509{
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «+»
 	FAC : + •VAR_CTE «/»
@@ -18778,14 +18792,14 @@ S508{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	cte_i -> 504
-	cte_float -> 512
-	cte_char -> 513
-	VAR_CTE -> 575
+	id -> 503
+	cte_i -> 505
+	cte_float -> 513
+	cte_char -> 514
+	VAR_CTE -> 576
 
 
-S509{
+S510{
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «+»
 	FAC : - •VAR_CTE «/»
@@ -18838,14 +18852,14 @@ S509{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	cte_i -> 504
-	cte_float -> 512
-	cte_char -> 513
-	VAR_CTE -> 576
+	id -> 503
+	cte_i -> 505
+	cte_float -> 513
+	cte_char -> 514
+	VAR_CTE -> 577
 
 
-S510{
+S511{
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
 	TERM : FAC •TERM1 «<»
@@ -18880,12 +18894,12 @@ S510{
 	TERM1 : •/ TERM «]»
 }
 Transitions:
-	TERM1 -> 577
-	* -> 578
-	/ -> 579
+	TERM1 -> 578
+	* -> 579
+	/ -> 580
 
 
-S511{
+S512{
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «+»
 	FAC : VAR_CTE• «/»
@@ -18900,7 +18914,7 @@ S511{
 Transitions:
 
 
-S512{
+S513{
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «+»
 	VAR_CTE : cte_float• «/»
@@ -18915,7 +18929,7 @@ S512{
 Transitions:
 
 
-S513{
+S514{
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «+»
 	VAR_CTE : cte_char• «/»
@@ -18930,7 +18944,7 @@ S513{
 Transitions:
 
 
-S514{
+S515{
 	VAR_CTE : id• «!=»
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «/»
@@ -18943,7 +18957,7 @@ S514{
 Transitions:
 
 
-S515{
+S516{
 	FAC : ( •H_EXP ) «!=»
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «/»
@@ -19095,10 +19109,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 580
+	H_EXP -> 581
 
 
-S516{
+S517{
 	VAR_CTE : cte_i• «!=»
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «/»
@@ -19111,7 +19125,7 @@ S516{
 Transitions:
 
 
-S517{
+S518{
 	S_EXP1 : REL EXP• «!=»
 	S_EXP1 : REL EXP• «&&»
 	S_EXP1 : REL EXP• «]»
@@ -19120,7 +19134,7 @@ S517{
 Transitions:
 
 
-S518{
+S519{
 	EXP : TERM •EXP1 «!=»
 	EXP : TERM •EXP1 «&&»
 	EXP : TERM •EXP1 «]»
@@ -19139,12 +19153,12 @@ S518{
 	EXP1 : •- EXP «||»
 }
 Transitions:
-	EXP1 -> 581
-	+ -> 582
-	- -> 583
+	EXP1 -> 582
+	+ -> 583
+	- -> 584
 
 
-S519{
+S520{
 	FAC : + •VAR_CTE «!=»
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «/»
@@ -19187,14 +19201,14 @@ S519{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	cte_i -> 516
-	cte_float -> 523
-	cte_char -> 524
-	VAR_CTE -> 584
+	id -> 515
+	cte_i -> 517
+	cte_float -> 524
+	cte_char -> 525
+	VAR_CTE -> 585
 
 
-S520{
+S521{
 	FAC : - •VAR_CTE «!=»
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «/»
@@ -19237,14 +19251,14 @@ S520{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	cte_i -> 516
-	cte_float -> 523
-	cte_char -> 524
-	VAR_CTE -> 585
+	id -> 515
+	cte_i -> 517
+	cte_float -> 524
+	cte_char -> 525
+	VAR_CTE -> 586
 
 
-S521{
+S522{
 	TERM : FAC •TERM1 «!=»
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
@@ -19271,12 +19285,12 @@ S521{
 	TERM1 : •/ TERM «||»
 }
 Transitions:
-	TERM1 -> 586
-	* -> 587
-	/ -> 588
+	TERM1 -> 587
+	* -> 588
+	/ -> 589
 
 
-S522{
+S523{
 	FAC : VAR_CTE• «!=»
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «/»
@@ -19289,7 +19303,7 @@ S522{
 Transitions:
 
 
-S523{
+S524{
 	VAR_CTE : cte_float• «!=»
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «/»
@@ -19302,7 +19316,7 @@ S523{
 Transitions:
 
 
-S524{
+S525{
 	VAR_CTE : cte_char• «!=»
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «/»
@@ -19315,7 +19329,7 @@ S524{
 Transitions:
 
 
-S525{
+S526{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
@@ -19329,7 +19343,7 @@ S525{
 Transitions:
 
 
-S526{
+S527{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
@@ -19343,7 +19357,7 @@ S526{
 Transitions:
 
 
-S527{
+S528{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -19359,7 +19373,7 @@ S527{
 Transitions:
 
 
-S528{
+S529{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -19375,14 +19389,14 @@ S528{
 Transitions:
 
 
-S529{
+S530{
 	VAR1 : [ H_EXP ]• «)»
 	VAR1 : [ H_EXP ]• «,»
 }
 Transitions:
 
 
-S530{
+S531{
 	DEC : if ( H_EXP ) { EST B1 •} DEC1 «for»
 	DEC : if ( H_EXP ) { EST B1 •} DEC1 «id»
 	DEC : if ( H_EXP ) { EST B1 •} DEC1 «if»
@@ -19393,10 +19407,10 @@ S530{
 	DEC : if ( H_EXP ) { EST B1 •} DEC1 «}»
 }
 Transitions:
-	} -> 589
+	} -> 590
 
 
-S531{
+S532{
 	REP1 : ) { EST B1 •} «for»
 	REP1 : ) { EST B1 •} «id»
 	REP1 : ) { EST B1 •} «if»
@@ -19407,10 +19421,10 @@ S531{
 	REP1 : ) { EST B1 •} «}»
 }
 Transitions:
-	} -> 590
+	} -> 591
 
 
-S532{
+S533{
 	REP : for ( AS ; H_EXP ; H_EXP •REP1 «for»
 	REP : for ( AS ; H_EXP ; H_EXP •REP1 «id»
 	REP : for ( AS ; H_EXP ; H_EXP •REP1 «if»
@@ -19430,44 +19444,44 @@ S532{
 }
 Transitions:
 	) -> 219
-	REP1 -> 591
-
-
-S533{
-	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «main»
-}
-Transitions:
-	} -> 592
+	REP1 -> 592
 
 
 S534{
+	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «main»
+}
+Transitions:
+	} -> 593
+
+
+S535{
 	MET_CL1 : F MET_CL1• «}»
 }
 Transitions:
 
 
-S535{
+S536{
 	MET_CL : methods { F MET_CL1 }• «}»
 }
 Transitions:
 
 
-S536{
+S537{
 	F : function F1 id •( F2 ) { DV body { EST B1 } } F4 «function»
 	F : function F1 id •( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	( -> 593
-
-
-S537{
-	ATR_CL : public : ATR_SIMP private : ATR_SIMP protected •: ATR_SIMP «}»
-}
-Transitions:
-	: -> 594
+	( -> 594
 
 
 S538{
+	ATR_CL : public : ATR_SIMP private : ATR_SIMP protected •: ATR_SIMP «}»
+}
+Transitions:
+	: -> 595
+
+
+S539{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «protected»
 	DV2 : •TIP_COMP id DV4 «;»
 	DV2 : •DV6 DV5 «;»
@@ -19490,10 +19504,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 595
+	DV2 -> 596
 
 
-S539{
+S540{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «private»
 	ATR_SIMP1 : empty• «private»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «private»
@@ -19509,28 +19523,28 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 539
-	TIP_SIMP -> 540
-	ATR_SIMP1 -> 596
+	ATR_SIMP -> 540
+	TIP_SIMP -> 541
+	ATR_SIMP1 -> 597
 
 
-S540{
+S541{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «private»
 }
 Transitions:
-	id -> 597
+	id -> 598
 
 
-S541{
+S542{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «private»
 }
 Transitions:
 
 
-S542{
+S543{
 	FAC : ( H_EXP •) «)»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -19539,17 +19553,17 @@ S542{
 	FAC : ( H_EXP •) «,»
 }
 Transitions:
-	) -> 598
+	) -> 599
 
 
-S543{
+S544{
 	EXP : TERM EXP1• «)»
 	EXP : TERM EXP1• «,»
 }
 Transitions:
 
 
-S544{
+S545{
 	EXP1 : + •EXP «)»
 	EXP1 : + •EXP «,»
 	EXP : •TERM EXP1 «)»
@@ -19608,20 +19622,20 @@ S544{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	( -> 440
-	cte_i -> 441
-	TERM -> 443
-	+ -> 444
-	- -> 445
-	FAC -> 446
-	VAR_CTE -> 447
-	cte_float -> 448
-	cte_char -> 449
-	EXP -> 599
+	id -> 440
+	( -> 441
+	cte_i -> 442
+	TERM -> 444
+	+ -> 445
+	- -> 446
+	FAC -> 447
+	VAR_CTE -> 448
+	cte_float -> 449
+	cte_char -> 450
+	EXP -> 600
 
 
-S545{
+S546{
 	EXP1 : - •EXP «)»
 	EXP1 : - •EXP «,»
 	EXP : •TERM EXP1 «)»
@@ -19680,20 +19694,20 @@ S545{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	( -> 440
-	cte_i -> 441
-	TERM -> 443
-	+ -> 444
-	- -> 445
-	FAC -> 446
-	VAR_CTE -> 447
-	cte_float -> 448
-	cte_char -> 449
-	EXP -> 600
+	id -> 440
+	( -> 441
+	cte_i -> 442
+	TERM -> 444
+	+ -> 445
+	- -> 446
+	FAC -> 447
+	VAR_CTE -> 448
+	cte_float -> 449
+	cte_char -> 450
+	EXP -> 601
 
 
-S546{
+S547{
 	FAC : + VAR_CTE• «)»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -19704,7 +19718,7 @@ S546{
 Transitions:
 
 
-S547{
+S548{
 	FAC : - VAR_CTE• «)»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -19715,7 +19729,7 @@ S547{
 Transitions:
 
 
-S548{
+S549{
 	TERM : FAC TERM1• «)»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -19724,7 +19738,7 @@ S548{
 Transitions:
 
 
-S549{
+S550{
 	TERM1 : * •TERM «)»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -19783,19 +19797,19 @@ S549{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	( -> 440
-	cte_i -> 441
-	+ -> 444
-	- -> 445
-	FAC -> 446
-	VAR_CTE -> 447
-	cte_float -> 448
-	cte_char -> 449
-	TERM -> 601
+	id -> 440
+	( -> 441
+	cte_i -> 442
+	+ -> 445
+	- -> 446
+	FAC -> 447
+	VAR_CTE -> 448
+	cte_float -> 449
+	cte_char -> 450
+	TERM -> 602
 
 
-S550{
+S551{
 	TERM1 : / •TERM «)»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -19854,19 +19868,19 @@ S550{
 	VAR_CTE : •cte_char «,»
 }
 Transitions:
-	id -> 439
-	( -> 440
-	cte_i -> 441
-	+ -> 444
-	- -> 445
-	FAC -> 446
-	VAR_CTE -> 447
-	cte_float -> 448
-	cte_char -> 449
-	TERM -> 602
+	id -> 440
+	( -> 441
+	cte_i -> 442
+	+ -> 445
+	- -> 446
+	FAC -> 447
+	VAR_CTE -> 448
+	cte_float -> 449
+	cte_char -> 450
+	TERM -> 603
 
 
-S551{
+S552{
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «+»
 	FAC : ( H_EXP •) «/»
@@ -19874,16 +19888,16 @@ S551{
 	FAC : ( H_EXP •) «;»
 }
 Transitions:
-	) -> 603
+	) -> 604
 
 
-S552{
+S553{
 	EXP : TERM EXP1• «;»
 }
 Transitions:
 
 
-S553{
+S554{
 	EXP1 : + •EXP «;»
 	EXP : •TERM EXP1 «;»
 	TERM : •FAC TERM1 «+»
@@ -19931,20 +19945,20 @@ S553{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	( -> 461
-	cte_i -> 462
-	TERM -> 464
-	+ -> 465
-	- -> 466
-	FAC -> 467
-	VAR_CTE -> 468
-	cte_float -> 469
-	cte_char -> 470
-	EXP -> 604
+	id -> 461
+	( -> 462
+	cte_i -> 463
+	TERM -> 465
+	+ -> 466
+	- -> 467
+	FAC -> 468
+	VAR_CTE -> 469
+	cte_float -> 470
+	cte_char -> 471
+	EXP -> 605
 
 
-S554{
+S555{
 	EXP1 : - •EXP «;»
 	EXP : •TERM EXP1 «;»
 	TERM : •FAC TERM1 «+»
@@ -19992,20 +20006,20 @@ S554{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	( -> 461
-	cte_i -> 462
-	TERM -> 464
-	+ -> 465
-	- -> 466
-	FAC -> 467
-	VAR_CTE -> 468
-	cte_float -> 469
-	cte_char -> 470
-	EXP -> 605
+	id -> 461
+	( -> 462
+	cte_i -> 463
+	TERM -> 465
+	+ -> 466
+	- -> 467
+	FAC -> 468
+	VAR_CTE -> 469
+	cte_float -> 470
+	cte_char -> 471
+	EXP -> 606
 
 
-S555{
+S556{
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «+»
 	FAC : + VAR_CTE• «/»
@@ -20015,7 +20029,7 @@ S555{
 Transitions:
 
 
-S556{
+S557{
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «+»
 	FAC : - VAR_CTE• «/»
@@ -20025,7 +20039,7 @@ S556{
 Transitions:
 
 
-S557{
+S558{
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
 	TERM : FAC TERM1• «;»
@@ -20033,7 +20047,7 @@ S557{
 Transitions:
 
 
-S558{
+S559{
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
 	TERM1 : * •TERM «;»
@@ -20082,19 +20096,19 @@ S558{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	( -> 461
-	cte_i -> 462
-	+ -> 465
-	- -> 466
-	FAC -> 467
-	VAR_CTE -> 468
-	cte_float -> 469
-	cte_char -> 470
-	TERM -> 606
+	id -> 461
+	( -> 462
+	cte_i -> 463
+	+ -> 466
+	- -> 467
+	FAC -> 468
+	VAR_CTE -> 469
+	cte_float -> 470
+	cte_char -> 471
+	TERM -> 607
 
 
-S559{
+S560{
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
 	TERM1 : / •TERM «;»
@@ -20143,19 +20157,19 @@ S559{
 	VAR_CTE : •cte_char «;»
 }
 Transitions:
-	id -> 460
-	( -> 461
-	cte_i -> 462
-	+ -> 465
-	- -> 466
-	FAC -> 467
-	VAR_CTE -> 468
-	cte_float -> 469
-	cte_char -> 470
-	TERM -> 607
+	id -> 461
+	( -> 462
+	cte_i -> 463
+	+ -> 466
+	- -> 467
+	FAC -> 468
+	VAR_CTE -> 469
+	cte_float -> 470
+	cte_char -> 471
+	TERM -> 608
 
 
-S560{
+S561{
 	FAC : ( H_EXP •) «)»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -20163,16 +20177,16 @@ S560{
 	FAC : ( H_EXP •) «-»
 }
 Transitions:
-	) -> 608
+	) -> 609
 
 
-S561{
+S562{
 	EXP : TERM EXP1• «)»
 }
 Transitions:
 
 
-S562{
+S563{
 	EXP1 : + •EXP «)»
 	EXP : •TERM EXP1 «)»
 	TERM : •FAC TERM1 «)»
@@ -20220,20 +20234,20 @@ S562{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	( -> 482
-	cte_i -> 483
-	TERM -> 485
-	+ -> 486
-	- -> 487
-	FAC -> 488
-	VAR_CTE -> 489
-	cte_float -> 490
-	cte_char -> 491
-	EXP -> 609
+	id -> 482
+	( -> 483
+	cte_i -> 484
+	TERM -> 486
+	+ -> 487
+	- -> 488
+	FAC -> 489
+	VAR_CTE -> 490
+	cte_float -> 491
+	cte_char -> 492
+	EXP -> 610
 
 
-S563{
+S564{
 	EXP1 : - •EXP «)»
 	EXP : •TERM EXP1 «)»
 	TERM : •FAC TERM1 «)»
@@ -20281,20 +20295,20 @@ S563{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	( -> 482
-	cte_i -> 483
-	TERM -> 485
-	+ -> 486
-	- -> 487
-	FAC -> 488
-	VAR_CTE -> 489
-	cte_float -> 490
-	cte_char -> 491
-	EXP -> 610
+	id -> 482
+	( -> 483
+	cte_i -> 484
+	TERM -> 486
+	+ -> 487
+	- -> 488
+	FAC -> 489
+	VAR_CTE -> 490
+	cte_float -> 491
+	cte_char -> 492
+	EXP -> 611
 
 
-S564{
+S565{
 	FAC : + VAR_CTE• «)»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -20304,7 +20318,7 @@ S564{
 Transitions:
 
 
-S565{
+S566{
 	FAC : - VAR_CTE• «)»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -20314,7 +20328,7 @@ S565{
 Transitions:
 
 
-S566{
+S567{
 	TERM : FAC TERM1• «)»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -20322,7 +20336,7 @@ S566{
 Transitions:
 
 
-S567{
+S568{
 	TERM1 : * •TERM «)»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -20371,19 +20385,19 @@ S567{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	( -> 482
-	cte_i -> 483
-	+ -> 486
-	- -> 487
-	FAC -> 488
-	VAR_CTE -> 489
-	cte_float -> 490
-	cte_char -> 491
-	TERM -> 611
+	id -> 482
+	( -> 483
+	cte_i -> 484
+	+ -> 487
+	- -> 488
+	FAC -> 489
+	VAR_CTE -> 490
+	cte_float -> 491
+	cte_char -> 492
+	TERM -> 612
 
 
-S568{
+S569{
 	TERM1 : / •TERM «)»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -20432,19 +20446,19 @@ S568{
 	VAR_CTE : •cte_char «-»
 }
 Transitions:
-	id -> 481
-	( -> 482
-	cte_i -> 483
-	+ -> 486
-	- -> 487
-	FAC -> 488
-	VAR_CTE -> 489
-	cte_float -> 490
-	cte_char -> 491
-	TERM -> 612
+	id -> 482
+	( -> 483
+	cte_i -> 484
+	+ -> 487
+	- -> 488
+	FAC -> 489
+	VAR_CTE -> 490
+	cte_float -> 491
+	cte_char -> 492
+	TERM -> 613
 
 
-S569{
+S570{
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «+»
 	FAC : ( H_EXP •) «/»
@@ -20457,16 +20471,16 @@ S569{
 	FAC : ( H_EXP •) «]»
 }
 Transitions:
-	) -> 613
+	) -> 614
 
 
-S570{
+S571{
 	S_EXP : EXP S_EXP1• «]»
 }
 Transitions:
 
 
-S571{
+S572{
 	S_EXP1 : REL •EXP «]»
 	EXP : •TERM EXP1 «]»
 	TERM : •FAC TERM1 «+»
@@ -20514,20 +20528,20 @@ S571{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	( -> 615
-	cte_i -> 616
-	EXP -> 617
-	TERM -> 618
-	+ -> 619
-	- -> 620
-	FAC -> 621
-	VAR_CTE -> 622
-	cte_float -> 623
-	cte_char -> 624
+	id -> 615
+	( -> 616
+	cte_i -> 617
+	EXP -> 618
+	TERM -> 619
+	+ -> 620
+	- -> 621
+	FAC -> 622
+	VAR_CTE -> 623
+	cte_float -> 624
+	cte_char -> 625
 
 
-S572{
+S573{
 	EXP : TERM EXP1• «<»
 	EXP : TERM EXP1• «<=»
 	EXP : TERM EXP1• «==»
@@ -20538,7 +20552,7 @@ S572{
 Transitions:
 
 
-S573{
+S574{
 	EXP1 : + •EXP «<»
 	EXP1 : + •EXP «<=»
 	EXP1 : + •EXP «==»
@@ -20641,20 +20655,20 @@ S573{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	( -> 503
-	cte_i -> 504
-	TERM -> 507
-	+ -> 508
-	- -> 509
-	FAC -> 510
-	VAR_CTE -> 511
-	cte_float -> 512
-	cte_char -> 513
-	EXP -> 625
+	id -> 503
+	( -> 504
+	cte_i -> 505
+	TERM -> 508
+	+ -> 509
+	- -> 510
+	FAC -> 511
+	VAR_CTE -> 512
+	cte_float -> 513
+	cte_char -> 514
+	EXP -> 626
 
 
-S574{
+S575{
 	EXP1 : - •EXP «<»
 	EXP1 : - •EXP «<=»
 	EXP1 : - •EXP «==»
@@ -20757,20 +20771,20 @@ S574{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	( -> 503
-	cte_i -> 504
-	TERM -> 507
-	+ -> 508
-	- -> 509
-	FAC -> 510
-	VAR_CTE -> 511
-	cte_float -> 512
-	cte_char -> 513
-	EXP -> 626
+	id -> 503
+	( -> 504
+	cte_i -> 505
+	TERM -> 508
+	+ -> 509
+	- -> 510
+	FAC -> 511
+	VAR_CTE -> 512
+	cte_float -> 513
+	cte_char -> 514
+	EXP -> 627
 
 
-S575{
+S576{
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «+»
 	FAC : + VAR_CTE• «/»
@@ -20785,7 +20799,7 @@ S575{
 Transitions:
 
 
-S576{
+S577{
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «+»
 	FAC : - VAR_CTE• «/»
@@ -20800,7 +20814,7 @@ S576{
 Transitions:
 
 
-S577{
+S578{
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
 	TERM : FAC TERM1• «<»
@@ -20813,7 +20827,7 @@ S577{
 Transitions:
 
 
-S578{
+S579{
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
 	TERM1 : * •TERM «<»
@@ -20912,19 +20926,19 @@ S578{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	( -> 503
-	cte_i -> 504
-	+ -> 508
-	- -> 509
-	FAC -> 510
-	VAR_CTE -> 511
-	cte_float -> 512
-	cte_char -> 513
-	TERM -> 627
+	id -> 503
+	( -> 504
+	cte_i -> 505
+	+ -> 509
+	- -> 510
+	FAC -> 511
+	VAR_CTE -> 512
+	cte_float -> 513
+	cte_char -> 514
+	TERM -> 628
 
 
-S579{
+S580{
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
 	TERM1 : / •TERM «<»
@@ -21023,19 +21037,19 @@ S579{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 502
-	( -> 503
-	cte_i -> 504
-	+ -> 508
-	- -> 509
-	FAC -> 510
-	VAR_CTE -> 511
-	cte_float -> 512
-	cte_char -> 513
-	TERM -> 628
+	id -> 503
+	( -> 504
+	cte_i -> 505
+	+ -> 509
+	- -> 510
+	FAC -> 511
+	VAR_CTE -> 512
+	cte_float -> 513
+	cte_char -> 514
+	TERM -> 629
 
 
-S580{
+S581{
 	FAC : ( H_EXP •) «!=»
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «/»
@@ -21046,10 +21060,10 @@ S580{
 	FAC : ( H_EXP •) «||»
 }
 Transitions:
-	) -> 629
+	) -> 630
 
 
-S581{
+S582{
 	EXP : TERM EXP1• «!=»
 	EXP : TERM EXP1• «&&»
 	EXP : TERM EXP1• «]»
@@ -21058,7 +21072,7 @@ S581{
 Transitions:
 
 
-S582{
+S583{
 	EXP1 : + •EXP «!=»
 	EXP1 : + •EXP «&&»
 	EXP1 : + •EXP «]»
@@ -21139,20 +21153,20 @@ S582{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	( -> 515
-	cte_i -> 516
-	TERM -> 518
-	+ -> 519
-	- -> 520
-	FAC -> 521
-	VAR_CTE -> 522
-	cte_float -> 523
-	cte_char -> 524
-	EXP -> 630
+	id -> 515
+	( -> 516
+	cte_i -> 517
+	TERM -> 519
+	+ -> 520
+	- -> 521
+	FAC -> 522
+	VAR_CTE -> 523
+	cte_float -> 524
+	cte_char -> 525
+	EXP -> 631
 
 
-S583{
+S584{
 	EXP1 : - •EXP «!=»
 	EXP1 : - •EXP «&&»
 	EXP1 : - •EXP «]»
@@ -21233,20 +21247,20 @@ S583{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	( -> 515
-	cte_i -> 516
-	TERM -> 518
-	+ -> 519
-	- -> 520
-	FAC -> 521
-	VAR_CTE -> 522
-	cte_float -> 523
-	cte_char -> 524
-	EXP -> 631
+	id -> 515
+	( -> 516
+	cte_i -> 517
+	TERM -> 519
+	+ -> 520
+	- -> 521
+	FAC -> 522
+	VAR_CTE -> 523
+	cte_float -> 524
+	cte_char -> 525
+	EXP -> 632
 
 
-S584{
+S585{
 	FAC : + VAR_CTE• «!=»
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «/»
@@ -21259,7 +21273,7 @@ S584{
 Transitions:
 
 
-S585{
+S586{
 	FAC : - VAR_CTE• «!=»
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «/»
@@ -21272,7 +21286,7 @@ S585{
 Transitions:
 
 
-S586{
+S587{
 	TERM : FAC TERM1• «!=»
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
@@ -21283,7 +21297,7 @@ S586{
 Transitions:
 
 
-S587{
+S588{
 	TERM1 : * •TERM «!=»
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
@@ -21362,19 +21376,19 @@ S587{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	( -> 515
-	cte_i -> 516
-	+ -> 519
-	- -> 520
-	FAC -> 521
-	VAR_CTE -> 522
-	cte_float -> 523
-	cte_char -> 524
-	TERM -> 632
+	id -> 515
+	( -> 516
+	cte_i -> 517
+	+ -> 520
+	- -> 521
+	FAC -> 522
+	VAR_CTE -> 523
+	cte_float -> 524
+	cte_char -> 525
+	TERM -> 633
 
 
-S588{
+S589{
 	TERM1 : / •TERM «!=»
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
@@ -21453,19 +21467,19 @@ S588{
 	VAR_CTE : •cte_char «||»
 }
 Transitions:
-	id -> 514
-	( -> 515
-	cte_i -> 516
-	+ -> 519
-	- -> 520
-	FAC -> 521
-	VAR_CTE -> 522
-	cte_float -> 523
-	cte_char -> 524
-	TERM -> 633
+	id -> 515
+	( -> 516
+	cte_i -> 517
+	+ -> 520
+	- -> 521
+	FAC -> 522
+	VAR_CTE -> 523
+	cte_float -> 524
+	cte_char -> 525
+	TERM -> 634
 
 
-S589{
+S590{
 	DEC : if ( H_EXP ) { EST B1 } •DEC1 «for»
 	DEC : if ( H_EXP ) { EST B1 } •DEC1 «id»
 	DEC : if ( H_EXP ) { EST B1 } •DEC1 «if»
@@ -21492,11 +21506,11 @@ S589{
 	DEC1 : •else { EST B1 } «}»
 }
 Transitions:
-	DEC1 -> 634
-	else -> 635
+	DEC1 -> 635
+	else -> 636
 
 
-S590{
+S591{
 	REP1 : ) { EST B1 }• «for»
 	REP1 : ) { EST B1 }• «id»
 	REP1 : ) { EST B1 }• «if»
@@ -21509,7 +21523,7 @@ S590{
 Transitions:
 
 
-S591{
+S592{
 	REP : for ( AS ; H_EXP ; H_EXP REP1• «for»
 	REP : for ( AS ; H_EXP ; H_EXP REP1• «id»
 	REP : for ( AS ; H_EXP ; H_EXP REP1• «if»
@@ -21522,14 +21536,14 @@ S591{
 Transitions:
 
 
-S592{
+S593{
 	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «main»
 }
 Transitions:
-	} -> 636
+	} -> 637
 
 
-S593{
+S594{
 	F : function F1 id ( •F2 ) { DV body { EST B1 } } F4 «function»
 	F : function F1 id ( •F2 ) { DV body { EST B1 } } F4 «}»
 	F2 : empty• «)»
@@ -21543,10 +21557,10 @@ Transitions:
 	char -> 21
 	float -> 22
 	TIP_SIMP -> 53
-	F2 -> 637
+	F2 -> 638
 
 
-S594{
+S595{
 	ATR_CL : public : ATR_SIMP private : ATR_SIMP protected : •ATR_SIMP «}»
 	ATR_SIMP : •TIP_SIMP id DV2 ; ATR_SIMP1 «}»
 	TIP_SIMP : •int «id»
@@ -21557,24 +21571,24 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 638
-	TIP_SIMP -> 639
-
-
-S595{
-	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «protected»
-}
-Transitions:
-	; -> 640
+	ATR_SIMP -> 639
+	TIP_SIMP -> 640
 
 
 S596{
+	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «protected»
+}
+Transitions:
+	; -> 641
+
+
+S597{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «private»
 }
 Transitions:
 
 
-S597{
+S598{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «int»
@@ -21600,10 +21614,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 641
+	DV2 -> 642
 
 
-S598{
+S599{
 	FAC : ( H_EXP )• «)»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -21614,21 +21628,21 @@ S598{
 Transitions:
 
 
-S599{
+S600{
 	EXP1 : + EXP• «)»
 	EXP1 : + EXP• «,»
 }
 Transitions:
 
 
-S600{
+S601{
 	EXP1 : - EXP• «)»
 	EXP1 : - EXP• «,»
 }
 Transitions:
 
 
-S601{
+S602{
 	TERM1 : * TERM• «)»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -21637,7 +21651,7 @@ S601{
 Transitions:
 
 
-S602{
+S603{
 	TERM1 : / TERM• «)»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -21646,7 +21660,7 @@ S602{
 Transitions:
 
 
-S603{
+S604{
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «+»
 	FAC : ( H_EXP )• «/»
@@ -21656,19 +21670,19 @@ S603{
 Transitions:
 
 
-S604{
+S605{
 	EXP1 : + EXP• «;»
 }
 Transitions:
 
 
-S605{
+S606{
 	EXP1 : - EXP• «;»
 }
 Transitions:
 
 
-S606{
+S607{
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
 	TERM1 : * TERM• «;»
@@ -21676,7 +21690,7 @@ S606{
 Transitions:
 
 
-S607{
+S608{
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
 	TERM1 : / TERM• «;»
@@ -21684,7 +21698,7 @@ S607{
 Transitions:
 
 
-S608{
+S609{
 	FAC : ( H_EXP )• «)»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -21694,19 +21708,19 @@ S608{
 Transitions:
 
 
-S609{
+S610{
 	EXP1 : + EXP• «)»
 }
 Transitions:
 
 
-S610{
+S611{
 	EXP1 : - EXP• «)»
 }
 Transitions:
 
 
-S611{
+S612{
 	TERM1 : * TERM• «)»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -21714,7 +21728,7 @@ S611{
 Transitions:
 
 
-S612{
+S613{
 	TERM1 : / TERM• «)»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -21722,7 +21736,7 @@ S612{
 Transitions:
 
 
-S613{
+S614{
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «+»
 	FAC : ( H_EXP )• «/»
@@ -21737,7 +21751,7 @@ S613{
 Transitions:
 
 
-S614{
+S615{
 	VAR_CTE : id• «*»
 	VAR_CTE : id• «+»
 	VAR_CTE : id• «/»
@@ -21747,7 +21761,7 @@ S614{
 Transitions:
 
 
-S615{
+S616{
 	FAC : ( •H_EXP ) «*»
 	FAC : ( •H_EXP ) «+»
 	FAC : ( •H_EXP ) «/»
@@ -21896,10 +21910,10 @@ Transitions:
 	VAR_CTE -> 141
 	cte_float -> 142
 	cte_char -> 143
-	H_EXP -> 642
+	H_EXP -> 643
 
 
-S616{
+S617{
 	VAR_CTE : cte_i• «*»
 	VAR_CTE : cte_i• «+»
 	VAR_CTE : cte_i• «/»
@@ -21909,25 +21923,25 @@ S616{
 Transitions:
 
 
-S617{
+S618{
 	S_EXP1 : REL EXP• «]»
 }
 Transitions:
 
 
-S618{
+S619{
 	EXP : TERM •EXP1 «]»
 	EXP1 : empty• «]»
 	EXP1 : •+ EXP «]»
 	EXP1 : •- EXP «]»
 }
 Transitions:
-	EXP1 -> 643
-	+ -> 644
-	- -> 645
+	EXP1 -> 644
+	+ -> 645
+	- -> 646
 
 
-S619{
+S620{
 	FAC : + •VAR_CTE «*»
 	FAC : + •VAR_CTE «+»
 	FAC : + •VAR_CTE «/»
@@ -21955,14 +21969,14 @@ S619{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	cte_i -> 616
-	cte_float -> 623
-	cte_char -> 624
-	VAR_CTE -> 646
+	id -> 615
+	cte_i -> 617
+	cte_float -> 624
+	cte_char -> 625
+	VAR_CTE -> 647
 
 
-S620{
+S621{
 	FAC : - •VAR_CTE «*»
 	FAC : - •VAR_CTE «+»
 	FAC : - •VAR_CTE «/»
@@ -21990,14 +22004,14 @@ S620{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	cte_i -> 616
-	cte_float -> 623
-	cte_char -> 624
-	VAR_CTE -> 647
+	id -> 615
+	cte_i -> 617
+	cte_float -> 624
+	cte_char -> 625
+	VAR_CTE -> 648
 
 
-S621{
+S622{
 	TERM : FAC •TERM1 «+»
 	TERM : FAC •TERM1 «-»
 	TERM : FAC •TERM1 «]»
@@ -22012,12 +22026,12 @@ S621{
 	TERM1 : •/ TERM «]»
 }
 Transitions:
-	TERM1 -> 648
-	* -> 649
-	/ -> 650
+	TERM1 -> 649
+	* -> 650
+	/ -> 651
 
 
-S622{
+S623{
 	FAC : VAR_CTE• «*»
 	FAC : VAR_CTE• «+»
 	FAC : VAR_CTE• «/»
@@ -22027,7 +22041,7 @@ S622{
 Transitions:
 
 
-S623{
+S624{
 	VAR_CTE : cte_float• «*»
 	VAR_CTE : cte_float• «+»
 	VAR_CTE : cte_float• «/»
@@ -22037,7 +22051,7 @@ S623{
 Transitions:
 
 
-S624{
+S625{
 	VAR_CTE : cte_char• «*»
 	VAR_CTE : cte_char• «+»
 	VAR_CTE : cte_char• «/»
@@ -22047,7 +22061,7 @@ S624{
 Transitions:
 
 
-S625{
+S626{
 	EXP1 : + EXP• «<»
 	EXP1 : + EXP• «<=»
 	EXP1 : + EXP• «==»
@@ -22058,7 +22072,7 @@ S625{
 Transitions:
 
 
-S626{
+S627{
 	EXP1 : - EXP• «<»
 	EXP1 : - EXP• «<=»
 	EXP1 : - EXP• «==»
@@ -22069,7 +22083,7 @@ S626{
 Transitions:
 
 
-S627{
+S628{
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
 	TERM1 : * TERM• «<»
@@ -22082,7 +22096,7 @@ S627{
 Transitions:
 
 
-S628{
+S629{
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
 	TERM1 : / TERM• «<»
@@ -22095,7 +22109,7 @@ S628{
 Transitions:
 
 
-S629{
+S630{
 	FAC : ( H_EXP )• «!=»
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «/»
@@ -22108,7 +22122,7 @@ S629{
 Transitions:
 
 
-S630{
+S631{
 	EXP1 : + EXP• «!=»
 	EXP1 : + EXP• «&&»
 	EXP1 : + EXP• «]»
@@ -22117,7 +22131,7 @@ S630{
 Transitions:
 
 
-S631{
+S632{
 	EXP1 : - EXP• «!=»
 	EXP1 : - EXP• «&&»
 	EXP1 : - EXP• «]»
@@ -22126,7 +22140,7 @@ S631{
 Transitions:
 
 
-S632{
+S633{
 	TERM1 : * TERM• «!=»
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
@@ -22137,7 +22151,7 @@ S632{
 Transitions:
 
 
-S633{
+S634{
 	TERM1 : / TERM• «!=»
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
@@ -22148,7 +22162,7 @@ S633{
 Transitions:
 
 
-S634{
+S635{
 	DEC : if ( H_EXP ) { EST B1 } DEC1• «for»
 	DEC : if ( H_EXP ) { EST B1 } DEC1• «id»
 	DEC : if ( H_EXP ) { EST B1 } DEC1• «if»
@@ -22161,7 +22175,7 @@ S634{
 Transitions:
 
 
-S635{
+S636{
 	DEC1 : else •{ EST B1 } «for»
 	DEC1 : else •{ EST B1 } «id»
 	DEC1 : else •{ EST B1 } «if»
@@ -22172,10 +22186,10 @@ S635{
 	DEC1 : else •{ EST B1 } «}»
 }
 Transitions:
-	{ -> 651
+	{ -> 652
 
 
-S636{
+S637{
 	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «main»
 	F4 : empty• «main»
 	F4 : •F «main»
@@ -22183,32 +22197,32 @@ S636{
 }
 Transitions:
 	function -> 14
-	F -> 652
-	F4 -> 653
+	F -> 653
+	F4 -> 654
 
 
-S637{
+S638{
 	F : function F1 id ( F2 •) { DV body { EST B1 } } F4 «function»
 	F : function F1 id ( F2 •) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	) -> 654
+	) -> 655
 
 
-S638{
+S639{
 	ATR_CL : public : ATR_SIMP private : ATR_SIMP protected : ATR_SIMP• «}»
 }
 Transitions:
 
 
-S639{
+S640{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «}»
 }
 Transitions:
-	id -> 655
+	id -> 656
 
 
-S640{
+S641{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «protected»
 	ATR_SIMP1 : empty• «protected»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «protected»
@@ -22224,22 +22238,22 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 656
-	TIP_SIMP -> 657
-	ATR_SIMP1 -> 658
+	ATR_SIMP -> 657
+	TIP_SIMP -> 658
+	ATR_SIMP1 -> 659
 
 
-S641{
+S642{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «private»
 }
 Transitions:
-	; -> 659
+	; -> 660
 
 
-S642{
+S643{
 	FAC : ( H_EXP •) «*»
 	FAC : ( H_EXP •) «+»
 	FAC : ( H_EXP •) «/»
@@ -22247,16 +22261,16 @@ S642{
 	FAC : ( H_EXP •) «]»
 }
 Transitions:
-	) -> 660
+	) -> 661
 
 
-S643{
+S644{
 	EXP : TERM EXP1• «]»
 }
 Transitions:
 
 
-S644{
+S645{
 	EXP1 : + •EXP «]»
 	EXP : •TERM EXP1 «]»
 	TERM : •FAC TERM1 «+»
@@ -22304,20 +22318,20 @@ S644{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	( -> 615
-	cte_i -> 616
-	TERM -> 618
-	+ -> 619
-	- -> 620
-	FAC -> 621
-	VAR_CTE -> 622
-	cte_float -> 623
-	cte_char -> 624
-	EXP -> 661
+	id -> 615
+	( -> 616
+	cte_i -> 617
+	TERM -> 619
+	+ -> 620
+	- -> 621
+	FAC -> 622
+	VAR_CTE -> 623
+	cte_float -> 624
+	cte_char -> 625
+	EXP -> 662
 
 
-S645{
+S646{
 	EXP1 : - •EXP «]»
 	EXP : •TERM EXP1 «]»
 	TERM : •FAC TERM1 «+»
@@ -22365,20 +22379,20 @@ S645{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	( -> 615
-	cte_i -> 616
-	TERM -> 618
-	+ -> 619
-	- -> 620
-	FAC -> 621
-	VAR_CTE -> 622
-	cte_float -> 623
-	cte_char -> 624
-	EXP -> 662
+	id -> 615
+	( -> 616
+	cte_i -> 617
+	TERM -> 619
+	+ -> 620
+	- -> 621
+	FAC -> 622
+	VAR_CTE -> 623
+	cte_float -> 624
+	cte_char -> 625
+	EXP -> 663
 
 
-S646{
+S647{
 	FAC : + VAR_CTE• «*»
 	FAC : + VAR_CTE• «+»
 	FAC : + VAR_CTE• «/»
@@ -22388,7 +22402,7 @@ S646{
 Transitions:
 
 
-S647{
+S648{
 	FAC : - VAR_CTE• «*»
 	FAC : - VAR_CTE• «+»
 	FAC : - VAR_CTE• «/»
@@ -22398,7 +22412,7 @@ S647{
 Transitions:
 
 
-S648{
+S649{
 	TERM : FAC TERM1• «+»
 	TERM : FAC TERM1• «-»
 	TERM : FAC TERM1• «]»
@@ -22406,7 +22420,7 @@ S648{
 Transitions:
 
 
-S649{
+S650{
 	TERM1 : * •TERM «+»
 	TERM1 : * •TERM «-»
 	TERM1 : * •TERM «]»
@@ -22455,19 +22469,19 @@ S649{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	( -> 615
-	cte_i -> 616
-	+ -> 619
-	- -> 620
-	FAC -> 621
-	VAR_CTE -> 622
-	cte_float -> 623
-	cte_char -> 624
-	TERM -> 663
+	id -> 615
+	( -> 616
+	cte_i -> 617
+	+ -> 620
+	- -> 621
+	FAC -> 622
+	VAR_CTE -> 623
+	cte_float -> 624
+	cte_char -> 625
+	TERM -> 664
 
 
-S650{
+S651{
 	TERM1 : / •TERM «+»
 	TERM1 : / •TERM «-»
 	TERM1 : / •TERM «]»
@@ -22516,19 +22530,19 @@ S650{
 	VAR_CTE : •cte_char «]»
 }
 Transitions:
-	id -> 614
-	( -> 615
-	cte_i -> 616
-	+ -> 619
-	- -> 620
-	FAC -> 621
-	VAR_CTE -> 622
-	cte_float -> 623
-	cte_char -> 624
-	TERM -> 664
+	id -> 615
+	( -> 616
+	cte_i -> 617
+	+ -> 620
+	- -> 621
+	FAC -> 622
+	VAR_CTE -> 623
+	cte_float -> 624
+	cte_char -> 625
+	TERM -> 665
 
 
-S651{
+S652{
 	DEC1 : else { •EST B1 } «for»
 	DEC1 : else { •EST B1 } «id»
 	DEC1 : else { •EST B1 } «if»
@@ -22625,14 +22639,14 @@ S651{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -22673,30 +22687,30 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	EST -> 665
+	EST -> 666
 
 
-S652{
+S653{
 	F4 : F• «main»
 }
 Transitions:
 
 
-S653{
+S654{
 	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «main»
 }
 Transitions:
 
 
-S654{
+S655{
 	F : function F1 id ( F2 ) •{ DV body { EST B1 } } F4 «function»
 	F : function F1 id ( F2 ) •{ DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	{ -> 666
+	{ -> 667
 
 
-S655{
+S656{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «}»
 	DV2 : •TIP_COMP id DV4 «;»
 	DV2 : •DV6 DV5 «;»
@@ -22719,10 +22733,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 667
+	DV2 -> 668
 
 
-S656{
+S657{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «protected»
 	ATR_SIMP1 : empty• «protected»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «protected»
@@ -22738,28 +22752,28 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 656
-	TIP_SIMP -> 657
-	ATR_SIMP1 -> 668
+	ATR_SIMP -> 657
+	TIP_SIMP -> 658
+	ATR_SIMP1 -> 669
 
 
-S657{
+S658{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «protected»
 }
 Transitions:
-	id -> 669
+	id -> 670
 
 
-S658{
+S659{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «protected»
 }
 Transitions:
 
 
-S659{
+S660{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -22784,12 +22798,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 540
-	ATR_SIMP -> 670
-	ATR_SIMP1 -> 671
+	TIP_SIMP -> 541
+	ATR_SIMP -> 671
+	ATR_SIMP1 -> 672
 
 
-S660{
+S661{
 	FAC : ( H_EXP )• «*»
 	FAC : ( H_EXP )• «+»
 	FAC : ( H_EXP )• «/»
@@ -22799,19 +22813,19 @@ S660{
 Transitions:
 
 
-S661{
+S662{
 	EXP1 : + EXP• «]»
 }
 Transitions:
 
 
-S662{
+S663{
 	EXP1 : - EXP• «]»
 }
 Transitions:
 
 
-S663{
+S664{
 	TERM1 : * TERM• «+»
 	TERM1 : * TERM• «-»
 	TERM1 : * TERM• «]»
@@ -22819,7 +22833,7 @@ S663{
 Transitions:
 
 
-S664{
+S665{
 	TERM1 : / TERM• «+»
 	TERM1 : / TERM• «-»
 	TERM1 : / TERM• «]»
@@ -22827,7 +22841,7 @@ S664{
 Transitions:
 
 
-S665{
+S666{
 	DEC1 : else { EST •B1 } «for»
 	DEC1 : else { EST •B1 } «id»
 	DEC1 : else { EST •B1 } «if»
@@ -22926,14 +22940,14 @@ S665{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -22975,33 +22989,33 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	B1 -> 672
+	B1 -> 673
 
 
-S666{
+S667{
 	F : function F1 id ( F2 ) { •DV body { EST B1 } } F4 «function»
 	F : function F1 id ( F2 ) { •DV body { EST B1 } } F4 «}»
 	DV : •variables { DV1 } «body»
 }
 Transitions:
 	variables -> 155
-	DV -> 673
-
-
-S667{
-	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «}»
-}
-Transitions:
-	; -> 674
+	DV -> 674
 
 
 S668{
+	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «}»
+}
+Transitions:
+	; -> 675
+
+
+S669{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «protected»
 }
 Transitions:
 
 
-S669{
+S670{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «int»
@@ -23027,10 +23041,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 675
+	DV2 -> 676
 
 
-S670{
+S671{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -23055,12 +23069,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 540
-	ATR_SIMP -> 670
-	ATR_SIMP1 -> 676
+	TIP_SIMP -> 541
+	ATR_SIMP -> 671
+	ATR_SIMP1 -> 677
 
 
-S671{
+S672{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -23069,7 +23083,7 @@ S671{
 Transitions:
 
 
-S672{
+S673{
 	DEC1 : else { EST B1 •} «for»
 	DEC1 : else { EST B1 •} «id»
 	DEC1 : else { EST B1 •} «if»
@@ -23080,18 +23094,18 @@ S672{
 	DEC1 : else { EST B1 •} «}»
 }
 Transitions:
-	} -> 677
+	} -> 678
 
 
-S673{
+S674{
 	F : function F1 id ( F2 ) { DV •body { EST B1 } } F4 «function»
 	F : function F1 id ( F2 ) { DV •body { EST B1 } } F4 «}»
 }
 Transitions:
-	body -> 678
+	body -> 679
 
 
-S674{
+S675{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «}»
 	ATR_SIMP1 : empty• «}»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «}»
@@ -23107,22 +23121,22 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 679
-	TIP_SIMP -> 680
-	ATR_SIMP1 -> 681
+	ATR_SIMP -> 680
+	TIP_SIMP -> 681
+	ATR_SIMP1 -> 682
 
 
-S675{
+S676{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «protected»
 }
 Transitions:
-	; -> 682
+	; -> 683
 
 
-S676{
+S677{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
@@ -23131,7 +23145,7 @@ S676{
 Transitions:
 
 
-S677{
+S678{
 	DEC1 : else { EST B1 }• «for»
 	DEC1 : else { EST B1 }• «id»
 	DEC1 : else { EST B1 }• «if»
@@ -23144,15 +23158,15 @@ S677{
 Transitions:
 
 
-S678{
+S679{
 	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «function»
 	F : function F1 id ( F2 ) { DV body •{ EST B1 } } F4 «}»
 }
 Transitions:
-	{ -> 683
+	{ -> 684
 
 
-S679{
+S680{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «}»
 	ATR_SIMP1 : empty• «}»
 	ATR_SIMP1 : •ATR_SIMP ATR_SIMP1 «}»
@@ -23168,28 +23182,28 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	ATR_SIMP -> 679
-	TIP_SIMP -> 680
-	ATR_SIMP1 -> 684
+	ATR_SIMP -> 680
+	TIP_SIMP -> 681
+	ATR_SIMP1 -> 685
 
 
-S680{
+S681{
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP •id DV2 ; ATR_SIMP1 «}»
 }
 Transitions:
-	id -> 685
+	id -> 686
 
 
-S681{
+S682{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «}»
 }
 Transitions:
 
 
-S682{
+S683{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -23214,12 +23228,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 657
-	ATR_SIMP -> 686
-	ATR_SIMP1 -> 687
+	TIP_SIMP -> 658
+	ATR_SIMP -> 687
+	ATR_SIMP1 -> 688
 
 
-S683{
+S684{
 	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «function»
 	F : function F1 id ( F2 ) { DV body { •EST B1 } } F4 «}»
 	EST : •AS «for»
@@ -23310,14 +23324,14 @@ S683{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -23358,16 +23372,16 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	EST -> 688
+	EST -> 689
 
 
-S684{
+S685{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «}»
 }
 Transitions:
 
 
-S685{
+S686{
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id •DV2 ; ATR_SIMP1 «int»
@@ -23393,10 +23407,10 @@ Transitions:
 	TIP_SIMP -> 26
 	TIP_COMP -> 29
 	DV6 -> 30
-	DV2 -> 689
+	DV2 -> 690
 
 
-S686{
+S687{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -23421,12 +23435,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 657
-	ATR_SIMP -> 686
-	ATR_SIMP1 -> 690
+	TIP_SIMP -> 658
+	ATR_SIMP -> 687
+	ATR_SIMP1 -> 691
 
 
-S687{
+S688{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -23435,7 +23449,7 @@ S687{
 Transitions:
 
 
-S688{
+S689{
 	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «function»
 	F : function F1 id ( F2 ) { DV body { EST •B1 } } F4 «}»
 	B1 : empty• «}»
@@ -23528,14 +23542,14 @@ S688{
 	LEC : •input ( VAR LEC1 ) ; «return»
 	LEC : •input ( VAR LEC1 ) ; «while»
 	LEC : •input ( VAR LEC1 ) ; «}»
-	LLAM : •id ( LLAM1 ) «for»
-	LLAM : •id ( LLAM1 ) «id»
-	LLAM : •id ( LLAM1 ) «if»
-	LLAM : •id ( LLAM1 ) «input»
-	LLAM : •id ( LLAM1 ) «output»
-	LLAM : •id ( LLAM1 ) «return»
-	LLAM : •id ( LLAM1 ) «while»
-	LLAM : •id ( LLAM1 ) «}»
+	LLAM : •id ( LLAM1 ) ; «for»
+	LLAM : •id ( LLAM1 ) ; «id»
+	LLAM : •id ( LLAM1 ) ; «if»
+	LLAM : •id ( LLAM1 ) ; «input»
+	LLAM : •id ( LLAM1 ) ; «output»
+	LLAM : •id ( LLAM1 ) ; «return»
+	LLAM : •id ( LLAM1 ) ; «while»
+	LLAM : •id ( LLAM1 ) ; «}»
 	RET : •return ( H_EXP ) ; «for»
 	RET : •return ( H_EXP ) ; «id»
 	RET : •return ( H_EXP ) ; «if»
@@ -23577,20 +23591,20 @@ Transitions:
 	if -> 75
 	while -> 76
 	for -> 77
-	B1 -> 691
+	B1 -> 692
 
 
-S689{
+S690{
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «int»
 	ATR_SIMP : TIP_SIMP id DV2 •; ATR_SIMP1 «}»
 }
 Transitions:
-	; -> 692
+	; -> 693
 
 
-S690{
+S691{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
@@ -23599,15 +23613,15 @@ S690{
 Transitions:
 
 
-S691{
+S692{
 	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «function»
 	F : function F1 id ( F2 ) { DV body { EST B1 •} } F4 «}»
 }
 Transitions:
-	} -> 693
+	} -> 694
 
 
-S692{
+S693{
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; •ATR_SIMP1 «int»
@@ -23632,20 +23646,20 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 680
-	ATR_SIMP -> 694
-	ATR_SIMP1 -> 695
+	TIP_SIMP -> 681
+	ATR_SIMP -> 695
+	ATR_SIMP1 -> 696
 
 
-S693{
+S694{
 	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «function»
 	F : function F1 id ( F2 ) { DV body { EST B1 } •} F4 «}»
 }
 Transitions:
-	} -> 696
+	} -> 697
 
 
-S694{
+S695{
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «char»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «float»
 	ATR_SIMP1 : ATR_SIMP •ATR_SIMP1 «int»
@@ -23670,12 +23684,12 @@ Transitions:
 	int -> 20
 	char -> 21
 	float -> 22
-	TIP_SIMP -> 680
-	ATR_SIMP -> 694
-	ATR_SIMP1 -> 697
+	TIP_SIMP -> 681
+	ATR_SIMP -> 695
+	ATR_SIMP1 -> 698
 
 
-S695{
+S696{
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «char»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «float»
 	ATR_SIMP : TIP_SIMP id DV2 ; ATR_SIMP1• «int»
@@ -23684,7 +23698,7 @@ S695{
 Transitions:
 
 
-S696{
+S697{
 	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «function»
 	F : function F1 id ( F2 ) { DV body { EST B1 } } •F4 «}»
 	F4 : empty• «function»
@@ -23695,12 +23709,12 @@ S696{
 	F : •function F1 id ( F2 ) { DV body { EST B1 } } F4 «}»
 }
 Transitions:
-	function -> 343
-	F -> 698
-	F4 -> 699
+	function -> 344
+	F -> 699
+	F4 -> 700
 
 
-S697{
+S698{
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «char»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «float»
 	ATR_SIMP1 : ATR_SIMP ATR_SIMP1• «int»
@@ -23709,14 +23723,14 @@ S697{
 Transitions:
 
 
-S698{
+S699{
 	F4 : F• «function»
 	F4 : F• «}»
 }
 Transitions:
 
 
-S699{
+S700{
 	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «function»
 	F : function F1 id ( F2 ) { DV body { EST B1 } } F4• «}»
 }

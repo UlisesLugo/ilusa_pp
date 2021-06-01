@@ -1,0 +1,12 @@
+Program unitFuncTest :
+  function void isa(int a){
+    variables{
+    }
+    body{
+      output(a);
+    }
+  }
+
+  main () {
+      isa(2);
+  }

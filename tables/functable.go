@@ -2,6 +2,7 @@ package tables
 
 import (
 	"github.com/uliseslugo/ilusa_pp/gocc/token"
+	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
@@ -12,6 +13,7 @@ type FuncRow struct {
 	params     []types.CoreType
 	// scope int
 	local_vars *VarTable
+	address memory.Address
 }
 
 // fuction table struct

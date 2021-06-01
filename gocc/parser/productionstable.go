@@ -32,13 +32,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `P : "Program" id ":" P1 P2 P3 B	<< ast.NewProgram(X[1],X[6]) >>`,
+		String: `P : "Program" id ":" P1 P2 P3 B	<< ast.NewProgram(X[1],X[5],X[6]) >>`,
 		Id:         "P",
 		NTType:     1,
 		Index:      1,
 		NumSymbols: 7,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewProgram(X[1],X[6])
+			return ast.NewProgram(X[1],X[5],X[6])
 		},
 	},
 	ProdTabEntry{
@@ -432,13 +432,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2], X[7]) >>`,
+		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2],X[7],X[10],X[11]) >>`,
 		Id:         "F",
 		NTType:     23,
 		Index:      41,
 		NumSymbols: 15,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[2], X[7])
+			return ast.NewFunction(X[2],X[7],X[10],X[11])
 		},
 	},
 	ProdTabEntry{
@@ -472,13 +472,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F2 : TIP_SIMP id F3	<< ast.NewFunction(X[1], nil) >>`,
+		String: `F2 : TIP_SIMP id F3	<< ast.NewFunctionAttrib(X[0],X[1],X[2]) >>`,
 		Id:         "F2",
 		NTType:     25,
 		Index:      45,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[1], nil)
+			return ast.NewFunctionAttrib(X[0],X[1],X[2])
 		},
 	},
 	ProdTabEntry{
@@ -492,13 +492,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunction(X[2], nil) >>`,
+		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunctionAttrib(X[1],X[2],X[3]) >>`,
 		Id:         "F3",
 		NTType:     26,
 		Index:      47,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[2], nil)
+			return ast.NewFunctionAttrib(X[1],X[2],X[3])
 		},
 	},
 	ProdTabEntry{
@@ -602,13 +602,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `LLAM : id "(" LLAM1 ")"	<<  >>`,
+		String: `LLAM : id "(" LLAM1 ")" ";"	<< ast.NewFunctionCall(X[0], X[2]) >>`,
 		Id:         "LLAM",
 		NTType:     30,
 		Index:      58,
-		NumSymbols: 4,
+		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunctionCall(X[0], X[2])
 		},
 	},
 	ProdTabEntry{
