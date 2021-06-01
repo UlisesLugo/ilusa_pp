@@ -1,11 +1,12 @@
 Program firstTest :
   variables {
-    int a;
+      int a;
   }
   main() {
-      a=2;
-      if(a > 1){
-          a = 1;
+      a = 1;
+      while(a < 10){
           output(a);
+          a = a + 1;
       }
   }
+  
