@@ -34,7 +34,7 @@ type Consts struct {
 	reads obj JSON encoding
 **/
 func (vm *VirtualMachine) ReadJSON() {
-	jsonFile, err := os.Open("../encoding.obj")
+	jsonFile, err := os.Open("../tests/encoding.obj")
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
@@ -43,7 +43,7 @@ func (vm *VirtualMachine) ReadJSON() {
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 
-	OBJFile, err_obj := ioutil.ReadFile("../encoding.obj")
+	OBJFile, err_obj := ioutil.ReadFile("../tests/encoding.obj")
 
 	if err_obj != nil {
 		fmt.Println(err_obj)

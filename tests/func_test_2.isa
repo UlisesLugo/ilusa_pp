@@ -5,15 +5,16 @@ Program doubleFuncTest :
       float v;
     }
     body{
-      output(1); 
+      output(1 + 2 * 3); 
     }
   }
   
   function void ulises(){
     variables{
+      int a;
     }
     body{
-      output(1); 
+      output(1 + 4 * 9); 
     }
   }
 

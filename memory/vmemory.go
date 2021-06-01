@@ -2,6 +2,7 @@ package memory
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -59,6 +60,8 @@ type VirtualMemory struct {
 	resets counters of local scope in Virtual memory
 **/
 func (vm *VirtualMemory) ResetLocalMemory() {
+	fmt.Println("Old local counters", vm.local_temp_int_count)
+
 	vm.local_int_count = 0
 	vm.local_char_count = 0
 	vm.local_bool_count = 0
@@ -67,6 +70,8 @@ func (vm *VirtualMemory) ResetLocalMemory() {
 	vm.local_temp_int_count = 0
 	vm.local_temp_char_count = 0
 	vm.local_temp_bool_count = 0
+
+	fmt.Println("New local counters", vm.local_temp_int_count)
 	// vm.local_temp_ids_count = 0
 }
 
@@ -268,12 +273,14 @@ func (vm *VirtualMemory) NextLocal(t types.CoreType) (Address, error) {
 func (vm *VirtualMemory) NextLocalTemp(t types.CoreType) (Address, error) {
 	switch t {
 	case 0: // integer constant
+		fmt.Println("Integer temp local")
 		if vm.local_temp_int_count >= segmentSize {
 			return Address(-1), errors.New("Too many temporal integers in local memory.")
 		}
 		addr := vm.local_temp_int_count + TempIntOffset + LocalContext
 		// increment counter
 		vm.local_temp_int_count++
+		fmt.Println(vm)
 		return Address(addr), nil
 
 	case 1: // float constant
@@ -298,7 +305,7 @@ func (vm *VirtualMemory) NextLocalTemp(t types.CoreType) (Address, error) {
 			return Address(-1), errors.New("Too many temporal booleans in local memory.")
 		}
 		addr := vm.local_temp_bool_count + TempBoolOffset + LocalContext
-		vm.local_bool_count++
+		vm.local_temp_bool_count++
 		return Address(addr), nil
 
 	}
