@@ -2,7 +2,6 @@ package memory
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -313,7 +312,6 @@ func (vm *VirtualMemory) NextLocalTemp(t types.CoreType) (Address, error) {
 	returns next available address of new constant in map
 **/
 func (vm *VirtualMemory) NextConst(t types.CoreType) (Address, error) {
-	fmt.Println("New Constant of Type", t)
 	switch t {
 	case 0: // integer constant
 		if vm.const_int_count >= segmentSize {
