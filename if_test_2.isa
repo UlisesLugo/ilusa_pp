@@ -1,7 +1,14 @@
 Program firstTest :
+  variables{
+      int a;
+  }
   main() {
-      if(1 > 2){
+      a=2;
+      if(a > 1){
           output(2);
+      }
+      else {
+          output(1);
       }
   }
   

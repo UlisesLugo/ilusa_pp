@@ -310,6 +310,10 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 func NewIf(exp, est, est_list, else_res Attrib) ([]quadruples.Cuadruplo, error) {
 	new_exp, ok := exp.(*Exp)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
+
+	start_go := quadruples.Cuadruplo{"START_GO","-1","-1","-1"}
+	curr_quads = append(curr_quads, start_go)
+
 	new_quads, _ := est.([]quadruples.Cuadruplo)
 	if !ok {
 		return nil, errors.New("problem in casting h_exp @if")
@@ -339,17 +343,20 @@ func NewIf(exp, est, est_list, else_res Attrib) ([]quadruples.Cuadruplo, error) 
 
 	// TODO (Add append for est list)
 	if est_list != nil {
-		est_list_quads := est.([]quadruples.Cuadruplo)
+		est_list_quads := est_list.([]quadruples.Cuadruplo)
 		curr_quads = append(curr_quads, est_list_quads...)
 	}
 
 	if else_res != nil {
 		else_quads, _ := else_res.([]quadruples.Cuadruplo)
-		goto_location := location + len(else_quads)
+		goto_location := location + len(else_quads) - 1
 		goto_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(goto_location)}
 		curr_quads = append(curr_quads, goto_quad)
 		curr_quads = append(curr_quads, else_quads...)
 	}
+	
+	end_go := quadruples.Cuadruplo{"END_GO","-1","-1","-1"}
+	curr_quads = append(curr_quads, end_go)
 
 	return curr_quads, nil
 }
