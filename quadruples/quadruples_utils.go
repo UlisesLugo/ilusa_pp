@@ -1,8 +1,11 @@
 package quadruples
 
 import (
-	"fmt"	
+	"fmt"
 	"strconv"
+
+	"github.com/uliseslugo/ilusa_pp/memory"
+	"github.com/uliseslugo/ilusa_pp/tables"
 )
 
 
@@ -24,6 +27,18 @@ func ParseQuadruples(quads_list []Cuadruplo) {
 				quads_list[i+1].Res= fmt.Sprint(next_pos)
 
 
+		}
+	}
+}
+
+func ParseFunctionAdresses(quads []Cuadruplo, functable *tables.FuncTable) {
+	if functable == nil || functable.Table() == nil {
+		return 
+	}
+
+	for i,quad := range quads {
+		if quad.Op == "START_FUNC" {
+			functable.Table()[quad.Res].SetAddress(memory.Address(i+1))
 		}
 	}
 }

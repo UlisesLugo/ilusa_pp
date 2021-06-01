@@ -37,6 +37,16 @@ func (fr *FuncRow) SetId(curr_id string) {
 	fr.id = curr_id
 }
 
+// Getter for id
+func (fr *FuncRow) Address() memory.Address {
+	return fr.address
+}
+
+// Setter for id
+func (fr *FuncRow) SetAddress(addr memory.Address) {
+	fr.address = addr
+}
+
 func (fr *FuncRow) AddRow(id string, curr_type types.CoreType, token *token.Token) error {
 	return fr.local_vars.AddRow(id, curr_type, token)
 }

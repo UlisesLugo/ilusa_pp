@@ -8,6 +8,7 @@ import (
 	"github.com/uliseslugo/ilusa_pp/memory"
 	"github.com/uliseslugo/ilusa_pp/quadruples"
 	"github.com/uliseslugo/ilusa_pp/semantic"
+	"github.com/uliseslugo/ilusa_pp/tables"
 	"github.com/uliseslugo/ilusa_pp/types"
 )
 
@@ -26,6 +27,7 @@ type Program struct {
 	quads_ []quadruples.Cuadruplo
 	id     *token.Token
 	constants map[string]int
+	functable map[string]tables.FuncRow
 }
 
 func (p *Program) String() string {
@@ -38,6 +40,10 @@ func (p *Program) Quads() []quadruples.Cuadruplo {
 
 func (p *Program) Consts() map[string]int {
 	return p.constants
+}
+
+func (p *Program) FuncTable() map[string]tables.FuncRow {
+	return p.functable
 }
 
 /*

@@ -31,6 +31,7 @@ var globalOperatorsDict *semantic.HierarchyDict
 var globalSemanticCube *semantic.SemanticCube
 
 var quadsCounter int
+var paramOrder int
 
 func init() {
 	globalFuncTable = tables.NewFuncTable() // Function Directory
@@ -44,6 +45,7 @@ func init() {
 	globalStackTypes = make(stacks.Stack, 0)
 	globalSemanticCube = semantic.NewSemanticCube()
 	quadsCounter = 0
+	paramOrder = 0
 
 	fmt.Println("Defining globals")
 }
@@ -88,7 +90,8 @@ func NewProgram(id, func_est,main_est Attrib) (*Program, error) {
 	end_quad := quadruples.Cuadruplo{"END", "-1", "-1", "-1"}
 	globalCurrQuads = append(globalCurrQuads, end_quad)
 	quadruples.ParseQuadruples(globalCurrQuads)
-	return &Program{nombre, globalCurrQuads, new_id, constantsMap}, nil
+	quadruples.ParseFunctionAdresses(globalCurrQuads, globalFuncTable)
+	return &Program{nombre, globalCurrQuads, new_id, constantsMap, nil}, nil
 }
 
 /*
@@ -141,6 +144,9 @@ func NewFunction(id, attrib_map,var_map, est, est_list, rest_func Attrib) ([]qua
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
 	
+	start_func := quadruples.Cuadruplo{"START_FUNC","-1","-1",idName}
+	curr_quads = append(curr_quads, start_func)
+
 	// Add inner statements
 	new_est, _ := est.([]quadruples.Cuadruplo)
 	curr_quads = append(curr_quads, new_est...)
@@ -256,9 +262,6 @@ func NewBlockVariables(var_map, next_var_map Attrib) (map[string]*tables.VarRow,
 	}
 	new_next_var_map, _ := next_var_map.(map[string]*tables.VarRow)
 	for _, val := range new_next_var_map {
-		if _, ok := new_var_map[val.Id()]; ok {
-			return nil, errors.New(fmt.Sprint("Id redeclaration:", val.Id()))
-		}
 		new_var_map[val.Id()] = val
 	}
 	return new_var_map, nil
