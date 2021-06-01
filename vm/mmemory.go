@@ -10,11 +10,13 @@ import (
 // Get value of address in memory block from Main memory
 // Memory represents the virtual memory for the virtual machine
 type Memory struct {
-	mem_global   *MemoryBlock
-	mem_local    *MemoryBlock
-	mem_constant *MemoryBlock // TODO: Create memory block for constants
-	mem_pointers *MemoryBlock // TODO: Create memory block for pointers
-	mem_scope    *MemoryBlock
+	mem_global     *MemoryBlock
+	mem_local      *MemoryBlock
+	mem_constant   *MemoryBlock   // TODO: Create memory block for constants
+	mem_pointers   *MemoryBlock   // TODO: Create memory block for pointers
+	mem_scope      *MemoryBlock   // TODO: ?????
+	callStack      []*MemoryBlock // ss
+	prevFuncsStack []*MemoryBlock // vf
 }
 
 func NewMemory() *Memory {
@@ -24,6 +26,8 @@ func NewMemory() *Memory {
 		NewMemoryBlock("ConstantsContext", memory.ConstantsContext),
 		NewMemoryBlock("PointersContext", memory.PointersContext),
 		NewMemoryBlock("Scope Context", memory.Scopestart),
+		make([]*MemoryBlock, 0),
+		make([]*MemoryBlock, 0),
 	}
 }
 
@@ -40,7 +44,8 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 		}
 		return val, nil
 	case addr < memory.ConstantsContext: // Referring to Local var 8 - 16
-		val, err := mm.mem_local.GetValue(addr)
+		top := mm.prevFuncsStack[len(mm.prevFuncsStack)-1]
+		val, err := top.GetValue(addr)
 		if err != nil {
 			return nil, err
 		}
@@ -79,7 +84,8 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		}
 		return nil
 	case addr < memory.ConstantsContext: // Referring to Local var 8 - 16
-		err := mm.mem_local.SetValue(addr, val)
+		top := mm.prevFuncsStack[len(mm.prevFuncsStack)-1]
+		err := top.SetValue(addr, val)
 		if err != nil {
 			return err
 		}
