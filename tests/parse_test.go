@@ -39,7 +39,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"expr_test_1.isa",
+		"call_test_2.isa",
 	}
 
 	for _, test := range tests {
@@ -77,6 +77,9 @@ func TestDuck(t *testing.T) {
 
 			// set key for Constants Table
 			obj_map["Consts"] = prog.Consts()
+
+			// set key for Functable
+			obj_map["Functable"] = prog.FuncTable()
 
 			// encodigin map
 			enc.Encode(obj_map)
