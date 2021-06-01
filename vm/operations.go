@@ -520,3 +520,10 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 
 	return nil
 }
+
+// func (vm *VirtualMachine) Era(funcId string) error {
+// 	newMB := NewMemoryBlock(funcId, memory.LocalContext)
+// 	// push mb to stack
+// 	vm.mm.callStack = append(vm.mm.callStack, newMB)
+
+// }
