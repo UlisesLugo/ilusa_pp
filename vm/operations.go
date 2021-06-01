@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
@@ -521,9 +522,54 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 	return nil
 }
 
-// func (vm *VirtualMachine) Era(funcId string) error {
-// 	newMB := NewMemoryBlock(funcId, memory.LocalContext)
-// 	// push mb to stack
-// 	vm.mm.callStack = append(vm.mm.callStack, newMB)
+// Functions operations
 
-// }
+func (vm *VirtualMachine) Gosub(jump int) error {
+	// Push to prev functions
+	callStackLen := len(vm.mm.callStack)
+	topCall := vm.mm.callStack[callStackLen-1]
+	vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
+
+	// save current ip
+	str_ip := strconv.Itoa(vm.ip + 1)
+	vm.jumps.Push(str_ip)
+
+	// Unconditional jump
+	vm.ip = jump
+	return nil
+}
+
+func (vm *VirtualMachine) EndFunc() error {
+	// Pop from prevFunctions
+	prevFuncLen := len(vm.mm.prevFuncsStack)
+	if prevFuncLen != 0 {
+		vm.mm.prevFuncsStack = vm.mm.prevFuncsStack[:prevFuncLen-1]
+	}
+	// Pop from call stack
+	callStackLen := len(vm.mm.callStack)
+	if callStackLen != 0 {
+		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
+	}
+
+	// update ip
+	top_ip, ok := vm.jumps.Top()
+	if !ok {
+		return errors.New("Couldn't get top of vm jumps.")
+	}
+	vm.jumps.Pop()
+
+	top_ip_int, err_ip := strconv.Atoi(top_ip)
+	if err_ip != nil {
+		return errors.New("Problem casting top ip to integer")
+	}
+	// Return tu destination
+	vm.ip = top_ip_int
+	return nil
+}
+
+func (vm *VirtualMachine) Era(funcId string) error {
+	newMB := NewMemoryBlock(funcId, memory.LocalContext)
+	// push mb to stack to save curr context
+	vm.mm.callStack = append(vm.mm.callStack, newMB)
+	return nil
+}

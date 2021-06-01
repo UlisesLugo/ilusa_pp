@@ -1,1 +1,0 @@
-{"Consts":{"2":16000},"Quads":[{"Op":"GOTO","Var1":"-1","Var2":"-1","Res":"3"},{"Op":"WRITE","Var1":"-1","Var2":"-1","Res":"13001"},{"Op":"ENDPROC","Var1":"-1","Var2":"-1","Res":"-1"},{"Op":"ERA","Var1":"-1","Var2":"-1","Res":"isa"},{"Op":"GOSUB","Var1":"-1","Var2":"-1","Res":"isa"},{"Op":"END","Var1":"-1","Var2":"-1","Res":"-1"}]}
