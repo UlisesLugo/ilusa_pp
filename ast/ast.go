@@ -527,7 +527,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		}
 		if new_exp1.op_exp_ != nil {
 			quads_to_add := createBinaryQuadruple(new_exp1.op_exp_.operation)
-			curr_quads = append(quads_to_add, curr_quads...)
+			curr_quads = append(curr_quads,quads_to_add...)
 		}
 
 	}
@@ -536,7 +536,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		quads_to_add := createBinaryQuadruple(new_exp2.operation)
 		curr_quads = append(quads_to_add, curr_quads...)
 		if new_exp2.exp != nil {
-			curr_quads = append(new_exp2.exp.quads_, curr_quads...)
+			curr_quads = append(new_exp2.exp.quads_,curr_quads...)
 		}
 	}
 	// fmt.Println("Adding quad in exp",new_exp1, new_exp2, curr_quads)
@@ -794,17 +794,21 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	if !ok {
 		return nil, errors.New("problem casting constant in input")
 	}
-	for _, val := range id_list {
-		curr_quads = append(curr_quads, val.Quads()...)
-
+	temp := make([]string,0)
+	for i := range id_list {
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
-			return nil, errors.New("stack is empty in writing")
+			return nil, errors.New(fmt.Sprint("stack is empty in writing",i))
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
+		temp = append([]string{output_str}, temp...)
 
-		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", output_str}
+	}
+	for i, curr_temp := range temp {
+		curr_quads = append(curr_quads, id_list[i].Quads()...)
+		curr_quad := quadruples.Cuadruplo{"WRITE", "-1", "-1", curr_temp}
 		curr_quads = append(curr_quads, curr_quad)
+
 	}
 	fmt.Println("Output quads", curr_quads)
 	return curr_quads, nil
