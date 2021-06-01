@@ -12,8 +12,8 @@ import (
 type Memory struct {
 	mem_global   *MemoryBlock
 	mem_local    *MemoryBlock
-	mem_constant *MemoryBlock
-	mem_pointers *MemoryBlock
+	mem_constant *MemoryBlock // TODO: Create memory block for constants
+	mem_pointers *MemoryBlock // TODO: Create memory block for pointers
 	mem_scope    *MemoryBlock
 }
 

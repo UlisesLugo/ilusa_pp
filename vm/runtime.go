@@ -10,7 +10,8 @@ import (
 // Memory Segment for Run-time Memory
 type MemoryBlock struct {
 	baseAddr memory.Address
-	id       string       // id for memory block (Example: Global)
+	id       string // id for memory block (Example: Global)
+
 	integers [100]int     // integeres memory
 	floats   [100]float64 // floats memory
 	chars    [100]rune    // chars memory

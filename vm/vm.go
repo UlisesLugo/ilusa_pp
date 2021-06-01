@@ -201,14 +201,14 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		if op_err != nil {
 			return op_err
 		}
-		vm.ip++
+		// vm.ip++
 		return nil
 	case "GOTOF":
 		op_err := vm.GotoF(addr_1, int(addr_res))
 		if op_err != nil {
 			return op_err
 		}
-		vm.ip++
+		// vm.ip++
 		return nil
 	case "READ":
 		// TODO
@@ -218,22 +218,18 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 }
 
 /**
-	RunQuad
+	RunNextQuad
 	@param q quad
 	returns error
 	calls RunBinaryQuad or RunUnaryQuad according to q
 **/
-func (vm *VirtualMachine) RunQuad(q Attrib) error {
-	quad, ok := q.(quadruples.Cuadruplo)
-
-	if !ok {
-		return errors.New("Error running quad " + fmt.Sprint(vm.ip))
-	}
+func (vm *VirtualMachine) RunNextQuad() error {
+	quad := vm.quads[vm.ip]
 
 	if quad.Var1 == "-1" || quad.Var2 == "-1" {
-		vm.RunUnaryQuad(q)
+		vm.RunUnaryQuad(quad)
 	} else {
-		vm.RunBinaryQuad(q)
+		vm.RunBinaryQuad(quad)
 	}
 	return nil
 }
@@ -256,14 +252,7 @@ func (vm *VirtualMachine) RunMachine() {
 	// TODO: Push main activation record
 
 	// execute quad
-	for i := range vm.quads {
-		q := vm.quads[i]
-		vm.RunQuad(q)
-	}
-
-	// Debugging quads
-	fmt.Println("QUADS:")
-	for i := range vm.quads {
-		fmt.Println(vm.quads[i])
+	for vm.ip < len(vm.quads)-1 {
+		vm.RunNextQuad()
 	}
 }
