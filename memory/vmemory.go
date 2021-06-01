@@ -2,6 +2,7 @@ package memory
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -312,6 +313,7 @@ func (vm *VirtualMemory) NextLocalTemp(t types.CoreType) (Address, error) {
 	returns next available address of new constant in map
 **/
 func (vm *VirtualMemory) NextConst(t types.CoreType) (Address, error) {
+	fmt.Println("New Constant of Type", t)
 	switch t {
 	case 0: // integer constant
 		if vm.const_int_count >= segmentSize {
@@ -336,7 +338,7 @@ func (vm *VirtualMemory) NextConst(t types.CoreType) (Address, error) {
 		addr := vm.const_char_count + CharOffset + ConstantsContext
 		vm.const_char_count++
 		return Address(addr), nil
-
+	// TODO: case 3 - bools
 	case 4:
 		if vm.const_ids_count >= segmentSize {
 			return Address(-1), errors.New("Too many ids constants.")
@@ -379,7 +381,7 @@ func (vm *VirtualMemory) NextPointer(t types.CoreType) (Address, error) {
 		vm.pointers_char_count++ // increment counter
 		return Address(addr), nil
 
-	case 3: // integer constant
+	case 3: // bool constant
 		if vm.pointers_bool_count >= segmentSize {
 			return Address(-1), errors.New("Too many boolean pointers.")
 		}

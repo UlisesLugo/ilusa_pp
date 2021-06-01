@@ -85,6 +85,7 @@ func (vm *VirtualMachine) ReadJSON() {
 	loads constants from virtual memory constants map to run time memory
 **/
 func (vm *VirtualMachine) LoadConstants() error {
+	fmt.Println("In LoadConstants of VM Main Memory")
 	if vm.constants == nil {
 		return errors.New("Constants map empty in VM.")
 	}
@@ -93,14 +94,18 @@ func (vm *VirtualMachine) LoadConstants() error {
 		// insert value in constants memory
 		switch a := memory.Address(val) - vm.mm.mem_constant.baseAddr; {
 		case a >= 0 && a < 1000:
+			type_addr := a - memory.IntOffset
 			int_val, _ := strconv.Atoi(key)
-			vm.mm.mem_constant.integers[a] = int_val
+			vm.mm.mem_constant.integers[type_addr] = int_val
 		case a >= 1000 && a < 2000:
+			type_addr := a - memory.FloatOffset
 			flt_val, _ := strconv.ParseFloat(key, 64)
-			vm.mm.mem_constant.floats[a] = flt_val
+			vm.mm.mem_constant.floats[type_addr] = flt_val
 		case a >= 2000 && a < 3000:
 			char_val := key[0]
-			vm.mm.mem_constant.chars[a] = rune(char_val)
+			type_addr := a - memory.CharOffset
+			vm.mm.mem_constant.chars[type_addr] = rune(char_val)
+			// TODO: Add bool constants and ids ??
 		}
 	}
 

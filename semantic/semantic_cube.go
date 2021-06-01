@@ -23,7 +23,7 @@ const (
 	NotEqual = "!="
 	Assign   = "="
 	GOTO     = "GOTO"
-	Read	 = "READ"
+	Read     = "READ"
 )
 
 type OperationsDict struct {
@@ -61,6 +61,7 @@ type OperatorKey struct {
 	Dict map[string]int
 }
 
+// DEPRECATED ?
 func NewOperatorKey() *OperatorKey {
 	// Hierarchy levels:
 	// 	indexes 0-2: 0
@@ -106,8 +107,8 @@ func NewHierarchyDict() *HierarchyDict {
 	return &HierarchyDict{
 		map[string]int{
 			// super low hierarchy (right association)
-			"!":  0,
-			"=":  0,
+			"!": 0,
+			"=": 0,
 			// logic operators very low hierarchy
 			"&&": 1,
 			"||": 1,
