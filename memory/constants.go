@@ -2,8 +2,6 @@ package memory
 
 import (
 	"errors"
-	"fmt"
-	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/types"
 )
@@ -16,7 +14,6 @@ import (
 	returns address of constant
 **/
 func (vm *VirtualMemory) InsertConstant(cte string, t types.CoreType) (Address, error) {
-	fmt.Println("Constant="+cte, "Type "+strconv.Itoa(int(t)))
 	if !vm.FindConstant(cte) { // new constant
 		nextAvailable, next_err := vm.NextConst(t)
 		if next_err != nil {
