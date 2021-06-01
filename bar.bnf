@@ -57,8 +57,8 @@ TIP_COMP : id ;
 
 F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2,$7,$10,$11) >> ;
 F1 : TIP_SIMP | "void" ;
-F2 : empty | TIP_SIMP id F3 ;
-F3 : empty | "," TIP_SIMP id F3 ;
+F2 : empty | TIP_SIMP id F3 << ast.NewFunctionAttrib($0,$1,$2) >> ;
+F3 : empty | "," TIP_SIMP id F3 << ast.NewFunctionAttrib($1,$2,$3) >> ;
 F4 : empty | F ;
 
 EST : AS 

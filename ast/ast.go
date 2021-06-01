@@ -166,6 +166,29 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error){
 	return curr_quads,nil
 }
 
+func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error){
+	tok, ok := id.(*token.Token)
+	val := string(tok.Lit)
+	curr_map := make(map[string]*tables.VarRow)
+	if !ok {
+		return nil, errors.New("problem reading function attribute")
+	}
+	if rest == nil {
+		row :=&tables.VarRow{}
+		row.SetId(val)
+		row.SetToken(tok)
+		row.SetDim1(0)
+		row.SetDim2(0)
+		curr_type, _ := tipo.(types.CoreType)
+		addr,_ := vmemory.NextLocalTemp(curr_type)
+		row.SetDirV(addr)
+		curr_map[val] = row
+		fmt.Println("Reading attr",curr_map)
+		return curr_map, nil
+	}
+	return curr_map, nil
+}
+
 func NewStatements(est, est_list Attrib) ([]quadruples.Cuadruplo, error){
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	new_quads, ok := est.([]quadruples.Cuadruplo)

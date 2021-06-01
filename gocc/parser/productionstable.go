@@ -472,13 +472,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F2 : TIP_SIMP id F3	<<  >>`,
+		String: `F2 : TIP_SIMP id F3	<< ast.NewFunctionAttrib(X[0],X[1],X[2]) >>`,
 		Id:         "F2",
 		NTType:     25,
 		Index:      45,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunctionAttrib(X[0],X[1],X[2])
 		},
 	},
 	ProdTabEntry{
@@ -492,13 +492,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F3 : "," TIP_SIMP id F3	<<  >>`,
+		String: `F3 : "," TIP_SIMP id F3	<< ast.NewFunctionAttrib(X[1],X[2],X[3]) >>`,
 		Id:         "F3",
 		NTType:     26,
 		Index:      47,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return X[0], nil
+			return ast.NewFunctionAttrib(X[1],X[2],X[3])
 		},
 	},
 	ProdTabEntry{
