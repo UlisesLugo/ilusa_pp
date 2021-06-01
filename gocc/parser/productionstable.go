@@ -432,13 +432,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2],X[7],X[10],X[11],X[14]) >>`,
+		String: `F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4	<< ast.NewFunction(X[2],X[4],X[7],X[10],X[11],X[14]) >>`,
 		Id:         "F",
 		NTType:     23,
 		Index:      41,
 		NumSymbols: 15,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewFunction(X[2],X[7],X[10],X[11],X[14])
+			return ast.NewFunction(X[2],X[4],X[7],X[10],X[11],X[14])
 		},
 	},
 	ProdTabEntry{

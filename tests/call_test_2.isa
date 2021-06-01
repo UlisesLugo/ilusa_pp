@@ -1,9 +1,10 @@
 Program unitFuncTest :
   function void isa(int a){
     variables{
+      int b;
     }
     body{
-      output(a);
+      output(b);
     }
   }
 
