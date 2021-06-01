@@ -1,4 +1,4 @@
-package test
+package tests
 
 import (
 	"fmt"
@@ -39,7 +39,7 @@ func readFile(path string) ([]byte, error) {
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 	tests := []string{
-		"func_test_2.isa",
+		"call_test_2.isa",
 	}
 
 	for _, test := range tests {
