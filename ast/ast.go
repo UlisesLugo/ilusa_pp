@@ -31,6 +31,7 @@ var globalOperatorsDict *semantic.HierarchyDict
 var globalSemanticCube *semantic.SemanticCube
 
 var quadsCounter int
+var currFunc string
 
 func init() {
 	globalFuncTable = tables.NewFuncTable() // Function Directory
@@ -44,6 +45,7 @@ func init() {
 	globalStackTypes = make(stacks.Stack, 0)
 	globalSemanticCube = semantic.NewSemanticCube()
 	quadsCounter = 0
+	currFunc = ""
 
 	fmt.Println("Defining globals")
 }
@@ -149,8 +151,9 @@ func NewFunction(id, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cua
 
 	fmt.Println("Function:", row.Id(), curr_quads)
 
-	// Reset local memory
-	vmemory.ResetLocalMemory()
+	// // Reset local memory and currFunc string
+	// globalCurrentScope = nil
+	// vmemory.ResetLocalMemory()
 
 	return curr_quads, nil
 }
@@ -182,6 +185,7 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error) {
 	tok, ok := id.(*token.Token)
 	val := string(tok.Lit)
+	// currFunc = val
 	curr_map := make(map[string]*tables.VarRow)
 	if !ok {
 		return nil, errors.New("problem reading function attribute")
@@ -304,10 +308,26 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
-	current_address, err := vmemory.NextGlobal(types.Ids)
-	if err != nil {
-		return nil, err
+
+	// choose between local or global context
+	// choose between local or global context
+	var current_address memory.Address
+	var err_addr error
+
+	if globalCurrentScope != nil {
+		// choose local context
+		current_address, err_addr = vmemory.NextLocalTemp(row.Type())
+		if err_addr != nil {
+			fmt.Println("Error in new local temp: ", err_addr)
+		}
+	} else {
+		// choose global context
+		current_address, err_addr = vmemory.NextGlobalTemp(row.Type())
+		if err_addr != nil {
+			fmt.Println("Error in new global temp: ", err_addr)
+		}
 	}
+
 	row.SetDirV(current_address)
 	return append([]*tables.VarRow{row}, new_rows...), nil
 }
@@ -520,6 +540,13 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	return &Exp{new_exp1, new_exp2, new_const, curr_quads}, nil
 }
 
+func ResetLocalMemory() (int, error) {
+	fmt.Println("Resets Local Memory for new function.")
+	vmemory.ResetLocalMemory()
+	globalCurrentScope = nil
+	return 0, nil
+}
+
 /*
 	NewOpExpression
 	@param op Attrib
@@ -577,7 +604,25 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		}
 
 		// generate quad
-		current_address, _ := vmemory.NextGlobalTemp(cube_type)
+		// choose between local or global context
+		var current_address memory.Address
+		var err_addr error
+
+		if globalCurrentScope != nil {
+			// choose local context
+			current_address, err_addr = vmemory.NextLocalTemp(cube_type)
+			if err_addr != nil {
+				fmt.Println("Error in new local temp: ", err_addr)
+			}
+		} else {
+			// choose global context
+			fmt.Println("No global current scope")
+			current_address, err_addr = vmemory.NextGlobalTemp(cube_type)
+			if err_addr != nil {
+				fmt.Println("Error in new global temp: ", err_addr)
+			}
+		}
+
 		curr_quad := quadruples.Cuadruplo{top, curr_top1, curr_top2, fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		globalStackTypes = globalStackTypes.Push(fmt.Sprint(cube_type))
