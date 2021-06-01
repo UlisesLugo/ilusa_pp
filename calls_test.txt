@@ -1,0 +1,24 @@
+Program unitFuncTest :
+  variables {
+    int a;
+    int b;
+  }
+  function void isa(){
+    variables{
+    }
+    body{
+      output(a + 2);
+    }
+  }
+
+  function void uli(){
+    variables{
+    }
+    body{
+      output(b + 2);
+    }
+  }
+
+  main () {
+      isa(2);
+  }

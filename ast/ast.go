@@ -54,7 +54,7 @@ func init() {
 	reads the program name id
 	returns progam name as a literal
 */
-func NewProgram(id, func_est,main_est Attrib) (*Program, error) {
+func NewProgram(id, func_est, main_est Attrib) (*Program, error) {
 	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
@@ -63,19 +63,19 @@ func NewProgram(id, func_est,main_est Attrib) (*Program, error) {
 	if !ok {
 		return nil, errors.New("Program " + nombre + "is not valid")
 	}
-	
+
 	fmt.Println("\tmain stmts", main_est)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
-	
+
 	func_quads, ok := func_est.([]quadruples.Cuadruplo)
 	if ok {
 		curr_quads = append(curr_quads, func_quads...)
 		quadsCounter += len(func_quads)
-		} 
-		globalCurrQuads = append(globalCurrQuads, func_quads...)
-		
+	}
+	globalCurrQuads = append(globalCurrQuads, func_quads...)
+
 	// Prepend main quad
-	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter+1)}
+	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter + 1)}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 
 	est_quads, ok := main_est.([]quadruples.Cuadruplo)
@@ -83,7 +83,6 @@ func NewProgram(id, func_est,main_est Attrib) (*Program, error) {
 		curr_quads = append(curr_quads, est_quads...)
 	}
 	globalCurrQuads = append(globalCurrQuads, est_quads...)
-
 
 	end_quad := quadruples.Cuadruplo{"END", "-1", "-1", "-1"}
 	globalCurrQuads = append(globalCurrQuads, end_quad)
@@ -113,7 +112,7 @@ func NewClass(id Attrib) (string, error) {
 */
 func NewFunction(id, var_map, est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
-	curr_quads := make([]quadruples.Cuadruplo,0)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
 	if !ok {
 		return nil, errors.New("problem reading function")
 	}
@@ -130,44 +129,47 @@ func NewFunction(id, var_map, est, est_list Attrib) ([]quadruples.Cuadruplo, err
 	}
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
-	
+
 	// Add inner statements
 	new_est, _ := est.([]quadruples.Cuadruplo)
 	curr_quads = append(curr_quads, new_est...)
-	
-	endfunc_quad := quadruples.Cuadruplo{"ENDPROC","-1","-1","-1"}
+
+	endfunc_quad := quadruples.Cuadruplo{"ENDPROC", "-1", "-1", "-1"}
 	curr_quads = append(curr_quads, endfunc_quad)
-	
+
 	fmt.Println("Function:", row.Id(), curr_quads)
+
+	// Reset local memory
+	vmemory.ResetLocalMemory()
 
 	return curr_quads, nil
 }
 
-func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error){
+func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
 	val := string(tok.Lit)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	if !ok {
 		return nil, errors.New("problem reading function")
 	}
-	if globalFuncTable == nil || globalFuncTable.Table()==nil {
-		return nil, errors.New(fmt.Sprint("undefined function ",val))
+	if globalFuncTable == nil || globalFuncTable.Table() == nil {
+		return nil, errors.New(fmt.Sprint("undefined function ", val))
 	}
 	func_row, ok := globalFuncTable.Table()[val]
 	if !ok {
-		return nil, errors.New(fmt.Sprint("undefined function ",val))
+		return nil, errors.New(fmt.Sprint("undefined function ", val))
 	}
 
-	era_quad := quadruples.Cuadruplo{"ERA","-1","-1",func_row.Id()}
+	era_quad := quadruples.Cuadruplo{"ERA", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, era_quad)
 
 	// TODO Add parameter verification
-	sub_quad := quadruples.Cuadruplo{"GOSUB","-1","-1",func_row.Id()}
+	sub_quad := quadruples.Cuadruplo{"GOSUB", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, sub_quad)
-	return curr_quads,nil
+	return curr_quads, nil
 }
 
-func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error){
+func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error) {
 	tok, ok := id.(*token.Token)
 	val := string(tok.Lit)
 	curr_map := make(map[string]*tables.VarRow)
@@ -175,16 +177,16 @@ func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error)
 		return nil, errors.New("problem reading function attribute")
 	}
 	if rest == nil {
-		row :=&tables.VarRow{}
+		row := &tables.VarRow{}
 		row.SetId(val)
 		row.SetToken(tok)
 		row.SetDim1(0)
 		row.SetDim2(0)
 		curr_type, _ := tipo.(types.CoreType)
-		addr,_ := vmemory.NextLocalTemp(curr_type)
+		addr, _ := vmemory.NextLocalTemp(curr_type)
 		row.SetDirV(addr)
 		curr_map[val] = row
-		fmt.Println("Reading attr",curr_map)
+		fmt.Println("Reading attr", curr_map)
 		return curr_map, nil
 	}
 	return curr_map, nil
@@ -311,7 +313,7 @@ func NewIf(exp, est, est_list, else_res Attrib) ([]quadruples.Cuadruplo, error) 
 	new_exp, ok := exp.(*Exp)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 
-	start_go := quadruples.Cuadruplo{"START_GO","-1","-1","-1"}
+	start_go := quadruples.Cuadruplo{"START_GO", "-1", "-1", "-1"}
 	curr_quads = append(curr_quads, start_go)
 
 	new_quads, _ := est.([]quadruples.Cuadruplo)
@@ -354,8 +356,8 @@ func NewIf(exp, est, est_list, else_res Attrib) ([]quadruples.Cuadruplo, error) 
 		curr_quads = append(curr_quads, goto_quad)
 		curr_quads = append(curr_quads, else_quads...)
 	}
-	
-	end_go := quadruples.Cuadruplo{"END_GO","-1","-1","-1"}
+
+	end_go := quadruples.Cuadruplo{"END_GO", "-1", "-1", "-1"}
 	curr_quads = append(curr_quads, end_go)
 
 	return curr_quads, nil
@@ -408,20 +410,20 @@ func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 	if globalCurrentScope != nil {
 		var_row, ok := globalCurrentScope[val]
 		if !ok {
-			return nil, errors.New(fmt.Sprint("Variable",string(tok.Lit),"has not been declared"))
+			return nil, errors.New(fmt.Sprint("Variable", string(tok.Lit), "has not been declared"))
 		}
-		current_address = memory.Address(var_row.DirV())// TODO Check Types
+		current_address = memory.Address(var_row.DirV()) // TODO Check Types
 	}
-	
+
 	// get operand 1
-	fmt.Println("In new assign",globalStackOperands)
+	fmt.Println("In new assign", globalStackOperands)
 	curr_top1, ok := globalStackOperands.Top()
 	if !ok {
 		return nil, errors.New("Cannot assign to bad expr")
 	}
 	// pop operand 1
 	globalStackOperands, _ = globalStackOperands.Pop()
-	quadToAdd := quadruples.Cuadruplo{semantic.Assign,curr_top1,"-1", fmt.Sprint(current_address)}
+	quadToAdd := quadruples.Cuadruplo{semantic.Assign, curr_top1, "-1", fmt.Sprint(current_address)}
 	curr_quads = append(curr_quads, quadToAdd)
 	return curr_quads, nil // return row
 }
@@ -429,7 +431,7 @@ func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 func NewWhile(exp, est Attrib) ([]quadruples.Cuadruplo, error) {
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 
-	start_go := quadruples.Cuadruplo{"START_GO","-1","-1","-1"}
+	start_go := quadruples.Cuadruplo{"START_GO", "-1", "-1", "-1"}
 	curr_quads = append(curr_quads, start_go)
 
 	new_exp, ok := exp.(*Exp)
@@ -454,7 +456,7 @@ func NewWhile(exp, est Attrib) ([]quadruples.Cuadruplo, error) {
 	goto_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter)}
 	curr_quads = append(curr_quads, goto_quad)
 
-	end_go := quadruples.Cuadruplo{"END_GO","-1","-1","-1"}
+	end_go := quadruples.Cuadruplo{"END_GO", "-1", "-1", "-1"}
 	curr_quads = append(curr_quads, end_go)
 
 	fmt.Println("In new while", curr_quads)
@@ -571,7 +573,7 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		globalStackTypes = globalStackTypes.Push(fmt.Sprint(cube_type))
 		quadsToAdd = append([]quadruples.Cuadruplo{curr_quad}, quadsToAdd...)
 		fmt.Println("Adding quad temp", current_address, quadsToAdd)
-		
+
 		top, ok = globalStackOperators.Top()
 		top_level = globalOperatorsDict.Op_hierarchy[top]
 	}
@@ -632,12 +634,12 @@ func NewIdConst(id Attrib) (*Constant, error) {
 		}
 	}
 
-	if globalVarTable ==nil || globalVarTable.Table() == nil {
-		return nil, errors.New(fmt.Sprint("Variable ",str_val," has not been declared"))
+	if globalVarTable == nil || globalVarTable.Table() == nil {
+		return nil, errors.New(fmt.Sprint("Variable ", str_val, " has not been declared"))
 	}
 	addr, ok := globalVarTable.Table()[str_val] // Checking varTable
 	if !ok {
-		return nil, errors.New(fmt.Sprint("Variable",str_val,"has not been declared"))
+		return nil, errors.New(fmt.Sprint("Variable", str_val, "has not been declared"))
 	}
 	current_address := memory.Address(addr.DirV())
 	// calculate current address occuppied in context
