@@ -111,7 +111,7 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id, var_map, est, est_list Attrib) ([]quadruples.Cuadruplo, error) {
+func NewFunction(id, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
 	curr_quads := make([]quadruples.Cuadruplo,0)
 	if !ok {
@@ -135,9 +135,19 @@ func NewFunction(id, var_map, est, est_list Attrib) ([]quadruples.Cuadruplo, err
 	new_est, _ := est.([]quadruples.Cuadruplo)
 	curr_quads = append(curr_quads, new_est...)
 	
+	if est_list != nil {
+		new_est_list, _ := est_list.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, new_est_list...)
+	}
+	
 	endfunc_quad := quadruples.Cuadruplo{"ENDPROC","-1","-1","-1"}
 	curr_quads = append(curr_quads, endfunc_quad)
 	
+	if rest_func != nil {
+		new_func_quads, _ := rest_func.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, new_func_quads...)
+	}
+
 	fmt.Println("Function:", row.Id(), curr_quads)
 
 	return curr_quads, nil
