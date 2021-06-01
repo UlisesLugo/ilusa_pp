@@ -573,3 +573,20 @@ func (vm *VirtualMachine) Era(funcId string) error {
 	vm.mm.callStack = append(vm.mm.callStack, newMB)
 	return nil
 }
+
+func (vm *VirtualMachine) Return(left, res memory.Address) error {
+	left_val, err_left := vm.mm.GetValue(left)
+	if err_left != nil {
+		fmt.Println("Problem in left value for GOTOF")
+		return err_left
+	}
+
+	err_set := vm.mm.SetValue(res, left_val)
+
+	if err_set != nil {
+		fmt.Println("Problem setting value to return address.")
+		return err_set
+	}
+
+	return nil
+}
