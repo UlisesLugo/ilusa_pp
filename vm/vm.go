@@ -15,7 +15,7 @@ type Attrib interface{}
 
 // Our virtual machine structure
 type VirtualMachine struct {
-	funcTable tables.FuncTable       // function directory
+	funcTable []tables.FuncRow       // function directory
 	quads     []quadruples.Cuadruplo // code
 	ip        int                    // instruction pointer
 	paramp    int                    // param pointer
@@ -32,7 +32,7 @@ type VirtualMachine struct {
 **/
 func NewVirtualMachine() *VirtualMachine {
 	return &VirtualMachine{
-		tables.FuncTable{},              // functable
+		make([]tables.FuncRow, 0),       // functable
 		make([]quadruples.Cuadruplo, 0), // quads[]
 		0,                               // ip
 		0,                               // paramp
@@ -141,13 +141,6 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		}
 		vm.ip++
 		return nil
-	case "=":
-		op_err := vm.Assign(addr_1, addr_2, addr_res)
-		if op_err != nil {
-			return op_err
-		}
-		vm.ip++
-		return nil
 	}
 	return nil
 }
@@ -178,9 +171,20 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	addr_1 := memory.Address(int_var1)
 	// addr_res := memory.Address(int_res)
 
-	fmt.Println("Running unary", quad.Op)
-
 	switch quad.Op {
+	case "=":
+		int_res, err_res := strconv.Atoi(quad.Res)
+		addr_res := memory.Address(int_res)
+		if err_res != nil {
+			return errors.New("Couldn't cast q.Op to int")
+		}
+		op_err := vm.Assign(addr_1, addr_res)
+		if op_err != nil {
+			fmt.Println("error in assign")
+			return op_err
+		}
+		vm.ip++
+		return nil
 	case "!":
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
@@ -232,6 +236,8 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		return nil
 		// Functions
 	case "PARAM":
+
+		vm.ip++
 		return nil
 	case "ENDPROC":
 		op_err := vm.EndFunc()
@@ -249,17 +255,29 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "GOSUB":
+		op_err := vm.Gosub(quad.Res)
+		if op_err != nil {
+			return op_err
+		}
+		return nil
+	case "RETURN":
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
 		if err_res != nil {
 			return errors.New("Couldn't cast q.Op to int")
 		}
-		op_err := vm.Gosub(int(addr_res))
+		op_err := vm.Return(addr_res)
 		if op_err != nil {
 			return op_err
 		}
+		vm.ip++
 		return nil
-		// TODO: RETURN
+	case "START_GO":
+		vm.ip++
+		return nil
+	case "END_GO":
+		vm.ip++
+		return nil
 		// Arrays
 		// VER
 	case "END":
@@ -311,7 +329,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println(vm.ip)
+		fmt.Println("Running:", vm.quads[vm.ip])
 		err := vm.RunNextQuad()
 		if err != nil {
 			fmt.Println(err)

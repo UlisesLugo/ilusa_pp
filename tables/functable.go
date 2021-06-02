@@ -13,7 +13,7 @@ type FuncRow struct {
 	params     map[int]types.CoreType
 	// scope int
 	local_vars *VarTable
-	address memory.Address
+	address    memory.Address // jump
 }
 
 // fuction table struct
