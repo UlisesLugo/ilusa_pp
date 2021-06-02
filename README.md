@@ -24,7 +24,7 @@
 * ✅ IC to generate quadruples in arithmetic expressions
 * ✅ IC to generate quadruples in logical and relational expressions
 * ✅ IC to generate quadruples for print and assignments
-* 🤔 IC to generate quadruples for non linear statements (for,if,while)
+* ✅ IC to generate quadruples for non linear statements (if,while)
 * 🤔 IC to generate quadruples for return statement
 * 🤔 IC for function definition
 * 🤔 IC for function calling
@@ -33,8 +33,8 @@
 * ✅ Run-time memory map for virtual machine
 * 🤔 Activation Records for function
 * 🤔 Handle recursion in functions
-* 🤔 Create obj from quadruples
-* 🤔 Virtual machine actions (switch)
+* ✅ Create obj from quadruples
+* ✅ Virtual machine actions (switch)
 * 🤔 Implement Linked List for array indexing
 * 🤔 IC for arrays
 * 🤔 IC to generate quadruples in function calls
