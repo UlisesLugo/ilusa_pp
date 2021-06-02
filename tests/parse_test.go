@@ -1,11 +1,10 @@
 package tests
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"testing"
-
-	"encoding/json"
 
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
@@ -79,7 +78,7 @@ func TestDuck(t *testing.T) {
 			obj_map["Consts"] = prog.Consts()
 
 			// set key for Functable
-			enc.Encode(prog.FuncTable())
+			//enc.Encode(prog.FuncTable())
 
 			// encodigin map
 			enc.Encode(obj_map)
