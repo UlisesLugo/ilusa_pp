@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
+	"github.com/uliseslugo/ilusa_pp/tables"
 )
 
 // Arithmetic operations
@@ -524,18 +525,31 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 
 // Functions operations
 
-func (vm *VirtualMachine) Gosub(jump int) error {
+func (vm *VirtualMachine) Gosub(funcId string) error {
+	var funcR tables.FuncRow
+	// Get func row
+	for i := range vm.funcTable {
+		fr := vm.funcTable[i]
+
+		if fr.Id() == funcId {
+			funcR = fr
+			break
+		}
+	}
+
 	// Push to prev functions
 	callStackLen := len(vm.mm.callStack)
-	topCall := vm.mm.callStack[callStackLen-1]
-	vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
-
+	var topCall *MemoryBlock
+	if callStackLen > 0 {
+		topCall = vm.mm.callStack[callStackLen-1]
+		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
+	}
 	// save current ip
 	str_ip := strconv.Itoa(vm.ip + 1)
-	vm.jumps.Push(str_ip)
+	vm.jumps = vm.jumps.Push(str_ip)
 
 	// Unconditional jump
-	vm.ip = jump
+	vm.ip = int(funcR.Address())
 	return nil
 }
 
@@ -571,5 +585,50 @@ func (vm *VirtualMachine) Era(funcId string) error {
 	newMB := NewMemoryBlock(funcId, memory.LocalContext)
 	// push mb to stack to save curr context
 	vm.mm.callStack = append(vm.mm.callStack, newMB)
+	return nil
+}
+
+// 	/**
+//  * Sets a value for an upcoming function's parameter
+//  * @param addr Address of parameter in ActivationRecord
+//  * @param value Value to put to address
+//  */
+//  private setParam(addr: number, value: number | string): void {
+//   this.ss.peek().locals.setValue(addr, value);
+// }
+// right = this.getValue(quad.right as number);
+//       const func = this.funcTable[this.ss.peek().name];
+
+//       if (getTypeForAddress(quad.right as number) === ValueType.POINTER) {
+//         const rightType = getTypeForAddress(right);
+//         right = this.getValue(right);
+//         if (rightType !== func.params[this.paramCountStack.peek()].type){
+//           throw new Error('Incorrect Parameters');
+//         }
+//       }
+
+//       this.setParam(quad.result as number, right);
+//       let paramCount = this.paramCountStack.pop();
+//       paramCount++;
+//       this.paramCountStack.push(paramCount);
+//       break;
+func (vm *VirtualMachine) Param(left, res memory.Address) error {
+	left_val, err_left := vm.mm.GetValue(left)
+	callStackLen := len(vm.mm.callStack)
+
+	var funcCall *MemoryBlock
+
+	if callStackLen > 0 {
+		funcCall = vm.mm.callStack[callStackLen-1]
+	}
+
+	// TODO: Check type of param
+
+	// Set param
+	funcCall.SetValue(left, left_val)
+
+	if err_left != nil {
+		return err_left
+	}
 	return nil
 }

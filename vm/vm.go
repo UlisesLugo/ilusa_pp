@@ -178,8 +178,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	addr_1 := memory.Address(int_var1)
 	// addr_res := memory.Address(int_res)
 
-	fmt.Println("Running unary", quad.Op)
-
 	switch quad.Op {
 	case "!":
 		int_res, err_res := strconv.Atoi(quad.Res)
@@ -232,6 +230,7 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		return nil
 		// Functions
 	case "PARAM":
+
 		vm.ip++
 		return nil
 	case "ENDPROC":
@@ -250,12 +249,7 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "GOSUB":
-		int_res, err_res := strconv.Atoi(quad.Res)
-		addr_res := memory.Address(int_res)
-		if err_res != nil {
-			return errors.New("Couldn't cast q.Op to int")
-		}
-		op_err := vm.Gosub(int(addr_res))
+		op_err := vm.Gosub(quad.Res)
 		if op_err != nil {
 			return op_err
 		}
@@ -311,8 +305,8 @@ func (vm *VirtualMachine) RunMachine() {
 	// TODO: Push main activation record
 
 	// execute quad
-	for vm.quads[vm.ip].Op != "END" {
-		fmt.Println(vm.ip)
+	for vm.ip < len(vm.quads)-1 {
+		fmt.Println("Running:", vm.quads[vm.ip])
 		err := vm.RunNextQuad()
 		if err != nil {
 			fmt.Println(err)

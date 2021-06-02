@@ -64,7 +64,7 @@ func TestDuck(t *testing.T) {
 		if !ok {
 			t.Error("Program failed")
 		} else {
-			f, err := os.Create("encoding.obj")
+			f, err := os.Create("../tests/encoding.obj")
 			if err != nil {
 				panic(err)
 			}
@@ -87,6 +87,8 @@ func TestDuck(t *testing.T) {
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])
 			}
+
+			fmt.Println("------------------VirtalMachine-----------------")
 
 			newVM := NewVirtualMachine()
 
