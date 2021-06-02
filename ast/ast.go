@@ -334,15 +334,18 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	if !tok_ok {
 		return nil, errors.New("Problem in casting id token")
 	}
-	new_dim1, _ := dim1.(int)
-	new_dim2, _ := dim1.(int)
+	new_dim1 := 1
+	if dim1 != nil {
+		curr_dim, _ := dim1.(*token.Token).Int32Value()
+		new_dim1 = int(curr_dim)
+	}
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
 	if curr_type != nil {
 		row.SetType(curr_type.(types.CoreType))
 	}
-	row.SetDim1(new_dim1)
-	row.SetDim2(new_dim2)
+	row.SetDim1(int(new_dim1))
+	// row.SetDim2(new_dim2)
 	// set values to varibale row
 	row.SetId(string(tok.Lit))
 	row.SetToken(tok)
@@ -360,7 +363,8 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 		}
 	} else {
 		// choose global context
-		current_address, err_addr = vmemory.NextGlobalTemp(row.Type())
+		fmt.Println("New global temp var");
+		current_address, err_addr = vmemory.NextGlobalTemp(row.Type(),new_dim1)
 		if err_addr != nil {
 			fmt.Println("Error in new global temp: ", err_addr)
 		}
@@ -656,7 +660,7 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		} else {
 			// choose global context
 			fmt.Println("No global current scope")
-			current_address, err_addr = vmemory.NextGlobalTemp(cube_type)
+			current_address, err_addr = vmemory.NextGlobalTemp(cube_type,1)
 			if err_addr != nil {
 				fmt.Println("Error in new global temp: ", err_addr)
 			}
@@ -844,7 +848,7 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	// TODO (Access id address from vartable scope instead of curr address)
 	// TODO (Check dimensions)
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextGlobalTemp(types.Ids) // TODO Check Types (Validate type with semantic cube)
+	current_address, _ := vmemory.NextGlobalTemp(types.Ids,1) // TODO Check Types (Validate type with semantic cube)
 	return &Constant{string(val.Lit), val, types.Ids, current_address}, nil
 }
 
