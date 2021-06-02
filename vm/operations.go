@@ -476,6 +476,7 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 
 func (vm *VirtualMachine) Write(res memory.Address) error {
 	result, err_res := vm.mm.GetValue(res)
+
 	if err_res != nil {
 		fmt.Print("Error in result output")
 		return err_res
@@ -588,32 +589,12 @@ func (vm *VirtualMachine) Era(funcId string) error {
 	return nil
 }
 
-// 	/**
-//  * Sets a value for an upcoming function's parameter
-//  * @param addr Address of parameter in ActivationRecord
-//  * @param value Value to put to address
-//  */
-//  private setParam(addr: number, value: number | string): void {
-//   this.ss.peek().locals.setValue(addr, value);
-// }
-// right = this.getValue(quad.right as number);
-//       const func = this.funcTable[this.ss.peek().name];
-
-//       if (getTypeForAddress(quad.right as number) === ValueType.POINTER) {
-//         const rightType = getTypeForAddress(right);
-//         right = this.getValue(right);
-//         if (rightType !== func.params[this.paramCountStack.peek()].type){
-//           throw new Error('Incorrect Parameters');
-//         }
-//       }
-
-//       this.setParam(quad.result as number, right);
-//       let paramCount = this.paramCountStack.pop();
-//       paramCount++;
-//       this.paramCountStack.push(paramCount);
-//       break;
 func (vm *VirtualMachine) Param(left, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
+	if err_left != nil {
+		return err_left
+	}
+	fmt.Println("leftV ", left_val)
 	callStackLen := len(vm.mm.callStack)
 
 	var funcCall *MemoryBlock
@@ -626,10 +607,6 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 
 	// Set param
 	funcCall.SetValue(left, left_val)
-
-	if err_left != nil {
-		return err_left
-	}
 	return nil
 }
 
@@ -638,12 +615,19 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	if err_res != nil {
 		return err_res
 	}
+	vm.mm.SetValue(res, res_val)
 
-	// TODO:Check type of result with functable
-	err_set := vm.mm.SetValue(res, res_val)
-	if err_set != nil {
-		fmt.Println("Problem setting return value.")
-		return err_set
+	// End - pop from call stack and prev functions
+	// Pop from prevFunctions
+	prevFuncLen := len(vm.mm.prevFuncsStack)
+	if prevFuncLen != 0 {
+		vm.mm.prevFuncsStack = vm.mm.prevFuncsStack[:prevFuncLen-1]
 	}
+	// Pop from call stack
+	callStackLen := len(vm.mm.callStack)
+	if callStackLen != 0 {
+		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
+	}
+
 	return nil
 }
