@@ -1,7 +1,12 @@
 Program firstTest :
+variables  {
+      int i;
+  }
   main() {
-      if(1 > 2){
-          output(2);
-      }
+    i = 0;
+    while(i < 2) {
+      i = i + 1;
+      output(i);
+    }
   }
   

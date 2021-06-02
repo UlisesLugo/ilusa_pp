@@ -141,13 +141,6 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		}
 		vm.ip++
 		return nil
-	case "=":
-		op_err := vm.Assign(addr_1, addr_2, addr_res)
-		if op_err != nil {
-			return op_err
-		}
-		vm.ip++
-		return nil
 	}
 	return nil
 }
@@ -179,6 +172,19 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	// addr_res := memory.Address(int_res)
 
 	switch quad.Op {
+	case "=":
+		int_res, err_res := strconv.Atoi(quad.Res)
+		addr_res := memory.Address(int_res)
+		if err_res != nil {
+			return errors.New("Couldn't cast q.Op to int")
+		}
+		op_err := vm.Assign(addr_1, addr_res)
+		if op_err != nil {
+			fmt.Println("error in assign")
+			return op_err
+		}
+		vm.ip++
+		return nil
 	case "!":
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
@@ -266,7 +272,12 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		}
 		vm.ip++
 		return nil
-		// TODO: RETURN
+	case "START_GO":
+		vm.ip++
+		return nil
+	case "END_GO":
+		vm.ip++
+		return nil
 		// Arrays
 		// VER
 	case "END":

@@ -16,11 +16,13 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
+		fmt.Println("Error getting left value of addition.")
 		return err_left
 	}
 
 	right_val, err_right := vm.mm.GetValue(right)
 	if err_right != nil {
+		fmt.Println("Error getting right value of addition.")
 		return err_right
 	}
 
@@ -35,16 +37,17 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
-		fmt.Println("res", result)
+		fmt.Println("int res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
+			fmt.Println("Error setting int value")
 			return err_res
 		}
 		return nil
 	}
 
 	result := left_flt + right_flt
-	fmt.Println("res", result)
+	fmt.Println("flt res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -172,7 +175,7 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 	return nil
 }
 
-func (vm *VirtualMachine) Assign(left, right, res memory.Address) error {
+func (vm *VirtualMachine) Assign(left, res memory.Address) error {
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
@@ -516,7 +519,7 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 	if left_num == 0 {
 		fmt.Println("Falso")
 		vm.ip = jump
-		fmt.Println(vm.ip)
+		fmt.Println("Jump to: ", vm.ip)
 	} else {
 		vm.ip++
 	}
