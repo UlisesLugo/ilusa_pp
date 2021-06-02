@@ -254,6 +254,18 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 			return op_err
 		}
 		return nil
+	case "RETURN":
+		int_res, err_res := strconv.Atoi(quad.Res)
+		addr_res := memory.Address(int_res)
+		if err_res != nil {
+			return errors.New("Couldn't cast q.Op to int")
+		}
+		op_err := vm.Return(addr_res)
+		if op_err != nil {
+			return op_err
+		}
+		vm.ip++
+		return nil
 		// TODO: RETURN
 		// Arrays
 		// VER

@@ -1,0 +1,13 @@
+Program unitFuncTest :
+  function int isa(){
+    variables{
+      int b, c;
+    }
+    body{
+      return(1);
+    }
+  }
+
+  main () {
+     output(isa());
+  }

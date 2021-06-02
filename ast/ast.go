@@ -133,13 +133,13 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 		new_attrib_map := attrib_map.(map[string]*tables.VarRow)
 		function_map = new_attrib_map
 		for _, val := range new_attrib_map {
-			if val.Order() > 0{
+			if val.Order() > 0 {
 				curr_params_counter++
 			}
 		}
-		for _,val := range new_attrib_map {
-			if val.Order() > 0{
-			params_map[curr_params_counter-val.Order()] = val.Type()
+		for _, val := range new_attrib_map {
+			if val.Order() > 0 {
+				params_map[curr_params_counter-val.Order()] = val.Type()
 			}
 		}
 	}
@@ -156,8 +156,8 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 	row.SetLocalVars(new_var_table)
 	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
-	
-	start_func := quadruples.Cuadruplo{"START_FUNC","-1","-1",idName}
+
+	start_func := quadruples.Cuadruplo{"START_FUNC", "-1", "-1", idName}
 	curr_quads = append(curr_quads, start_func)
 
 	// Add inner statements
@@ -211,14 +211,14 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	return curr_quads, nil
 }
 
-func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo,error){
-	curr_quads := make([]quadruples.Cuadruplo,0)
+func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo, error) {
+	curr_quads := make([]quadruples.Cuadruplo, 0)
 	new_exp, ok := exp.(*Exp)
 	if !ok {
 		return nil, errors.New("problem casting expression in new func")
 	}
 	curr_quads = append(curr_quads, new_exp.Quads()...)
-	
+
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top() // Get result
 	if !ok {
@@ -238,7 +238,7 @@ func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo,error){
 func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error) {
 	tok, ok := id.(*token.Token)
 	val := string(tok.Lit)
-	paramOrder++;
+	paramOrder++
 	// currFunc = val
 	curr_map := make(map[string]*tables.VarRow)
 	if !ok {
@@ -591,7 +591,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		}
 		if new_exp1.op_exp_ != nil {
 			quads_to_add := createBinaryQuadruple(new_exp1.op_exp_.operation)
-			curr_quads = append(curr_quads,quads_to_add...)
+			curr_quads = append(curr_quads, quads_to_add...)
 		}
 
 	}
@@ -600,7 +600,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		quads_to_add := createBinaryQuadruple(new_exp2.operation)
 		curr_quads = append(quads_to_add, curr_quads...)
 		if new_exp2.exp != nil {
-			curr_quads = append(new_exp2.exp.quads_,curr_quads...)
+			curr_quads = append(new_exp2.exp.quads_, curr_quads...)
 		}
 	}
 	// fmt.Println("Adding quad in exp",new_exp1, new_exp2, curr_quads)
@@ -884,11 +884,11 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	if !ok {
 		return nil, errors.New("problem casting constant in input")
 	}
-	temp := make([]string,0)
+	temp := make([]string, 0)
 	for i := range id_list {
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
-			return nil, errors.New(fmt.Sprint("stack is empty in writing",i))
+			return nil, errors.New(fmt.Sprint("stack is empty in writing", i))
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
 		temp = append([]string{output_str}, temp...)
@@ -907,6 +907,7 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	new_id, ok := id.(*Exp)
 	id_list, _ := idList.([]*Exp)
+	fmt.Println("In new output", id, idList)
 	if !ok {
 		return nil, errors.New("problem casting constant in output")
 	}

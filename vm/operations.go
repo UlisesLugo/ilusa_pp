@@ -632,3 +632,18 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 	}
 	return nil
 }
+
+func (vm *VirtualMachine) Return(res memory.Address) error {
+	res_val, err_res := vm.mm.GetValue(res)
+	if err_res != nil {
+		return err_res
+	}
+
+	// TODO:Check type of result with functable
+	err_set := vm.mm.SetValue(res, res_val)
+	if err_set != nil {
+		fmt.Println("Problem setting return value.")
+		return err_set
+	}
+	return nil
+}
