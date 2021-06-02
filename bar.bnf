@@ -72,9 +72,9 @@ EST : AS
 
 AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
 
-LLAM : id "(" LLAM1 ")" ";" << ast.NewFunctionCall($0, $2) >>;
-LLAM1 : empty | H_EXP LLAM2 ;
-LLAM2 : empty | "," H_EXP LLAM2 ;
+LLAM : id "(" LLAM1 ")" ";" << ast.NewFunctionCall($0,$2) >>;
+LLAM1 : empty | H_EXP LLAM2 << ast.NewFunctionParam($0,$1) >>;
+LLAM2 : empty | "," H_EXP LLAM2 << ast.NewFunctionParam($1,$2) >>;
 
 RET : "return" "(" H_EXP ")" ";" << ast.Return($2) >>;
 

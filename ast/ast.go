@@ -200,9 +200,38 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	era_quad := quadruples.Cuadruplo{"ERA", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, era_quad)
 
+	if params != nil {
+		new_params := params.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, new_params...)
+	}
+
 	// TODO Add parameter verification
 	sub_quad := quadruples.Cuadruplo{"GOSUB", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, sub_quad)
+	return curr_quads, nil
+}
+
+func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo,error){
+	curr_quads := make([]quadruples.Cuadruplo,0)
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return nil, errors.New("problem casting expression in new func")
+	}
+	curr_quads = append(curr_quads, new_exp.Quads()...)
+	
+	// get operand 1
+	curr_top1, ok := globalStackOperands.Top() // Get result
+	if !ok {
+		return nil, errors.New("expected param")
+	}
+	globalStackOperands, _ = globalStackOperands.Pop()
+	param_quad := quadruples.Cuadruplo{"PARAM", curr_top1, "-1", "Par"}
+	curr_quads = append(curr_quads, param_quad)
+
+	if rest != nil {
+		new_rest := rest.([]quadruples.Cuadruplo)
+		curr_quads = append(curr_quads, new_rest...)
+	}
 	return curr_quads, nil
 }
 

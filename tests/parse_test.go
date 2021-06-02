@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"encoding/gob"
+	"encoding/json"
 
 	"github.com/uliseslugo/ilusa_pp/ast"
 	"github.com/uliseslugo/ilusa_pp/gocc/lexer"
@@ -68,7 +68,7 @@ func TestDuck(t *testing.T) {
 			if err != nil {
 				panic(err)
 			}
-			enc := gob.NewEncoder(f)
+			enc := json.NewEncoder(f)
 
 			obj_map := make(map[string]interface{}) // map of key: json object
 
