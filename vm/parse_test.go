@@ -1,4 +1,4 @@
-package tests
+package vm
 
 import (
 	"encoding/json"
@@ -37,8 +37,9 @@ func readFile(path string) ([]byte, error) {
 
 func TestDuck(t *testing.T) {
 	p := parser.NewParser()
+
 	tests := []string{
-		"call_test_3.isa",
+		"../tests/call_test_3.isa",
 	}
 
 	for _, test := range tests {
@@ -78,7 +79,7 @@ func TestDuck(t *testing.T) {
 			obj_map["Consts"] = prog.Consts()
 
 			// set key for Functable
-			//enc.Encode(prog.FuncTable())
+			funcDir := prog.FuncTable()
 
 			// encodigin map
 			enc.Encode(obj_map)
@@ -86,6 +87,31 @@ func TestDuck(t *testing.T) {
 			for cuad := range prog.Quads() {
 				fmt.Println(prog.Quads()[cuad])
 			}
+
+			newVM := NewVirtualMachine()
+
+			// testing vm
+			newVM.ReadJSON()
+
+			fmt.Println("Constants now are", newVM.constants)
+			fmt.Println("Quads in runtime memory:")
+			for _, q := range newVM.quads {
+				fmt.Println(q)
+			}
+
+			fmt.Println("Constants in virtual machine:")
+			for key, element := range newVM.constants {
+				fmt.Println(key, element)
+			}
+
+			fmt.Println("Function table in Virtual machine")
+			newVM.funcTable = funcDir
+			fmt.Println(newVM.funcTable)
+
+			newVM.RunMachine()
+
+			fmt.Printf("%s\n", "Running Machine Test Passed")
 		}
 	}
+
 }

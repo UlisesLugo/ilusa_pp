@@ -15,7 +15,7 @@ type Attrib interface{}
 
 // Our virtual machine structure
 type VirtualMachine struct {
-	funcTable tables.FuncTable       // function directory
+	funcTable []tables.FuncRow       // function directory
 	quads     []quadruples.Cuadruplo // code
 	ip        int                    // instruction pointer
 	paramp    int                    // param pointer
@@ -32,7 +32,7 @@ type VirtualMachine struct {
 **/
 func NewVirtualMachine() *VirtualMachine {
 	return &VirtualMachine{
-		tables.FuncTable{},              // functable
+		make([]tables.FuncRow, 0),       // functable
 		make([]quadruples.Cuadruplo, 0), // quads[]
 		0,                               // ip
 		0,                               // paramp
@@ -232,6 +232,7 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		return nil
 		// Functions
 	case "PARAM":
+		vm.ip++
 		return nil
 	case "ENDPROC":
 		op_err := vm.EndFunc()
@@ -310,7 +311,7 @@ func (vm *VirtualMachine) RunMachine() {
 	// TODO: Push main activation record
 
 	// execute quad
-	for vm.ip < len(vm.quads)-1 {
+	for vm.quads[vm.ip].Op != "END" {
 		fmt.Println(vm.ip)
 		err := vm.RunNextQuad()
 		if err != nil {

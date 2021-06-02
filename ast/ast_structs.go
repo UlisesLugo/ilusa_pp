@@ -23,9 +23,9 @@ type Attrib interface{}
 	id: program token
 */
 type Program struct {
-	nombre string
-	quads_ []quadruples.Cuadruplo
-	id     *token.Token
+	nombre    string
+	quads_    []quadruples.Cuadruplo
+	id        *token.Token
 	constants map[string]int
 	functable []tables.FuncRow
 }
@@ -54,11 +54,11 @@ func (p *Program) FuncTable() []tables.FuncRow {
 type Exp struct {
 	exp1    *Exp
 	op_exp_ *Op_exp
-	const_ *Constant
-	quads_ []quadruples.Cuadruplo
+	const_  *Constant
+	quads_  []quadruples.Cuadruplo
 }
 
-func (exp *Exp) Quads() []quadruples.Cuadruplo{
+func (exp *Exp) Quads() []quadruples.Cuadruplo {
 	return exp.quads_
 }
 
@@ -70,7 +70,7 @@ func (exp *Exp) Quads() []quadruples.Cuadruplo{
 type Op_exp struct {
 	operation semantic.Operation
 	const_    *Constant
-	exp *Exp
+	exp       *Exp
 }
 
 /*
