@@ -1,0 +1,7 @@
+Program unitFuncTest :
+  variables{
+      int a[10];
+  }
+  main () {
+      output(1);
+  }
