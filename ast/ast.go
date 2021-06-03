@@ -114,7 +114,7 @@ func NewClass(id Attrib) (string, error) {
 	reads the function name id and function entry from table
 	returns function row in funciton directory
 */
-func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
+func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
 	tok, ok := id.(*token.Token)
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	if !ok {
@@ -124,6 +124,10 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 	idName := string(tok.Lit)
 	row := new(tables.FuncRow)
 	row.SetId(idName)
+
+	curr_type := type_.(types.CoreType)
+	row.SetReturnValue(curr_type)
+
 	function_map := make(map[string]*tables.VarRow)
 	curr_params_counter := 0
 	params_map := make(map[int]types.CoreType)
@@ -607,12 +611,18 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 	return &Exp{new_exp1, new_exp2, new_const, curr_quads}, nil
 }
 
-func ResetLocalMemory() (int, error) {
-	fmt.Println("Resets Local Memory for new function.")
+func NewFunctionType(type_ Attrib) (types.CoreType, error) {
+	ResetLocalMemory();
+	if type_ == nil {
+		return types.Null, nil
+	}
+	return 0, nil
+}
+
+func ResetLocalMemory() {
 	vmemory.ResetLocalMemory()
 	paramOrder = 0
 	globalCurrentScope = nil
-	return 0, nil
 }
 
 /*
