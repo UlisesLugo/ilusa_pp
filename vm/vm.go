@@ -232,11 +232,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		}
 		return nil
 	case "READ":
-		// TODO
+		// TODO-isa
 		return nil
 		// Functions
 	case "PARAM":
-
+		// todo-ISA
 		vm.ip++
 		return nil
 	case "ENDPROC":
