@@ -212,6 +212,17 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	// TODO Add parameter verification
 	sub_quad := quadruples.Cuadruplo{"GOSUB", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, sub_quad)
+
+	// Add return value
+	if func_row.ReturnValue() != types.Null {
+		current_address, err_addr := vmemory.NextGlobalTemp(func_row.ReturnValue())
+		if err_addr != nil {
+			fmt.Println("Error in new global temp: ", err_addr)
+		}
+		assign_quad :=quadruples.Cuadruplo{"=",val,"-1",fmt.Sprint(current_address)}
+		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
+		curr_quads = append(curr_quads, assign_quad)
+	}
 	return curr_quads, nil
 }
 
@@ -898,7 +909,7 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 	for i := range id_list {
 		output_str, ok := globalStackOperands.Top()
 		if !ok {
-			return nil, errors.New(fmt.Sprint("stack is empty in writing", i))
+			return nil, errors.New(fmt.Sprint("stack is empty in writing ", i))
 		}
 		globalStackOperands, _ = globalStackOperands.Pop()
 		temp = append([]string{output_str}, temp...)
@@ -917,9 +928,12 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	new_id, ok := id.(*Exp)
 	id_list, _ := idList.([]*Exp)
-	fmt.Println("In new output", id, idList)
 	if !ok {
-		return nil, errors.New("problem casting constant in output")
+		curr_quads, ok := id.([]quadruples.Cuadruplo)
+		if !ok {
+			return nil, errors.New("problem casting constant in output")
+		}
+		new_id = &Exp{nil,nil,nil,curr_quads}
 	}
 	return append([]*Exp{new_id}, id_list...), nil // Prepend (Add first)
 }
