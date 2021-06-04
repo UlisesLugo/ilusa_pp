@@ -231,12 +231,17 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 			return op_err
 		}
 		return nil
-	case "READ":
-		// TODO-isa
-		return nil
 		// Functions
 	case "PARAM":
-		// todo-ISA
+		int_res, err_res := strconv.Atoi(quad.Res)
+		addr_res := memory.Address(int_res)
+		if err_res != nil {
+			return errors.New("Couldn't cast q.Res to int")
+		}
+		op_err := vm.Param(addr_1, addr_res)
+		if op_err != nil {
+			return op_err
+		}
 		vm.ip++
 		return nil
 	case "ENDPROC":
@@ -329,7 +334,6 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println("Running:", vm.quads[vm.ip])
 		err := vm.RunNextQuad()
 		if err != nil {
 			fmt.Println(err)

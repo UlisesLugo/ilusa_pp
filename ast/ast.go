@@ -32,6 +32,10 @@ var globalSemanticCube *semantic.SemanticCube
 
 var quadsCounter int
 var paramOrder int
+var currFunc string
+
+var paramsList []string
+var paramCounter int
 
 func init() {
 	globalFuncTable = tables.NewFuncTable() // Function Directory
@@ -44,8 +48,11 @@ func init() {
 	globalCurrQuads = make([]quadruples.Cuadruplo, 0) // TODO change main to memory address
 	globalStackTypes = make(stacks.Stack, 0)
 	globalSemanticCube = semantic.NewSemanticCube()
+	globalVarTable = &tables.VarTable{}
 	quadsCounter = 0
 	paramOrder = 0
+
+	//currFunc = ""
 
 	fmt.Println("Defining globals")
 }
@@ -57,7 +64,7 @@ func init() {
 	returns progam name as a literal
 */
 func NewProgram(id, func_est, main_est Attrib) (*Program, error) {
-	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap)
+	fmt.Println("In NEW PROGRAM", globalStackOperators, globalStackOperands, globalFuncTable, constantsMap, globalVarTable)
 	// cast id Attrib to token literal string
 	nombre := string(id.(*token.Token).Lit)
 	// cast id Attrib to token
@@ -125,6 +132,8 @@ func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib
 	row := new(tables.FuncRow)
 	row.SetId(idName)
 
+	currFunc = row.Id()
+
 	curr_type := type_.(types.CoreType)
 	row.SetReturnValue(curr_type)
 
@@ -132,6 +141,22 @@ func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib
 	curr_params_counter := 0
 	params_map := make(map[int]types.CoreType)
 	new_var_table := &tables.VarTable{}
+	fmt.Println("currFunc", idName)
+
+	// set global current scope
+	varR := &tables.VarRow{}
+	varR.SetId(idName)
+	varR.SetType(curr_type)
+	if curr_type != 5 {
+		addr, err_addr := vmemory.NextGlobal(curr_type)
+		if err_addr != nil {
+			return nil, errors.New("Error setting global variable for return.")
+		}
+		varR.SetDirV(addr)
+	}
+	row.Return_address = varR.DirV()
+
+	globalVarTable.Table()[idName] = varR // setting global variable for return
 
 	if attrib_map != nil {
 		new_attrib_map := attrib_map.(map[string]*tables.VarRow)
@@ -213,13 +238,15 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	sub_quad := quadruples.Cuadruplo{"GOSUB", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, sub_quad)
 
+	// Get address of function
+
 	// Add return value
 	if func_row.ReturnValue() != types.Null {
 		current_address, err_addr := vmemory.NextGlobalTemp(func_row.ReturnValue())
 		if err_addr != nil {
 			fmt.Println("Error in new global temp: ", err_addr)
 		}
-		assign_quad :=quadruples.Cuadruplo{"=",val,"-1",fmt.Sprint(current_address)}
+		assign_quad := quadruples.Cuadruplo{"=", fmt.Sprint(func_row.Return_address), "-1", fmt.Sprint(current_address)}
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		curr_quads = append(curr_quads, assign_quad)
 	}
@@ -240,7 +267,25 @@ func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo, error) {
 		return nil, errors.New("expected param")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
-	param_quad := quadruples.Cuadruplo{"PARAM", curr_top1, "-1", "Par"}
+
+	// Get top of params list
+	curr_p := ""
+	var addr_res memory.Address
+
+	if len(paramsList) > 0 {
+		curr_p = paramsList[paramCounter]
+	}
+
+	// Get res address
+	for vr := range globalCurrentScope {
+		v := globalCurrentScope[vr]
+		if v.Id() == curr_p {
+			addr_res = v.DirV()
+		}
+	}
+
+	param_quad := quadruples.Cuadruplo{"PARAM", curr_top1, "-1", fmt.Sprint(addr_res)}
+	paramCounter++
 	curr_quads = append(curr_quads, param_quad)
 
 	if rest != nil {
@@ -260,13 +305,14 @@ func NewFunctionAttrib(tipo, id, rest Attrib) (map[string]*tables.VarRow, error)
 		return nil, errors.New("problem reading function attribute")
 	}
 	row := &tables.VarRow{}
+	paramsList = append(paramsList, val)
 	row.SetId(val)
 	row.SetToken(tok)
 	row.SetDim1(0)
 	row.SetDim2(0)
 	curr_type, _ := tipo.(types.CoreType)
 	row.SetType(curr_type)
-	addr, _ := vmemory.NextLocalTemp(curr_type)
+	addr, _ := vmemory.NextLocal(curr_type)
 	row.SetDirV(addr)
 	row.SetOrder(paramOrder)
 	if rest == nil {
@@ -380,6 +426,7 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 	}
 	new_dim1, _ := dim1.(int)
 	new_dim2, _ := dim1.(int)
+
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
 	if curr_type != nil {
@@ -623,7 +670,7 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 }
 
 func NewFunctionType(type_ Attrib) (types.CoreType, error) {
-	ResetLocalMemory();
+	ResetLocalMemory()
 	if type_ == nil {
 		return types.Null, nil
 	}
@@ -634,6 +681,8 @@ func ResetLocalMemory() {
 	vmemory.ResetLocalMemory()
 	paramOrder = 0
 	globalCurrentScope = nil
+	paramCounter = 0
+	paramsList = nil
 }
 
 /*
@@ -782,6 +831,7 @@ func NewIdConst(id Attrib) (*Constant, error) {
 		return nil, errors.New(fmt.Sprint("Variable ", str_val, " has not been declared"))
 	}
 	addr, ok := globalVarTable.Table()[str_val] // Checking varTable
+
 	if !ok {
 		return nil, errors.New(fmt.Sprint("Variable", str_val, "has not been declared"))
 	}
@@ -921,7 +971,6 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 		curr_quads = append(curr_quads, curr_quad)
 
 	}
-	fmt.Println("Output quads", curr_quads)
 	return curr_quads, nil
 }
 
@@ -933,17 +982,19 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 		if !ok {
 			return nil, errors.New("problem casting constant in output")
 		}
-		new_id = &Exp{nil,nil,nil,curr_quads}
+		new_id = &Exp{nil, nil, nil, curr_quads}
 	}
 	return append([]*Exp{new_id}, id_list...), nil // Prepend (Add first)
 }
 
 func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
 	curr_top, ok := globalStackOperands.Top()
+	// TODO: Add func id in return quad
 	if !ok {
 		return nil, errors.New("stack is empty in return")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
+
 	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
 	return []quadruples.Cuadruplo{curr_quad}, nil
 }

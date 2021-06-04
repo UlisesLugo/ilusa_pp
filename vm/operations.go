@@ -542,14 +542,21 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 	}
 
 	// Push to prev functions
+	// Create new context
 	callStackLen := len(vm.mm.callStack)
 	var topCall *MemoryBlock
 	if callStackLen > 0 {
 		topCall = vm.mm.callStack[callStackLen-1]
 		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
 	}
+
+	// Check if func has return type
+	// if funcR.ReturnValue() != 5 { // is not null
+	// 	assign_err := vm.Assign()
+	// }
+
 	// save current ip
-	str_ip := strconv.Itoa(vm.ip + 1)
+	str_ip := strconv.Itoa(vm.ip)
 	vm.jumps = vm.jumps.Push(str_ip)
 
 	// Unconditional jump
@@ -598,6 +605,7 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 		return err_left
 	}
 	fmt.Println("leftV ", left_val)
+
 	callStackLen := len(vm.mm.callStack)
 
 	var funcCall *MemoryBlock
@@ -609,7 +617,7 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 	// TODO: Check type of param
 
 	// Set param
-	funcCall.SetValue(left, left_val)
+	funcCall.SetValue(res, left_val)
 	return nil
 }
 
@@ -618,7 +626,31 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	if err_res != nil {
 		return err_res
 	}
-	vm.mm.SetValue(res, res_val)
+	// vm.mm.SetValue(res, res_val)
+
+	// Get func row of curr call stack
+	callStackLen := len(vm.mm.callStack)
+	var currFunc *MemoryBlock
+	if callStackLen != 0 {
+		currFunc = vm.mm.callStack[callStackLen-1]
+	}
+
+	currFuncId := currFunc.id
+
+	// Get address of global variable of function
+	var funcR tables.FuncRow
+	// Get func row
+	for i := range vm.funcTable {
+		fr := vm.funcTable[i]
+
+		if fr.Id() == currFuncId {
+			funcR = fr
+			break
+		}
+	}
+
+	vm.mm.SetValue(funcR.Return_address, res_val)
+	fmt.Println("Global var:", funcR)
 
 	// End - pop from call stack and prev functions
 	// Pop from prevFunctions
@@ -627,10 +659,23 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 		vm.mm.prevFuncsStack = vm.mm.prevFuncsStack[:prevFuncLen-1]
 	}
 	// Pop from call stack
-	callStackLen := len(vm.mm.callStack)
 	if callStackLen != 0 {
 		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
 	}
+
+	// update ip
+	top_ip, ok := vm.jumps.Top()
+	if !ok {
+		return errors.New("Couldn't get top of vm jumps.")
+	}
+	vm.jumps.Pop()
+
+	top_ip_int, err_ip := strconv.Atoi(top_ip)
+	if err_ip != nil {
+		return errors.New("Problem casting top ip to integer")
+	}
+	// Return tu destination
+	vm.ip = top_ip_int
 
 	return nil
 }

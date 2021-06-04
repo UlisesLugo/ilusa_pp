@@ -45,6 +45,8 @@ func NewMemoryBlock(context_id string, context_start int) *MemoryBlock {
 func (mb *MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 	idx := addr - mb.baseAddr
 
+	fmt.Println(idx)
+
 	switch {
 	case idx < memory.IntOffset:
 		return nil, errors.New("Invalid negative address.")
@@ -144,11 +146,12 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		mb.temp_floats[typeAddr] = float64(val.(float64))
 		return nil
 	case idx >= 7000 && idx < 8000: // char temp
-		typeAddr := int(idx - memory.CharOffset)
+		typeAddr := int(idx - memory.TempCharOffset)
 		mb.temp_chars[typeAddr] = val.(rune)
 		return nil
 	case idx >= 8000 && idx < 9000: // bool temp
-		typeAddr := int(idx - memory.BoolOffset)
+		typeAddr := int(idx - memory.TempBoolOffset)
+		fmt.Println("array index", typeAddr)
 		mb.temp_bools[typeAddr] = val.(int)
 		return nil
 	}
