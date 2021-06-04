@@ -39,7 +39,7 @@ func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 
 	tests := []string{
-		"../tests/fib_rec.isa",
+		"../tests/array_test_1.isa",
 	}
 
 	for _, test := range tests {

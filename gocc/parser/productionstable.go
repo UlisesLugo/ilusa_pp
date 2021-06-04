@@ -292,13 +292,13 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV3 : "[" cte_i "]"	<< ast.NewIntConst(X[1]) >>`,
+		String: `DV3 : "[" cte_i "]"	<< X[1], nil >>`,
 		Id:         "DV3",
 		NTType:     17,
 		Index:      27,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewIntConst(X[1])
+			return X[1], nil
 		},
 	},
 	ProdTabEntry{
@@ -332,63 +332,63 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV5	<< ast.NewVariable(nil,X[1],0,0, X[2]) >>`,
+		String: `DV5 : "," id DV5	<< ast.NewVariable(nil,X[1],0,0,X[2]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      31,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(nil,X[1],0,0, X[2])
+			return ast.NewVariable(nil,X[1],0,0,X[2])
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],0, X[3]) >>`,
+		String: `DV5 : "," id DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],0,X[3]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      32,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(nil,X[1],X[2],0, X[3])
+			return ast.NewVariable(nil,X[1],X[2],0,X[3])
 		},
 	},
 	ProdTabEntry{
-		String: `DV5 : "," id DV3 DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],X[3], X[4]) >>`,
+		String: `DV5 : "," id DV3 DV3 DV5	<< ast.NewVariable(nil,X[1],X[2],X[3],X[4]) >>`,
 		Id:         "DV5",
 		NTType:     19,
 		Index:      33,
 		NumSymbols: 5,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(nil,X[1],X[2],X[3], X[4])
+			return ast.NewVariable(nil,X[1],X[2],X[3],X[4])
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id	<< ast.NewVariable(X[0],X[1],0,0, nil) >>`,
+		String: `DV6 : TIP_SIMP id	<< ast.NewVariable(X[0],X[1],nil,nil,nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      34,
 		NumSymbols: 2,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[0],X[1],0,0, nil)
+			return ast.NewVariable(X[0],X[1],nil,nil,nil)
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id DV3	<< ast.NewVariable(X[0],X[1],X[2],0, nil) >>`,
+		String: `DV6 : TIP_SIMP id DV3	<< ast.NewVariable(X[0],X[1],X[2],nil,nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      35,
 		NumSymbols: 3,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[0],X[1],X[2],0, nil)
+			return ast.NewVariable(X[0],X[1],X[2],nil,nil)
 		},
 	},
 	ProdTabEntry{
-		String: `DV6 : TIP_SIMP id DV3 DV3	<< ast.NewVariable(X[0],X[1],X[2],X[3], nil) >>`,
+		String: `DV6 : TIP_SIMP id DV3 DV3	<< ast.NewVariable(X[0],X[1],X[2],X[3],nil) >>`,
 		Id:         "DV6",
 		NTType:     20,
 		Index:      36,
 		NumSymbols: 4,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
-			return ast.NewVariable(X[0],X[1],X[2],X[3], nil)
+			return ast.NewVariable(X[0],X[1],X[2],X[3],nil)
 		},
 	},
 	ProdTabEntry{

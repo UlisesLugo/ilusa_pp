@@ -40,15 +40,15 @@ ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 DV : "variables" "{" DV1 "}" << $2, nil >>;
 DV1 : empty | DV2 ";" DV1 << ast.NewBlockVariables($0,$2) >> ;
 DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
-DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
+DV3 : "[" cte_i "]" << $1, nil >> ;
 DV4 : empty | "," id DV4 ;
 DV5 : empty 
- | "," id DV5<< ast.NewVariable(nil,$1,0,0, $2) >>
- | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,0, $3) >> 
- | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3, $4) >> ;
-DV6 : TIP_SIMP id << ast.NewVariable($0,$1,0,0, nil) >> 
- |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,0, nil) >> 
- |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3, nil) >> ;
+ | "," id DV5<< ast.NewVariable(nil,$1,0,0,$2) >>
+ | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,0,$3) >> 
+ | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3,$4) >> ;
+DV6 : TIP_SIMP id << ast.NewVariable($0,$1,nil,nil,nil) >> 
+ |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,nil,nil) >> 
+ |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3,nil) >> ;
 
 TIP_SIMP : "int" << types.Integer, nil >>
  | "char"  << types.Char, nil >>
