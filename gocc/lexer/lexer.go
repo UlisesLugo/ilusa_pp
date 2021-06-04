@@ -16,32 +16,20 @@ const (
 )
 
 type Lexer struct {
-	src     []byte
-	pos     int
-	line    int
-	column  int
-	Context token.Context
+	src    []byte
+	pos    int
+	line   int
+	column int
 }
 
 func NewLexer(src []byte) *Lexer {
 	lexer := &Lexer{
-		src:     src,
-		pos:     0,
-		line:    1,
-		column:  1,
-		Context: nil,
+		src:    src,
+		pos:    0,
+		line:   1,
+		column: 1,
 	}
 	return lexer
-}
-
-// SourceContext is a simple instance of a token.Context which
-// contains the name of the source file.
-type SourceContext struct {
-	Filepath string
-}
-
-func (s *SourceContext) Source() string {
-	return s.Filepath
 }
 
 func NewLexerFile(fpath string) (*Lexer, error) {
@@ -49,17 +37,14 @@ func NewLexerFile(fpath string) (*Lexer, error) {
 	if err != nil {
 		return nil, err
 	}
-	lexer := NewLexer(src)
-	lexer.Context = &SourceContext{Filepath: fpath}
-	return lexer, nil
+	return NewLexer(src), nil
 }
 
 func (l *Lexer) Scan() (tok *token.Token) {
-	tok = &token.Token{}
+	tok = new(token.Token)
 	if l.pos >= len(l.src) {
 		tok.Type = token.EOF
 		tok.Pos.Offset, tok.Pos.Line, tok.Pos.Column = l.pos, l.line, l.column
-		tok.Pos.Context = l.Context
 		return
 	}
 	start, startLine, startColumn, end := l.pos, l.line, l.column, 0
@@ -118,7 +103,6 @@ func (l *Lexer) Scan() (tok *token.Token) {
 		tok.Lit = []byte{}
 	}
 	tok.Pos.Offset, tok.Pos.Line, tok.Pos.Column = start, startLine, startColumn
-	tok.Pos.Context = l.Context
 
 	return
 }
