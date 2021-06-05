@@ -212,6 +212,7 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	if !ok {
 		return nil, errors.New("problem reading function")
 	}
+	fmt.Println("New function call", globalFuncTable)
 	if globalFuncTable == nil || globalFuncTable.Table() == nil {
 		return nil, errors.New(fmt.Sprint("undefined function ", val))
 	}
@@ -950,6 +951,7 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 }
 
 func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
+	fmt.Println("In return",globalStackOperands)
 	curr_top, ok := globalStackOperands.Top()
 	// TODO: Add func id in return quad
 	if !ok {

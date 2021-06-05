@@ -76,7 +76,8 @@ LLAM : id "(" LLAM1 ")" << ast.NewFunctionCall($0,$2) >>;
 LLAM1 : empty | H_EXP LLAM2 << ast.NewFunctionParam($0,$1) >>;
 LLAM2 : empty | "," H_EXP LLAM2 << ast.NewFunctionParam($1,$2) >>;
 
-RET : "return" "(" H_EXP ")" ";" << ast.Return($2) >>;
+RET : "return" "(" H_EXP ")" ";" << ast.Return($2) >>
+| "return" "(" LLAM ")" ";" << ast.Return($2) >>;
 
 LEC : "input" "(" VAR LEC1 ")" ";" << ast.NewInput($2,$3) >>;
 LEC1 : empty | "," VAR LEC1 << ast.NewInput($1,$2) >>;
