@@ -1,0 +1,1 @@
+{"Consts":{},"Quads":[{"Op":"GOTO","Var1":"-1","Var2":"-1","Res":"1"},{"Op":"WRITE","Var1":"-1","Var2":"-1","Res":"\"isa\""},{"Op":"END","Var1":"-1","Var2":"-1","Res":"-1"}]}
