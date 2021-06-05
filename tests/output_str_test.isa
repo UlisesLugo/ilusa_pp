@@ -1,0 +1,4 @@
+Program linearFuncTest :
+  main () {
+      output("isa");
+  }

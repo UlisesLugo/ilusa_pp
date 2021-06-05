@@ -265,14 +265,14 @@ func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo, error) {
 		return nil, errors.New("problem casting expression in new func")
 	}
 	curr_quads = append(curr_quads, new_exp.Quads()...)
-	
+
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top() // Get result
 	if !ok {
 		return nil, errors.New("expected param")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
-	
+
 	fmt.Println("HEREEEEEEEEEEEEEEE", paramsList, paramCounter)
 	// Get top of params list
 	curr_p := ""
@@ -952,10 +952,20 @@ func FinishOutput(idList Attrib) ([]quadruples.Cuadruplo, error) {
 func NewOutput(id, idList Attrib) ([]*Exp, error) {
 	new_id, ok := id.(*Exp)
 	id_list, _ := idList.([]*Exp)
+
 	if !ok {
 		curr_quads, ok := id.([]quadruples.Cuadruplo)
+		fmt.Println("OUTPUT ID:", id)
 		if !ok {
-			return nil, errors.New("problem casting constant in output")
+			// try to cast to string
+			id_tok, ok_str := id.(*token.Token)
+			id_str := string(id_tok.Lit)
+			fmt.Println("OUTPUT STRING:", id_str)
+			if !ok_str {
+				return nil, errors.New("problem casting constant in output")
+			}
+			// push id to operands stack
+			globalStackOperands = append(globalStackOperands, id_str)
 		}
 		new_id = &Exp{nil, nil, nil, curr_quads}
 	}
