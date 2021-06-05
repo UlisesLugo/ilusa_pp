@@ -180,6 +180,7 @@ func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]qu
 		new_func_quads, _ := rest_func.([]quadruples.Cuadruplo)
 		curr_quads = append(curr_quads, new_func_quads...)
 	}
+	paramCounter = 0
 	return curr_quads, nil
 }
 
@@ -253,6 +254,7 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 		globalStackOperands = globalStackOperands.Push(fmt.Sprint(current_address))
 		curr_quads = append(curr_quads, assign_quad)
 	}
+	paramCounter = 0
 	return curr_quads, nil
 }
 
@@ -263,14 +265,15 @@ func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo, error) {
 		return nil, errors.New("problem casting expression in new func")
 	}
 	curr_quads = append(curr_quads, new_exp.Quads()...)
-
+	
 	// get operand 1
 	curr_top1, ok := globalStackOperands.Top() // Get result
 	if !ok {
 		return nil, errors.New("expected param")
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
-
+	
+	fmt.Println("HEREEEEEEEEEEEEEEE", paramsList, paramCounter)
 	// Get top of params list
 	curr_p := ""
 	var addr_res memory.Address
