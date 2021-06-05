@@ -11,10 +11,10 @@ function int fib(int n) {
     }
     n = n - 1;
     output(n);
-    return(fib(n-1));
+    return(fib(n));
   }
 }
 
 main() {
-  output(fib(2));
+  output(fib(3));
 }

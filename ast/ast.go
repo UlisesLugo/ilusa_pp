@@ -973,7 +973,13 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 }
 
 func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
-	fmt.Println("In return", globalStackOperands)
+	curr_quads := make([]quadruples.Cuadruplo,0)
+
+	cuad_list, q_ok := exp.([]quadruples.Cuadruplo)
+	if q_ok {
+		curr_quads = append(curr_quads, cuad_list...)
+	}
+
 	curr_top, ok := globalStackOperands.Top()
 	// TODO: Add func id in return quad
 	if !ok {
@@ -982,5 +988,6 @@ func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
 	globalStackOperands, _ = globalStackOperands.Pop()
 
 	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
-	return []quadruples.Cuadruplo{curr_quad}, nil
+	curr_quads = append(curr_quads, curr_quad)
+	return curr_quads, nil
 }
