@@ -419,10 +419,10 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 		return nil, errors.New("Problem in casting id token")
 	}
 	new_dim1 := 1
-	if dim1 != nil {
-		curr_dim, _ := dim1.(*token.Token).Int32Value()
-		new_dim1 = int(curr_dim)
-	}
+	// if dim1 != nil {
+	// 	curr_dim, _ := dim1.(*token.Token).Int32Value()
+	// 	new_dim1 = int(curr_dim)
+	// }
 
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
