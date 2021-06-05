@@ -8,7 +8,8 @@ import (
 	"github.com/uliseslugo/ilusa_pp/tables"
 )
 
-
+// Parses GOTO and GOTOF instructions by offsetting according to the location
+// and to the stack, which is modified by the START_GO and END_GO instructions
 func ParseQuadruples(quads_list []Cuadruplo) {
 	loc_stack := make([]int,0)
 	for i, quad := range quads_list[1:] {

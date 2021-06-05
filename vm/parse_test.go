@@ -39,7 +39,7 @@ func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 
 	tests := []string{
-		"../tests/while_test_2.isa",
+		"../tests/fib_rec.isa",
 	}
 
 	for _, test := range tests {
@@ -95,20 +95,20 @@ func TestDuck(t *testing.T) {
 			// testing vm
 			newVM.ReadJSON()
 
-			fmt.Println("Constants now are", newVM.constants)
-			fmt.Println("Quads in runtime memory:")
-			for _, q := range newVM.quads {
-				fmt.Println(q)
-			}
+			//fmt.Println("Constants now are", newVM.constants)
+			// fmt.Println("Quads in runtime memory:")
+			// for _, q := range newVM.quads {
+			// 	fmt.Println(q)
+			// }
 
-			fmt.Println("Constants in virtual machine:")
-			for key, element := range newVM.constants {
-				fmt.Println(key, element)
-			}
+			// fmt.Println("Constants in virtual machine:")
+			// for key, element := range newVM.constants {
+			// 	fmt.Println(key, element)
+			// }
 
-			fmt.Println("Function table in Virtual machine")
+			//fmt.Println("Function table in Virtual machine")
 			newVM.funcTable = funcDir
-			fmt.Println(newVM.funcTable)
+			//fmt.Println(newVM.funcTable)
 
 			newVM.RunMachine()
 
