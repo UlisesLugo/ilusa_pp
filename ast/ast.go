@@ -79,14 +79,14 @@ func NewProgram(id, func_est, main_est Attrib) (*Program, error) {
 	globalCurrQuads = append(globalCurrQuads, func_quads...)
 
 	// prepend main quad with position of one after the function quads number
-	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter + 1)} 
+	main_quad := quadruples.Cuadruplo{"GOTO", "-1", "-1", fmt.Sprint(quadsCounter + 1)}
 	globalCurrQuads = append([]quadruples.Cuadruplo{main_quad}, globalCurrQuads...)
 
 	// Append main statements to global quads
 	est_quads, ok := main_est.([]quadruples.Cuadruplo)
 	globalCurrQuads = append(globalCurrQuads, est_quads...)
 
-	// Append the end quadruple 
+	// Append the end quadruple
 	end_quad := quadruples.Cuadruplo{"END", "-1", "-1", "-1"}
 	globalCurrQuads = append(globalCurrQuads, end_quad)
 
@@ -233,11 +233,11 @@ func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
 	sub_quad := quadruples.Cuadruplo{"GOSUB", "-1", "-1", func_row.Id()}
 	curr_quads = append(curr_quads, sub_quad)
 
-	// Get address of function
+	// Get address of function  - return address
 
 	// Add return value
 	if func_row.ReturnValue() != types.Null {
-		current_address, err_addr := vmemory.NextGlobalTemp(func_row.ReturnValue(),1)
+		current_address, err_addr := vmemory.NextGlobalTemp(func_row.ReturnValue(), 1)
 		if err_addr != nil {
 			fmt.Println("Error in new global temp: ", err_addr)
 		}
@@ -447,7 +447,7 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 			fmt.Println("Error in new local temp: ", err_addr)
 		}
 	} else {
-		fmt.Println("Setting global temp",new_dim1)
+		fmt.Println("Setting global temp", new_dim1)
 		// choose global context
 		current_address, err_addr = vmemory.NextGlobalTemp(row.Type(), new_dim1)
 		if err_addr != nil {
@@ -753,7 +753,7 @@ func createBinaryQuadruple(new_op semantic.Operation) []quadruples.Cuadruplo {
 		} else {
 			// choose global context
 			fmt.Println("No global current scope")
-			current_address, err_addr = vmemory.NextGlobalTemp(cube_type,1)
+			current_address, err_addr = vmemory.NextGlobalTemp(cube_type, 1)
 			if err_addr != nil {
 				fmt.Println("Error in new global temp: ", err_addr)
 			}
@@ -907,7 +907,7 @@ func GetIdDimConst(id, dim1, dim2 Attrib) (*Constant, error) {
 	// TODO (Access id address from vartable scope instead of curr address)
 	// TODO (Check dimensions)
 	// calculate current address occuppied in context
-	current_address, _ := vmemory.NextGlobalTemp(types.Ids,1) // TODO Check Types (Validate type with semantic cube)
+	current_address, _ := vmemory.NextGlobalTemp(types.Ids, 1) // TODO Check Types (Validate type with semantic cube)
 	return &Constant{string(val.Lit), val, types.Ids, current_address}, nil
 }
 
@@ -951,7 +951,7 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 }
 
 func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
-	fmt.Println("In return",globalStackOperands)
+	fmt.Println("In return", globalStackOperands)
 	curr_top, ok := globalStackOperands.Top()
 	// TODO: Add func id in return quad
 	if !ok {
