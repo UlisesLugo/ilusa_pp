@@ -55,12 +55,13 @@ TIP_SIMP : "int" << types.Integer, nil >>
  | "float" << types.Float, nil >>;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($1,$2,$4,$7,$10,$11,$14) >> ;
+F : "function" F5 "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($1,$3,$6,$9,$10,$13) >> ;
 F1 : TIP_SIMP << ast.NewFunctionType($0) >>
 | "void" << ast.NewFunctionType(nil) >> ;
 F2 : empty | TIP_SIMP id F3 << ast.NewFunctionAttrib($0,$1,$2) >> ;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunctionAttrib($1,$2,$3) >> ;
 F4 : empty | F ;
+F5 : F1 id << ast.NewFunctionId($0,$1) >> ;
 
 EST : AS 
  | DEC

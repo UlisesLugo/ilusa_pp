@@ -35,6 +35,7 @@ var paramOrder int
 
 var paramsList []string
 var paramCounter int
+var currFunc string
 
 func init() {
 	// Global definitions
@@ -116,32 +117,10 @@ func NewClass(id Attrib) (string, error) {
 	creates a function entry for table and
 	returns the quadruples corresponding to the full function
 */
-func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
-	tok, ok := id.(*token.Token)
-	if !ok {
-		return nil, errors.New("problem reading function")
-	}
-	idName := string(tok.Lit)
-	curr_type := type_.(types.CoreType)
-
-	// Initializing func row
-	row := new(tables.FuncRow)
-	row.SetId(idName)
-	row.SetReturnValue(curr_type)
-
-	// set global variable for returning value in recursion
-	varR := &tables.VarRow{}
-	varR.SetId(idName)
-	varR.SetType(curr_type)
-	if curr_type != 5 {
-		addr, err_addr := vmemory.NextGlobal(curr_type)
-		if err_addr != nil {
-			return nil, errors.New("error setting global variable for return.")
-		}
-		varR.SetDirV(addr)
-	}
-	row.Return_address = varR.DirV()
-	globalVarTable.Table()[idName] = varR // setting global variable for return
+func NewFunction(id, attrib_map, var_map, est, est_list, rest_func Attrib) ([]quadruples.Cuadruplo, error) {
+	curr_id := id.(string)
+	row := globalFuncTable.Table()[curr_id]
+	fmt.Println("In new function remastered", row)
 
 	// Initialize function attributes
 	function_map := make(map[string]*tables.VarRow)
@@ -176,14 +155,13 @@ func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib
 	new_var_table.SetParent(globalVarTable) // Sets global table as parent
 	new_var_table.SetTable(function_map)
 	row.SetLocalVars(new_var_table) // To func row
-	globalFuncTable.AddRow(row)
 	// TODO Add type checking and check to repeated func
 
 	//////////////////////////////
 	// Add quadruples for function
 	//////////////////////////////
 	curr_quads := make([]quadruples.Cuadruplo, 0)
-	start_func := quadruples.Cuadruplo{"START_FUNC", "-1", "-1", idName}
+	start_func := quadruples.Cuadruplo{"START_FUNC", "-1", "-1", curr_id}
 	curr_quads = append(curr_quads, start_func)
 
 	// Add inner statements
@@ -203,6 +181,36 @@ func NewFunction(type_, id, attrib_map, var_map, est, est_list, rest_func Attrib
 		curr_quads = append(curr_quads, new_func_quads...)
 	}
 	return curr_quads, nil
+}
+
+func NewFunctionId(type_, id Attrib) (string, error) {
+	tok, _ := id.(*token.Token)
+	val := string(tok.Lit)
+	curr_type := type_.(types.CoreType)
+	currFunc = val
+
+	// Initializing func row
+	row := new(tables.FuncRow)
+	row.SetId(val)
+	row.SetReturnValue(curr_type)
+
+	// set global variable for returning value in recursion
+	varR := &tables.VarRow{}
+	varR.SetId(val)
+	varR.SetType(curr_type)
+	if curr_type != 5 {
+		addr, err_addr := vmemory.NextGlobal(curr_type)
+		if err_addr != nil {
+			return "", errors.New("error setting global variable for return.")
+		}
+		varR.SetDirV(addr)
+	}
+	row.Return_address = varR.DirV()
+	globalVarTable.Table()[val] = varR // setting global variable for return
+
+	globalFuncTable.AddRow(row)
+	fmt.Println("In new function id:", val)
+	return val, nil
 }
 
 func NewFunctionCall(id, params Attrib) ([]quadruples.Cuadruplo, error) {
@@ -419,10 +427,10 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 		return nil, errors.New("Problem in casting id token")
 	}
 	new_dim1 := 1
-	if dim1 != nil {
-		curr_dim, _ := dim1.(*token.Token).Int32Value()
-		new_dim1 = int(curr_dim)
-	}
+	// if dim1 != nil {
+	// 	curr_dim, _ := dim1.(*token.Token).Int32Value()
+	// 	new_dim1 = int(curr_dim)
+	// }
 
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
@@ -681,6 +689,7 @@ func ResetLocalMemory() {
 	globalCurrentScope = nil
 	paramCounter = 0
 	paramsList = nil
+	currFunc = ""
 }
 
 /*
