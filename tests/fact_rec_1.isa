@@ -17,5 +17,5 @@ function int fact(int n) {
 }
 
 main() {
-  output(fact(3));
+  output(fact(2));
 }

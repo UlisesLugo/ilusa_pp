@@ -530,11 +530,6 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
 	}
 
-	// Check if func has return type
-	// if funcR.ReturnValue() != 5 { // is not null
-	// 	assign_err := vm.Assign()
-	// }
-
 	// save current ip
 	str_ip := strconv.Itoa(vm.ip)
 	vm.jumps = vm.jumps.Push(str_ip)
@@ -602,18 +597,23 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 
 func (vm *VirtualMachine) Return(res memory.Address) error {
 	res_val, err_res := vm.mm.GetValue(res)
+	fmt.Println("RESULT_VAL IN RETURN", res_val)
 	if err_res != nil {
 		return err_res
 	}
 
 	// Get func row of curr call stack
 	callStackLen := len(vm.mm.callStack)
+
 	var currFunc *MemoryBlock
+	currFuncId := ""
+
 	if callStackLen != 0 {
 		currFunc = vm.mm.callStack[callStackLen-1]
+		currFuncId = currFunc.id
 	}
 
-	currFuncId := currFunc.id
+	fmt.Println("RESULT_VAL IN RETURN 2", res_val)
 
 	// Get address of global variable of function
 	var funcR tables.FuncRow
@@ -640,19 +640,27 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
 	}
 
-	// update ip
-	top_ip, ok := vm.jumps.Top()
-	if !ok {
-		return errors.New("Couldn't get top of vm jumps.")
-	}
-	vm.jumps.Pop()
+	// // update ip
+	// top_ip, ok := vm.jumps.Top()
+	// if !ok {
+	// 	return errors.New("Couldn't get top of vm jumps.")
+	// }
+	// vm.jumps.Pop()
 
-	top_ip_int, err_ip := strconv.Atoi(top_ip)
-	if err_ip != nil {
-		return errors.New("Problem casting top ip to integer")
-	}
+	// top_ip_int, err_ip := strconv.Atoi(top_ip)
+	// if err_ip != nil {
+	// 	return errors.New("Problem casting top ip to integer")
+	// }
+
 	// Return tu destination
-	vm.ip = top_ip_int
+	if len(vm.jumps) == 0 {
+		vm.ip = len(vm.quads) - 1 // ends
+	} else {
+		str_ip, _ := vm.jumps.Top()
+		vm.jumps.Pop()
+		vm.ip, _ = strconv.Atoi(str_ip)
+		fmt.Println("GOING TO QUAD", vm.ip)
+	}
 
 	return nil
 }
