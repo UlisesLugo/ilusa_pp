@@ -532,10 +532,10 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 	// vm.jumps = vm.jumps.Push(str_ip)
 	// fmt.Println("Pushed jump: ", str_ip)
 
-	// Save current ip - JUMP ERROR
-	// str_ip := strconv.Itoa(vm.ip + 1)
-	// vm.jumps = vm.jumps.Push(str_ip)
-	// fmt.Println("Pushed jump: ", str_ip)
+	//Save current ip - JUMP ERROR
+	str_ip := strconv.Itoa(vm.ip)
+	vm.jumps = vm.jumps.Push(str_ip)
+	fmt.Println("Pushed jump: ", str_ip)
 
 	// Unconditional jump
 	vm.ip = int(funcR.Address())
