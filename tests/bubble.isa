@@ -1,0 +1,49 @@
+Program factit :
+  variables{
+    int a[5],i, n, x, j, temp, k, left, right;
+  }
+
+  main () {
+    i = 0;
+    n = 4;
+    a[0] = 5;
+    a[1] = 4;
+    a[2] = 3;
+    a[3] = 2;
+    a[4] = 1;
+  
+    output("Unsorted Array:");
+    output(a[0]);
+    output(a[1]);
+    output(a[2]);
+    output(a[3]);
+    output(a[4]);
+
+    while(i < n){
+      x = n - i;
+      j = 0;
+      while(j < x){
+        k = j + 1;
+        output("------");
+        left = a[j];
+        right = a[k];
+        output(left);
+        output(right);
+        if (left > right) {
+          output(a[j]);
+          output(a[k]);
+          a[j] = right;
+          a[k] = left;
+        }
+        j = k;
+      }
+      i = i + 1;
+    }
+
+    output("Sorted Array:");
+    output(a[0]);
+    output(a[1]);
+    output(a[2]);
+    output(a[3]);
+    output(a[4]);
+  }
