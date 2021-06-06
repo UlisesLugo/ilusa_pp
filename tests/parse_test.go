@@ -39,7 +39,7 @@ func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 
 	tests := []string{
-		"../tests/fib_rec_2.isa",
+		"../tests/small_rec_1.isa",
 	}
 
 	for _, test := range tests {
@@ -85,7 +85,7 @@ func TestDuck(t *testing.T) {
 			enc.Encode(obj_map)
 
 			for cuad := range prog.Quads() {
-				fmt.Println(prog.Quads()[cuad])
+				fmt.Println(cuad, " ", prog.Quads()[cuad])
 			}
 		}
 	}

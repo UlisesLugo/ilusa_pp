@@ -1,0 +1,21 @@
+Program factorial :
+variables{
+  int b;
+}
+function int fact(int n) {
+  variables {
+    int sum,res;
+  }
+  body{
+    if (n == 1) {
+      return(1);
+    }
+    sum = fact(n-1);
+    res = n * sum;
+    return(res);
+  }
+}
+
+main() {
+  output(fact(6));
+}

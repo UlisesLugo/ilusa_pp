@@ -2,7 +2,6 @@ package vm
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
@@ -82,19 +81,19 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 	checks the context of the address and calls setValue of given context
 **/
 func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
-	fmt.Println("Address to set", addr)
+	//fmt.Println("Address to set", addr)
 	switch {
 	case addr < memory.GlobalContext: // < 0
 		return errors.New("Address out of scope.")
 	case addr < memory.LocalContext: // Referring to Global var 0 - 8000
-		fmt.Println("g set")
+		//fmt.Println("g set")
 		err := mm.mem_global.SetValue(addr, val)
 		if err != nil {
 			return err
 		}
 		return nil
 	case addr < memory.ConstantsContext: // Referring to Local var 8 - 16
-		fmt.Println("local set")
+		//fmt.Println("local set")
 		if len(mm.prevFuncsStack) > 0 {
 			top := mm.prevFuncsStack[len(mm.prevFuncsStack)-1]
 			err := top.SetValue(addr, val)
@@ -102,7 +101,7 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 				return err
 			}
 		} else { // no functions
-			fmt.Println("setting to local")
+			//fmt.Println("setting to local")
 			err := mm.mem_local.SetValue(addr, val)
 			if err != nil {
 				return err
@@ -110,15 +109,12 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		}
 		return nil
 	case addr < memory.PointersContext: // Referring to Constant 16 - 20
-		fmt.Println("constant set")
-		fmt.Println("Constant addr", addr)
 		err := mm.mem_constant.SetValue(addr, val)
 		if err != nil {
 			return err
 		}
 		return nil
 	case addr < memory.Scopestart: // Referring to Pointers 20 - 30
-		fmt.Println("main set")
 		err := mm.mem_pointers.SetValue(addr, val)
 		if err != nil {
 			return err

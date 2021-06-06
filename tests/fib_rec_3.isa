@@ -1,0 +1,22 @@
+Program fibonacci :
+variables{
+  int i;
+}
+function int fib(int n) {
+  variables {
+    int a;
+    int b;
+  }
+  body{
+    if (n == 1) {
+      return(0);
+    }
+    a = n - 1;
+    b = n - 2;
+    return(fib(a) + fib(b));
+  }
+}
+
+main() {
+  output(fib(3));
+}

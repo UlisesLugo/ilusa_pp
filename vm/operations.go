@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -12,7 +13,6 @@ import (
 // Arithmetic operations
 
 func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
-	fmt.Println("left", left)
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
@@ -37,7 +37,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
-		fmt.Println("int res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			fmt.Println("Error setting int value")
@@ -47,7 +46,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	}
 
 	result := left_flt + right_flt
-	fmt.Println("flt res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -77,7 +75,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num - right_num
-		fmt.Println("res int", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -86,7 +83,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 	}
 
 	result := left_flt - right_flt
-	fmt.Println("res flt", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -117,8 +113,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num * right_num
-		fmt.Println("res", result)
-		fmt.Println("Result Address", res)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -127,7 +121,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 	}
 
 	result := left_flt * right_flt
-	fmt.Println("res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -158,7 +151,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num / right_num
-		fmt.Println("res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -167,7 +159,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 	}
 
 	result := left_flt / right_flt
-	fmt.Println("res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -226,7 +217,6 @@ func (vm *VirtualMachine) GreaterT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -269,7 +259,6 @@ func (vm *VirtualMachine) LessT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -312,7 +301,6 @@ func (vm *VirtualMachine) EqualT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -355,7 +343,6 @@ func (vm *VirtualMachine) NotEqualT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -397,7 +384,6 @@ func (vm *VirtualMachine) And(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -438,7 +424,6 @@ func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -469,7 +454,6 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 		int_res = 1
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -477,7 +461,7 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	return nil
 }
 
-func (vm *VirtualMachine) Write(res memory.Address) error {
+func (vm *VirtualMachine) Write(res memory.Address, f *os.File) error {
 	result, err_res := vm.mm.GetValue(res)
 
 	if err_res != nil {
@@ -485,10 +469,7 @@ func (vm *VirtualMachine) Write(res memory.Address) error {
 		return err_res
 	}
 
-	// Print results
-	fmt.Println("-----------------------------")
-	fmt.Println("Output: ", result)
-	fmt.Println("-----------------------------")
+	fmt.Fprintf(f, fmt.Sprintf("%v\n", result))
 	return nil
 }
 
@@ -514,10 +495,7 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 		return err_ln
 	}
 
-	fmt.Println("Value found for GOTOF", left_num)
-
 	if left_num == 0 {
-		fmt.Println("Falso")
 		vm.ip = jump
 		fmt.Println("Jump to: ", vm.ip)
 	} else {
@@ -530,6 +508,14 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 // Functions operations
 
 func (vm *VirtualMachine) Gosub(funcId string) error {
+	// Push to prev functions
+	callStackLen := len(vm.mm.callStack)
+	var topCall *MemoryBlock
+	if callStackLen > 0 {
+		topCall = vm.mm.callStack[callStackLen-1]
+		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
+	}
+
 	var funcR tables.FuncRow
 	// Get func row
 	for i := range vm.funcTable {
@@ -541,26 +527,14 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 		}
 	}
 
-	// Push to prev functions
-	// Create new context
-	callStackLen := len(vm.mm.callStack)
-	var topCall *MemoryBlock
-	if callStackLen > 0 {
-		topCall = vm.mm.callStack[callStackLen-1]
-		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
-	}
-
-	// Check if func has return type
-	// if funcR.ReturnValue() != 5 { // is not null
-	// 	assign_err := vm.Assign()
-	// }
-
-	// save current ip
-	str_ip := strconv.Itoa(vm.ip)
+	//Save current ip - JUMP ERROR
+	str_ip := strconv.Itoa(vm.ip + 1)
 	vm.jumps = vm.jumps.Push(str_ip)
+	fmt.Println("Pushed jump: ", str_ip)
 
 	// Unconditional jump
 	vm.ip = int(funcR.Address())
+	fmt.Println("New jump to:", vm.ip)
 	return nil
 }
 
@@ -581,7 +555,7 @@ func (vm *VirtualMachine) EndFunc() error {
 	if !ok {
 		return errors.New("Couldn't get top of vm jumps.")
 	}
-	vm.jumps.Pop()
+	vm.jumps, _ = vm.jumps.Pop()
 
 	top_ip_int, err_ip := strconv.Atoi(top_ip)
 	if err_ip != nil {
@@ -604,7 +578,6 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 	if err_left != nil {
 		return err_left
 	}
-	fmt.Println("leftV ", left_val)
 
 	callStackLen := len(vm.mm.callStack)
 
@@ -614,8 +587,6 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 		funcCall = vm.mm.callStack[callStackLen-1]
 	}
 
-	// TODO: Check type of param
-
 	// Set param
 	funcCall.SetValue(res, left_val)
 	return nil
@@ -623,19 +594,21 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 
 func (vm *VirtualMachine) Return(res memory.Address) error {
 	res_val, err_res := vm.mm.GetValue(res)
+	fmt.Println("RESULT_VAL IN RETURN", res_val)
 	if err_res != nil {
 		return err_res
 	}
-	// vm.mm.SetValue(res, res_val)
 
 	// Get func row of curr call stack
 	callStackLen := len(vm.mm.callStack)
+
 	var currFunc *MemoryBlock
+	currFuncId := ""
+
 	if callStackLen != 0 {
 		currFunc = vm.mm.callStack[callStackLen-1]
+		currFuncId = currFunc.id
 	}
-
-	currFuncId := currFunc.id
 
 	// Get address of global variable of function
 	var funcR tables.FuncRow
@@ -650,7 +623,6 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	}
 
 	vm.mm.SetValue(funcR.Return_address, res_val)
-	fmt.Println("Global var:", funcR)
 
 	// End - pop from call stack and prev functions
 	// Pop from prevFunctions
@@ -663,19 +635,13 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
 	}
 
-	// update ip
+	// // update ip
 	top_ip, ok := vm.jumps.Top()
 	if !ok {
 		return errors.New("Couldn't get top of vm jumps.")
 	}
-	vm.jumps.Pop()
-
-	top_ip_int, err_ip := strconv.Atoi(top_ip)
-	if err_ip != nil {
-		return errors.New("Problem casting top ip to integer")
-	}
-	// Return tu destination
-	vm.ip = top_ip_int
+	vm.jumps, _ = vm.jumps.Pop()
+	vm.ip, _ = strconv.Atoi(top_ip)
 
 	return nil
 }

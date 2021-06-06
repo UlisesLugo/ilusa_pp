@@ -273,7 +273,6 @@ func NewFunctionParam(exp, rest Attrib) ([]quadruples.Cuadruplo, error) {
 	}
 	globalStackOperands, _ = globalStackOperands.Pop()
 
-	fmt.Println("HEREEEEEEEEEEEEEEE", paramsList, paramCounter)
 	// Get top of params list
 	curr_p := ""
 	var addr_res memory.Address
@@ -569,10 +568,14 @@ func NewAssignation(id, exp Attrib) ([]quadruples.Cuadruplo, error) {
 
 	curr_quads := make([]quadruples.Cuadruplo, 0)
 	new_exp, ok := exp.(*Exp)
-	if !ok {
-		return nil, errors.New("problem casting exp in assign")
+	if ok {
+		curr_quads = append(curr_quads, new_exp.quads_...)
 	}
-	curr_quads = append(curr_quads, new_exp.quads_...)
+	call_quads, call_ok := exp.([]quadruples.Cuadruplo)
+	fmt.Println("In new assignation", call_quads)
+	if call_ok {
+		curr_quads = append(curr_quads, call_quads...)
+	}
 
 	var current_address memory.Address
 	if globalCurrentScope != nil {
@@ -973,7 +976,7 @@ func NewOutput(id, idList Attrib) ([]*Exp, error) {
 }
 
 func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
-	curr_quads := make([]quadruples.Cuadruplo,0)
+	curr_quads := make([]quadruples.Cuadruplo, 0)
 
 	cuad_list, q_ok := exp.([]quadruples.Cuadruplo)
 	if q_ok {

@@ -71,7 +71,8 @@ EST : AS
  | RET
  | REP;
 
-AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
+AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>
+ | id "=" LLAM ";" << ast.NewAssignation($0,$2)>> ;
 
 LLAM : id "(" LLAM1 ")" << ast.NewFunctionCall($0,$2) >>;
 LLAM1 : empty | H_EXP LLAM2 << ast.NewFunctionParam($0,$1) >>;
