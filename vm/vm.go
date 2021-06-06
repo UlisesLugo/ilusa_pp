@@ -279,7 +279,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib, f *os.File) error {
 		if op_err != nil {
 			return op_err
 		}
-		vm.ip++
 		return nil
 	case "START_GO":
 		vm.ip++

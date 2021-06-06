@@ -533,7 +533,7 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 	// fmt.Println("Pushed jump: ", str_ip)
 
 	//Save current ip - JUMP ERROR
-	str_ip := strconv.Itoa(vm.ip)
+	str_ip := strconv.Itoa(vm.ip+1)
 	vm.jumps = vm.jumps.Push(str_ip)
 	fmt.Println("Pushed jump: ", str_ip)
 
@@ -560,7 +560,7 @@ func (vm *VirtualMachine) EndFunc() error {
 	if !ok {
 		return errors.New("Couldn't get top of vm jumps.")
 	}
-	vm.jumps.Pop()
+	vm.jumps, _ = vm.jumps.Pop()
 
 	top_ip_int, err_ip := strconv.Atoi(top_ip)
 	if err_ip != nil {
@@ -641,29 +641,31 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	}
 
 	// // update ip
-	// top_ip, ok := vm.jumps.Top()
-	// if !ok {
-	// 	return errors.New("Couldn't get top of vm jumps.")
-	// }
-	// vm.jumps.Pop()
-
+	top_ip, ok := vm.jumps.Top()
+	if !ok {
+		return errors.New("Couldn't get top of vm jumps.")
+	}
+	vm.jumps,_ = vm.jumps.Pop()
+	vm.ip, _ = strconv.Atoi(top_ip)
+	// vm.ip++
+	
 	// top_ip_int, err_ip := strconv.Atoi(top_ip)
 	// if err_ip != nil {
 	// 	return errors.New("Problem casting top ip to integer")
 	// }
 
 	// Return tu destination
-	if len(vm.jumps) == 0 {
-		fmt.Println("Destination missing") // JUMP ERROR
-		vm.ip = len(vm.quads) - 3
-		fmt.Println("LENG", len(vm.quads)) // ends
-		fmt.Println("GOING TOO:", vm.ip)
-	} else {
-		str_ip, _ := vm.jumps.Top()
-		vm.jumps.Pop()
-		vm.ip, _ = strconv.Atoi(str_ip)
-		fmt.Println("GOING TO QUAD", vm.ip)
-	}
+	// if len(vm.jumps) == 0 {
+	// 	fmt.Println("Destination missing") // JUMP ERROR
+	// 	vm.ip = len(vm.quads) - 3
+	// 	fmt.Println("LENG", len(vm.quads)) // ends
+	// 	fmt.Println("GOING TOO:", vm.ip)
+	// } else {
+	// 	str_ip, _ := vm.jumps.Top()
+	// 	vm.jumps.Pop()
+	// 	vm.ip, _ = strconv.Atoi(str_ip)
+	// 	fmt.Println("GOING TO QUAD", vm.ip)
+	// }
 
 	return nil
 }

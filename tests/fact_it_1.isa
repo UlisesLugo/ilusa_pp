@@ -22,5 +22,5 @@ Program factit :
   }
 
   main () {
-    output(fact(5));
+    output(fact(6));
   }
