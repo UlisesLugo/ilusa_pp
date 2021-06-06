@@ -43,8 +43,8 @@ DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
 DV3 : "[" cte_i "]" << $1, nil >> ;
 DV4 : empty | "," id DV4 ;
 DV5 : empty 
- | "," id DV5<< ast.NewVariable(nil,$1,0,0,$2) >>
- | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,0,$3) >> 
+ | "," id DV5<< ast.NewVariable(nil,$1,nil,nil,$2) >>
+ | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,nil,$3) >> 
  | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3,$4) >> ;
 DV6 : TIP_SIMP id << ast.NewVariable($0,$1,nil,nil,nil) >> 
  |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,nil,nil) >> 
@@ -72,7 +72,7 @@ EST : AS
  | REP;
 
 AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>
- | id "=" LLAM ";" << ast.NewAssignation($0,$2)>> ;
+ | id "[" H_EXP "]" "=" H_EXP ";" << ast.NewArrayAssignation($0,$2,$5) >> ;
 
 LLAM : id "(" LLAM1 ")" << ast.NewFunctionCall($0,$2) >>;
 LLAM1 : empty | H_EXP LLAM2 << ast.NewFunctionParam($0,$1) >>;
@@ -117,7 +117,8 @@ TERM1 : empty
 FAC : "(" H_EXP ")" 
  | VAR_CTE
  | "+" VAR_CTE << ast.NewOperation($0,$1) >>
- | "-" VAR_CTE << ast.NewOperation($0,$1) >>;
+ | "-" VAR_CTE << ast.NewOperation($0,$1) >>
+ | id "[" H_EXP "]" << ast.NewArrayOperand($0,$2) >>;
 
 VAR_CTE : id << ast.NewIdConst($0) >>
  | cte_i << ast.NewIntConst($0) >>
