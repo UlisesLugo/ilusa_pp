@@ -159,7 +159,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		}
 		vm.ip++
 	}
-	
+
 	return nil
 }
 
@@ -365,7 +365,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println(vm.ip, "-", vm.quads[vm.ip])
+		fmt.Println(vm.ip, " Running -", vm.quads[vm.ip])
 		err := vm.RunNextQuad(file)
 		if err != nil {
 			fmt.Println(err)
