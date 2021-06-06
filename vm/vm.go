@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -153,7 +154,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 
 	// TODO-ISA: add operator parameter
 **/
-func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
+func (vm *VirtualMachine) RunUnaryQuad(q Attrib, f *os.File) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
 	if !ok {
@@ -201,7 +202,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
 		if err_res != nil {
-			fmt.Println(quad.Res)
+			_, err_out := f.WriteString(quad.Res)
+			if err_out != nil {
+				fmt.Println("Error in output file.")
+				return err_out
+			}
 			vm.ip++
 			return nil
 		}
@@ -300,11 +305,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	returns error
 	calls RunBinaryQuad or RunUnaryQuad according to q
 **/
-func (vm *VirtualMachine) RunNextQuad() error {
+func (vm *VirtualMachine) RunNextQuad(file *os.File) error {
 	quad := vm.quads[vm.ip]
 
 	if quad.Var1 == "-1" || quad.Var2 == "-1" {
-		err_u := vm.RunUnaryQuad(quad)
+		err_u := vm.RunUnaryQuad(quad, file)
 		if err_u != nil {
 			return err_u
 		}
@@ -322,6 +327,17 @@ func (vm *VirtualMachine) RunNextQuad() error {
 	calls LoadConstants and executes vm quads
 **/
 func (vm *VirtualMachine) RunMachine() {
+	// Create execution file
+	file, err := os.Create("./exec_result.txt")
+
+	defer file.Close()
+
+	_, err_file := file.WriteString("--------Welcome to ILUSA Virtual Machine-------\n")
+
+	if err != nil || err_file != nil {
+		fmt.Println("Error creating execution file.")
+	}
+
 	if len(vm.quads) <= 0 {
 		fmt.Println("Quadruples list is empty.")
 	}
@@ -336,7 +352,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		err := vm.RunNextQuad()
+		err := vm.RunNextQuad(file)
 		if err != nil {
 			fmt.Println(err)
 			return

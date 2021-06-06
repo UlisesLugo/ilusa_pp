@@ -1,0 +1,26 @@
+Program factit :
+  variables{
+    int a;
+  }
+  function int fact(int n){
+    variables{
+      int sum;
+    }
+    body{
+      sum = 1;
+      
+      if (n < 2) {
+        return(1);
+      }
+
+      while(n > 1){
+        sum = sum * n;
+        n = n - 1;
+      }
+      return(sum);
+    }
+  }
+
+  main () {
+    output(fact(5));
+  }

@@ -3,5 +3,6 @@ Program unitFuncTest :
       int a[10];
   }
   main () {
-      output(1);
+      a[1]=0;
+      output(a[1]);
   } 
