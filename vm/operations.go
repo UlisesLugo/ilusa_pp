@@ -13,6 +13,8 @@ import (
 // Arithmetic operations
 
 func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
+	fmt.Println("left - add", left)
+	fmt.Println("right - add", right)
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
@@ -20,13 +22,32 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 		return err_left
 	}
 
+	// Check if res is pointer
+	if res >= memory.PointersContext && res < memory.Scopestart {
+		left_num, err_ln := getNum(left_val)
+
+		// cast right to int
+		right_int := int(right)
+
+		if err_ln != nil {
+			fmt.Println("Error casting left val to integer in Add.")
+			return err_ln
+		}
+		result := left_num + right_int
+
+		fmt.Println("ADDING VALUES", left_num, right_int)
+		err_res := vm.mm.SetValue(res, result)
+		if err_res != nil {
+			return err_res
+		}
+		return nil
+	}
+
 	right_val, err_right := vm.mm.GetValue(right)
 	if err_right != nil {
 		fmt.Println("Error getting right value of addition.")
 		return err_right
 	}
-
-	// TODO: Check if operation is valid
 
 	//	get Num
 	left_num, err_ln := getNum(left_val)
@@ -37,6 +58,8 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
+		fmt.Println("Adding integers", left_num, right_num)
+		fmt.Println("int res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			fmt.Println("Error setting int value")
@@ -643,5 +666,30 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	vm.jumps, _ = vm.jumps.Pop()
 	vm.ip, _ = strconv.Atoi(top_ip)
 
+	return nil
+}
+
+/**
+	Verify
+	@param left is address of pointer
+	@param res is value of array size
+**/
+func (vm *VirtualMachine) Verify(left memory.Address, res int) error {
+	left_val, err_left := vm.mm.GetValue(left)
+
+	if err_left != nil {
+		fmt.Println("Error getting left value of addition.")
+		return err_left
+	}
+
+	// cast left_val to integer
+	left_int := left_val.(int)
+	fmt.Println("Index of:", left_int)
+
+	// Pop a la pila de dimensiones
+
+	if left_int > res-1 || left_int < 0 {
+		return errors.New("Index out of bound stored in pointer" + fmt.Sprint(left))
+	}
 	return nil
 }

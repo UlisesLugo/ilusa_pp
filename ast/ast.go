@@ -429,10 +429,10 @@ func NewVariable(curr_type, id, dim1, dim2, rows Attrib) ([]*tables.VarRow, erro
 		return nil, errors.New("Problem in casting id token")
 	}
 	new_dim1 := 1
-	// if dim1 != nil {
-	// 	curr_dim, _ := dim1.(*token.Token).Int32Value()
-	// 	new_dim1 = int(curr_dim)
-	// }
+	if dim1 != nil {
+		curr_dim, _ := dim1.(*token.Token).Int32Value()
+		new_dim1 = int(curr_dim)
+	}
 
 	// create variable row
 	row := &tables.VarRow{} // TODO Constructor for VarRow
@@ -676,6 +676,10 @@ func NewExpression(exp1, exp2 Attrib) (*Exp, error) {
 		if new_exp2.exp != nil {
 			curr_quads = append(new_exp2.exp.quads_, curr_quads...)
 		}
+	}
+	new_quads, quads_ok := exp1.([]quadruples.Cuadruplo)
+	if quads_ok {
+		curr_quads = append(curr_quads, new_quads...)
 	}
 	// fmt.Println("Adding quad in exp",new_exp1, new_exp2, curr_quads)
 	return &Exp{new_exp1, new_exp2, new_const, curr_quads}, nil
@@ -992,5 +996,100 @@ func Return(exp Attrib) ([]quadruples.Cuadruplo, error) {
 
 	curr_quad := quadruples.Cuadruplo{"RETURN", "-1", "-1", curr_top}
 	curr_quads = append(curr_quads, curr_quad)
+	return curr_quads, nil
+}
+
+func NewArrayAssignation(id,index,value Attrib)([]quadruples.Cuadruplo, error){
+	curr_quads := make([]quadruples.Cuadruplo, 0)
+	tok, tok_ok := id.(*token.Token)
+	if !tok_ok {
+		return nil, errors.New("Problem in casting id token")
+	}
+	val := string(tok.Lit)
+	if globalVarTable == nil || globalVarTable.Table() == nil {
+		return nil, errors.New("undeclared variable")
+	}
+
+	curr_top1, ok := globalStackOperands.Top()
+	if !ok {
+		return nil, errors.New("Cannot assign to bad expr in array")
+	}
+	// pop operand 1
+	globalStackOperands, _ = globalStackOperands.Pop()
+
+
+	curr_top2, ok := globalStackOperands.Top()
+	if !ok {
+		return nil, errors.New("Cannot assign to bad expr in array")
+	}
+	// pop operand 1
+	globalStackOperands, _ = globalStackOperands.Pop()
+
+	// Add ver quad
+	sup_lim := globalVarTable.Table()[val].Dim1()
+	ver_quad := quadruples.Cuadruplo{"VER",curr_top2,"0",fmt.Sprint(sup_lim)}
+	curr_quads = append(curr_quads, ver_quad)
+
+	// Sum base Address to var
+	curr_type := globalVarTable.Table()[val].Type()
+	baseAddr := globalVarTable.Table()[val].DirV()
+	temp_addr, err_addr := vmemory.NextPointer(curr_type)
+	if err_addr != nil {
+		return nil, err_addr
+	}
+	baseAddr_quad := quadruples.Cuadruplo{"+",curr_top2,fmt.Sprint(baseAddr),fmt.Sprint(temp_addr)}
+	curr_quads = append(curr_quads, baseAddr_quad)
+
+	new_exp, ok := value.(*Exp)
+	if !ok {
+		return nil, errors.New("problem casting exp in assign")
+	}
+	curr_quads = append(curr_quads, new_exp.quads_...)
+
+	// Final quad to add
+	assign_quad := quadruples.Cuadruplo{"=",curr_top1,"-1",fmt.Sprint(temp_addr)}
+	curr_quads = append(curr_quads, assign_quad)
+
+	return curr_quads, nil
+}
+
+func NewArrayOperand(id, exp Attrib)([]quadruples.Cuadruplo, error){
+	curr_quads := make([]quadruples.Cuadruplo,0)
+	tok, tok_ok := id.(*token.Token)
+	if !tok_ok {
+		return nil, errors.New("Problem in casting id token")
+	}
+	val := string(tok.Lit)
+
+	new_exp, ok := exp.(*Exp)
+	if !ok {
+		return nil, errors.New("problem casting exp in assign")
+	}
+	curr_quads = append(curr_quads, new_exp.quads_...)
+
+
+	curr_top1, ok := globalStackOperands.Top()
+	if !ok {
+		return nil, errors.New("Cannot assign to bad expr in array")
+	}
+	// pop operand 1
+	globalStackOperands, _ = globalStackOperands.Pop()
+
+	// Add ver quad
+	sup_lim := globalVarTable.Table()[val].Dim1()
+	ver_quad := quadruples.Cuadruplo{"VER",curr_top1,"0",fmt.Sprint(sup_lim)}
+	curr_quads = append(curr_quads, ver_quad)
+
+	// Sum base Address to var
+	curr_type := globalVarTable.Table()[val].Type()
+	baseAddr := globalVarTable.Table()[val].DirV()
+	temp_addr, err_addr := vmemory.NextPointer(curr_type)
+	globalStackOperands = globalStackOperands.Push(fmt.Sprint(temp_addr))
+	if err_addr != nil {
+		return nil, err_addr
+	}
+	baseAddr_quad := quadruples.Cuadruplo{"+",curr_top1,fmt.Sprint(baseAddr),fmt.Sprint(temp_addr)}
+	curr_quads = append(curr_quads, baseAddr_quad)
+
 	return curr_quads, nil
 }

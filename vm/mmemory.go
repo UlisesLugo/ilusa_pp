@@ -2,6 +2,7 @@ package vm
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
@@ -64,8 +65,18 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 		}
 		return val, nil
 	case addr < memory.Scopestart: // Referring to Pointer Context
-		val, err := mm.mem_pointers.GetValue(addr)
+		// first we need to get the address of pointer
+		val_addr, err_addr := mm.mem_pointers.GetValue(addr)
+		if err_addr != nil {
+			fmt.Println("Error getting address of pointer.")
+			return nil, err_addr
+		}
+		// go to pointer address
+		val_int := val_addr.(int)
+		val_dir := memory.Address(val_int)
+		val, err := mm.GetValue(val_dir)
 		if err != nil {
+			fmt.Println("Error in indirect addressing of pointer.")
 			return nil, err
 		}
 		return val, nil
@@ -81,7 +92,8 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 	checks the context of the address and calls setValue of given context
 **/
 func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
-	//fmt.Println("Address to set", addr)
+	fmt.Println("Address to set in main memory", addr)
+	fmt.Println("Value to set in main memory", val)
 	switch {
 	case addr < memory.GlobalContext: // < 0
 		return errors.New("Address out of scope.")
@@ -93,7 +105,6 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		}
 		return nil
 	case addr < memory.ConstantsContext: // Referring to Local var 8 - 16
-		//fmt.Println("local set")
 		if len(mm.prevFuncsStack) > 0 {
 			top := mm.prevFuncsStack[len(mm.prevFuncsStack)-1]
 			err := top.SetValue(addr, val)
@@ -115,9 +126,32 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		}
 		return nil
 	case addr < memory.Scopestart: // Referring to Pointers 20 - 30
-		err := mm.mem_pointers.SetValue(addr, val)
-		if err != nil {
-			return err
+		// check if already stored address in pointer
+		val_ptr, err_ptr := mm.mem_pointers.GetValue(addr)
+		if err_ptr != nil {
+			fmt.Println("Error getting value of pointer address.")
+			return err_ptr
+		}
+
+		// if val_ptr is not 0, it is an address
+		if val_ptr != 0 {
+			val_int := val_ptr.(int)
+			val_dir := memory.Address(val_int) // get address
+			fmt.Println("VAL_DIR", val_int)
+
+			// set address to indirect address
+			err_indirect := mm.SetValue(val_dir, val)
+			if err_indirect != nil {
+				fmt.Println("Error setting value in indirect addressing.")
+				return err_indirect
+			}
+		} else {
+			// set new address in indirect address
+			err_pt := mm.mem_pointers.SetValue(addr, val)
+			if err_pt != nil {
+				fmt.Println("Error setting value in pointer address.")
+				return err_pt
+			}
 		}
 		return nil
 	}
