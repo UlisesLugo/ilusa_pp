@@ -39,7 +39,7 @@ func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 
 	tests := []string{
-		"../tests/fact_rec_1.isa",
+		"../tests/small_rec_1.isa",
 	}
 
 	for _, test := range tests {
@@ -84,9 +84,9 @@ func TestDuck(t *testing.T) {
 			// encodigin map
 			enc.Encode(obj_map)
 
-			for cuad := range prog.Quads() {
-				fmt.Println(prog.Quads()[cuad])
-			}
+			// for cuad := range prog.Quads() {
+			// 	fmt.Println(prog.Quads()[cuad])
+			// }
 
 			newVM := NewVirtualMachine()
 

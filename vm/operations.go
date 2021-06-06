@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -460,7 +461,7 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	return nil
 }
 
-func (vm *VirtualMachine) Write(res memory.Address) error {
+func (vm *VirtualMachine) Write(res memory.Address, f *os.File) error {
 	result, err_res := vm.mm.GetValue(res)
 
 	if err_res != nil {
@@ -468,10 +469,7 @@ func (vm *VirtualMachine) Write(res memory.Address) error {
 		return err_res
 	}
 
-	// Print results
-	fmt.Println("-----------------------------")
-	fmt.Println("Output: ", result)
-	fmt.Println("-----------------------------")
+	fmt.Fprintf(f, fmt.Sprintf("%v\n", result))
 	return nil
 }
 
@@ -510,6 +508,14 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 // Functions operations
 
 func (vm *VirtualMachine) Gosub(funcId string) error {
+	// Push to prev functions
+	callStackLen := len(vm.mm.callStack)
+	var topCall *MemoryBlock
+	if callStackLen > 0 {
+		topCall = vm.mm.callStack[callStackLen-1]
+		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
+	}
+
 	var funcR tables.FuncRow
 	// Get func row
 	for i := range vm.funcTable {
@@ -521,21 +527,19 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 		}
 	}
 
-	// Push to prev functions
-	// Create new context
-	callStackLen := len(vm.mm.callStack)
-	var topCall *MemoryBlock
-	if callStackLen > 0 {
-		topCall = vm.mm.callStack[callStackLen-1]
-		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
-	}
-
 	// save current ip
-	str_ip := strconv.Itoa(vm.ip)
-	vm.jumps = vm.jumps.Push(str_ip)
+	// str_ip := strconv.Itoa(vm.)
+	// vm.jumps = vm.jumps.Push(str_ip)
+	// fmt.Println("Pushed jump: ", str_ip)
+
+	// Save current ip - JUMP ERROR
+	// str_ip := strconv.Itoa(vm.ip + 1)
+	// vm.jumps = vm.jumps.Push(str_ip)
+	// fmt.Println("Pushed jump: ", str_ip)
 
 	// Unconditional jump
 	vm.ip = int(funcR.Address())
+	fmt.Println("New jump to:", vm.ip)
 	return nil
 }
 
@@ -588,8 +592,6 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 		funcCall = vm.mm.callStack[callStackLen-1]
 	}
 
-	// TODO: Check type of param
-
 	// Set param
 	funcCall.SetValue(res, left_val)
 	return nil
@@ -612,8 +614,6 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 		currFunc = vm.mm.callStack[callStackLen-1]
 		currFuncId = currFunc.id
 	}
-
-	fmt.Println("RESULT_VAL IN RETURN 2", res_val)
 
 	// Get address of global variable of function
 	var funcR tables.FuncRow
@@ -654,7 +654,10 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 
 	// Return tu destination
 	if len(vm.jumps) == 0 {
-		vm.ip = len(vm.quads) - 1 // ends
+		fmt.Println("Destination missing") // JUMP ERROR
+		vm.ip = len(vm.quads) - 3
+		fmt.Println("LENG", len(vm.quads)) // ends
+		fmt.Println("GOING TOO:", vm.ip)
 	} else {
 		str_ip, _ := vm.jumps.Top()
 		vm.jumps.Pop()

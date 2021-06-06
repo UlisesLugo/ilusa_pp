@@ -202,15 +202,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib, f *os.File) error {
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
 		if err_res != nil {
-			_, err_out := f.WriteString(quad.Res)
-			if err_out != nil {
-				fmt.Println("Error in output file.")
-				return err_out
-			}
+			fmt.Fprintf(f, fmt.Sprintf("%v\n", quad.Res))
 			vm.ip++
 			return nil
 		}
-		op_err := vm.Write(addr_res)
+		op_err := vm.Write(addr_res, f)
 		if op_err != nil {
 			return op_err
 		}
@@ -353,7 +349,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println("Running: ", vm.quads[vm.ip])
+		fmt.Println(vm.ip, "-", vm.quads[vm.ip])
 		err := vm.RunNextQuad(file)
 		if err != nil {
 			fmt.Println(err)
