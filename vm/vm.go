@@ -68,11 +68,11 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	// cast int values to memory addresses
 	addr_1 := memory.Address(int_var1)
 	addr_2 := memory.Address(int_var2)
-	addr_res := memory.Address(int_var3)
 
 	// Execute binary operation
 	switch quad.Op {
 	case "+":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Add(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -80,6 +80,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "-":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Sub(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -87,6 +88,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "*":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Mult(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -94,6 +96,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "/":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Div(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -101,6 +104,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "&&":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.And(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -108,6 +112,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "||":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Or(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -115,6 +120,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "<":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.LessT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -122,6 +128,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case ">":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.GreaterT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -129,6 +136,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "==":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.EqualT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -136,12 +144,20 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "!=":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.NotEqualT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
 		}
 		vm.ip++
 		return nil
+	case "VER":
+		op_err := vm.Verify(addr_1, int_var3)
+		if op_err != nil {
+			fmt.Println("VM error in VER operation")
+			return op_err
+		}
+		vm.ip++
 	}
 	return nil
 }

@@ -1,9 +1,19 @@
 8 LR-1 conflicts: 
-	S151
+	S164
 		symbol: [
-			Shift(226)
 			Reduce(83:VAR1 : empty	<<  >>)
-	S678
+			Shift(259)
+	S754
+		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(21)
+		symbol: float
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(22)
+		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
+	S760
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
@@ -13,7 +23,7 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S689
+	S772
 		symbol: int
 			Shift(20)
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
@@ -23,7 +33,17 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S701
+	S776
+		symbol: float
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(22)
+		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
+		symbol: char
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(21)
+	S782
 		symbol: int
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(20)
@@ -33,37 +53,17 @@
 		symbol: float
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
-	S705
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
-	S711
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
-		symbol: char
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(21)
-		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(22)
-	S712
+	S783
 		symbol: function
 			Reduce(48:F4 : empty	<<  >>)
-			Shift(361)
-	S713
-		symbol: int
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
-			Shift(20)
+			Shift(416)
+	S784
 		symbol: char
 			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(21)
 		symbol: float
-			Reduce(20:ATR_SIMP1 : empty	<<  >>)
 			Shift(22)
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+		symbol: int
+			Reduce(20:ATR_SIMP1 : empty	<<  >>)
+			Shift(20)
