@@ -190,8 +190,36 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 }
 
 func (vm *VirtualMachine) Assign(left, res memory.Address) error {
-	left_val, err_left := vm.mm.GetValue(left)
+	// Check if value is pointer
+	if left >= memory.PointersContext && res < memory.Scopestart {
+		fmt.Println("LEFT POINTER", left)
+		// get value of indirect address
+		ptr_val, err_ptr := vm.mm.mem_pointers.GetValue(left)
+		if err_ptr != nil {
+			fmt.Println("Error assigning value of indirect address.")
+			return err_ptr
+		}
 
+		// cast value to address
+		ptr_int := ptr_val.(int)
+		fmt.Println("LEFT POINTER INT:", ptr_int)
+		ptr_addr := memory.Address(ptr_int)
+
+		left_val, err_left := vm.mm.GetValue(ptr_addr)
+		fmt.Println("FOUND LEFT VAL:", left_val)
+		if err_left != nil {
+			fmt.Println("Error getting value in indirect address", ptr_addr)
+			return err_left
+		}
+
+		err_set := vm.mm.SetValue(res, left_val)
+		if err_set != nil {
+			return err_set
+		}
+		return nil
+	}
+
+	left_val, err_left := vm.mm.GetValue(left)
 	if err_left != nil {
 		return err_left
 	}

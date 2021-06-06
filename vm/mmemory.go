@@ -34,6 +34,7 @@ func NewMemory() *Memory {
 // Get Value from Main Memory
 // First you need to know which context
 func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
+	fmt.Println("GETTING VALUE FROM:", addr)
 	switch {
 	case addr < memory.GlobalContext: // < 0
 		return nil, errors.New("Address out of scope.")
