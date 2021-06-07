@@ -63,6 +63,7 @@ func init() {
 	returns a Program struct
 */
 func NewProgram(id, func_est, main_est Attrib) (*Program, error) {
+	fmt.Println("Constants map", constantsMap)
 	nombre := string(id.(*token.Token).Lit) // Casting id Attrib to string
 	new_id, ok := id.(*token.Token)
 	if !ok {

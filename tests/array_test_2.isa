@@ -1,0 +1,18 @@
+Program unitFuncTest :
+  variables{
+    int a[5];
+    int i;
+    int temp;
+  }
+  main () {
+      i = 1;
+      a[i]=2;
+      temp = 2;
+
+      output(a[i]);
+      if (i > 0){
+        temp = 8; 
+      }
+
+      output(temp);
+  }

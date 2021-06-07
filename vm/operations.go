@@ -24,17 +24,13 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	if res >= memory.PointersContext && res < memory.Scopestart {
 		left_num, err_ln := getNum(left_val)
 
-		right_val, err_right := vm.mm.GetValue(right)
-		if err_right != nil {
-			fmt.Println("Error getting right value of addition.")
-			return err_right
-		}
-
 		if err_ln != nil {
 			fmt.Println("Error casting left val to integer in Add.")
 			return err_ln
 		}
-		result := left_num + right_val.(int)
+		result := left_num + int(right)
+		fmt.Println("Adding address:", left, right)
+		fmt.Println("Adding values:", left_num, right)
 
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {

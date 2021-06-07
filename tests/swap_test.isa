@@ -9,8 +9,6 @@ Program factit :
 
     temp = a[0];
 
-    a[0] = a[1];
-
     output(a[0]);
     output(a[1]);
   }
