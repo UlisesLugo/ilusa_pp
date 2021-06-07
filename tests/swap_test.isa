@@ -12,4 +12,5 @@ Program factit :
     a[0] = a[1];
 
     output(a[0]);
+    output(a[1]);
   }
