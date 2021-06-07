@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -12,7 +13,6 @@ import (
 // Arithmetic operations
 
 func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
-	fmt.Println("left", left)
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
@@ -20,13 +20,30 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 		return err_left
 	}
 
+	// Check if res is pointer
+	if res >= memory.PointersContext && res < memory.Scopestart {
+		left_num, err_ln := getNum(left_val)
+
+		if err_ln != nil {
+			fmt.Println("Error casting left val to integer in Add.")
+			return err_ln
+		}
+		result := left_num + int(right)
+		fmt.Println("Adding address:", left, right)
+		fmt.Println("Adding values:", left_num, right)
+
+		err_res := vm.mm.SetValue(res, result)
+		if err_res != nil {
+			return err_res
+		}
+		return nil
+	}
+
 	right_val, err_right := vm.mm.GetValue(right)
 	if err_right != nil {
 		fmt.Println("Error getting right value of addition.")
 		return err_right
 	}
-
-	// TODO: Check if operation is valid
 
 	//	get Num
 	left_num, err_ln := getNum(left_val)
@@ -37,7 +54,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
-		fmt.Println("int res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			fmt.Println("Error setting int value")
@@ -47,7 +63,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 	}
 
 	result := left_flt + right_flt
-	fmt.Println("flt res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -77,7 +92,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num - right_num
-		fmt.Println("res int", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -86,7 +100,6 @@ func (vm *VirtualMachine) Sub(left, right, res memory.Address) error {
 	}
 
 	result := left_flt - right_flt
-	fmt.Println("res flt", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -117,8 +130,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num * right_num
-		fmt.Println("res", result)
-		fmt.Println("Result Address", res)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -127,7 +138,6 @@ func (vm *VirtualMachine) Mult(left, right, res memory.Address) error {
 	}
 
 	result := left_flt * right_flt
-	fmt.Println("res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -158,7 +168,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num / right_num
-		fmt.Println("res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -167,7 +176,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 	}
 
 	result := left_flt / right_flt
-	fmt.Println("res", result)
 	err_res := vm.mm.SetValue(res, result)
 	if err_res != nil {
 		return err_res
@@ -176,8 +184,33 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 }
 
 func (vm *VirtualMachine) Assign(left, res memory.Address) error {
-	left_val, err_left := vm.mm.GetValue(left)
+	// Check if value is pointer
+	if left >= memory.PointersContext && res < memory.Scopestart {
+		// get value of indirect address
+		ptr_val, err_ptr := vm.mm.mem_pointers.GetValue(left)
+		if err_ptr != nil {
+			fmt.Println("Error assigning value of indirect address.")
+			return err_ptr
+		}
 
+		// cast value to address
+		ptr_int := ptr_val.(int)
+		ptr_addr := memory.Address(ptr_int)
+
+		left_val, err_left := vm.mm.GetValue(ptr_addr)
+		if err_left != nil {
+			fmt.Println("Error getting value in indirect address", ptr_addr)
+			return err_left
+		}
+
+		err_set := vm.mm.SetValue(res, left_val)
+		if err_set != nil {
+			return err_set
+		}
+		return nil
+	}
+
+	left_val, err_left := vm.mm.GetValue(left)
 	if err_left != nil {
 		return err_left
 	}
@@ -226,7 +259,6 @@ func (vm *VirtualMachine) GreaterT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -269,7 +301,6 @@ func (vm *VirtualMachine) LessT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -312,7 +343,6 @@ func (vm *VirtualMachine) EqualT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -355,7 +385,6 @@ func (vm *VirtualMachine) NotEqualT(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -397,7 +426,6 @@ func (vm *VirtualMachine) And(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -438,7 +466,6 @@ func (vm *VirtualMachine) Or(left, right, res memory.Address) error {
 		int_res = 0
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -469,7 +496,6 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 		int_res = 1
 	}
 
-	fmt.Println("res", int_res)
 	err_res := vm.mm.SetValue(res, int_res)
 	if err_res != nil {
 		return err_res
@@ -477,7 +503,7 @@ func (vm *VirtualMachine) Not(left, res memory.Address) error {
 	return nil
 }
 
-func (vm *VirtualMachine) Write(res memory.Address) error {
+func (vm *VirtualMachine) Write(res memory.Address, f *os.File) error {
 	result, err_res := vm.mm.GetValue(res)
 
 	if err_res != nil {
@@ -485,10 +511,7 @@ func (vm *VirtualMachine) Write(res memory.Address) error {
 		return err_res
 	}
 
-	// Print results
-	fmt.Println("-----------------------------")
-	fmt.Println("Output: ", result)
-	fmt.Println("-----------------------------")
+	fmt.Fprintf(f, fmt.Sprintf("%v\n", result))
 	return nil
 }
 
@@ -514,12 +537,8 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 		return err_ln
 	}
 
-	fmt.Println("Value found for GOTOF", left_num)
-
 	if left_num == 0 {
-		fmt.Println("Falso")
 		vm.ip = jump
-		fmt.Println("Jump to: ", vm.ip)
 	} else {
 		vm.ip++
 	}
@@ -530,6 +549,14 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 // Functions operations
 
 func (vm *VirtualMachine) Gosub(funcId string) error {
+	// Push to prev functions
+	callStackLen := len(vm.mm.callStack)
+	var topCall *MemoryBlock
+	if callStackLen > 0 {
+		topCall = vm.mm.callStack[callStackLen-1]
+		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
+	}
+
 	var funcR tables.FuncRow
 	// Get func row
 	for i := range vm.funcTable {
@@ -541,14 +568,7 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 		}
 	}
 
-	// Push to prev functions
-	callStackLen := len(vm.mm.callStack)
-	var topCall *MemoryBlock
-	if callStackLen > 0 {
-		topCall = vm.mm.callStack[callStackLen-1]
-		vm.mm.prevFuncsStack = append(vm.mm.prevFuncsStack, topCall)
-	}
-	// save current ip
+	//Save current ip - JUMP ERROR
 	str_ip := strconv.Itoa(vm.ip + 1)
 	vm.jumps = vm.jumps.Push(str_ip)
 
@@ -574,7 +594,7 @@ func (vm *VirtualMachine) EndFunc() error {
 	if !ok {
 		return errors.New("Couldn't get top of vm jumps.")
 	}
-	vm.jumps.Pop()
+	vm.jumps, _ = vm.jumps.Pop()
 
 	top_ip_int, err_ip := strconv.Atoi(top_ip)
 	if err_ip != nil {
@@ -597,7 +617,7 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 	if err_left != nil {
 		return err_left
 	}
-	fmt.Println("leftV ", left_val)
+
 	callStackLen := len(vm.mm.callStack)
 
 	var funcCall *MemoryBlock
@@ -606,10 +626,8 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 		funcCall = vm.mm.callStack[callStackLen-1]
 	}
 
-	// TODO: Check type of param
-
 	// Set param
-	funcCall.SetValue(left, left_val)
+	funcCall.SetValue(res, left_val)
 	return nil
 }
 
@@ -618,7 +636,31 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 	if err_res != nil {
 		return err_res
 	}
-	vm.mm.SetValue(res, res_val)
+
+	// Get func row of curr call stack
+	callStackLen := len(vm.mm.callStack)
+
+	var currFunc *MemoryBlock
+	currFuncId := ""
+
+	if callStackLen != 0 {
+		currFunc = vm.mm.callStack[callStackLen-1]
+		currFuncId = currFunc.id
+	}
+
+	// Get address of global variable of function
+	var funcR tables.FuncRow
+	// Get func row
+	for i := range vm.funcTable {
+		fr := vm.funcTable[i]
+
+		if fr.Id() == currFuncId {
+			funcR = fr
+			break
+		}
+	}
+
+	vm.mm.SetValue(funcR.Return_address, res_val)
 
 	// End - pop from call stack and prev functions
 	// Pop from prevFunctions
@@ -627,10 +669,41 @@ func (vm *VirtualMachine) Return(res memory.Address) error {
 		vm.mm.prevFuncsStack = vm.mm.prevFuncsStack[:prevFuncLen-1]
 	}
 	// Pop from call stack
-	callStackLen := len(vm.mm.callStack)
 	if callStackLen != 0 {
 		vm.mm.callStack = vm.mm.callStack[:callStackLen-1]
 	}
 
+	// // update ip
+	top_ip, ok := vm.jumps.Top()
+	if !ok {
+		return errors.New("Couldn't get top of vm jumps.")
+	}
+	vm.jumps, _ = vm.jumps.Pop()
+	vm.ip, _ = strconv.Atoi(top_ip)
+
+	return nil
+}
+
+/**
+	Verify
+	@param left is address of pointer
+	@param res is value of array size
+**/
+func (vm *VirtualMachine) Verify(left memory.Address, res int) error {
+	left_val, err_left := vm.mm.GetValue(left)
+
+	if err_left != nil {
+		fmt.Println("Error getting left value of addition.")
+		return err_left
+	}
+
+	// cast left_val to integer
+	left_int := left_val.(int)
+
+	// Pop a la pila de dimensiones
+
+	if left_int > res-1 || left_int < 0 {
+		return errors.New("Index out of bound stored in pointer" + fmt.Sprint(left))
+	}
 	return nil
 }

@@ -40,27 +40,28 @@ ATR_SIMP1 : empty | ATR_SIMP ATR_SIMP1 ;
 DV : "variables" "{" DV1 "}" << $2, nil >>;
 DV1 : empty | DV2 ";" DV1 << ast.NewBlockVariables($0,$2) >> ;
 DV2 : TIP_COMP id DV4 | DV6 DV5 << ast.NewTypeVariables($0,$1) >>;
-DV3 : "[" cte_i "]" << ast.NewIntConst($1) >> ;
+DV3 : "[" cte_i "]" << $1, nil >> ;
 DV4 : empty | "," id DV4 ;
 DV5 : empty 
- | "," id DV5<< ast.NewVariable(nil,$1,0,0, $2) >>
- | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,0, $3) >> 
- | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3, $4) >> ;
-DV6 : TIP_SIMP id << ast.NewVariable($0,$1,0,0, nil) >> 
- |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,0, nil) >> 
- |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3, nil) >> ;
+ | "," id DV5<< ast.NewVariable(nil,$1,nil,nil,$2) >>
+ | "," id DV3 DV5<< ast.NewVariable(nil,$1,$2,nil,$3) >> 
+ | "," id DV3 DV3 DV5<< ast.NewVariable(nil,$1,$2,$3,$4) >> ;
+DV6 : TIP_SIMP id << ast.NewVariable($0,$1,nil,nil,nil) >> 
+ |    TIP_SIMP id DV3 << ast.NewVariable($0,$1,$2,nil,nil) >> 
+ |    TIP_SIMP id DV3 DV3 << ast.NewVariable($0,$1,$2,$3,nil) >> ;
 
 TIP_SIMP : "int" << types.Integer, nil >>
  | "char"  << types.Char, nil >>
  | "float" << types.Float, nil >>;
 TIP_COMP : id ;
 
-F : "function" F1 id "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($2,$4,$7,$10,$11,$14) >> ;
-F1 : TIP_SIMP << ast.ResetLocalMemory() >>
-| "void" << ast.ResetLocalMemory() >> ;
+F : "function" F5 "(" F2 ")" "{" DV "body" "{" EST B1 "}" "}" F4 << ast.NewFunction($1,$3,$6,$9,$10,$13) >> ;
+F1 : TIP_SIMP << ast.NewFunctionType($0) >>
+| "void" << ast.NewFunctionType(nil) >> ;
 F2 : empty | TIP_SIMP id F3 << ast.NewFunctionAttrib($0,$1,$2) >> ;
 F3 : empty | "," TIP_SIMP id F3 << ast.NewFunctionAttrib($1,$2,$3) >> ;
 F4 : empty | F ;
+F5 : F1 id << ast.NewFunctionId($0,$1) >> ;
 
 EST : AS 
  | DEC
@@ -70,13 +71,16 @@ EST : AS
  | RET
  | REP;
 
-AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>;
+AS : id "=" H_EXP ";" << ast.NewAssignation($0,$2) >>
+ | id "=" LLAM ";" << ast.NewAssignation($0,$2)>> 
+ | id "[" H_EXP "]" "=" H_EXP ";" << ast.NewArrayAssignation($0,$2,$5) >> ;
 
 LLAM : id "(" LLAM1 ")" << ast.NewFunctionCall($0,$2) >>;
 LLAM1 : empty | H_EXP LLAM2 << ast.NewFunctionParam($0,$1) >>;
 LLAM2 : empty | "," H_EXP LLAM2 << ast.NewFunctionParam($1,$2) >>;
 
-RET : "return" "(" H_EXP ")" ";" << ast.Return($2) >>;
+RET : "return" "(" H_EXP ")" ";" << ast.Return($2) >>
+| "return" "(" LLAM ")" ";" << ast.Return($2) >>;
 
 LEC : "input" "(" VAR LEC1 ")" ";" << ast.NewInput($2,$3) >>;
 LEC1 : empty | "," VAR LEC1 << ast.NewInput($1,$2) >>;
@@ -114,7 +118,8 @@ TERM1 : empty
 FAC : "(" H_EXP ")" 
  | VAR_CTE
  | "+" VAR_CTE << ast.NewOperation($0,$1) >>
- | "-" VAR_CTE << ast.NewOperation($0,$1) >>;
+ | "-" VAR_CTE << ast.NewOperation($0,$1) >>
+ | id "[" H_EXP "]" << ast.NewArrayOperand($0,$2) >>;
 
 VAR_CTE : id << ast.NewIdConst($0) >>
  | cte_i << ast.NewIntConst($0) >>

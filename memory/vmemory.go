@@ -166,7 +166,7 @@ func (vm *VirtualMemory) NextGlobal(t types.CoreType) (Address, error) {
 	@param t type of global variable
 	returns next available address for global temporal
 **/
-func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType) (Address, error) {
+func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType, space int) (Address, error) {
 	switch t {
 	case 0: // integer constant
 		if vm.global_temp_int_count >= segmentSize {
@@ -174,7 +174,7 @@ func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType) (Address, error) {
 		}
 		addr := vm.global_temp_int_count + TempIntOffset + GlobalContext
 		// increment counter
-		vm.global_temp_int_count++
+		vm.global_temp_int_count+= space
 		return Address(addr), nil
 
 	case 1: // float constant
@@ -183,7 +183,7 @@ func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType) (Address, error) {
 		}
 		addr := vm.global_temp_float_count + TempFloatOffset + GlobalContext
 		// increment counter
-		vm.global_temp_float_count++
+		vm.global_temp_float_count+= space
 		return Address(addr), nil
 
 	case 2: // chars
@@ -191,7 +191,7 @@ func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType) (Address, error) {
 			return Address(-1), errors.New("Too many temporal chars in local memory.")
 		}
 		addr := vm.global_temp_char_count + TempCharOffset + GlobalContext
-		vm.global_temp_char_count++
+		vm.global_temp_char_count+= space
 		return Address(addr), nil
 
 	case 3: // booleans
@@ -199,7 +199,7 @@ func (vm *VirtualMemory) NextGlobalTemp(t types.CoreType) (Address, error) {
 			return Address(-1), errors.New("Too many temporal booleans in local memory.")
 		}
 		addr := vm.global_temp_bool_count + TempBoolOffset + GlobalContext
-		vm.global_temp_bool_count++
+		vm.global_temp_bool_count+= space
 		return Address(addr), nil
 
 	}

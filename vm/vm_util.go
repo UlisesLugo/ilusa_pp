@@ -85,7 +85,6 @@ func (vm *VirtualMachine) ReadJSON() {
 	loads constants from virtual memory constants map to run time memory
 **/
 func (vm *VirtualMachine) LoadConstants() error {
-	fmt.Println("In LoadConstants of VM Main Memory")
 	if vm.constants == nil {
 		return errors.New("Constants map empty in VM.")
 	}

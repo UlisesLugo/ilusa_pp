@@ -1,0 +1,10 @@
+Program unitFuncTest :
+  variables{
+    int a[5];
+    int i;
+  }
+  main () {
+      i = 1;
+      a[i]=2;
+      output(a[i]);
+  }

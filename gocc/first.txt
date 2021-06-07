@@ -121,6 +121,12 @@ F4: {
 	empty
 	function
 }
+F5: {
+	char
+	float
+	int
+	void
+}
 EST: {
 	for
 	id

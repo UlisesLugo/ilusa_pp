@@ -1,0 +1,25 @@
+Program factorial :
+variables{
+  int b;
+}
+function int fact(int n) {
+  variables {
+    int sum,res;
+  }
+  body{
+    output("n", n);
+    if (n < 1) {
+      return(1);
+    }
+    output("pasa");
+    sum = fact(n-1);
+    output("pasa 2");
+    res = n * sum;
+    output("no pasa");
+    return(res);
+  }
+}
+
+main() {
+  output(fact(5));
+}

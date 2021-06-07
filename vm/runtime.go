@@ -2,7 +2,6 @@ package vm
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
 )
@@ -108,9 +107,12 @@ func (mb *MemoryBlock) GetValue(addr memory.Address) (interface{}, error) {
 	@param addr address for Run-time memory
 **/
 func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
-	idx := addr - mb.baseAddr
-	fmt.Println("Index to set value", idx)
-	fmt.Println("Value to set", val)
+	idx := int(addr) - int(mb.baseAddr)
+
+	// fmt.Println("Address to set value in memory bloc", addr)
+	// fmt.Println("Base addr of context"+mb.id, mb.baseAddr)
+	// fmt.Println("Index to set value", idx)
+	// fmt.Println("Value to set", val)
 
 	switch {
 	case idx < 0:
@@ -144,11 +146,11 @@ func (mb *MemoryBlock) SetValue(addr memory.Address, val interface{}) error {
 		mb.temp_floats[typeAddr] = float64(val.(float64))
 		return nil
 	case idx >= 7000 && idx < 8000: // char temp
-		typeAddr := int(idx - memory.CharOffset)
+		typeAddr := int(idx - memory.TempCharOffset)
 		mb.temp_chars[typeAddr] = val.(rune)
 		return nil
 	case idx >= 8000 && idx < 9000: // bool temp
-		typeAddr := int(idx - memory.BoolOffset)
+		typeAddr := int(idx - memory.TempBoolOffset)
 		mb.temp_bools[typeAddr] = val.(int)
 		return nil
 	}

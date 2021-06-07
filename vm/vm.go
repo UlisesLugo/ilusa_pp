@@ -3,6 +3,7 @@ package vm
 import (
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/uliseslugo/ilusa_pp/memory"
@@ -67,11 +68,11 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 	// cast int values to memory addresses
 	addr_1 := memory.Address(int_var1)
 	addr_2 := memory.Address(int_var2)
-	addr_res := memory.Address(int_var3)
 
 	// Execute binary operation
 	switch quad.Op {
 	case "+":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Add(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -79,6 +80,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "-":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Sub(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -86,6 +88,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "*":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Mult(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -93,6 +96,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "/":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Div(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -100,6 +104,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "&&":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.And(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -107,6 +112,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "||":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.Or(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -114,6 +120,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "<":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.LessT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -121,6 +128,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case ">":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.GreaterT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -128,6 +136,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "==":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.EqualT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
@@ -135,13 +144,22 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 		vm.ip++
 		return nil
 	case "!=":
+		addr_res := memory.Address(int_var3)
 		op_err := vm.NotEqualT(addr_1, addr_2, addr_res)
 		if op_err != nil {
 			return op_err
 		}
 		vm.ip++
 		return nil
+	case "VER":
+		op_err := vm.Verify(addr_1, int_var3)
+		if op_err != nil {
+			fmt.Println("VM error in VER operation")
+			return op_err
+		}
+		vm.ip++
 	}
+
 	return nil
 }
 
@@ -153,7 +171,7 @@ func (vm *VirtualMachine) RunBinaryQuad(q Attrib) error {
 
 	// TODO-ISA: add operator parameter
 **/
-func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
+func (vm *VirtualMachine) RunUnaryQuad(q Attrib, f *os.File) error {
 	quad, ok := q.(quadruples.Cuadruplo)
 
 	if !ok {
@@ -201,9 +219,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		int_res, err_res := strconv.Atoi(quad.Res)
 		addr_res := memory.Address(int_res)
 		if err_res != nil {
-			return errors.New("Couldn't cast q.Op to int")
+			fmt.Fprintf(f, fmt.Sprintf("%v\n", quad.Res))
+			vm.ip++
+			return nil
 		}
-		op_err := vm.Write(addr_res)
+		op_err := vm.Write(addr_res, f)
 		if op_err != nil {
 			return op_err
 		}
@@ -231,12 +251,17 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 			return op_err
 		}
 		return nil
-	case "READ":
-		// TODO
-		return nil
 		// Functions
 	case "PARAM":
-
+		int_res, err_res := strconv.Atoi(quad.Res)
+		addr_res := memory.Address(int_res)
+		if err_res != nil {
+			return errors.New("Couldn't cast q.Res to int")
+		}
+		op_err := vm.Param(addr_1, addr_res)
+		if op_err != nil {
+			return op_err
+		}
 		vm.ip++
 		return nil
 	case "ENDPROC":
@@ -270,7 +295,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 		if op_err != nil {
 			return op_err
 		}
-		vm.ip++
 		return nil
 	case "START_GO":
 		vm.ip++
@@ -293,11 +317,11 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib) error {
 	returns error
 	calls RunBinaryQuad or RunUnaryQuad according to q
 **/
-func (vm *VirtualMachine) RunNextQuad() error {
+func (vm *VirtualMachine) RunNextQuad(file *os.File) error {
 	quad := vm.quads[vm.ip]
 
 	if quad.Var1 == "-1" || quad.Var2 == "-1" {
-		err_u := vm.RunUnaryQuad(quad)
+		err_u := vm.RunUnaryQuad(quad, file)
 		if err_u != nil {
 			return err_u
 		}
@@ -315,6 +339,17 @@ func (vm *VirtualMachine) RunNextQuad() error {
 	calls LoadConstants and executes vm quads
 **/
 func (vm *VirtualMachine) RunMachine() {
+	// Create execution file
+	file, err := os.Create("./exec_result.txt")
+
+	defer file.Close()
+
+	_, err_file := file.WriteString("--------Welcome to ILUSA Virtual Machine-------\n")
+
+	if err != nil || err_file != nil {
+		fmt.Println("Error creating execution file.")
+	}
+
 	if len(vm.quads) <= 0 {
 		fmt.Println("Quadruples list is empty.")
 	}
@@ -329,8 +364,7 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println("Running:", vm.quads[vm.ip])
-		err := vm.RunNextQuad()
+		err := vm.RunNextQuad(file)
 		if err != nil {
 			fmt.Println(err)
 			return

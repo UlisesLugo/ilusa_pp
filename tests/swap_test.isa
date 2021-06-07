@@ -1,0 +1,14 @@
+Program factit :
+  variables{
+    int a[5],temp;
+  }
+
+  main () {
+    a[0] = 5;
+    a[1] = 10;
+
+    temp = a[0];
+
+    output(a[0]);
+    output(a[1]);
+  }

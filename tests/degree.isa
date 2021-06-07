@@ -1,0 +1,36 @@
+Program unitFuncTest :
+  variables{
+      int a[5];
+  }
+  
+  function int sum() {
+    variables{
+      int i;
+      int n;
+      int sum;
+      int temp;
+    }
+    body{
+      i = 0;
+      sum = 0;
+      while(i < 5){
+        temp = a[i];
+        output(temp);
+        sum = sum + temp;
+        i = i + 1;
+      }
+      output("Total Sum:");
+      output(sum);
+    }
+
+  }
+
+  main () {
+    a[0] = 5;
+    a[1] = 4;
+    a[2] = 3;
+    a[3] = 2;
+    a[4] = 1;
+
+    sum();
+  } 

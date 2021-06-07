@@ -1,0 +1,22 @@
+Program factit :
+  variables{
+    int a[5],temp, left, right;
+  }
+
+  main () {
+    a[0] = 5;
+    a[1] = 10;
+
+    output(a[0]);
+    output(a[1]);
+
+    left = a[0];
+    right = a[1];
+
+    while (left < right) {
+      left = left + 1;
+      a[0] = left;
+    }
+
+    output(a[0]);
+  }

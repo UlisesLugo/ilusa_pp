@@ -1,4 +1,4 @@
-package vm
+package tests
 
 import (
 	"encoding/json"
@@ -39,7 +39,7 @@ func TestDuck(t *testing.T) {
 	p := parser.NewParser()
 
 	tests := []string{
-		"../tests/swap_test.isa",
+		"../tests/array_test_2.isa",
 	}
 
 	for _, test := range tests {
@@ -79,26 +79,14 @@ func TestDuck(t *testing.T) {
 			obj_map["Consts"] = prog.Consts()
 
 			// set key for Functable
-			funcDir := prog.FuncTable()
+			// funcDir := prog.FuncTable()
 
 			// encodigin map
 			enc.Encode(obj_map)
 
-			// for cuad := range prog.Quads() {
-			// 	fmt.Println(prog.Quads()[cuad])
-			// }
-
-			newVM := NewVirtualMachine()
-
-			// testing vm
-			newVM.ReadJSON()
-
-			newVM.funcTable = funcDir
-
-			newVM.RunMachine()
-
-			fmt.Printf("%s\n", "Running Machine Test Passed")
+			for cuad := range prog.Quads() {
+				fmt.Println(cuad, " ", prog.Quads()[cuad])
+			}
 		}
 	}
-
 }
