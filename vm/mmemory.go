@@ -34,7 +34,6 @@ func NewMemory() *Memory {
 // Get Value from Main Memory
 // First you need to know which context
 func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
-	fmt.Println("GETTING VALUE FROM:", addr)
 	switch {
 	case addr < memory.GlobalContext: // < 0
 		return nil, errors.New("Address out of scope.")
@@ -93,13 +92,10 @@ func (mm *Memory) GetValue(addr memory.Address) (interface{}, error) {
 	checks the context of the address and calls setValue of given context
 **/
 func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
-	fmt.Println("Address to set in main memory", addr)
-	fmt.Println("Value to set in main memory", val)
 	switch {
 	case addr < memory.GlobalContext: // < 0
 		return errors.New("Address out of scope.")
 	case addr < memory.LocalContext: // Referring to Global var 0 - 8000
-		//fmt.Println("g set")
 		err := mm.mem_global.SetValue(addr, val)
 		if err != nil {
 			return err
@@ -113,7 +109,6 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 				return err
 			}
 		} else { // no functions
-			//fmt.Println("setting to local")
 			err := mm.mem_local.SetValue(addr, val)
 			if err != nil {
 				return err
@@ -138,7 +133,6 @@ func (mm *Memory) SetValue(addr memory.Address, val interface{}) error {
 		if val_ptr != 0 {
 			val_int := val_ptr.(int)
 			val_dir := memory.Address(val_int) // get address
-			fmt.Println("VAL_DIR", val_int)
 
 			// set address to indirect address
 			err_indirect := mm.SetValue(val_dir, val)

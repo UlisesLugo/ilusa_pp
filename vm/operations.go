@@ -13,8 +13,6 @@ import (
 // Arithmetic operations
 
 func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
-	fmt.Println("left - add", left)
-	fmt.Println("right - add", right)
 	left_val, err_left := vm.mm.GetValue(left)
 
 	if err_left != nil {
@@ -38,7 +36,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 		}
 		result := left_num + right_val.(int)
 
-		fmt.Println("ADDING VALUES", left_num, right_val.(int))
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			return err_res
@@ -61,8 +58,6 @@ func (vm *VirtualMachine) Add(left, right, res memory.Address) error {
 
 	if err_ln == nil && err_rn == nil {
 		result := left_num + right_num
-		fmt.Println("Adding integers", left_num, right_num)
-		fmt.Println("int res", result)
 		err_res := vm.mm.SetValue(res, result)
 		if err_res != nil {
 			fmt.Println("Error setting int value")
@@ -195,7 +190,6 @@ func (vm *VirtualMachine) Div(left, right, res memory.Address) error {
 func (vm *VirtualMachine) Assign(left, res memory.Address) error {
 	// Check if value is pointer
 	if left >= memory.PointersContext && res < memory.Scopestart {
-		fmt.Println("LEFT POINTER", left)
 		// get value of indirect address
 		ptr_val, err_ptr := vm.mm.mem_pointers.GetValue(left)
 		if err_ptr != nil {
@@ -205,11 +199,9 @@ func (vm *VirtualMachine) Assign(left, res memory.Address) error {
 
 		// cast value to address
 		ptr_int := ptr_val.(int)
-		fmt.Println("LEFT POINTER INT:", ptr_int)
 		ptr_addr := memory.Address(ptr_int)
 
 		left_val, err_left := vm.mm.GetValue(ptr_addr)
-		fmt.Println("FOUND LEFT VAL:", left_val)
 		if err_left != nil {
 			fmt.Println("Error getting value in indirect address", ptr_addr)
 			return err_left
@@ -551,7 +543,6 @@ func (vm *VirtualMachine) GotoF(left memory.Address, jump int) error {
 
 	if left_num == 0 {
 		vm.ip = jump
-		fmt.Println("Jump to: ", vm.ip)
 	} else {
 		vm.ip++
 	}
@@ -584,11 +575,9 @@ func (vm *VirtualMachine) Gosub(funcId string) error {
 	//Save current ip - JUMP ERROR
 	str_ip := strconv.Itoa(vm.ip + 1)
 	vm.jumps = vm.jumps.Push(str_ip)
-	fmt.Println("Pushed jump: ", str_ip)
 
 	// Unconditional jump
 	vm.ip = int(funcR.Address())
-	fmt.Println("New jump to:", vm.ip)
 	return nil
 }
 
@@ -648,7 +637,6 @@ func (vm *VirtualMachine) Param(left, res memory.Address) error {
 
 func (vm *VirtualMachine) Return(res memory.Address) error {
 	res_val, err_res := vm.mm.GetValue(res)
-	fmt.Println("RESULT_VAL IN RETURN", res_val)
 	if err_res != nil {
 		return err_res
 	}
@@ -715,7 +703,6 @@ func (vm *VirtualMachine) Verify(left memory.Address, res int) error {
 
 	// cast left_val to integer
 	left_int := left_val.(int)
-	fmt.Println("Index of:", left_int)
 
 	// Pop a la pila de dimensiones
 

@@ -291,7 +291,6 @@ func (vm *VirtualMachine) RunUnaryQuad(q Attrib, f *os.File) error {
 		if err_res != nil {
 			return errors.New("Couldn't cast q.Op to int")
 		}
-		fmt.Println("Address to return", addr_res)
 		op_err := vm.Return(addr_res)
 		if op_err != nil {
 			return op_err
@@ -365,7 +364,6 @@ func (vm *VirtualMachine) RunMachine() {
 
 	// execute quad
 	for vm.ip < len(vm.quads)-1 {
-		fmt.Println(vm.ip, " Running -", vm.quads[vm.ip])
 		err := vm.RunNextQuad(file)
 		if err != nil {
 			fmt.Println(err)
